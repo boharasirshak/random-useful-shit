@@ -12,8 +12,8 @@ export default function TabLayout() {
         <NativeTabs.Trigger.Label>Body</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon sf="figure.walk" md="directions_walk" />
       </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="progress">
-        <NativeTabs.Trigger.Label>Progress</NativeTabs.Trigger.Label>
+      <NativeTabs.Trigger name="goals">
+        <NativeTabs.Trigger.Label>Goals</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon sf="chart.line.downtrend.xyaxis" md="trending_down" />
       </NativeTabs.Trigger>
     </NativeTabs>

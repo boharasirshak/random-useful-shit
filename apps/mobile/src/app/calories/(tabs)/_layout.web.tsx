@@ -32,7 +32,7 @@ export default function WebTabLayout() {
       }}>
         <TabTrigger name="index" href="/calories" asChild><TabButton icon="restaurant">Food</TabButton></TabTrigger>
         <TabTrigger name="body" href="/calories/body" asChild><TabButton icon="walk">Body</TabButton></TabTrigger>
-        <TabTrigger name="progress" href="/calories/progress" asChild><TabButton icon="trending-down">Progress</TabButton></TabTrigger>
+        <TabTrigger name="goals" href="/calories/goals" asChild><TabButton icon="trending-down">Goals</TabButton></TabTrigger>
       </TabList>
     </Tabs>
   );

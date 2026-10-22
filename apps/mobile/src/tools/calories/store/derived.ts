@@ -1,5 +1,5 @@
-// Numbers several screens need: current weight and daily budget.
-import { LB, maintenance } from '@/tools/calories/lib/model';
+// Numbers several screens need: current weight, maintenance, and the daily target.
+import { LB, maintenance, planIntake } from '@/tools/calories/lib/model';
 import { profileReady, useApp } from './app';
 
 export function useCurrentWeight() {
@@ -10,9 +10,16 @@ export function useCurrentWeight() {
   return day ? { lb: weights[day], day } : { lb: start, day: null };
 }
 
-// Maintenance calories at your latest weight; null until the profile is filled in.
-export function useBudget() {
+// Calories to hold your latest weight; null until the profile is filled in.
+export function useMaintenance() {
   const profile = useApp(s => s.profile);
   const { lb } = useCurrentWeight();
   return profileReady(profile) ? maintenance(lb * LB, profile) : null;
+}
+
+// What to eat today for your planned lb/week (Goals tab).
+export function useBudget() {
+  const profile = useApp(s => s.profile);
+  const { lb } = useCurrentWeight();
+  return profileReady(profile) ? planIntake(lb * LB, profile) : null;
 }

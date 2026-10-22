@@ -23,7 +23,6 @@ export function ProfileSections() {
         <Field label="Height" value={profile.ft} onChange={ft => set({ ft })} unit="ft" />
         <Field label="Inches" value={profile.in} onChange={inches => set({ in: inches })} unit="in" decimals />
         <Field label="Starting weight" value={profile.weight} onChange={weight => set({ weight })} unit="lb" decimals />
-        <Field label="Goal weight" value={profile.goal} onChange={goal => set({ goal })} unit="lb" decimals />
       </Section>
       <Section header="Activity" footer="Steps and workouts set your daily burn. Leave body fat empty to estimate it from your BMI.">
         <Field label="Daily steps" value={profile.steps} onChange={steps => set({ steps })} placeholder="e.g. 7000" />

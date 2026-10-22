@@ -4,7 +4,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { LB, maintenance, simulate, trend, type Profile } from './model.ts';
 
-const p: Profile = { sex: 'm', age: 30, ft: 5, in: 10, weight: 200, goal: 180, steps: 8000, exercise: 0, bf: 0 };
+const p: Profile = { sex: 'm', age: 30, ft: 5, in: 10, weight: 200, goal: 180, rate: 1, steps: 8000, exercise: 0, bf: 0 };
 const maint = maintenance(200 * LB, p);
 
 test('matches the web prototype', () => {

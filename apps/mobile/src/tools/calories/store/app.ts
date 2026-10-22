@@ -7,8 +7,10 @@ import type { AppData } from '@/tools/calories/lib/backup';
 import { addEntry, stepEntry, type Entry } from '@/tools/calories/lib/log';
 import type { Profile } from '@/tools/calories/lib/model';
 
-export const EMPTY_PROFILE: Profile = { sex: 'm', age: 0, ft: 0, in: 0, weight: 0, goal: 0, steps: 0, exercise: 0, bf: 0 };
-export const profileReady = (p: Profile) => p.age > 0 && p.ft > 0 && p.weight > 0 && p.goal > 0;
+export const EMPTY_PROFILE: Profile = { sex: 'm', age: 0, ft: 0, in: 0, weight: 0, goal: 0, rate: 1, steps: 0, exercise: 0, bf: 0 };
+export const profileReady = (p: Profile) => p.age > 0 && p.ft > 0 && p.weight > 0;
+// Older saves and backups predate newer profile fields.
+const withDefaults = (d: AppData): AppData => ({ ...d, profile: { ...EMPTY_PROFILE, ...d.profile } });
 
 type State = AppData & {
   lastBackup: string | null;
@@ -39,10 +41,10 @@ export const useApp = create<State>()(
         const { [day]: _, ...weights } = s.weights;
         return { weights };
       }),
-      restore: data => set(data),
+      restore: data => set(withDefaults(data)),
       markBackedUp: lastBackup => set({ lastBackup }),
     }),
-    { name: 'calorie-tracker', storage: createJSONStorage(() => AsyncStorage), version: 1 },
+    { name: 'calorie-tracker', storage: createJSONStorage(() => AsyncStorage), version: 2, migrate: s => withDefaults(s as AppData) },
   ),
 );
 

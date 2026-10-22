@@ -74,7 +74,7 @@ src/
       backup/                   google.ts (sign-in → Drive token), drive.ts (Drive REST)
   ui/                           Shared iOS design kit: theme, Screen, Section, Row, Segmented, Field,
                                 Stepper, Button, LineChart, AppIcon, haptics, confirm
-assets/menu/                    Menu photos (+ CREDITS.md)
+assets/menu/                    Menu photos, one folder per restaurant (+ CREDITS.md)
 public/                         PWA files: index.html, manifest.json, icons
 app.json / app.config.ts        Expo config (app.config.ts adds the Google iOS URL scheme from .env)
 ```

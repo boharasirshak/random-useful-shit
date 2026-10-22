@@ -1,8 +1,7 @@
 # Image credits
 
-- `cfa-*.png`: Chick-fil-A menu photos from chick-fil-a.com (Oct 2026). Personal use only.
-- `panda-orange-chicken.jpg`: "Panda Express side of Orange Chicken" by Willis Lam, CC BY-SA 2.0, via Wikimedia Commons.
-- `panda-white-rice.jpg`: "Steamed rice in bowl 01" by Anna Frodesiak, CC0, via Wikimedia Commons.
+- `chick-fil-a/`: Chick-fil-A menu photos from chick-fil-a.com (Oct 2026).
+- `panda-express/`: Panda Express menu photos from pandaexpress.com (Oct 2026), saved from the browser.
 
-Other Panda items show a placeholder until you save a photo here as `panda-<slug>.jpg`
-(names are in `src/tools/calories/data/menu.ts`). pandaexpress.com blocks scripted downloads, so save them from your browser.
+Photos belong to their restaurants. Only the ones `src/tools/calories/data/menu.ts` points at are bundled into the app.
+Items without a photo (e.g. Eggplant Tofu, Quinoa Fried Rice) show an icon instead.

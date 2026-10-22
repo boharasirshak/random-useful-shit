@@ -14,7 +14,7 @@ export function BurnSection() {
   const { lb } = useCurrentWeight();
   if (!profileReady(p)) return (
     <Section header="Daily burn">
-      <Row title="Fill in your profile above" subtitle="Age, height, starting and goal weight." />
+      <Row title="Fill in your profile above" subtitle="Age, height and starting weight." />
     </Section>
   );
 

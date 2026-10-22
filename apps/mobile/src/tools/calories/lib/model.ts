@@ -10,6 +10,7 @@ export type Profile = {
   in: number;
   weight: number; // starting weight, lb
   goal: number; // lb
+  rate: number; // planned loss, lb/week
   steps: number; // average per day
   exercise: number; // workout kcal per day
   bf: number; // body fat %, 0 = estimate
@@ -35,16 +36,18 @@ export const stepKcal = (kg: number, p: Profile) => 0.0005 * kg * heightCm(p) / 
 export const baseBurn = (kg: number, p: Profile) => bmr(kg, p) * (1 + NEAT_BASE) + stepKcal(kg, p) + (p.exercise || 0);
 // Intake at which you'd hold weight (expenditure = intake, TEF included).
 export const maintenance = (kg: number, p: Profile) => baseBurn(kg, p) / (1 - TEF);
+// Common floor for dieting without a doctor.
+export const MIN_KCAL = { m: 1500, f: 1200 };
 export const bodyFatPct = (kg: number, p: Profile) =>
   p.bf || 1.2 * kg / (heightCm(p) / 100) ** 2 + 0.23 * p.age - (p.sex === 'm' ? 10.8 : 0) - 5.4;
 
-// Day-by-day simulation. intakeFor(i) = kcal eaten on day i. Returns lb for days 0..days.
-export function simulate(startLb: number, p: Profile, days: number, intakeFor: (day: number) => number): number[] {
+// Day-by-day simulation. intakeFor(i, lb) = kcal eaten on day i at that day's weight. Returns lb for days 0..days.
+export function simulate(startLb: number, p: Profile, days: number, intakeFor: (day: number, lb: number) => number): number[] {
   const W0 = startLb * LB, I0 = maintenance(W0, p);
   let F = W0 * bodyFatPct(W0, p) / 100, L = W0 - F, G = 0;
   const out = [startLb];
   for (let i = 0; i < days; i++) {
-    const I = intakeFor(i), W = F + L + G;
+    const W = F + L + G, I = intakeFor(i, W / LB);
     const E = baseBurn(W, p) + TEF * I + BETA_AT * (I - I0);
     const dG = (-GLY_MAX * Math.min(1, Math.max(0, (I0 - I) / 1000)) - G) / GLY_TAU;
     const tissue = I - E - dG * GLY_KCAL; // burning glycogen covers part of the gap
@@ -73,3 +76,15 @@ export function trend(points: Point[]): Point[] {
   }
   return out;
 }
+
+// Daily deficit that loses p.rate lb/week by this model. Not the 3,500 kcal/lb rule: early loss is partly lean
+// tissue, which holds fewer calories, so the rule overshoots. Loss is ~linear in the deficit, so probe 500 kcal
+// once and scale; days 14–28 skip the early water drop.
+export function planDeficit(kg: number, p: Profile): number {
+  const m = maintenance(kg, p);
+  const lbs = simulate(kg / LB, p, 28, () => m - 500);
+  return (500 * p.rate) / ((lbs[14] - lbs[28]) / 2);
+}
+
+// What to eat for the planned rate, never under the floor.
+export const planIntake = (kg: number, p: Profile) => Math.max(MIN_KCAL[p.sex], maintenance(kg, p) - planDeficit(kg, p));

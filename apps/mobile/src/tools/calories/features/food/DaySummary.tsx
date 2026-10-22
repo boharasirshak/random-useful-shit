@@ -7,7 +7,7 @@ import { nums, radius, space, type, useColors } from '@/ui/theme';
 
 const fmt = (n: number) => Math.round(n).toLocaleString();
 
-// Eaten / Budget / Left for the selected day, with a progress bar.
+// Eaten / Target / Left for the selected day, with a progress bar.
 export function DaySummary() {
   const c = useColors();
   const day = useUi(s => s.day);
@@ -27,13 +27,13 @@ export function DaySummary() {
     <View style={{ marginHorizontal: space.lg, backgroundColor: c.card, borderRadius: radius.lg, padding: space.lg, gap: space.md }}>
       <View style={{ flexDirection: 'row' }}>
         {stat('Eaten', fmt(eaten))}
-        {stat('Budget', budget == null ? '–' : fmt(budget))}
+        {stat('Target', budget == null ? '–' : fmt(budget))}
         {stat(over ? 'Over' : 'Left', left == null ? '–' : fmt(Math.abs(left)), left == null ? c.secondary : over ? c.red : c.green)}
       </View>
       <View style={{ height: 6, borderRadius: 3, backgroundColor: c.fill, overflow: 'hidden' }}>
         <View style={{ height: '100%', width: `${budget ? Math.min(100, (eaten / budget) * 100) : 0}%`, backgroundColor: over ? c.red : c.green, borderRadius: 3 }} />
       </View>
-      {budget == null && <Text style={[type.footnote, { color: c.secondary }]}>Fill in the Body tab to get your daily budget.</Text>}
+      {budget == null && <Text style={[type.footnote, { color: c.secondary }]}>Fill in the Body tab to get your daily target.</Text>}
     </View>
   );
 }
