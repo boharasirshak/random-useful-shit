@@ -1,21 +1,31 @@
 import { useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { GestureDetector, usePanGesture } from 'react-native-gesture-handler';
-import Svg, { Circle, Line, Polyline } from 'react-native-svg';
+import Svg, { Circle, Line, Polygon, Polyline } from 'react-native-svg';
 import { select } from './haptics';
+import { niceRange } from './scale';
 import { nums, radius, space, type, useColors } from './theme';
 
 export type Point = { x: number; y: number }; // x = ms timestamp
 // Series with the same label share a legend chip, a tooltip row and visibility (e.g. a solid past + dashed future).
-export type Series = { points: Point[]; color: string; width?: number; dash?: string; dots?: boolean; label?: string };
+// fill: shade the area under the line.
+export type Series = { points: Point[]; color: string; width?: number; dash?: string; dots?: boolean; fill?: boolean; label?: string };
 
 const DAY = 864e5;
 const PAD = { left: 34, right: 8, top: 8, bottom: 22 };
-const fmtDay = (x: number) => new Date(x).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+const fmtDay = (x: number, long: boolean) => new Date(x).toLocaleDateString(undefined, long ? { month: 'short', year: '2-digit' } : { month: 'short', day: 'numeric' });
+
 const fmtLong = (x: number) => new Date(x).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
 
-// The point of a series on a given day (lines: that day; dots: only if there's one that day).
-const at = (s: Series, x: number) => s.points.find(p => Math.abs(p.x - x) < DAY / 2);
+// The point of a series nearest a day: dots only on their own day; lines within half their point spacing (some are weekly).
+function at(s: Series, x: number) {
+  const n = s.points.length;
+  if (!n) return undefined;
+  const gap = s.dots || n < 2 ? DAY : (s.points[n - 1].x - s.points[0].x) / (n - 1);
+  let best = s.points[0];
+  for (const p of s.points) if (Math.abs(p.x - x) < Math.abs(best.x - x)) best = p;
+  return Math.abs(best.x - x) <= Math.max(DAY, gap) / 2 ? best : undefined;
+}
 
 // Multi-series line chart in SVG, same on iOS, Android and web.
 // Touch and drag to scrub: a crosshair snaps to days, with a tooltip and a haptic tick per day.
@@ -28,7 +38,8 @@ export function LineChart({ series, height = 220, unit = '' }: { series: Series[
   const all = series.flatMap(s => s.points);
   const xs = all.map(p => p.x), ys = all.map(p => p.y);
   const [x0, x1] = [Math.min(...xs), Math.max(...xs)];
-  const [y0, y1] = [Math.floor(Math.min(...ys) - 1), Math.ceil(Math.max(...ys) + 1)];
+  const [y0, y1, step] = niceRange(Math.min(...ys), Math.max(...ys));
+  const long = x1 - x0 > 300 * DAY;
   const w = width - PAD.left - PAD.right, h = height - PAD.top - PAD.bottom;
   const X = (x: number) => PAD.left + (x1 === x0 ? w / 2 : ((x - x0) / (x1 - x0)) * w);
   const Y = (y: number) => PAD.top + (1 - (y - y0) / (y1 - y0)) * h;
@@ -48,7 +59,7 @@ export function LineChart({ series, height = 220, unit = '' }: { series: Series[
   });
 
   if (!all.length) return null;
-  const yTicks = [0, 1, 2, 3].map(i => y0 + ((y1 - y0) * i) / 3);
+  const yTicks = Array.from({ length: Math.round((y1 - y0) / step) + 1 }, (_, i) => y0 + i * step);
   const xTicks = [x0, (x0 + x1) / 2, x1];
   const hits = cursor == null ? [] : dedupe(series.map(s => ({ s, p: at(s, cursor) })).filter(h => h.p && h.s.label));
   // Tooltip sits beside the crosshair, in whichever half (top/bottom) the lines aren't.
@@ -64,6 +75,10 @@ export function LineChart({ series, height = 220, unit = '' }: { series: Series[
           <>
             <Svg width={width} height={height}>
               {yTicks.map(t => <Line key={t} x1={PAD.left} x2={width - PAD.right} y1={Y(t)} y2={Y(t)} stroke={c.separator} strokeWidth={0.5} />)}
+              {series.filter(s => s.fill && s.points.length > 1).map((s, i) => (
+                <Polygon key={`f${i}`} fill={s.color} fillOpacity={0.15}
+                  points={[...s.points.map(p => `${X(p.x)},${Y(p.y)}`), `${X(s.points[s.points.length - 1].x)},${Y(y0)}`, `${X(s.points[0].x)},${Y(y0)}`].join(' ')} />
+              ))}
               {series.map((s, i) =>
                 s.dots
                   ? s.points.map(p => <Circle key={`${i}-${p.x}`} cx={X(p.x)} cy={Y(p.y)} r={3} fill={s.color} />)
@@ -78,10 +93,10 @@ export function LineChart({ series, height = 220, unit = '' }: { series: Series[
               )}
             </Svg>
             {yTicks.map(t => (
-              <Text key={t} style={[type.caption, nums, { position: 'absolute', left: 0, width: PAD.left - 6, textAlign: 'right', top: Y(t) - 8, color: c.secondary }]}>{Math.round(t)}</Text>
+              <Text key={t} style={[type.caption, nums, { position: 'absolute', left: 0, width: PAD.left - 6, textAlign: 'right', top: Y(t) - 8, color: c.secondary }]}>{Number.isInteger(t) ? t : t.toFixed(1)}</Text>
             ))}
             {xTicks.map((t, i) => (
-              <Text key={i} style={[type.caption, { position: 'absolute', bottom: 0, color: c.secondary, ...(i === 0 ? { left: PAD.left } : i === 2 ? { right: PAD.right } : { left: X(t) - 24, width: 48, textAlign: 'center' }) }]}>{fmtDay(t)}</Text>
+              <Text key={i} style={[type.caption, { position: 'absolute', bottom: 0, color: c.secondary, ...(i === 0 ? { left: PAD.left } : i === 2 ? { right: PAD.right } : { left: X(t) - 30, width: 60, textAlign: 'center' }) }]}>{fmtDay(t, long)}</Text>
             ))}
             {cursor != null && (
               <View pointerEvents="none" style={{ position: 'absolute', top: tipY, left: Math.min(Math.max(tipX, 0), width - tipW), width: tipW, backgroundColor: c.bg, borderRadius: radius.sm, padding: space.sm, gap: 2,

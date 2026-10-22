@@ -20,11 +20,12 @@ function Graph({ series }: { series: Series[] }) {
   return (<><LineChart series={series} height={170} unit=" lb" /><Legend series={series} /></>);
 }
 
-// The plan bends: water first, then a slow fade as you get lighter and your body saves energy.
+// The plateau: the same calories every day curve flat; a target that drops as you lose keeps going.
 function PlanCurve({ c }: { c: Colors }) {
-  const plan = simulate(210, EX, 270, (_, lb) => planIntake(lb * LB, EX));
-  const rule = plan.map((_, i) => 210 - i / 7);
-  return <Graph series={[{ points: daily(plan), color: c.tint, label: 'Model' }, { points: daily(rule), color: c.secondary, dash: '5 5', label: 'Straight 1 lb/wk' }]} />;
+  const plan = simulate(210, EX, 365, (_, lb) => planIntake(lb * LB, EX));
+  const fixed = planIntake(210 * LB, EX);
+  const same = simulate(210, EX, 365, () => fixed);
+  return <Graph series={[{ points: daily(plan), color: c.tint, label: 'Target drops as you lose' }, { points: daily(same), color: c.orange, dash: '2 4', label: `Always ${Math.round(fixed).toLocaleString()} kcal` }]} />;
 }
 
 // Week one: a 750 kcal deficit, split into water/glycogen vs tissue.
@@ -45,68 +46,106 @@ export function useQuestions(): Fold[] {
   const c = useColors();
   return [
     {
-      title: 'How is my daily burn worked out?',
+      title: 'How does the app know how much I burn?',
       body: <>
-        <P>Resting burn (BMR) comes from your age, height, weight and sex using the Mifflin–St Jeor equation, the one dietitians use most.</P>
-        <P>On top of that: your steps (each step costs energy based on your weight and stride, from the ACSM walking formula), about 10% for everyday moving around, your workouts, and about 10% for digesting food. Together that’s your maintenance: what you’d eat to stay the same weight.</P>
+        <P>Your body burns energy all day, even when you rest. The app guesses that from your age, height, weight and sex. That part is called BMR.</P>
+        <P>Then it adds your steps, everyday moving around, your workouts, and the energy it takes to digest food. All together, that’s your maintenance: how much you can eat and stay the same weight.</P>
       </>,
     },
     {
-      title: 'How is my daily target set?',
+      title: 'How is my daily target picked?',
       body: <>
-        <P>You pick how fast to lose. The app runs the energy model forward and finds the deficit that loses exactly that much per week at your current weight, then subtracts it from maintenance.</P>
-        <P>It never goes below 1,500 kcal for men or 1,200 for women, the usual floor for dieting without a doctor. As you lose weight your maintenance drops, so the target is recalculated every time you weigh in.</P>
+        <P>You choose how many pounds to lose each week. The app works out how much less than maintenance you need to eat to lose exactly that. That number is your target.</P>
+        <P>It never goes below 1,500 calories for men or 1,200 for women. Eating less than that without a doctor isn’t safe.</P>
       </>,
     },
     {
-      title: 'Why isn’t it just 3,500 calories per pound?',
+      title: 'How fast should I lose weight?',
       body: <>
-        <P>That rule assumes every pound lost is pure fat. Early on, some of what you lose is lean tissue and water, which hold far fewer calories, so the rule gets the speed wrong. This app uses Kevin Hall’s model (NIH, published in The Lancet in 2011) instead.</P>
+        <P>Slow and steady keeps your muscle and is easier to stick with. A good pace is about half a percent to three quarters of a percent of your body weight each week. For someone who weighs 200 lb, that’s 1 to 1.5 lb a week.</P>
+        <P>The slider marks this as Gentle, Recommended or Fast, and it won’t go past 1% a week. If you pick Fast, eat plenty of protein and keep lifting weights.</P>
       </>,
     },
     {
-      title: 'Why does the plan line bend instead of going straight?',
+      title: 'What do the rings on the Food tab mean?',
       body: <>
-        <P>Two things slow it down over time. A lighter body burns less, and your metabolism adapts: it drops by about 14% of how much you cut. The model includes both, so the line flattens. That’s also why the target keeps updating.</P>
+        <P>Like Apple’s activity rings, each ring fills up as you eat. The outside ring is calories. The middle one is protein. The inside one is carbs. Fat is listed next to them.</P>
+        <P>Protein matters most when you’re losing weight because it keeps your muscles. Your protein goal is about 0.8 grams for every pound of your goal weight. Fat gets 30% of your calories, and carbs get the rest.</P>
+        <P>Try to close the protein ring and stay inside the calorie ring.</P>
+      </>,
+    },
+    {
+      title: 'Why isn’t it just “3,500 calories = 1 pound”?',
+      body: <>
+        <P>That old rule pretends every pound you lose is fat. But at first, some of it is water and a little is muscle, and those weigh more for fewer calories. So the rule gets your speed wrong. This app uses a better science model from the National Institutes of Health.</P>
+      </>,
+    },
+    {
+      title: 'What’s a plateau, and how does the app handle it?',
+      body: <>
+        <P>A plateau is when your weight stops going down even though you’re doing the same thing.</P>
+        <P>Here’s why it happens. A smaller body burns fewer calories, about 7 less per day for every pound you lose. Your body also slows down a bit to save energy. So if you keep eating the same amount, the gap between what you eat and what you burn shrinks until it’s gone.</P>
+        <P>The app fixes this by lowering your target as you lose weight, so you keep going. On Goals, tap “Same kcal” to see what would happen if you didn’t lower it. The orange line flattens out.</P>
         <PlanCurve c={c} />
+        <P>A flat week or two is usually just water, not a real plateau. If your green trend line stays flat for 3 weeks while you’re under your target, check your portions.</P>
       </>,
     },
     {
-      title: 'Why do I drop so fast in the first week?',
+      title: 'Why do I lose so much the first week?',
       body: <>
-        <P>Your muscles store sugar (glycogen) with about 3 g of water per gram. A deficit uses it up in the first few days, so the scale drops 2–4 lb of water on top of fat. It’s real, but it doesn’t keep going. The model expects it, so it won’t make you think you’re ahead of plan.</P>
+        <P>Your muscles store a kind of sugar along with water. When you start eating less, your body uses up that sugar, and the water goes with it. That can be 2 to 4 pounds in the first few days. It’s real, but it doesn’t keep happening, so don’t expect that speed every week.</P>
         <WaterDrop c={c} />
       </>,
     },
     {
-      title: 'Why does the trend line ignore my daily weigh-ins?',
+      title: 'Why doesn’t the trend line follow every weigh-in?',
       body: <>
-        <P>Daily weight swings 1–3 lb from water, salt and food in your gut. The trend is a moving average (each day counts 10%), so one salty dinner barely moves it. Weigh in daily if you can; more points make the trend steadier.</P>
+        <P>Your weight goes up and down 1 to 3 pounds a day from water, salt and food in your stomach. The green trend line smooths that out so you can see where you’re really heading.</P>
         <Smoothing c={c} />
       </>,
     },
     {
-      title: 'How do steps change my numbers?',
+      title: 'Why weigh in every day?',
       body: <>
-        <P>Set your usual steps per day on the Body tab. Walking cost depends on your weight and stride (from your height), so the same steps burn more when you’re heavier. Update it if your routine changes.</P>
+        <P>One weigh-in tells you very little because of all the daily ups and downs. Lots of weigh-ins make the trend line smooth and honest. Weigh in at the same time each morning, after the bathroom and before breakfast.</P>
+      </>,
+    },
+    {
+      title: 'How do steps count?',
+      body: <>
+        <P>On the Body tab you set a normal week of steps. The app uses the average. If you change it, the change counts from that day on, so your past doesn’t get rewritten.</P>
+        <P>More steps means you burn more, so your daily target goes up.</P>
       </>,
     },
     {
       title: 'What does “Done for the Day” do?',
       body: <>
-        <P>It marks the day as fully logged, shows how you did against your target, and counts your streak. You can reopen a day anytime to fix something.</P>
+        <P>It tells the app you’re finished logging. You get to see how you did, and your streak goes up by one. You can reopen the day any time to fix something.</P>
+        <P>Your streak counts days in a row that you close. Today doesn’t break it until the day is over.</P>
       </>,
     },
     {
-      title: 'Where do the calorie numbers come from?',
+      title: 'Why did my goal date move?',
       body: <>
-        <P>The official nutrition pages of Chick-fil-A and Panda Express (October 2026). Panda bases are 12 oz servings.</P>
+        <P>When a day is over, the app uses what you really ate that day instead of your target. Days under your target move your goal date closer. Days over push it back. Days with nothing logged count as on target.</P>
+      </>,
+    },
+    {
+      title: 'How do awards work?',
+      body: <>
+        <P>You earn medals for streaks, days on target, weigh-ins and pounds lost, just like in Apple Fitness. Tap the flame on the Food tab to see them all, including the ones you’re close to.</P>
+      </>,
+    },
+    {
+      title: 'Where do the food numbers come from?',
+      body: <>
+        <P>From the official nutrition pages of Chick-fil-A and Panda Express. A few sizes, like 12-count nuggets and large fries, are worked out from the official size.</P>
       </>,
     },
     {
       title: 'Where is my data kept?',
       body: <>
-        <P>Only on this device. If you turn on backup in the Body tab, a copy goes to a hidden app folder in your own Google Drive. There’s no server.</P>
+        <P>Only on your phone. If you turn on backup, a copy goes to a hidden folder in your own Google Drive. Nobody else can see it.</P>
       </>,
     },
     {
@@ -115,7 +154,7 @@ export function useQuestions(): Fold[] {
         <P>Hall KD et al. Quantification of the effect of energy imbalance on bodyweight. Lancet, 2011.</P>
         <P>Mifflin MD, St Jeor ST et al. A new predictive equation for resting energy expenditure. Am J Clin Nutr, 1990.</P>
         <P>ACSM’s Guidelines for Exercise Testing and Prescription: walking equation.</P>
-        <P>Deurenberg P et al. Body mass index as a measure of body fatness. Br J Nutr, 1991 (body fat estimate).</P>
+        <P>Deurenberg P et al. Body mass index as a measure of body fatness. Br J Nutr, 1991.</P>
         <P>Forbes GB. Body fat content influences the body composition response to nutrition and exercise. Ann NY Acad Sci, 2000.</P>
       </>,
     },

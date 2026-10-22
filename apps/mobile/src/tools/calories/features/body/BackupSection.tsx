@@ -39,10 +39,8 @@ export function BackupSection() {
     }
   }
 
-  const footer = !google.configured
-    ? 'Google sign-in isn’t set up for this build yet. See apps/mobile/README.md → Google Drive backup.'
-    : lastBackup ? `Last backup ${new Date(lastBackup).toLocaleString()}. Stored in a hidden app folder in your Google Drive.`
-    : 'Sign in with Google to save a copy in a hidden app folder in your Drive.';
+  const footer = !google.configured ? 'Not set up in this build yet.'
+    : lastBackup ? `Last backup ${new Date(lastBackup).toLocaleString()}` : undefined;
   const disabled = !google.configured || !google.ready || busy != null;
 
   return (

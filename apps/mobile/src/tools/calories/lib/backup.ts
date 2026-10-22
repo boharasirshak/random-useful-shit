@@ -1,13 +1,20 @@
 // Backup file format: the whole app state as one JSON file.
-import type { Logs } from './log.ts';
+import type { Logs, Order } from './log.ts';
 import type { Profile } from './model.ts';
+import type { Reminder } from './reminder.ts';
+import type { StepWeek } from './steps.ts';
 
 export type AppData = {
   profile: Profile;
   shake: number;
+  shakeProtein: number; // grams per shake
   logs: Logs;
   weights: Record<string, number>;
   done: Record<string, boolean>; // days marked "Done for the Day"
+  stepWeeks: StepWeek[]; // typical step week, one version per edit day
+  favorites: Order[]; // pinned orders, newest first
+  seenAwards: string[]; // awards already celebrated
+  reminder: Reminder; // daily weigh-in notification
 };
 export type BackupFile = { app: 'calorie-tracker'; version: 1; savedAt: string; data: AppData };
 

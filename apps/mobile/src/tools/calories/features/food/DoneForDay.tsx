@@ -1,4 +1,5 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { router } from 'expo-router';
 import { Pressable, Text, View } from 'react-native';
 import Animated, { FadeIn, ZoomIn } from 'react-native-reanimated';
 import { shift } from '@/tools/calories/lib/dates';
@@ -7,7 +8,7 @@ import { useApp } from '@/tools/calories/store/app';
 import { useBudget } from '@/tools/calories/store/derived';
 import { useUi } from '@/tools/calories/store/ui';
 import { Button } from '@/ui/Button';
-import { success, tap } from '@/ui/haptics';
+import { tap } from '@/ui/haptics';
 import { radius, space, type, useColors } from '@/ui/theme';
 
 const fmt = (n: number) => Math.round(n).toLocaleString();
@@ -24,7 +25,7 @@ export function DoneForDay() {
   if (!done[day]) {
     return (
       <View style={{ paddingHorizontal: space.lg }}>
-        <Button title="Done for the Day" disabled={!eaten} onPress={() => { success(); setDone(day, true); }} />
+        <Button title="Done for the Day" disabled={!eaten} onPress={() => { setDone(day, true); router.push({ pathname: '/calories/day-done', params: { day } }); }} />
       </View>
     );
   }

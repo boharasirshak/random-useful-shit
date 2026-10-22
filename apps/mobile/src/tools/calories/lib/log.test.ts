@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { addEntry, countItem, entryKcal, recentOrders, removeEntry, stepEntry, totalKcal } from './log.ts';
+import { addEntry, countItem, countOrder, entryKcal, MEAL_SHARE, recentOrders, removeEntry, stepEntry, totalKcal, totalMacros } from './log.ts';
 
 const shake = 160;
 const orange = { meal: 'lunch' as const, parts: [{ id: 'panda-orange-chicken', qty: 1 }] };
@@ -47,4 +47,20 @@ test('recent orders: newest first, distinct, one restaurant', () => {
   };
   assert.deepEqual(recentOrders(logs, 'panda').map(o => o.name ?? o.parts[0].id), ['panda-orange-chicken', 'Panda Plate']);
   assert.equal(recentOrders(logs, 'cfa').length, 1);
+  assert.equal(recentOrders(logs).length, 3);
+});
+
+test('count an exact order; meal shares add up to the whole day', () => {
+  const log = addEntry(addEntry([], orange), orange);
+  assert.equal(countOrder(log, { parts: orange.parts }), 2);
+  assert.equal(countOrder(log, { name: 'Panda Plate', parts: orange.parts }), 0);
+  assert.equal(Object.values(MEAL_SHARE).reduce((a, b) => a + b, 0).toFixed(6), "1.000000");
+});
+
+test('macros add up across parts and quantities; the shake uses your protein', () => {
+  const plate = { meal: 'lunch' as const, name: 'Panda Plate', qty: 2, parts: [{ id: 'panda-chow-mein', qty: 0.5 }, { id: 'panda-orange-chicken', qty: 1 }] };
+  const shakeLine = { meal: 'breakfast' as const, qty: 1, parts: [{ id: 'shake', qty: 1 }] };
+  const m = totalMacros([plate, shakeLine], 160, 30);
+  assert.equal(m.p, 2 * (7 + 19) + 30);
+  assert.equal(m.c, 2 * (44.5 + 63) + 5);
 });

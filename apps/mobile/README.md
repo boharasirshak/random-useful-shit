@@ -13,12 +13,13 @@ One app, many small tools: the home screen is a launcher, and **Calorie Tracker*
 
 ```sh
 npm install
-npx expo start          # press w for web
-npm run ios             # builds + runs the iOS dev build in the Simulator (first build is slow)
-npm run android         # same for Android
+npx expo start                     # dev server; press w for web
+npm run ios                        # build + install the dev client in the Simulator (slow the first time)
+npm run ios -- --device "iPhone"   # same, on a plugged-in or Wi-Fi-paired iPhone
+npm run android                    # same for Android
 ```
 
-The app uses native modules (Google sign-in redirect, haptics), so phones run a **development build** (`npm run ios|android`), not Expo Go. Add packages with `npx expo install <pkg>` so versions match the Expo SDK.
+Phones run a **development build** with `expo-dev-client`, not Expo Go, because the app uses native modules (Google sign-in redirect, haptics, SwiftUI pickers). Build it once; after that, `npx expo start` is all you need day to day. The dev client finds the server on your network (or scan the QR code), shows errors on screen, and has a dev menu (shake the phone). Rebuild only when you add or upgrade a package with native code. Add packages with `npx expo install <pkg>` so versions match the Expo SDK.
 
 ## Test
 
@@ -95,6 +96,6 @@ app.json / app.config.ts        Expo config (app.config.ts adds the Google iOS U
 
 ## Status
 
-Done: launcher; Calorie Tracker with Food (meals, Panda bowl/plate/bigger plate with half & half, Chick-fil-A meal + sauces, à la carte, shake), Food "Done for the Day" with streaks, Body (profile and usual steps on iOS wheel pickers → daily burn), Goals (goal + lb/week → daily target, scrubbable plan vs actual chart, weigh-ins, history), How It Works (FAQ with example graphs), haptics, Google Drive backup/restore, PWA.
+Done: launcher; Calorie Tracker with Food (meals, Panda bowl/plate/bigger plate with half & half, Chick-fil-A meal + sauces, à la carte, shake), Food home (week strip, Activity-style rings for calories/protein/carbs plus fat, favorites, per-meal targets, yesterday's recap), Weigh-in tab (ring to goal, wheels, reactions, week bubbles, 5-lb milestones), "Done for the Day" celebration with streaks and Apple Fitness-style awards, closed days bending the plan, Body (profile on iOS wheel pickers, a typical step week whose edits apply from that day on → daily burn), Goals (goal + lb/week → daily target, scrubbable plan vs actual chart, weigh-ins, history), How It Works (FAQ with example graphs), haptics, Google Drive backup/restore, PWA.
 
 Next ideas: automatic backups, import from the old web prototype, EAS builds, the missing Panda photos.

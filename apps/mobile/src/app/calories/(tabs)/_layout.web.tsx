@@ -31,8 +31,9 @@ export default function WebTabLayout() {
         paddingBottom: Math.max(insets.bottom, 8), height: 50 + Math.max(insets.bottom, 8),
       }}>
         <TabTrigger name="index" href="/calories" asChild><TabButton icon="restaurant">Food</TabButton></TabTrigger>
-        <TabTrigger name="body" href="/calories/body" asChild><TabButton icon="walk">Body</TabButton></TabTrigger>
+        <TabTrigger name="weigh" href="/calories/weigh" asChild><TabButton icon="scale">Weigh-in</TabButton></TabTrigger>
         <TabTrigger name="goals" href="/calories/goals" asChild><TabButton icon="trending-down">Goals</TabButton></TabTrigger>
+        <TabTrigger name="body" href="/calories/body" asChild><TabButton icon="walk">Body</TabButton></TabTrigger>
       </TabList>
     </Tabs>
   );

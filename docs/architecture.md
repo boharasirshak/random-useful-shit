@@ -27,15 +27,21 @@ The prototype keeps its own frozen copies. If a future project (e.g. an API) nee
 Stored on-device as one JSON document (Zustand persist → AsyncStorage); the backup file wraps the same shape (`src/tools/calories/lib/backup.ts`).
 
 ```
-profile   { sex, age, ft, in, weight, goal, rate, steps, exercise, bf }
-            rate: planned lb/week; steps: usual steps per day
+profile   { sex, dob, age, ft, in, weight, goal, rate, steps, exercise, bf }
+            age: worked out from dob on every load
+            rate: planned lb/week; steps: average of the current step week
 shake     kcal per protein shake
+shakeProtein  grams of protein per shake (menu items carry their own protein/carbs/fat)
 logs      { "YYYY-MM-DD": [ { meal, name?, parts: [ { id, qty } ], qty } ] }
             meal: breakfast | lunch | dinner | snacks
             id:   prototype "<Restaurant>|<Item name>"; mobile uses stable ids from menu.ts
             parts with qty 0.5 = half portion (Panda half & half base)
 weights   { "YYYY-MM-DD": lb }
 done      { "YYYY-MM-DD": true }   days marked "Done for the Day"
+favorites [ { name?, parts } ]       pinned orders
+seenAwards [ id ]                    awards already celebrated (awards themselves are computed)
+stepWeeks [ { from: "YYYY-MM-DD", week: [Mon … Sun] } ]   one version per edit day;
+            the plan uses the version in effect on each day, so edits don't rewrite the past
 ```
 
 Why not SQLite: the whole thing is a few hundred KB even after years, it's always read in full, and nothing queries it. AsyncStorage works the same on iPhone and in the PWA. SQLite on the web needs a WASM build plus cross-origin isolation headers, which GitHub Pages can't send. Revisit if the data outgrows a single document or needs queries.

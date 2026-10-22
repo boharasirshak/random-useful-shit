@@ -8,13 +8,17 @@ export default function TabLayout() {
         <NativeTabs.Trigger.Label>Food</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon sf="fork.knife" md="restaurant" />
       </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="body">
-        <NativeTabs.Trigger.Label>Body</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon sf="figure.walk" md="directions_walk" />
+      <NativeTabs.Trigger name="weigh">
+        <NativeTabs.Trigger.Label>Weigh-in</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf="scalemass.fill" md="monitor_weight" />
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="goals">
         <NativeTabs.Trigger.Label>Goals</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon sf="chart.line.downtrend.xyaxis" md="trending_down" />
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="body">
+        <NativeTabs.Trigger.Label>Body</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf="figure.walk" md="directions_walk" />
       </NativeTabs.Trigger>
     </NativeTabs>
   );

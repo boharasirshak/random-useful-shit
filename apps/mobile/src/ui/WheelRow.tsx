@@ -9,9 +9,10 @@ export type Wheel = { value: number; options: number[]; suffix: string; onChange
 // Settings-style row backed by the iOS wheel picker. Several wheels sit side by side (e.g. ft + in).
 // iPhone app: tap the row to open the wheels inline, like the Settings app's date rows.
 // Web: each value is a transparent <select>, which Safari on iPhone shows as the same wheel.
-export function WheelRow({ label, wheels }: { label: string; wheels: Wheel[] }) {
+// startOpen: show the wheels right away (e.g. after picking which day to edit).
+export function WheelRow({ label, wheels, startOpen = false }: { label: string; wheels: Wheel[]; startOpen?: boolean }) {
   const c = useColors();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(startOpen);
   const text = (w: Wheel, n: number) => `${(w.format ?? String)(n)} ${w.suffix}`;
   const shown = (w: Wheel) => (w.value ? text(w, w.value) : '–');
   const items = (w: Wheel) => w.options.map(o => <Picker.Item key={o} label={text(w, o)} value={String(o)} />);

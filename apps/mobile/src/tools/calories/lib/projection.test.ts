@@ -42,7 +42,33 @@ test('plan runs from the first weigh-in; actual trend is compared against it', (
 });
 
 test('backups round-trip and reject junk', () => {
-  const data = { profile: p, shake: 160, logs: {}, weights: { [day]: 210 }, done: {} };
+  const data = { profile: p, shake: 160, shakeProtein: 30, logs: {}, weights: { [day]: 210 }, done: {}, stepWeeks: [], favorites: [], seenAwards: [], reminder: { on: false, hour: 7, minute: 30 } };
   assert.deepEqual(fromBackup(JSON.parse(JSON.stringify(toBackup(data)))).data, data);
   assert.throws(() => fromBackup({ hello: 1 }));
+});
+
+test('changing steps today leaves the past plan alone; more steps = a higher target at the same rate', () => {
+  const start = shift(day, -30);
+  const before = [{ from: start, week: Array(7).fill(7000) }];
+  const after = [...before, { from: day, week: Array(7).fill(12000) }];
+  const a = project(p, { [start]: 210 }, day, before), b = project(p, { [start]: 210 }, day, after);
+  assert.deepEqual(b.past, a.past);
+  assert.ok(b.target > a.target + 150);
+});
+
+test('closed days use what you ate: over target pushes the goal later and shows the balance', () => {
+  const start = shift(day, -10);
+  const base = project(p, { [start]: 210 }, day);
+  const over = project(p, { [start]: 210 }, day, [], { [shift(day, -3)]: 4000, [shift(day, -2)]: 4000 });
+  assert.ok(over.balance > 3000);
+  assert.ok(over.goalShift! > 0);
+  assert.ok(over.future[0].y > base.future[0].y);
+});
+
+test('plateau: eating today\'s target forever levels off above the goal, and flattens out', () => {
+  const r = project(p, {}, day);
+  const s = r.steady;
+  assert.ok(r.plateauLb < 210 && r.plateauLb > 150);
+  const early = s[0].y - s[4].y, late = s[s.length - 5].y - s[s.length - 1].y;
+  assert.ok(late < early / 5);
 });

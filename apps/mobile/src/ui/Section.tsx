@@ -2,15 +2,15 @@ import { Children, Fragment, type ReactNode } from 'react';
 import { Text, View } from 'react-native';
 import { hairline, radius, space, type, useColors } from './theme';
 
-// iOS "inset grouped" list section: header, rounded card of rows with hairlines, optional footer.
+// iOS "inset grouped" list section: a bold sentence-case header (Health style), rounded card of rows with hairlines, optional footer.
 export function Section({ header, right, footer, children }: { header?: string; right?: string; footer?: ReactNode; children: ReactNode }) {
   const c = useColors();
   const rows = Children.toArray(children).filter(Boolean);
   return (
     <View style={{ paddingHorizontal: space.lg }}>
       {(header || right) && (
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: space.lg, paddingBottom: 6 }}>
-          <Text style={[type.footnote, { color: c.secondary, textTransform: 'uppercase' }]}>{header}</Text>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', paddingHorizontal: space.xs, paddingBottom: space.sm }}>
+          <Text style={[type.title3, { color: c.label }]}>{header}</Text>
           {right ? <Text style={[type.footnote, { color: c.secondary }]}>{right}</Text> : null}
         </View>
       )}

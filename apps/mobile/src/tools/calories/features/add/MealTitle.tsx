@@ -8,12 +8,13 @@ import { type, useColors } from '@/ui/theme';
 const KEYS = Object.keys(MEALS) as Meal[];
 
 // "Lunch ⌄": which meal you're adding to. iPhone: action sheet. Web: native <select> (a wheel on iPhone Safari).
-export function MealTitle({ meal, onChange }: { meal: Meal; onChange: (m: Meal) => void }) {
+// large: page-title size, for the top of Add Food.
+export function MealTitle({ meal, onChange, large }: { meal: Meal; onChange: (m: Meal) => void; large?: boolean }) {
   const c = useColors();
   const label = (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
-      <Text style={[type.title2, { color: c.label }]}>{MEALS[meal]}</Text>
-      <Ionicons name="chevron-down" size={18} color={c.tint} />
+      <Text style={[large ? type.largeTitle : type.title2, { color: c.label }]}>{MEALS[meal]}</Text>
+      <Ionicons name="chevron-down" size={large ? 24 : 18} color={c.tint} />
     </View>
   );
 
