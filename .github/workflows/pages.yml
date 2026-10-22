@@ -1,0 +1,51 @@
+# Builds the PWA (apps/mobile) and publishes it to GitHub Pages on every push to main.
+name: Deploy PWA
+
+on:
+  push:
+    branches: [main]
+    paths: [apps/mobile/**, .github/workflows/pages.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    defaults:
+      run:
+        working-directory: apps/mobile
+    env:
+      BASE: /${{ github.event.repository.name }}
+      EXPO_BASE_URL: /${{ github.event.repository.name }}
+      # Optional: set this repo variable to turn on Google Drive backup on the web.
+      EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID: ${{ vars.GOOGLE_WEB_CLIENT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/mobile/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build:web
+      # public/index.html uses root paths; point them at /<repo>/. 404.html makes deep links work on reload.
+      - run: |
+          sed -i -E "s#\"/(manifest.json|logo192.png)\"#\"$BASE/\1\"#; s#'/sw.js'#'$BASE/sw.js'#" dist/index.html
+          cp dist/index.html dist/404.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/mobile/dist
+      - id: deploy
+        uses: actions/deploy-pages@v4

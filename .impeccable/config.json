@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "apps/web-prototype/index.html"
+        ],
+        "createdAt": "2026-10-22T15:34:18.591Z",
+        "reason": "Claude: detector reads unstyled sizes; Tailwind browser build applies text-4xl (36px) h1 / text-xl h2 at runtime"
+      }
+    ]
+  }
+}

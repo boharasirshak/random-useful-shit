@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" data-theme="dim">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Calorie Calculator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0/daisyui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0/themes.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.0.0"></script>
+  <style>
+    :root { accent-color: var(--color-primary); }
+    ::selection { background: color-mix(in oklab, var(--color-primary) 35%, transparent); }
+    * { scrollbar-width: thin; scrollbar-color: var(--color-base-300) transparent; }
+    .num { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body class="h-dvh overflow-hidden bg-base-200 text-base-content flex">
+
+  <!-- Desktop nav rail -->
+  <nav class="hidden lg:flex flex-col items-center w-24 shrink-0 py-5 gap-1 bg-base-100 border-r border-base-300" aria-label="Sections">
+    <a href="../index.html" class="btn btn-ghost btn-square mb-6" aria-label="Back to home"><i data-lucide="flame" class="size-6 text-primary"></i></a>
+    <button data-view="food" class="nav-btn flex flex-col items-center gap-1 w-20 py-3 rounded-box text-xs font-medium transition-colors"><i data-lucide="utensils" class="size-5"></i>Food</button>
+    <button data-view="body" class="nav-btn flex flex-col items-center gap-1 w-20 py-3 rounded-box text-xs font-medium transition-colors"><i data-lucide="activity" class="size-5"></i>Body</button>
+    <button data-view="progress" class="nav-btn flex flex-col items-center gap-1 w-20 py-3 rounded-box text-xs font-medium transition-colors"><i data-lucide="trending-down" class="size-5"></i>Progress</button>
+  </nav>
+
+  <div class="flex-1 min-w-0 flex flex-col">
+    <!-- Day summary: always visible -->
+    <header class="bg-base-100 border-b border-base-300">
+      <div class="flex flex-wrap items-center gap-x-8 gap-y-3 px-4 lg:px-8 pt-3 pb-3">
+        <div class="flex items-center gap-2">
+          <a href="../index.html" class="btn btn-ghost btn-sm btn-square lg:hidden" aria-label="Back to home"><i data-lucide="flame" class="size-5 text-primary"></i></a>
+          <div class="join">
+            <button id="prev-day" class="btn btn-sm join-item" aria-label="Previous day"><i data-lucide="chevron-left" class="size-4"></i></button>
+            <input type="date" id="day" class="input input-sm join-item w-36" aria-label="Day">
+            <button id="next-day" class="btn btn-sm join-item" aria-label="Next day"><i data-lucide="chevron-right" class="size-4"></i></button>
+          </div>
+          <button id="today-btn" class="btn btn-sm btn-ghost">Today</button>
+        </div>
+        <dl class="flex items-end gap-6 sm:gap-10 ml-auto">
+          <div><dt class="text-xs opacity-60">Eaten</dt><dd class="num text-2xl font-semibold" id="h-eaten">0</dd></div>
+          <div><dt class="text-xs opacity-60">Budget (TDEE)</dt><dd class="num text-2xl font-semibold" id="h-budget">–</dd></div>
+          <div><dt class="text-xs opacity-60" id="h-left-label">Left</dt><dd class="num text-2xl font-semibold" id="h-left">–</dd></div>
+        </dl>
+      </div>
+      <progress id="h-progress" class="progress progress-primary block w-full h-1 rounded-none" value="0" max="100"></progress>
+    </header>
+
+    <main id="main" class="flex-1 min-h-0 overflow-y-auto pb-20 lg:pb-0">
+
+      <!-- FOOD (primary) -->
+      <section data-panel="food" class="flex flex-col lg:h-full lg:grid lg:grid-cols-[1fr_24rem]">
+        <div class="lg:min-h-0 lg:overflow-y-auto px-4 lg:px-8 py-5 space-y-5">
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <div role="tablist" class="tabs tabs-box">
+              <button role="tab" class="tab" data-brand="Chick-fil-A">Chick-fil-A</button>
+              <button role="tab" class="tab" data-brand="Panda Express">Panda Express</button>
+              <button role="tab" class="tab" data-brand="Morning">Protein shake</button>
+            </div>
+            <div class="flex items-center gap-2 text-sm"><span class="opacity-60">Log to</span><div class="join" id="meal-picker"></div></div>
+          </div>
+          <div class="flex flex-wrap items-center gap-3" id="order-row">
+            <div class="join" id="order-types"></div>
+            <label class="input input-sm w-full sm:w-64 sm:ml-auto">
+              <i data-lucide="search" class="size-4 opacity-50"></i>
+              <input id="search" type="search" placeholder="Search the menu" autocomplete="off">
+            </label>
+          </div>
+          <div id="builder" class="lg:sticky lg:top-0 z-10"></div>
+          <div id="menu" class="space-y-8"></div>
+        </div>
+
+        <aside id="today" class="order-first lg:order-none bg-base-100 lg:border-l border-b lg:border-b-0 border-base-300 flex flex-col lg:min-h-0">
+          <div class="px-5 pt-5 pb-2 flex items-baseline justify-between">
+            <h2 class="text-lg font-semibold" id="today-title">Today</h2>
+            <span class="text-sm opacity-60 num" id="today-count"></span>
+          </div>
+          <div id="log" class="flex-1 lg:min-h-0 lg:overflow-y-auto px-5 pb-4 space-y-4"></div>
+          <div class="px-5 py-4 border-t border-base-300 space-y-1 text-sm">
+            <div class="flex justify-between"><span class="opacity-70">Total</span><span class="num font-semibold" id="log-total">0 kcal</span></div>
+            <div class="flex justify-between"><span class="opacity-70" id="deficit-label">Deficit</span><span class="num font-semibold" id="log-deficit">–</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- BODY: profile + BMR -->
+      <section data-panel="body" class="px-4 lg:px-8 py-6" hidden>
+        <h2 class="text-2xl font-semibold mb-1">Body</h2>
+        <p class="opacity-60 mb-6 text-sm">Used to work out your BMR and daily budget. Saved on this device.</p>
+        <div class="grid md:grid-cols-[minmax(0,34rem)_18rem] gap-6 items-start">
+          <form id="profile" class="card bg-base-100 border border-base-300">
+            <div class="card-body gap-4">
+              <div class="grid grid-cols-2 gap-4">
+                <label class="floating-label"><span>Sex</span>
+                  <select name="sex" class="select w-full"><option value="m">Male</option><option value="f">Female</option></select>
+                </label>
+                <label class="floating-label"><span>Age</span><input name="age" type="number" min="10" max="100" placeholder="Age" class="input w-full" required></label>
+                <label class="floating-label"><span>Height (ft)</span><input name="ft" type="number" min="3" max="8" placeholder="Height (ft)" class="input w-full" required></label>
+                <label class="floating-label"><span>Height (in)</span><input name="in" type="number" min="0" max="11.9" step="0.1" placeholder="Height (in)" class="input w-full" required></label>
+                <label class="floating-label"><span>Starting weight (lb)</span><input name="weight" type="number" min="50" max="700" step="0.1" placeholder="Starting weight (lb)" class="input w-full" required></label>
+                <label class="floating-label"><span>Goal weight (lb)</span><input name="goal" type="number" min="50" max="700" step="0.1" placeholder="Goal weight (lb)" class="input w-full" required></label>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <label class="floating-label"><span>Avg daily steps</span><input name="steps" type="number" min="0" max="60000" step="100" placeholder="Avg daily steps" class="input w-full" required></label>
+                <label class="floating-label"><span>Workouts (avg kcal/day)</span><input name="exercise" type="number" min="0" max="3000" placeholder="Workouts (avg kcal/day, optional)" class="input w-full"></label>
+              </div>
+              <label class="floating-label"><span>Body fat % (blank = estimate)</span><input name="bf" type="number" min="3" max="70" step="0.1" placeholder="Body fat % (optional, estimated if blank)" class="input w-full"></label>
+              <button type="submit" class="btn btn-primary" id="save-profile">Save</button>
+            </div>
+          </form>
+          <div class="space-y-6">
+            <div><div class="text-sm opacity-60">BMR</div><div class="num text-4xl font-semibold" id="b-bmr">–</div><div class="text-xs opacity-60">kcal/day at rest</div></div>
+            <div><div class="text-sm opacity-60">TDEE</div><div class="num text-4xl font-semibold" id="b-tdee">–</div><div class="text-xs opacity-60" id="b-factor">kcal/day to hold weight</div></div>
+            <dl id="b-breakdown" class="text-sm space-y-1.5 num"></dl>
+            <p class="text-xs opacity-60 leading-relaxed" id="b-note">Mifflin–St Jeor formula.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGRESS: weight record + projection -->
+      <section data-panel="progress" class="px-4 lg:px-8 py-6 space-y-6" hidden>
+        <div>
+          <h2 class="text-2xl font-semibold mb-1">Progress</h2>
+          <p class="opacity-60 text-sm" id="projection">Log food and a weigh-in to see your projection.</p>
+        </div>
+        <div class="grid xl:grid-cols-[20rem_1fr] gap-6 items-start">
+          <div class="card bg-base-100 border border-base-300">
+            <div class="card-body gap-4">
+              <h3 class="font-semibold">Weigh-ins</h3>
+              <form id="weigh" class="join w-full">
+                <input type="date" id="w-date" aria-label="Weigh-in date" class="input join-item flex-1 min-w-0">
+                <input type="number" id="w-lb" min="50" max="700" step="0.1" placeholder="lb" aria-label="Weight in pounds" class="input join-item w-20" required>
+                <button type="submit" class="btn btn-primary join-item">Log</button>
+              </form>
+              <ul id="weights" class="divide-y divide-white/10 max-h-80 overflow-y-auto -mx-1 px-1"></ul>
+            </div>
+          </div>
+          <div class="card bg-base-100 border border-base-300">
+            <div class="card-body"><canvas id="chart" height="190" aria-label="Weight chart: weigh-ins, actual trend and predicted trend"></canvas>
+              <p class="text-xs opacity-60 leading-relaxed">Actual trend smooths day-to-day water noise in your weigh-ins. Predicted uses your logged food with an energy-balance model (Hall, NIH): fast early glycogen/water drop, rebounds after big days, fat vs lean loss, metabolism adapting, and burn shrinking as you get lighter, so the curve flattens. Dashed = future at your average intake.</p></div>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body">
+            <h3 class="font-semibold">Daily history</h3>
+            <div class="overflow-x-auto">
+              <table class="table table-sm">
+                <thead><tr><th>Day</th><th class="text-right">Eaten</th><th class="text-right">Deficit</th></tr></thead>
+                <tbody id="history" class="num"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Mobile dock -->
+  <div class="dock dock-md lg:hidden bg-base-100 border-t border-base-300" aria-label="Sections">
+    <button data-view="food"><i data-lucide="utensils" class="size-5"></i><span class="dock-label">Food</span></button>
+    <button data-view="body"><i data-lucide="activity" class="size-5"></i><span class="dock-label">Body</span></button>
+    <button data-view="progress"><i data-lucide="trending-down" class="size-5"></i><span class="dock-label">Progress</span></button>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="model.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

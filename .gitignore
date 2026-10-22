@@ -1,0 +1,25 @@
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Common dependency and build folders (projects add their own as needed)
+node_modules/
+dist/
+build/
+.venv/
+__pycache__/
+target/
+
+# Design tooling scratch
+.impeccable/review/
+.impeccable/hook.cache.json
+.impeccable/config.local.json

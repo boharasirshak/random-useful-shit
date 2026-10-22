@@ -1,0 +1,26 @@
+// Generated from assets/menu/. Items whose photo is missing fall back to an icon (see ui/Thumb.tsx).
+// Static require() returns an asset id (a number) in React Native.
+export const IMAGES: Record<string, number> = {
+  'cfa-cfa-sauce.png': require('../../../../assets/menu/cfa-cfa-sauce.png'),
+  'cfa-cool-wrap.png': require('../../../../assets/menu/cfa-cool-wrap.png'),
+  'cfa-deluxe.png': require('../../../../assets/menu/cfa-deluxe.png'),
+  'cfa-fruit-cup.png': require('../../../../assets/menu/cfa-fruit-cup.png'),
+  'cfa-garden-herb-ranch.png': require('../../../../assets/menu/cfa-garden-herb-ranch.png'),
+  'cfa-grilled-club.png': require('../../../../assets/menu/cfa-grilled-club.png'),
+  'cfa-grilled-nuggets.png': require('../../../../assets/menu/cfa-grilled-nuggets.png'),
+  'cfa-grilled-sandwich.png': require('../../../../assets/menu/cfa-grilled-sandwich.png'),
+  'cfa-kale-crunch.png': require('../../../../assets/menu/cfa-kale-crunch.png'),
+  'cfa-lemonade.png': require('../../../../assets/menu/cfa-lemonade.png'),
+  'cfa-mac-cheese.png': require('../../../../assets/menu/cfa-mac-cheese.png'),
+  'cfa-nuggets.png': require('../../../../assets/menu/cfa-nuggets.png'),
+  'cfa-polynesian.png': require('../../../../assets/menu/cfa-polynesian.png'),
+  'cfa-sandwich.png': require('../../../../assets/menu/cfa-sandwich.png'),
+  'cfa-spicy-deluxe.png': require('../../../../assets/menu/cfa-spicy-deluxe.png'),
+  'cfa-spicy-sandwich.png': require('../../../../assets/menu/cfa-spicy-sandwich.png'),
+  'cfa-strips.png': require('../../../../assets/menu/cfa-strips.png'),
+  'cfa-sweet-tea.png': require('../../../../assets/menu/cfa-sweet-tea.png'),
+  'cfa-waffle-fries.png': require('../../../../assets/menu/cfa-waffle-fries.png'),
+  'cfa-water.png': require('../../../../assets/menu/cfa-water.png'),
+  'panda-orange-chicken.jpg': require('../../../../assets/menu/panda-orange-chicken.jpg'),
+  'panda-white-rice.jpg': require('../../../../assets/menu/panda-white-rice.jpg'),
+};

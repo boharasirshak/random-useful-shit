@@ -1,0 +1,39 @@
+import { Text, useWindowDimensions, View } from 'react-native';
+import type { MenuItem } from '@/tools/calories/data/menu';
+import { itemKcal } from '@/tools/calories/lib/log';
+import { useApp } from '@/tools/calories/store/app';
+import { space, type, useColors } from '@/ui/theme';
+import { FoodTile } from './FoodTile';
+
+type Props = {
+  title: string;
+  items: MenuItem[];
+  onPick: (id: string) => void;
+  badge?: (id: string) => number;
+  selected?: (id: string) => boolean;
+};
+
+const GAP = 10;
+const MAX_WIDTH = 720; // matches Screen's content width cap
+
+// Titled grid of food tiles; column count follows the available width.
+export function MenuGrid({ title, items, onPick, badge, selected }: Props) {
+  const c = useColors();
+  const shake = useApp(s => s.shake);
+  const width = Math.min(useWindowDimensions().width, MAX_WIDTH) - space.lg * 2;
+  const cols = Math.max(2, Math.floor((width + GAP) / (150 + GAP)));
+  const tile = (width - GAP * (cols - 1)) / cols;
+  if (!items.length) return null;
+
+  return (
+    <View style={{ paddingHorizontal: space.lg, gap: space.sm }}>
+      <Text style={[type.footnote, { color: c.secondary, textTransform: 'uppercase', paddingHorizontal: space.xs }]}>{title}</Text>
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: GAP }}>
+        {items.map(item => (
+          <FoodTile key={item.id} item={item} width={tile} kcal={itemKcal(item.id, shake)}
+            badge={badge?.(item.id)} selected={selected?.(item.id)} onPress={() => onPick(item.id)} />
+        ))}
+      </View>
+    </View>
+  );
+}
