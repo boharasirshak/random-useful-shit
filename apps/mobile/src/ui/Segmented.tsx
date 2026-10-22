@@ -1,5 +1,5 @@
 import { Pressable, Text, View } from 'react-native';
-import { tap } from './haptics';
+import { select } from './haptics';
 import { radius, space, type, useColors } from './theme';
 
 // iOS segmented control.
@@ -15,7 +15,7 @@ export function Segmented<T extends string>({ options, value, onChange, inline }
             key={key}
             accessibilityRole="tab"
             accessibilityState={{ selected: on }}
-            onPress={() => { tap(); onChange(key); }}
+            onPress={() => { if (!on) select(); onChange(key); }}
             style={{
               flex: 1, paddingVertical: 6, borderRadius: radius.sm - 1, alignItems: 'center',
               backgroundColor: on ? c.segment : 'transparent',

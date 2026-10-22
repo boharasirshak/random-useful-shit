@@ -13,15 +13,16 @@ type Props = {
   selected?: (id: string) => boolean;
 };
 
-const GAP = 10;
+const GAP = 8;
+const MIN_TILE = 104; // 3 across on a phone
 const MAX_WIDTH = 720; // matches Screen's content width cap
 
-// Titled grid of food tiles; column count follows the available width.
+// Titled grid of food tiles: 3 across on a phone, more on wider screens.
 export function MenuGrid({ title, items, onPick, badge, selected }: Props) {
   const c = useColors();
   const shake = useApp(s => s.shake);
   const width = Math.min(useWindowDimensions().width, MAX_WIDTH) - space.lg * 2;
-  const cols = Math.max(2, Math.floor((width + GAP) / (150 + GAP)));
+  const cols = Math.max(3, Math.floor((width + GAP) / (MIN_TILE + GAP)));
   const tile = (width - GAP * (cols - 1)) / cols;
   if (!items.length) return null;
 

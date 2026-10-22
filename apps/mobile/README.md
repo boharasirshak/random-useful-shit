@@ -95,6 +95,6 @@ app.json / app.config.ts        Expo config (app.config.ts adds the Google iOS U
 
 ## Status
 
-Done: launcher; Calorie Tracker with Food (meals, Panda bowl/plate/bigger plate with half & half, Chick-fil-A meal + sauces, à la carte, shake), Body (profile, steps → daily burn), Goals (goal + lb/week → daily target, plan vs actual trend chart, weigh-ins, history), Google Drive backup/restore, PWA.
+Done: launcher; Calorie Tracker with Food (meals, Panda bowl/plate/bigger plate with half & half, Chick-fil-A meal + sauces, à la carte, shake), Food "Done for the Day" with streaks, Body (profile and usual steps on iOS wheel pickers → daily burn), Goals (goal + lb/week → daily target, scrubbable plan vs actual chart, weigh-ins, history), How It Works (FAQ with example graphs), haptics, Google Drive backup/restore, PWA.
 
 Next ideas: automatic backups, import from the old web prototype, EAS builds, the missing Panda photos.

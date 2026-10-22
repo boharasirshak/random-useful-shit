@@ -12,7 +12,8 @@ const RATES = ['0.5', '1', '1.5', '2'] as const;
 const fmt = (n: number) => Math.round(n).toLocaleString();
 
 // Goal weight + how fast → what to eat per day. Saves as you type.
-export function PlanSection() {
+// floorRate: the slower lb/week you'll actually get when the target hits the safe minimum.
+export function PlanSection({ floorRate }: { floorRate: number | null }) {
   const c = useColors();
   const profile = useApp(s => s.profile);
   const set = useApp(s => s.setProfile);
@@ -21,9 +22,9 @@ export function PlanSection() {
 
   let footer = 'Fill in the Body tab to get your daily target.';
   if (maint != null && target != null) {
-    footer = `Maintenance ${fmt(maint)} − ${fmt(maint - target)} kcal deficit, sized by the energy model. Recalculated as your weight changes.`;
+    footer = `${fmt(maint)} maintenance − ${fmt(maint - target)} deficit.`;
     if (target <= MIN_KCAL[profile.sex]) {
-      footer += ` Raised to ${fmt(MIN_KCAL[profile.sex])}, the usual safe minimum, so you'll lose a bit slower than that.`;
+      footer = `Held at ${fmt(MIN_KCAL[profile.sex])}, the safe minimum, so expect about ${floorRate == null ? 'less' : `${floorRate.toFixed(1)} lb`} a week.`;
     }
   }
 

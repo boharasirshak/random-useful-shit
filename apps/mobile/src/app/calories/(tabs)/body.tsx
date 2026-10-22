@@ -1,13 +1,15 @@
 import { BackupSection } from '@/tools/calories/features/body/BackupSection';
 import { BurnSection } from '@/tools/calories/features/body/BurnSection';
-import { ProfileSections } from '@/tools/calories/features/body/ProfileSections';
+import { ActivitySection, ProfileSections } from '@/tools/calories/features/body/ProfileSections';
+import { HelpButton } from '@/tools/calories/features/faq/HelpButton';
 import { Screen } from '@/ui/Screen';
 
-// Body: profile and activity → daily burn. Also home to backup.
+// Body: who you are and how much you move → daily burn. Also home to backup.
 export default function BodyScreen() {
   return (
-    <Screen title="Body" back="Apps">
+    <Screen title="Body" back="Apps" accessory={<HelpButton />}>
       <ProfileSections />
+      <ActivitySection />
       <BurnSection />
       <BackupSection />
     </Screen>

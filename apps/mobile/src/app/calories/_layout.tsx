@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 import { useHydrated } from '@/tools/calories/store/app';
 import { useColors } from '@/ui/theme';
 
-// Calorie Tracker: tabs, plus the Add Food sheet. Waits for saved data so nothing flashes empty.
+// Calorie Tracker: tabs, plus the Add Food and How It Works sheets. Waits for saved data so nothing flashes empty.
 export default function CaloriesLayout() {
   const c = useColors();
   if (!useHydrated()) return null;
@@ -19,6 +19,7 @@ export default function CaloriesLayout() {
           sheetCornerRadius: 16,
         }}
       />
+      <Stack.Screen name="faq" options={{ presentation: Platform.OS === 'web' ? 'modal' : 'formSheet', sheetAllowedDetents: [0.92], sheetGrabberVisible: true, sheetCornerRadius: 16 }} />
     </Stack>
   );
 }

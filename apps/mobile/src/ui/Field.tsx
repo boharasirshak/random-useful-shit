@@ -26,7 +26,7 @@ export function Field({ label, value, onChange, unit, placeholder = '0', decimal
         placeholderTextColor={c.tertiary}
         accessibilityLabel={label}
         selectTextOnFocus
-        style={[type.body, nums, { color: c.label, textAlign: 'right', minWidth: 80, paddingVertical: 10 }]}
+        style={[type.body, nums, { color: c.label, textAlign: 'right', minWidth: 56, paddingVertical: 10 }]}
       />
       {unit ? <Text style={[type.body, { color: c.secondary }]}>{unit}</Text> : null}
     </View>

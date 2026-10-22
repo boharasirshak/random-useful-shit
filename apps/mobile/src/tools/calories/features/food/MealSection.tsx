@@ -8,6 +8,7 @@ import { useUi } from '@/tools/calories/store/ui';
 import { Row } from '@/ui/Row';
 import { Section } from '@/ui/Section';
 import { Stepper } from '@/ui/Stepper';
+import { thud } from '@/ui/haptics';
 import { Thumb } from '@/tools/calories/features/Thumb';
 import { nums, type, useColors } from '@/ui/theme';
 
@@ -39,7 +40,7 @@ export function MealSection({ meal }: { meal: Meal }) {
           right={
             <View style={{ alignItems: 'flex-end', gap: 4 }}>
               <Text style={[type.subhead, nums, { color: c.label, fontWeight: '600' }]}>{fmt(entryKcal(e, shake) * e.qty)}</Text>
-              <Stepper value={e.qty} onStep={by => stepFood(day, index, by)} />
+              <Stepper value={e.qty} onStep={by => { if (e.qty + by <= 0) thud(); stepFood(day, index, by); }} />
             </View>
           }
         />

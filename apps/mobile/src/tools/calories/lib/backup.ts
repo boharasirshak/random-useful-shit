@@ -2,7 +2,13 @@
 import type { Logs } from './log.ts';
 import type { Profile } from './model.ts';
 
-export type AppData = { profile: Profile; shake: number; logs: Logs; weights: Record<string, number> };
+export type AppData = {
+  profile: Profile;
+  shake: number;
+  logs: Logs;
+  weights: Record<string, number>;
+  done: Record<string, boolean>; // days marked "Done for the Day"
+};
 export type BackupFile = { app: 'calorie-tracker'; version: 1; savedAt: string; data: AppData };
 
 export const toBackup = (data: AppData, now = new Date()): BackupFile => ({ app: 'calorie-tracker', version: 1, savedAt: now.toISOString(), data });

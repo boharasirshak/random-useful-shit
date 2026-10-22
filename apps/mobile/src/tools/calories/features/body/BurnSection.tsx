@@ -22,7 +22,7 @@ export function BurnSection() {
   const bf = bodyFatPct(kg, p);
   return (
     <Section header="Daily burn"
-      footer={`At ${lb} lb · activity factor ${(T / B).toFixed(2)} · body fat ${bf.toFixed(0)}%${p.bf ? '' : ' (estimated)'}. BMR: Mifflin–St Jeor. Walking: ACSM.`}>
+      footer={`At ${lb} lb, ${bf.toFixed(0)}% body fat${p.bf ? '' : ' (estimated)'}.`}>
       <Row title="Resting (BMR)" value={fmt(B)} />
       <Row title="Daily living" value={fmt(NEAT_BASE * B)} />
       <Row title={`Walking (${p.steps.toLocaleString()} steps)`} value={fmt(stepKcal(kg, p))} />

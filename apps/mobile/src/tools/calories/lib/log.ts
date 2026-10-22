@@ -1,4 +1,4 @@
-import { byId } from '../data/menu.ts';
+import { byId, type Restaurant } from '../data/menu.ts';
 
 export type Meal = 'breakfast' | 'lunch' | 'dinner' | 'snacks';
 export const MEALS: Record<Meal, string> = { breakfast: 'Breakfast', lunch: 'Lunch', dinner: 'Dinner', snacks: 'Snacks' };
@@ -26,6 +26,29 @@ export function addEntry(entries: Entry[] = [], e: Omit<Entry, 'qty'>): Entry[] 
   const i = entries.findIndex(x => sameLine(x, e));
   if (i < 0) return [...entries, { ...e, qty: 1 }];
   return entries.map((x, j) => (j === i ? { ...x, qty: x.qty + 1 } : x));
+}
+
+// Undo one add: lowers the matching line by one (removing it at zero).
+export function removeEntry(entries: Entry[] = [], e: Omit<Entry, 'qty'>): Entry[] {
+  const i = entries.findIndex(x => sameLine(x, e));
+  return i < 0 ? entries : stepEntry(entries, i, -1);
+}
+
+export type Order = Omit<Entry, 'qty' | 'meal'>; // what you ate, regardless of meal
+
+// Your latest distinct orders from one restaurant (plates count as one order), newest first.
+export function recentOrders(logs: Logs, restaurant: Restaurant, limit = 8): Order[] {
+  const seen = new Set<string>(), out: Order[] = [];
+  for (const day of Object.keys(logs).sort().reverse()) {
+    for (const e of [...logs[day]].reverse()) {
+      const key = (e.name ?? '') + JSON.stringify(e.parts);
+      if (seen.has(key) || byId[e.parts[0]?.id]?.restaurant !== restaurant) continue;
+      seen.add(key);
+      out.push({ name: e.name, parts: e.parts });
+      if (out.length === limit) return out;
+    }
+  }
+  return out;
 }
 
 export function stepEntry(entries: Entry[], index: number, by: number): Entry[] {

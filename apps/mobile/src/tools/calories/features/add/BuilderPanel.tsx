@@ -1,69 +1,72 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { Fragment } from 'react';
 import { Pressable, Switch, Text, View } from 'react-native';
 import { byId } from '@/tools/calories/data/menu';
-import { buildKcal, isDone, type Build } from '@/tools/calories/lib/builder';
-import { useApp } from '@/tools/calories/store/app';
-import { Button } from '@/ui/Button';
 import { Thumb } from '@/tools/calories/features/Thumb';
-import { nums, radius, space, type, useColors } from '@/ui/theme';
+import { itemKcal } from '@/tools/calories/lib/log';
+import type { Build } from '@/tools/calories/lib/builder';
+import { useApp } from '@/tools/calories/store/app';
+import { hairline, nums, radius, space, type, useColors } from '@/ui/theme';
 
 type Props = {
-  title: string;
   build: Build;
   canHalf: boolean;
-  addLabel: string;
   onFocus: (slot: number) => void;
   onHalf: (on: boolean) => void;
   onRemoveExtra: (i: number) => void;
-  onAdd: () => void;
 };
 
 const SLOT = { entree: 'Entrée', base: 'Base', side: 'Side', drink: 'Drink' } as Record<string, string>;
 
-// The meal being built: one chip per slot (tap to change), add-ons, total, and Add.
-export function BuilderPanel({ title, build, canHalf, addLabel, onFocus, onHalf, onRemoveExtra, onAdd }: Props) {
+// The meal being built, one row per slot (tap to change it; the blue one is being picked below).
+// Add-ons (sauces) show as chips. The total and Add button live in the bottom bar.
+export function BuilderPanel({ build, canHalf, onFocus, onHalf, onRemoveExtra }: Props) {
   const c = useColors();
   const shake = useApp(s => s.shake);
   const count = (i: number) => build.slots.filter(s => s.category === build.slots[i].category).length;
   const nth = (i: number) => build.slots.slice(0, i + 1).filter(s => s.category === build.slots[i].category).length;
 
   return (
-    <View style={{ marginHorizontal: space.lg, backgroundColor: c.card, borderRadius: radius.lg, padding: space.md, gap: space.md }}>
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={[type.headline, { color: c.label }]}>{title}</Text>
-        {canHalf && (
-          <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm }}>
-            <Text style={[type.subhead, { color: c.secondary }]}>Half & half</Text>
-            <Switch value={build.half} onValueChange={onHalf} />
-          </View>
-        )}
-      </View>
-
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space.sm }}>
-        {build.slots.map((s, i) => {
-          const on = i === build.active;
-          return (
-            <Pressable key={i} onPress={() => onFocus(i)} accessibilityRole="button"
-              style={{ flexGrow: 1, flexBasis: 150, flexDirection: 'row', alignItems: 'center', gap: space.sm, padding: 6, borderRadius: radius.md,
-                borderWidth: 1.5, borderColor: on ? c.tint : c.separator, backgroundColor: on ? c.fill : 'transparent' }}>
-              {s.id ? <Thumb id={s.id} size={36} /> : (
-                <View style={{ width: 36, height: 36, borderRadius: 8, borderWidth: 1, borderStyle: 'dashed', borderColor: c.tertiary, alignItems: 'center', justifyContent: 'center' }}>
-                  <Ionicons name="add" size={18} color={c.tertiary} />
+    <View style={{ marginHorizontal: space.lg, backgroundColor: c.card, borderRadius: radius.lg, overflow: 'hidden' }}>
+      {build.slots.map((s, i) => {
+        const on = i === build.active;
+        return (
+          <Fragment key={i}>
+            {i > 0 && <View style={{ height: hairline, backgroundColor: c.separator, marginLeft: 64 }} />}
+            <Pressable onPress={() => onFocus(i)} accessibilityRole="button" accessibilityState={{ selected: on }}
+              accessibilityLabel={`${SLOT[s.category]}: ${s.id ? byId[s.id].name : 'not chosen'}`}
+              style={({ pressed }) => ({ flexDirection: 'row', alignItems: 'center', gap: space.md, paddingHorizontal: space.md, paddingVertical: 6,
+                backgroundColor: on ? c.fill : pressed ? c.fill : 'transparent' })}>
+              {on && <View style={{ position: 'absolute', left: 0, top: 6, bottom: 6, width: 3, borderRadius: 2, backgroundColor: c.tint }} />}
+              {s.id ? <Thumb id={s.id} size={40} /> : (
+                <View style={{ width: 40, height: 40, borderRadius: 8, borderWidth: 1.5, borderStyle: 'dashed', borderColor: on ? c.tint : c.tertiary, alignItems: 'center', justifyContent: 'center' }}>
+                  <Ionicons name="add" size={18} color={on ? c.tint : c.tertiary} />
                 </View>
               )}
               <View style={{ flex: 1, minWidth: 0 }}>
-                <Text style={[type.caption, { color: c.secondary }]}>
-                  {SLOT[s.category]}{count(i) > 1 ? ` ${nth(i)}` : ''}{s.qty < 1 ? ' (½)' : ''}
+                <Text style={[type.caption, { color: on ? c.tint : c.secondary, fontWeight: on ? '600' : '400' }]}>
+                  {SLOT[s.category]}{count(i) > 1 ? ` ${nth(i)}` : ''}{s.qty < 1 ? ' · half' : ''}
                 </Text>
-                <Text style={[type.subhead, { color: s.id ? c.label : c.tertiary }]} numberOfLines={1}>{s.id ? byId[s.id].name : 'Choose…'}</Text>
+                <Text style={[type.body, { color: s.id ? c.label : c.tertiary }]} numberOfLines={1}>{s.id ? byId[s.id].name : on ? 'Pick one below' : 'Tap to choose'}</Text>
               </View>
+              {s.id ? <Text style={[type.subhead, nums, { color: c.secondary }]}>{Math.round(itemKcal(s.id, shake) * s.qty)}</Text> : null}
             </Pressable>
-          );
-        })}
-      </View>
+          </Fragment>
+        );
+      })}
+
+      {canHalf && (
+        <>
+          <View style={{ height: hairline, backgroundColor: c.separator, marginLeft: space.md }} />
+          <View style={{ flexDirection: 'row', alignItems: 'center', paddingHorizontal: space.md, minHeight: 44 }}>
+            <Text style={[type.body, { color: c.label, flex: 1 }]}>Half & half base</Text>
+            <Switch value={build.half} onValueChange={onHalf} />
+          </View>
+        </>
+      )}
 
       {build.extras.length > 0 && (
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space.sm }}>
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space.sm, padding: space.md, borderTopWidth: hairline, borderTopColor: c.separator }}>
           {build.extras.map((id, i) => (
             <Pressable key={i} onPress={() => onRemoveExtra(i)} accessibilityLabel={`Remove ${byId[id].name}`}
               style={{ flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: c.fill, borderRadius: 14, paddingVertical: 4, paddingHorizontal: 10 }}>
@@ -73,11 +76,6 @@ export function BuilderPanel({ title, build, canHalf, addLabel, onFocus, onHalf,
           ))}
         </View>
       )}
-
-      <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.md }}>
-        <Text style={[type.headline, nums, { color: c.label, flex: 1 }]}>{Math.round(buildKcal(build, shake)).toLocaleString()} <Text style={{ color: c.secondary, fontWeight: '400' }}>kcal</Text></Text>
-        <View style={{ minWidth: 160 }}><Button title={addLabel} onPress={onAdd} disabled={!isDone(build)} /></View>
-      </View>
     </View>
   );
 }

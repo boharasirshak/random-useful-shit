@@ -1,22 +1,28 @@
-// State for the Add Food sheet: which restaurant, which way of ordering, and the meal being built.
+// State for the Add Food sheet: which restaurant, which way of ordering, the meal being built, and the last add (for Undo).
 import { useState } from 'react';
-import { MENU, ORDERS, RESTAURANTS, type Restaurant } from '@/tools/calories/data/menu';
+import { byId, MENU, ORDERS, RESTAURANTS, type Restaurant } from '@/tools/calories/data/menu';
 import { focus, pick, removeExtra, setHalf, startBuild, toParts, type Build } from '@/tools/calories/lib/builder';
-import { countItem } from '@/tools/calories/lib/log';
+import { countItem, recentOrders, totalKcal, type Order } from '@/tools/calories/lib/log';
 import { useApp } from '@/tools/calories/store/app';
+import { useBudget } from '@/tools/calories/store/derived';
 import { useUi } from '@/tools/calories/store/ui';
-import { success, tap } from '@/ui/haptics';
+import { success, tap, thud, warning } from '@/ui/haptics';
 
 export const ALA_CARTE = 'À la carte';
+export type Added = { order: Order; label: string; at: number };
 
 export function useAddFood() {
   const { day, meal } = useUi();
   const entries = useApp(s => s.logs[day]);
+  const logs = useApp(s => s.logs);
   const addFood = useApp(s => s.addFood);
+  const undoFood = useApp(s => s.undoFood);
+  const target = useBudget();
   const [restaurant, setRestaurantRaw] = useState<Restaurant>('cfa');
   const [orderName, setOrderRaw] = useState(ALA_CARTE);
   const [build, setBuild] = useState<Build | null>(null);
   const [query, setQuery] = useState('');
+  const [added, setAdded] = useState<Added | null>(null);
 
   const orders = ORDERS[restaurant];
   const order = orders?.[orderName] ?? null;
@@ -29,26 +35,39 @@ export function useAddFood() {
     setBuild(o ? startBuild(o) : null);
   };
 
-  const addSingle = (id: string) => { success(); addFood(day, { meal, parts: [{ id, qty: 1 }] }); };
+  // Every add goes through here: log it, buzz (a warning if it takes the day over target), and offer Undo.
+  const add = (o: Order) => {
+    addFood(day, { meal, ...o });
+    const s = useApp.getState();
+    (target != null && totalKcal(s.logs[day], s.shake) > target ? warning : success)();
+    setAdded({ order: o, label: o.name ?? byId[o.parts[0].id]?.name ?? 'Food', at: Date.now() });
+  };
   const comboName = `${restaurant === 'cfa' ? 'Chick-fil-A' : 'Panda'} ${orderName}`;
 
   return {
-    restaurant, setRestaurant, orders, orderName, setOrder, order, build, query, setQuery, items, comboName,
+    restaurant, setRestaurant, orders, orderName, setOrder, order, build, query, setQuery, items, comboName, added,
     restaurants: Object.entries(RESTAURANTS) as [Restaurant, string][],
+    recent: restaurant === 'shake' ? [] : recentOrders(logs, restaurant),
     loggedCount: (id: string) => countItem(entries, id),
     tapItem: (id: string) => {
-      if (!build || !order) return addSingle(id);
+      if (!build || !order) return add({ parts: [{ id, qty: 1 }] });
       tap();
       setBuild(pick(build, id, order.extras));
     },
-    addSingle,
+    add,
+    undo: () => {
+      if (!added) return;
+      thud();
+      undoFood(day, { meal, ...added.order });
+      setAdded(null);
+    },
+    dismissAdded: () => setAdded(null),
     focusSlot: (i: number) => build && setBuild(focus(build, i)),
     toggleHalf: (on: boolean) => build && setBuild(setHalf(build, on)),
     dropExtra: (i: number) => build && setBuild(removeExtra(build, i)),
     addBuild: () => {
       if (!build || !order) return;
-      success();
-      addFood(day, { meal, name: comboName, parts: toParts(build) });
+      add({ name: comboName, parts: toParts(build) });
       setBuild(startBuild(order));
     },
   };

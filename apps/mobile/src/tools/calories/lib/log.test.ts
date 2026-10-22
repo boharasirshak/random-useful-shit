@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { addEntry, countItem, entryKcal, stepEntry, totalKcal } from './log.ts';
+import { addEntry, countItem, entryKcal, recentOrders, removeEntry, stepEntry, totalKcal } from './log.ts';
 
 const shake = 160;
 const orange = { meal: 'lunch' as const, parts: [{ id: 'panda-orange-chicken', qty: 1 }] };
@@ -30,4 +30,21 @@ test('shake uses the user value, unknown ids count as 0', () => {
 
 test('stepping to zero removes the line', () => {
   assert.deepEqual(stepEntry(addEntry([], orange), 0, -1), []);
+});
+
+test('undo lowers the matching line, then removes it', () => {
+  let log = addEntry(addEntry([], orange), orange);
+  log = removeEntry(log, orange);
+  assert.equal(log[0].qty, 1);
+  assert.deepEqual(removeEntry(log, orange), []);
+});
+
+test('recent orders: newest first, distinct, one restaurant', () => {
+  const plate = { meal: 'lunch' as const, name: 'Panda Plate', qty: 1, parts: [{ id: 'panda-chow-mein', qty: 1 }, { id: 'panda-orange-chicken', qty: 2 }] };
+  const logs = {
+    '2026-10-20': [{ ...orange, qty: 1 }, plate],
+    '2026-10-21': [{ meal: 'dinner' as const, qty: 1, parts: [{ id: 'cfa-chicken-sandwich', qty: 1 }] }, { ...orange, meal: 'dinner' as const, qty: 1 }],
+  };
+  assert.deepEqual(recentOrders(logs, 'panda').map(o => o.name ?? o.parts[0].id), ['panda-orange-chicken', 'Panda Plate']);
+  assert.equal(recentOrders(logs, 'cfa').length, 1);
 });

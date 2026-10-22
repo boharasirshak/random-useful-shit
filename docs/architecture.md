@@ -27,14 +27,18 @@ The prototype keeps its own frozen copies. If a future project (e.g. an API) nee
 Stored on-device as one JSON document (Zustand persist → AsyncStorage); the backup file wraps the same shape (`src/tools/calories/lib/backup.ts`).
 
 ```
-profile   { sex, age, ft, in, weight, goal, steps, exercise, bf }
+profile   { sex, age, ft, in, weight, goal, rate, steps, exercise, bf }
+            rate: planned lb/week; steps: usual steps per day
 shake     kcal per protein shake
 logs      { "YYYY-MM-DD": [ { meal, name?, parts: [ { id, qty } ], qty } ] }
             meal: breakfast | lunch | dinner | snacks
             id:   prototype "<Restaurant>|<Item name>"; mobile uses stable ids from menu.ts
             parts with qty 0.5 = half portion (Panda half & half base)
 weights   { "YYYY-MM-DD": lb }
+done      { "YYYY-MM-DD": true }   days marked "Done for the Day"
 ```
+
+Why not SQLite: the whole thing is a few hundred KB even after years, it's always read in full, and nothing queries it. AsyncStorage works the same on iPhone and in the PWA. SQLite on the web needs a WASM build plus cross-origin isolation headers, which GitHub Pages can't send. Revisit if the data outgrows a single document or needs queries.
 
 The prototype's item ids are names, so renaming an item orphans old log entries. Mobile uses stable ids instead, so backups restore cleanly across menu updates.
 

@@ -1,6 +1,5 @@
-// Turns the plan, logs and weigh-ins into the Goals chart series and the summary numbers.
+// Turns the plan and weigh-ins into the Goals chart series and the summary numbers.
 import { DAY_MS, daysBetween, ts } from './dates.ts';
-import { totalKcal, type Logs } from './log.ts';
 import { LB, maintenance, MIN_KCAL, planDeficit, planIntake, simulate, trend, type Point, type Profile } from './model.ts';
 
 export type Projection = {
@@ -10,21 +9,15 @@ export type Projection = {
   future: Point[]; // plan, today → goal
   target: number; // kcal/day to eat now
   floored: boolean; // target was raised to the safe minimum
-  avg: number | null; // what you've actually eaten, kcal/day
-  lbPerWeek: number; // plan's rate over the next 2 weeks
+  lbPerWeek: number; // plan's rate over the next 2 weeks (only differs from p.rate when floored or early on)
   goalDate: number | null;
   trendPerWeek: number | null; // actual trend over the last 2 weeks
   vsPlan: number | null; // trend minus plan at the last weigh-in (negative = ahead of plan)
 };
 
-export function project(p: Profile, logs: Logs, weights: Record<string, number>, shake: number, today: string): Projection {
+export function project(p: Profile, weights: Record<string, number>, today: string): Projection {
   const weighIns = Object.entries(weights).sort().map(([d, lb]) => ({ x: ts(d), y: lb }));
   const smooth = trend(weighIns);
-  const days = Object.keys(logs).filter(d => logs[d].length).sort();
-  // Today is still in progress, so leave it out of the average unless it's all there is.
-  const done = days.filter(d => d !== today);
-  const sample = done.length ? done : days;
-  const avg = sample.length ? sample.reduce((t, d) => t + totalKcal(logs[d], shake), 0) / sample.length : null;
 
   // The plan starts at your first weigh-in (or today, at your starting weight) and eats the target every day.
   // The target is recalculated from the plan's own weight each day, like you'd do in real life.
@@ -53,7 +46,6 @@ export function project(p: Profile, logs: Logs, weights: Record<string, number>,
     future: pts.slice(elapsed),
     target,
     floored: maintenance(nowLb * LB, p) - planDeficit(nowLb * LB, p) < MIN_KCAL[p.sex],
-    avg,
     lbPerWeek: (lbs[elapsed] - lbs[Math.min(elapsed + 14, lbs.length - 1)]) / 2,
     goalDate: reached ? pts[pts.length - 1].x : null,
     trendPerWeek,

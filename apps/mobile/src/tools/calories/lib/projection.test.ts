@@ -3,7 +3,6 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { fromBackup, toBackup } from './backup.ts';
 import { shift } from './dates.ts';
-import type { Logs } from './log.ts';
 import { LB, maintenance, planIntake, simulate, type Profile } from './model.ts';
 import { project } from './projection.ts';
 
@@ -22,23 +21,19 @@ test('eating the target loses the planned lb/week (after the water drop), never 
 });
 
 test('no weigh-ins: plan starts today at the starting weight', () => {
-  const r = project(p, {}, {}, 160, day);
-  assert.equal(r.avg, null);
+  const r = project(p, {}, day);
   assert.equal(r.past.length, 1);
   assert.equal(r.future[0].y, 210);
   assert.ok(r.goalDate! > r.future[0].x);
 });
 
 test('faster rate reaches the goal sooner', () => {
-  const slow = project(p, {}, {}, 160, day), fast = project({ ...p, rate: 1.5 }, {}, {}, 160, day);
+  const slow = project(p, {}, day), fast = project({ ...p, rate: 1.5 }, {}, day);
   assert.ok(fast.goalDate! < slow.goalDate!);
 });
 
 test('plan runs from the first weigh-in; actual trend is compared against it', () => {
-  const logs: Logs = {};
-  for (let i = 1; i <= 14; i++) logs[shift(day, -i)] = [{ meal: 'lunch', qty: 1, parts: [{ id: 'panda-orange-chicken', qty: 3 }] }];
-  const r = project(p, logs, { [shift(day, -14)]: 210, [day]: 207 }, 160, day);
-  assert.equal(r.avg, 1680);
+  const r = project(p, { [shift(day, -14)]: 210, [day]: 207 }, day);
   assert.equal(r.past[0].y, 210);
   assert.deepEqual(r.past[r.past.length - 1], r.future[0]);
   assert.ok(r.lbPerWeek > 0.5);
@@ -47,7 +42,7 @@ test('plan runs from the first weigh-in; actual trend is compared against it', (
 });
 
 test('backups round-trip and reject junk', () => {
-  const data = { profile: p, shake: 160, logs: {}, weights: { [day]: 210 } };
+  const data = { profile: p, shake: 160, logs: {}, weights: { [day]: 210 }, done: {} };
   assert.deepEqual(fromBackup(JSON.parse(JSON.stringify(toBackup(data)))).data, data);
   assert.throws(() => fromBackup({ hello: 1 }));
 });
