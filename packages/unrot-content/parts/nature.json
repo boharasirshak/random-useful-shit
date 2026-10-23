@@ -1,0 +1,347 @@
+[
+  {
+    "id": "nature-001",
+    "type": "idea",
+    "topic": "nature",
+    "tags": [
+      "evolution",
+      "darwin",
+      "natural-selection"
+    ],
+    "title": "Evolution in three ingredients",
+    "text": "Darwin's core argument needs just three ingredients. Individuals vary. Much of that variation is inherited. And far more offspring are born than can survive. Put those together, and traits that help survival and reproduction become more common, generation after generation. He called it natural selection.",
+    "author": "Charles Darwin",
+    "source": "On the Origin of Species, ch. 4 (1859)",
+    "more": "None of the three ingredients was controversial on its own. Breeders knew animals vary and pass traits to their young, and Thomas Malthus had written about populations outgrowing their food supply. Darwin's leap, reached independently by Alfred Russel Wallace, was to see what happens when all three act together over immense spans of time. Their ideas were first presented jointly in 1858.\n\nNo goal or designer is required. Selection simply filters each generation, keeping what works a little better in that place and time. This thread walks through the idea step by step: the pressure behind it, evidence of it happening before our eyes, and what it tells us about all life on Earth.",
+    "link": "https://www.gutenberg.org/ebooks/1228",
+    "thread": {
+      "id": "evolution-step-by-step",
+      "title": "How evolution works, step by step (7 cards)",
+      "part": 1,
+      "of": 7
+    }
+  },
+  {
+    "id": "nature-002",
+    "type": "quote",
+    "topic": "nature",
+    "tags": [
+      "evolution",
+      "population",
+      "elephants"
+    ],
+    "text": "The elephant is reckoned to be the slowest breeder of all known animals... if this be so, at the end of the fifth century there would be alive fifteen million elephants, descended from the first pair.",
+    "author": "Charles Darwin",
+    "source": "On the Origin of Species, ch. 3 (1859)",
+    "more": "This is the pressure behind natural selection, made vivid. Every species can multiply far faster than its world can support. Darwin picked the elephant on purpose, the slowest breeder he knew of, and even it would overrun the planet if nothing held it back. In later editions he reworked the arithmetic and arrived at nearly nineteen million elephants after about 750 years, but the point stands.\n\nElephant numbers don't actually explode. So most offspring of every species must die before reproducing, from hunger, predators, disease or bad luck. Darwin called this the struggle for existence. Because so many don't make it, any small inherited edge changes who gets to become a parent.",
+    "link": "https://www.gutenberg.org/ebooks/1228",
+    "thread": {
+      "id": "evolution-step-by-step",
+      "title": "How evolution works, step by step (7 cards)",
+      "part": 2,
+      "of": 7
+    }
+  },
+  {
+    "id": "nature-003",
+    "type": "fact",
+    "topic": "nature",
+    "tags": [
+      "evolution",
+      "moths",
+      "camouflage"
+    ],
+    "title": "Moths that changed colour with the soot",
+    "text": "Peppered moths are usually pale and speckled, hidden against lichen-covered bark. As soot from the Industrial Revolution blackened England's trees, a rare dark form spread. Around Manchester, dark moths made up 98 percent of records by 1895. When clean-air laws took effect, the pale form came back.",
+    "source": "Wikipedia: Peppered moth evolution",
+    "more": "Birds hunt moths by sight. On pale bark, dark moths stood out and were eaten; on soot-darkened bark, the pale ones did. The variation already existed, colour was inherited, and the environment shifted which version survived. That's natural selection, visible within a human lifetime.\n\nBernard Kettlewell studied the mechanism between 1953 and 1956, and his experiments were later attacked, even accused of fraud. So the geneticist Michael Majerus ran a meticulous seven-year study starting in 2001, published after his death in 2012. It vindicated Kettlewell in detail. The dark form's rise and fall remains one of the clearest examples of evolution in action.",
+    "link": "https://en.wikipedia.org/wiki/Peppered_moth_evolution",
+    "thread": {
+      "id": "evolution-step-by-step",
+      "title": "How evolution works, step by step (7 cards)",
+      "part": 3,
+      "of": 7
+    }
+  },
+  {
+    "id": "nature-004",
+    "type": "fact",
+    "topic": "nature",
+    "tags": [
+      "evolution",
+      "finches",
+      "galapagos"
+    ],
+    "title": "Evolution measured in two years",
+    "text": "Since 1973, Peter and Rosemary Grant have studied Darwin's finches on the tiny Galápagos island of Daphne Major. In 1977 a drought left mostly large, tough seeds. Many finches died, and the birds that followed had measurably larger beaks. Selection had acted within a couple of years.",
+    "source": "Wikipedia: Peter and Rosemary Grant; Darwin's finches",
+    "more": "Darwin assumed natural selection was too slow to watch. The Grants proved otherwise by catching, tagging, measuring and taking blood samples from finches on the island, spending six months of every year there for decades. In the 1977 rainy season only 24 millimetres of rain fell. Small, soft seeds ran out, and birds with bigger beaks, able to crack the hard ones, survived and bred.\n\nThe effect can also run in reverse. After a drought in 2003, with a larger competing finch species now on the island, the medium ground finch's average beak size went down instead. Evolution isn't a march toward bigger or better. It tracks whatever the environment rewards right now.",
+    "link": "https://en.wikipedia.org/wiki/Peter_and_Rosemary_Grant",
+    "thread": {
+      "id": "evolution-step-by-step",
+      "title": "How evolution works, step by step (7 cards)",
+      "part": 4,
+      "of": 7
+    }
+  },
+  {
+    "id": "nature-005",
+    "type": "fact",
+    "topic": "nature",
+    "tags": [
+      "evolution",
+      "whales",
+      "fossils"
+    ],
+    "title": "Whales once walked on land",
+    "text": "Whales descend from four-legged land mammals. Around 50 million years ago, in what is now South Asia, wolf-like animals such as Pakicetus lived in and around water. Over millions of years their descendants became fully aquatic. The closest living relatives of whales are hippos.",
+    "source": "Wikipedia: Evolution of cetaceans; Pakicetus",
+    "more": "Whale evolution is one of the best-documented transitions in the fossil record, running from Pakicetus at the water's edge, through Ambulocetus, whose name means walking whale, to fully marine forms whose hind limbs had shrunk away.\n\nTraces remain in living whales. Many still carry small pelvic bones, leftovers of their ancestors' hips, now hidden deep inside the body and repurposed to support reproductive organs. And molecular studies, entirely independent of the fossils, place whales among the even-toed hoofed mammals, sharing a common ancestor with hippos that lived around 55 million years ago. Bones and genes, two separate lines of evidence, tell the same story.",
+    "link": "https://en.wikipedia.org/wiki/Evolution_of_cetaceans",
+    "thread": {
+      "id": "evolution-step-by-step",
+      "title": "How evolution works, step by step (7 cards)",
+      "part": 5,
+      "of": 7
+    }
+  },
+  {
+    "id": "nature-006",
+    "type": "fact",
+    "topic": "nature",
+    "tags": [
+      "evolution",
+      "dna",
+      "genetic-code"
+    ],
+    "title": "Every living thing shares one code",
+    "text": "Bacteria, mushrooms, oak trees and you all read DNA using nearly the same genetic code: a table of 64 three-letter codons that map to the same amino acids. That's why bacteria can be engineered to make human insulin, which has been produced this way for medical use since 1982.",
+    "source": "Wikipedia: Genetic code; Insulin (medication)",
+    "more": "There's no obvious reason the code had to be this way. Francis Crick suggested it may be a frozen accident: fixed very early, then locked in, because changing it would scramble almost every protein a cell makes. The fact that nearly all life shares it, with only minor variations, is powerful evidence that all of it descends from a single shared ancestor.\n\nBiologists call that ancestor LUCA, the last universal common ancestor. Most studies suggest it lived at least 3.5 billion years ago, and possibly earlier. Every organism alive today, from the finches on Daphne Major to the bacteria in your gut, is a distant cousin through it.",
+    "link": "https://en.wikipedia.org/wiki/Genetic_code",
+    "thread": {
+      "id": "evolution-step-by-step",
+      "title": "How evolution works, step by step (7 cards)",
+      "part": 6,
+      "of": 7
+    }
+  },
+  {
+    "id": "nature-007",
+    "type": "quote",
+    "topic": "nature",
+    "tags": [
+      "evolution",
+      "darwin",
+      "wonder"
+    ],
+    "text": "There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.",
+    "author": "Charles Darwin",
+    "source": "On the Origin of Species, ch. 14 (1859)",
+    "more": "These are the final words of the first edition of the Origin. Notice the end of the sentence: have been, and are being, evolved. Darwin understood that evolution isn't only ancient history. It is happening now, as the moths and finches in this thread show.\n\nThe whole thread in one breath: living things vary, much of that variation is inherited, far more are born than can survive, and so the environment keeps editing every species. Given enough time, that simple process links whales to hippos, and you to every other living thing through one shared genetic code. Darwin saw grandeur in that rather than loss. It's hard to disagree.",
+    "link": "https://www.gutenberg.org/ebooks/1228",
+    "thread": {
+      "id": "evolution-step-by-step",
+      "title": "How evolution works, step by step (7 cards)",
+      "part": 7,
+      "of": 7
+    }
+  },
+  {
+    "id": "nature-008",
+    "type": "quote",
+    "topic": "nature",
+    "tags": [
+      "ecology",
+      "connection",
+      "mountains"
+    ],
+    "text": "When we try to pick out anything by itself, we find it hitched to everything else in the universe.",
+    "author": "John Muir",
+    "source": "My First Summer in the Sierra, ch. 6 (1911)",
+    "more": "In 1869, a young John Muir spent a summer in California's Sierra Nevada, working alongside a flock of sheep being driven to mountain pastures. His journal from those months became this book, published in 1911, and it brims with giddy delight at rocks, flowers, insects, storms and light.\n\nThis line is often passed around in looser paraphrased versions; this is how he actually wrote it. It captures the heart of what we now call ecology: a flower depends on its pollinators, which depend on the weather, which depends on the mountains. Muir went on to co-found the Sierra Club and became one of the most influential champions of national parks.",
+    "link": "https://www.gutenberg.org/ebooks/32540"
+  },
+  {
+    "id": "nature-009",
+    "type": "quote",
+    "topic": "nature",
+    "tags": [
+      "darwin",
+      "galapagos",
+      "species"
+    ],
+    "text": "Hence, both in space and time, we seem to be brought somewhat near to that great fact—that mystery of mysteries—the first appearance of new beings on this earth.",
+    "author": "Charles Darwin",
+    "source": "The Voyage of the Beagle, ch. 17 (2nd ed., 1845)",
+    "more": "Darwin wrote this about the Galápagos Islands, which HMS Beagle reached in September 1835. He was struck that such young volcanic islands, with craters and lava flows still sharp, held so many creatures found nowhere else. New species seemed to have appeared there, geologically speaking, quite recently.\n\nThe phrase mystery of mysteries was borrowed. The astronomer John Herschel had used it in an 1836 letter to the geologist Charles Lyell, about how extinct species come to be replaced by new ones. In the opening of On the Origin of Species, Darwin credits it to one of our greatest philosophers, meaning Herschel. The Origin, published 24 years after this visit, was his answer.",
+    "link": "https://www.gutenberg.org/ebooks/944"
+  },
+  {
+    "id": "nature-010",
+    "type": "quote",
+    "topic": "nature",
+    "tags": [
+      "water",
+      "wonder",
+      "seasons"
+    ],
+    "text": "Heaven is under our feet as well as over our heads.",
+    "author": "Henry David Thoreau",
+    "source": "Walden, ch. 16, The Pond in Winter (1854)",
+    "more": "Thoreau wrote this after cutting through a foot of snow and a foot of ice on Walden Pond in winter. Kneeling to drink, he looked down into what he called the quiet parlor of the fishes, softly lit as if through ground glass, its sandy floor the same as in summer.\n\nIn the same chapter he did something very practical. Some people said Walden Pond was bottomless, so he sounded it with a cod-line and a stone, and found its greatest depth was exactly one hundred and two feet. It is a nice pairing: the man who found heaven in a frozen pond also took the trouble to measure it. Wonder and careful observation are not opposites.",
+    "link": "https://www.gutenberg.org/ebooks/205"
+  },
+  {
+    "id": "nature-011",
+    "type": "fact",
+    "topic": "nature",
+    "tags": [
+      "tardigrades",
+      "survival",
+      "space"
+    ],
+    "title": "The animals that survived open space",
+    "text": "Tardigrades, or water bears, are tiny eight-legged animals. In 2007, dried-out tardigrades rode outside a spacecraft for 10 days, exposed to the vacuum of space. Vacuum alone had no significant effect on them. Rehydrated back on Earth, they revived and went on laying eggs.",
+    "source": "Wikipedia: Tardigrade (FOTON-M3 mission)",
+    "more": "Their trick is a state called the tun. When the moss or pond they live in dries out, tardigrades draw in their legs and lose almost all their water, and their metabolism stops. In that state they can endure conditions that would kill nearly anything else, then revive when water returns.\n\nThey aren't invincible. In the same experiment, adding the full blast of unfiltered solar ultraviolet light killed most of them, though a few still recovered. But for a complex animal with a brain and muscles to shrug off the vacuum of space is remarkable. Tardigrades live almost everywhere, from mountaintops to the deep sea. On mosses they can reach over 2 million per square metre.",
+    "link": "https://en.wikipedia.org/wiki/Tardigrade"
+  },
+  {
+    "id": "nature-012",
+    "type": "fact",
+    "topic": "nature",
+    "tags": [
+      "sharks",
+      "longevity",
+      "ocean"
+    ],
+    "title": "The shark that may be 400 years old",
+    "text": "Greenland sharks may be the longest-lived animals with a backbone. Radiocarbon dating of their eye lenses suggests they live at least 272 years, and the oldest one studied was estimated at 392 years, give or take 120. They don't reach maturity until around age 150.",
+    "source": "Nielsen et al., Science (2016); Wikipedia: Greenland shark",
+    "more": "Sharks have no bony parts that lay down neat yearly rings, so their age was long a mystery. The breakthrough came in 2016, when researchers dated tissue in the core of the eye lens, which forms during development and doesn't change afterwards. Measuring its carbon-14, including the spike left by nuclear bomb tests in the 1950s and 60s, let them estimate when each shark was born.\n\nGreenland sharks live in the cold North Atlantic and Arctic, can grow over 6 metres long, and lead slow lives. The uncertainty on the oldest estimate is wide, but even the low end means some sharks alive today were born before Charles Darwin.",
+    "link": "https://en.wikipedia.org/wiki/Greenland_shark"
+  },
+  {
+    "id": "nature-013",
+    "type": "fact",
+    "topic": "nature",
+    "tags": [
+      "blood",
+      "human-body",
+      "cells"
+    ],
+    "title": "Your body's busiest factory",
+    "text": "An adult human makes about 2.4 million new red blood cells every second. Each one circulates for roughly 100 to 120 days before being recycled. At any moment you carry some 20 to 30 trillion of them, making them by far the most numerous cells in your body.",
+    "source": "Wikipedia: Red blood cell",
+    "more": "Red blood cells are stripped-down specialists. As they mature in the bone marrow, they lose their nucleus and most of their internal machinery to make room for haemoglobin, the iron-rich protein that carries oxygen. One way to picture them is as flexible little sacks of haemoglobin. Without a nucleus they can't divide or repair themselves, which is why they need constant replacing.\n\nThey are also constantly on the move. A typical red blood cell makes a full circuit of your body in about a minute. Over a life of three to four months, that adds up to well over a hundred thousand round trips through your heart, lungs and every other tissue.",
+    "link": "https://en.wikipedia.org/wiki/Red_blood_cell"
+  },
+  {
+    "id": "nature-014",
+    "type": "fact",
+    "topic": "nature",
+    "tags": [
+      "microbiome",
+      "myths",
+      "human-body"
+    ],
+    "title": "You are not mostly bacteria",
+    "text": "A popular claim says bacteria in your body outnumber your own cells ten to one. A careful 2016 recount found the real ratio is much closer to one to one: roughly 38 trillion bacteria to 30 trillion human cells, for a typical adult man.",
+    "source": "Sender, Fuchs and Milo, PLoS Biology and Cell (2016); Wikipedia: Human microbiome",
+    "more": "The ten-to-one figure traced back to rough estimates from the 1970s that got repeated for decades without being checked. When Ron Sender, Shai Fuchs and Ron Milo at the Weizmann Institute redid the sums with modern data, the ratio collapsed. Their count of human cells is dominated by blood cells, which make up about 90 percent of the total.\n\nBy weight, your bacteria are modest: about 0.2 kilograms. But numbers aren't the whole story. Your microbes, most of them living in your gut, help digest food, train your immune system and crowd out harmful invaders. You are not mostly bacteria, but you are certainly not alone.",
+    "link": "https://en.wikipedia.org/wiki/Human_microbiome"
+  },
+  {
+    "id": "nature-015",
+    "type": "fact",
+    "topic": "nature",
+    "tags": [
+      "trees",
+      "longevity",
+      "plants"
+    ],
+    "title": "A tree older than the pyramids",
+    "text": "A Great Basin bristlecone pine called Methuselah began growing around 2833 BC, making it more than 4,850 years old. It is credited as the oldest known living non-clonal organism on Earth. It was already centuries old when the Great Pyramid of Giza was finished.",
+    "source": "Wikipedia: Pinus longaeva",
+    "more": "Bristlecones grow high in the mountains of the western United States, in cold, dry, harsh conditions, and that's part of their secret. They grow incredibly slowly, producing dense, resinous wood. As an old tree ages, much of its living tissue can die back, until only a narrow strip of bark connects the roots to a few living branches, and the tree carries on.\n\nTree ages like this are counted from growth rings in thin cores drilled out of the trunk. Non-clonal matters here: some clonal colonies, like aspen groves joined by one root system, may be older, but Methuselah is a single tree that has stood on its own since the Bronze Age.",
+    "link": "https://en.wikipedia.org/wiki/Pinus_longaeva"
+  },
+  {
+    "id": "nature-016",
+    "type": "fact",
+    "topic": "nature",
+    "tags": [
+      "bees",
+      "communication",
+      "insects"
+    ],
+    "title": "Bees give directions by dancing",
+    "text": "A honeybee that finds good flowers returns to the hive and performs a waggle dance. The angle of her waggle run, measured from straight up on the comb, matches the direction of the food relative to the Sun. How long she waggles tells how far away it is.",
+    "source": "Wikipedia: Waggle dance; Karl von Frisch",
+    "more": "Karl von Frisch, an Austrian scientist, was one of the first to decode this language, through years of patient experiments with marked bees and feeding stations. He shared the 1973 Nobel Prize in Physiology or Medicine for his work on animal behaviour.\n\nThe system is elegant. Inside the dark hive, the comb hangs vertically, so the bees use straight up as a stand-in for the Sun's direction. A run straight up means fly toward the Sun; a run angled to the right means fly that same angle to the right of the Sun. Other bees follow the dancer closely, then head out to find the flowers themselves.",
+    "link": "https://en.wikipedia.org/wiki/Waggle_dance"
+  },
+  {
+    "id": "nature-017",
+    "type": "idea",
+    "topic": "nature",
+    "tags": [
+      "cells",
+      "symbiosis",
+      "mitochondria"
+    ],
+    "title": "The bacteria living inside your cells",
+    "text": "Lynn Margulis championed a once-doubted idea: the mitochondria that power your cells were once free-living bacteria. Long ago, one cell engulfed another, and instead of digesting it, the two became partners. Plant chloroplasts began the same way. Every complex cell is an ancient merger.",
+    "author": "Lynn Margulis",
+    "source": "On the Origin of Mitosing Cells, Journal of Theoretical Biology (1967)",
+    "more": "The idea, called symbiogenesis or endosymbiotic theory, had been proposed in 1905 and 1910 by the Russian botanist Konstantin Mereschkowski, but it was largely ignored. Margulis revived it in 1967 and backed it with microbiological evidence.\n\nThe clues are striking once you know to look. Mitochondria and chloroplasts carry their own small chromosomes, separate from the cell's main DNA. They reproduce by splitting in two, the way bacteria do, on their own schedule. Chloroplasts even share a double membrane and other features with free-living cyanobacteria. Today the theory is standard textbook biology, and a reminder that cooperation, not just competition, has shaped life.",
+    "link": "https://en.wikipedia.org/wiki/Symbiogenesis"
+  },
+  {
+    "id": "nature-018",
+    "type": "idea",
+    "topic": "nature",
+    "tags": [
+      "genes",
+      "evolution",
+      "dawkins"
+    ],
+    "title": "Seeing evolution from the gene's view",
+    "text": "Richard Dawkins suggested looking at evolution from the gene's point of view. Bodies come and go, but genes get copied across generations. Genes that happen to build bodies good at surviving and reproducing get copied more. In that sense, he argued, organisms are vehicles genes build to get themselves passed on.",
+    "author": "Richard Dawkins",
+    "source": "The Selfish Gene (1976)",
+    "more": "The word selfish trips people up. Dawkins didn't mean genes have desires, or that people ought to be selfish. He meant that the genes we see today are, statistically, the ones that were good at getting copied, and that this lens explains a lot.\n\nIt helps explain why animals help their relatives: a gene that nudges you to help your siblings can spread, because siblings are likely to carry copies of the same gene. That idea, kin selection, came largely from W. D. Hamilton's work, which the book did much to popularise, along with George C. Williams's earlier thinking. The book also introduced a word you probably use: meme.",
+    "link": "https://en.wikipedia.org/wiki/The_Selfish_Gene"
+  },
+  {
+    "id": "nature-019",
+    "type": "question",
+    "topic": "nature",
+    "tags": [
+      "identity",
+      "cells",
+      "human-body"
+    ],
+    "title": "Are you still the same body?",
+    "text": "Your body is constantly replacing parts of itself. Red blood cells last about four months, and roughly a tenth of your fat cells are renewed each year. Like the ancient Ship of Theseus, rebuilt plank by plank, if enough of you gets swapped out, are you still the same you?",
+    "source": "Wikipedia: Ship of Theseus; Bomb pulse",
+    "more": "The old puzzle asks whether a ship whose every plank has been replaced is still the same ship. Biology adds a twist, because you are not replaced evenly. You may have heard that your whole body renews itself every seven years. It isn't that simple.\n\nIn 2005, Kirsty Spalding and colleagues used carbon-14 from Cold War nuclear tests, which got locked into the DNA of cells as they formed, to work out how old human cells are. Many tissues turn over, but the neurons of your cerebral cortex essentially do not; they are about as old as you are. So part of you is constantly renewed, and part has been there all along. Maybe identity lives in the pattern, not the material.",
+    "link": "https://en.wikipedia.org/wiki/Ship_of_Theseus"
+  },
+  {
+    "id": "nature-020",
+    "type": "question",
+    "topic": "nature",
+    "tags": [
+      "evolution",
+      "eggs",
+      "riddles"
+    ],
+    "title": "Which came first, the chicken or the egg?",
+    "text": "It's one of the oldest riddles there is, and philosophers argued over it for centuries. But evolution gives a surprisingly clear answer. Before you tap for more, think it through: did the first chicken hatch from an egg, or lay one?",
+    "source": "Wikipedia: Chicken or the egg",
+    "more": "The egg, by a long way. Hard-shelled eggs that could be laid on dry land, the kind reptiles and birds still lay, appeared around 312 million years ago, long before any bird existed. Fish and amphibians laid eggs earlier still.\n\nEven if you only count chicken eggs, the egg wins. Species change gradually, so at some point two birds that were almost chickens produced an egg holding a bird we would call a chicken. The DNA that made it a chicken was already in the egg before anything hatched. There was never a first chicken without parents, just a long line of birds, each very slightly different from the last.",
+    "link": "https://en.wikipedia.org/wiki/Chicken_or_the_egg"
+  }
+]

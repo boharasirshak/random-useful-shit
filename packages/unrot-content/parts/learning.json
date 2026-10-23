@@ -1,0 +1,368 @@
+[
+  {
+    "id": "learning-001",
+    "type": "fact",
+    "topic": "learning",
+    "tags": [
+      "memory",
+      "forgetting",
+      "ebbinghaus"
+    ],
+    "title": "The man who memorised nonsense",
+    "text": "In the 1880s, Hermann Ebbinghaus memorised lists of nonsense syllables like WID and ZOF, then tested himself after different delays. Forgetting, he found, is fast at first and then slows down: a large share of what you learn is gone within a day or two unless you do something about it.",
+    "source": "Hermann Ebbinghaus, Memory: A Contribution to Experimental Psychology (1885)",
+    "more": "Ebbinghaus used nonsense on purpose, so meaning and prior knowledge could not help him. He was his own only subject, which is a real limitation, yet a 2015 replication by Jaap Murre and Joeri Dros found a very similar curve.\n\nMeaningful material is forgotten more slowly than nonsense, so do not treat his exact percentages as gospel. The shape is the lesson: a steep loss early, then a long, slow tail.\n\nThat shape sets up the rest of this thread. If forgetting is the default, the question is not how to cram more in, but how to make what goes in survive. The next cards cover the tools with the best evidence.",
+    "link": "https://en.wikipedia.org/wiki/Forgetting_curve",
+    "thread": {
+      "id": "learning-that-sticks",
+      "title": "How to learn so it sticks, in 7 cards",
+      "part": 1,
+      "of": 7
+    }
+  },
+  {
+    "id": "learning-002",
+    "type": "fact",
+    "topic": "learning",
+    "tags": [
+      "memory",
+      "spacing",
+      "study"
+    ],
+    "title": "Spread it out",
+    "text": "A 2006 review of decades of memory experiments found that spaced practice beat massed practice, or cramming, in 259 of 271 comparisons. Same total study time, very different results. Splitting study into sessions with gaps between them is one of the most reliable findings in learning research.",
+    "source": "Cepeda et al., Distributed practice in verbal recall tasks, Psychological Bulletin (2006)",
+    "more": "Ebbinghaus himself noticed the spacing effect, and it has been replicated for well over a century, across ages, subjects and even other species.\n\nWhy it works is still debated. One popular idea is that letting a memory fade a little before you revisit it forces a more effortful recall, which strengthens it more than reviewing something you still remember perfectly.\n\nThe best gap depends on how long you need to remember. Later work by Cepeda and colleagues suggests gaps of very roughly 10 to 20 percent of the time until you need the knowledge, shrinking proportionally for longer horizons. Flashcard apps that schedule reviews for you do this arithmetic automatically.",
+    "link": "https://en.wikipedia.org/wiki/Spacing_effect",
+    "thread": {
+      "id": "learning-that-sticks",
+      "title": "How to learn so it sticks, in 7 cards",
+      "part": 2,
+      "of": 7
+    }
+  },
+  {
+    "id": "learning-003",
+    "type": "fact",
+    "topic": "learning",
+    "tags": [
+      "memory",
+      "testing",
+      "retrieval"
+    ],
+    "title": "Testing beats rereading",
+    "text": "Students read a short passage, then either reread it or took practice tests on it. Five minutes later, the rereaders did slightly better. A week later, the testers remembered far more. Pulling information out of memory strengthens it more than putting it in again.",
+    "source": "Roediger & Karpicke, Test-Enhanced Learning, Psychological Science (2006)",
+    "more": "This is the testing effect, also called retrieval practice. A test is not just a measurement; the act of recalling changes the memory, making it easier to find next time.\n\nIt works best combined with the spacing from the last card, and with feedback so mistakes do not stick. It even helps when you fail to recall, as long as you check the answer afterwards.\n\nPractical versions: close the book and write down everything you remember from a chapter. Answer a flashcard out loud before flipping it. Explain an idea without notes. Ask a friend to quiz you. All of this feels harder than rereading, which is the subject of card five.",
+    "link": "https://en.wikipedia.org/wiki/Testing_effect",
+    "thread": {
+      "id": "learning-that-sticks",
+      "title": "How to learn so it sticks, in 7 cards",
+      "part": 3,
+      "of": 7
+    }
+  },
+  {
+    "id": "learning-004",
+    "type": "idea",
+    "topic": "learning",
+    "tags": [
+      "practice",
+      "interleaving",
+      "study"
+    ],
+    "title": "Mix up your practice",
+    "text": "Nate Kornell and Robert Bjork had people learn painters' styles either one artist at a time or all mixed together. Mixing worked better for recognising new paintings, yet most participants believed the one-at-a-time approach had helped them more. Interleaving forces you to notice what makes each thing different.",
+    "author": "Nate Kornell and Robert Bjork",
+    "source": "Learning Concepts and Categories, Psychological Science (2008)",
+    "more": "Blocked practice means doing all the problems of one type, then all of the next. Interleaving means shuffling them. Studies by Doug Rohrer and colleagues found the same pattern in maths: students who practised mixed problem sets did much better on later tests, because they had to work out which method each problem needed, rather than reusing the one from the chapter heading.\n\nInterleaving feels slower and messier, and early performance looks worse. That is a big part of why people avoid it.\n\nTry it: mix old and new topics in a revision session, alternate between scales and pieces when practising an instrument, or shuffle your flashcard decks instead of studying one category at a time.",
+    "link": "https://en.wikipedia.org/wiki/Desirable_difficulty",
+    "thread": {
+      "id": "learning-that-sticks",
+      "title": "How to learn so it sticks, in 7 cards",
+      "part": 4,
+      "of": 7
+    }
+  },
+  {
+    "id": "learning-005",
+    "type": "idea",
+    "topic": "learning",
+    "tags": [
+      "learning",
+      "illusions",
+      "study"
+    ],
+    "title": "Why easy studying fools you",
+    "text": "Robert Bjork coined the term desirable difficulties: conditions that make learning feel harder but make it last. Rereading and highlighting feel smooth, and the smoothness gets mistaken for mastery. Spacing, testing and mixing feel clumsy, and that clumsiness is often the learning happening.",
+    "author": "Robert A. Bjork",
+    "source": "Memory and metamemory considerations in the training of human beings, in Metacognition (1994)",
+    "more": "The trap is that we judge our learning by how fluent it feels in the moment. Rereading a chapter makes the text familiar, and familiarity feels like knowing. But recognising something on the page is very different from producing it on a blank sheet.\n\nNot every difficulty is desirable. Bjork's point is that a difficulty helps when it makes you do the kind of mental work you will need later, like recalling, comparing and telling things apart. Confusing explanations or background noise are just hard.\n\nA quick check: if a study session felt pleasantly easy, you probably overestimated what you learned. Test yourself before you decide you are done.",
+    "link": "https://en.wikipedia.org/wiki/Robert_A._Bjork",
+    "thread": {
+      "id": "learning-that-sticks",
+      "title": "How to learn so it sticks, in 7 cards",
+      "part": 5,
+      "of": 7
+    }
+  },
+  {
+    "id": "learning-006",
+    "type": "quote",
+    "topic": "learning",
+    "tags": [
+      "writing",
+      "practice",
+      "feedback"
+    ],
+    "text": "I took some of the papers, and, making short hints of the sentiment in each sentence, laid them by a few days, and then, without looking at the book, try'd to compleat the papers again... Then I compared my Spectator with the original, discovered some of my faults, and corrected them.",
+    "author": "Benjamin Franklin",
+    "source": "The Autobiography of Benjamin Franklin, part one (written 1771)",
+    "more": "As a teenager, Franklin taught himself to write by rebuilding essays from The Spectator. Look at what he built: spacing (he waited a few days), retrieval (he rewrote without looking), and feedback (he compared his version with the original and fixed his mistakes).\n\nHe varied it too. He turned some essays into verse and later back into prose to stretch his vocabulary, and jumbled his notes, then tried to restore their order, to learn how to structure an argument.\n\nThe same loop works for almost any skill. Produce something from memory, compare it with an expert's version, and work on the gaps. It is far less comfortable than admiring good work, which is exactly why it works.",
+    "link": "https://www.gutenberg.org/ebooks/20203",
+    "thread": {
+      "id": "learning-that-sticks",
+      "title": "How to learn so it sticks, in 7 cards",
+      "part": 6,
+      "of": 7
+    }
+  },
+  {
+    "id": "learning-007",
+    "type": "idea",
+    "topic": "learning",
+    "tags": [
+      "study",
+      "routine",
+      "memory"
+    ],
+    "title": "One routine that uses all of it",
+    "text": "Make It Stick boils decades of learning research down to a few habits. Quiz yourself instead of rereading. Space out your reviews. Mix related topics. Try to answer before you are taught. Reflect on what went wrong. None of it needs special tools, just a willingness to feel less fluent.",
+    "author": "Peter C. Brown, Henry Roediger and Mark McDaniel",
+    "source": "Make It Stick: The Science of Successful Learning (2014)",
+    "more": "Here is the thread as one routine. After a lecture, chapter or meeting, close it and write down what you remember (testing). Check it against the source and note the gaps (Franklin's loop). Schedule a review a few days later, then another a week after that (spacing, against Ebbinghaus's curve). When you review, mix in older material (interleaving).\n\nExpect it to feel harder and slower than rereading. That feeling is the desirable difficulty, not a sign of failure.\n\nThe authors also stress calibration: use tests to find out what you actually know, rather than trusting a sense of familiarity. Most people who try this discover they knew less than they thought, then remember more than they expected.",
+    "link": "https://en.wikipedia.org/wiki/Testing_effect",
+    "thread": {
+      "id": "learning-that-sticks",
+      "title": "How to learn so it sticks, in 7 cards",
+      "part": 7,
+      "of": 7
+    }
+  },
+  {
+    "id": "learning-008",
+    "type": "quote",
+    "topic": "learning",
+    "tags": [
+      "reading",
+      "writing",
+      "conversation"
+    ],
+    "text": "Reading maketh a full man; conference a ready man; and writing an exact man.",
+    "author": "Francis Bacon",
+    "source": "Essays, 'Of Studies' (1625 edition)",
+    "more": "In Bacon's English, conference means conversation and debate, and exact means precise. Each activity trains something different. Reading stocks your mind. Talking with others makes you quick at using what you know. Writing forces you to pin vague ideas down, because a sentence on paper cannot hide behind a feeling of understanding.\n\nThat last point is why writing is such a strong learning tool. Many people only discover they do not understand something when they try to explain it in writing and get stuck halfway.\n\nA balanced week might include all three: read something substantial, argue about it with someone, and write a page on what you now think.",
+    "link": "https://www.gutenberg.org/ebooks/575"
+  },
+  {
+    "id": "learning-009",
+    "type": "quote",
+    "topic": "learning",
+    "tags": [
+      "reading",
+      "focus",
+      "expertise"
+    ],
+    "text": "As the art of reading (after a certain stage in one's education) is the art of skipping, so the art of being wise is the art of knowing what to overlook.",
+    "author": "William James",
+    "source": "The Principles of Psychology, vol. 2, ch. 22 'Reasoning' (1890)",
+    "more": "James is describing how expert thinking works. As you get better at something, you stop processing every detail and start seeing only the features that matter. A strong chess player glances at a board and ignores most of it; a beginner has to consider every piece.\n\nThis cuts against the urge to read every word and keep every note. Skimming to find what matters, then reading that part slowly, is a skill, not a shortcut.\n\nThe hard part is choosing well what to overlook, and that depends on knowing what you are trying to do. Before you open a long report or book, write down the two or three questions you want it to answer.",
+    "link": "https://www.gutenberg.org/ebooks/57634"
+  },
+  {
+    "id": "learning-010",
+    "type": "quote",
+    "topic": "learning",
+    "tags": [
+      "problem-solving",
+      "method",
+      "thinking"
+    ],
+    "text": "The second, to divide each of the difficulties under examination into as many parts as possible, and as might be necessary for its adequate solution.",
+    "author": "René Descartes",
+    "source": "Discourse on the Method, part II (1637; trans. John Veitch)",
+    "more": "Descartes set himself four rules for thinking. Accept nothing as true that you do not clearly know. Break each difficulty into parts. Work from the simplest parts up to the complex ones. And review everything so completely that nothing is left out. This card is the second rule.\n\nIt is the one that travels best. A task like 'write the report' is paralysing; 'list the five sections' and 'draft the first paragraph of section one' are not. Programmers, mathematicians and anyone planning a project rely on the same move.\n\nThe phrase 'as might be necessary' matters. The aim is not to chop endlessly, but to keep splitting until each piece is something you can actually do or answer.",
+    "link": "https://www.gutenberg.org/ebooks/59"
+  },
+  {
+    "id": "learning-011",
+    "type": "quote",
+    "topic": "learning",
+    "tags": [
+      "persuasion",
+      "teaching",
+      "insight"
+    ],
+    "text": "People are generally better persuaded by the reasons which they have themselves discovered than by those which have come into the mind of others.",
+    "author": "Blaise Pascal",
+    "source": "Pensées, no. 10 (1670; trans. W. F. Trotter)",
+    "more": "Pascal's observation explains why lectures and arguments so often fail. Telling someone the answer, however clearly, hands them a conclusion with no roots. Helping them find it gives them ownership and a path back to it.\n\nLearning research points the same way. The generation effect, studied since the 1970s, shows that information you produce yourself, even from small cues, is remembered better than information you simply read.\n\nThis is useful for teaching, managing and parenting: ask the question that leads toward the insight rather than delivering it. In the pensée just before this one, Pascal adds a companion tip: to correct someone, first find the side from which they are right and admit it.",
+    "link": "https://www.gutenberg.org/ebooks/18269"
+  },
+  {
+    "id": "learning-012",
+    "type": "idea",
+    "topic": "learning",
+    "tags": [
+      "mental-models",
+      "thinking",
+      "munger"
+    ],
+    "title": "A latticework of models",
+    "text": "Charlie Munger argued that isolated facts are nearly useless unless they hang on a latticework of models: big ideas from many fields, like compound interest, incentives, feedback loops and margin of safety. Someone with only one model, he warned, is the man with a hammer to whom every problem looks like a nail.",
+    "author": "Charlie Munger",
+    "source": "A Lesson on Elementary Worldly Wisdom, talk at USC Business School (1994)",
+    "more": "Munger's point was that the world does not arrive sorted into academic departments. A business problem might be part psychology, part maths, part biology. If you know only one discipline, you will force everything into its frame.\n\nHe suggested learning the big ideas from each major field well enough to use them, not just to pass exams, and then checking a problem against several. He reckoned that around 80 or 90 important models do most of the work.\n\nYou can start small. Keep a list of models you understand, each with one real example. When facing a decision, run down the list and ask which ones apply.",
+    "link": "https://en.wikipedia.org/wiki/Mental_model"
+  },
+  {
+    "id": "learning-013",
+    "type": "idea",
+    "topic": "learning",
+    "tags": [
+      "mental-models",
+      "inversion",
+      "decisions"
+    ],
+    "title": "Invert, always invert",
+    "text": "Munger liked to repeat the mathematician Carl Jacobi's advice to invert problems. Instead of asking how to succeed, ask what would guarantee failure, then avoid it. In a 1986 graduation speech he described a good life by listing sure routes to a miserable one, like envy, resentment and unreliability.",
+    "author": "Charlie Munger",
+    "source": "Commencement speech at the Harvard School, Los Angeles (1986)",
+    "more": "Inversion works because our minds are better at spotting what is clearly wrong than at designing what is ideal. Ask 'how could I make this team miserable?' and the answers come fast: unclear priorities, surprise deadlines, credit taken by others. Now you have a list to avoid.\n\nJacobi used the idea in mathematics, where attacking a problem from its converse or its negation often makes it easier. Proof by contradiction is the same move.\n\nTry it on any plan: list the five fastest ways it could fail, and check you are not already doing any of them. It is a cousin of the premortem, and it takes two minutes.",
+    "link": "https://en.wikipedia.org/wiki/Carl_Gustav_Jacob_Jacobi"
+  },
+  {
+    "id": "learning-014",
+    "type": "idea",
+    "topic": "learning",
+    "tags": [
+      "focus",
+      "distraction",
+      "work"
+    ],
+    "title": "The cost of a quick check",
+    "text": "Cal Newport argues that the ability to focus without distraction on hard tasks is getting rarer just as it gets more valuable. He leans on Sophie Leroy's research on attention residue: after you switch tasks, part of your mind stays stuck on the last one, so even a quick check degrades the next stretch of work.",
+    "author": "Cal Newport",
+    "source": "Deep Work, part 1 (2016)",
+    "more": "Leroy's 2009 experiments found that people who left one task unfinished and moved to another performed worse on the second, because their thoughts kept drifting back. A quick look at your inbox can leave residue long after you close it.\n\nNewport's remedies are structural rather than motivational: schedule blocks of focused time in advance, batch shallow tasks like email together, and treat distraction-free work as a skill you practise, one that weakens without use.\n\nYou do not need a cabin in the woods. One protected 90-minute block a day, with your phone in another room, is enough to notice the difference.",
+    "link": "https://en.wikipedia.org/wiki/Cal_Newport"
+  },
+  {
+    "id": "learning-015",
+    "type": "idea",
+    "topic": "learning",
+    "tags": [
+      "decisions",
+      "luck",
+      "probability"
+    ],
+    "title": "Don't judge a decision by its result",
+    "text": "Former poker champion Annie Duke warns against resulting: judging a decision by how it turned out. A drunk driver who gets home safely did not make a good choice. A sound bet can still lose. If you only learn from outcomes, you will learn the wrong lessons from luck.",
+    "author": "Annie Duke",
+    "source": "Thinking in Bets, ch. 1 (2018)",
+    "more": "Duke opens her book with a famous American football call: a pass at the end of the 2015 Super Bowl that was intercepted and instantly branded one of the worst decisions ever. Her point is that the same call would have been praised if it had worked, and that a close look at the odds suggests it was defensible.\n\nThe fix is to separate the quality of a decision from the quality of its outcome. Ask what you knew at the time, what the options were, how you weighed the odds, and what you could have found out cheaply.\n\nThinking in probabilities helps. 'I'm 70% sure' leaves room for the 30%, so a bad result teaches you something instead of just stinging.",
+    "link": "https://en.wikipedia.org/wiki/Annie_Duke"
+  },
+  {
+    "id": "learning-016",
+    "type": "idea",
+    "topic": "learning",
+    "tags": [
+      "mindset",
+      "motivation",
+      "evidence"
+    ],
+    "title": "Growth mindset, honestly",
+    "text": "Carol Dweck's research suggests that people who see ability as something that can grow handle setbacks better than people who see it as fixed. The idea has something to it, but large recent studies find its effects on school results are real yet modest, not life-changing.",
+    "author": "Carol Dweck",
+    "source": "Mindset: The New Psychology of Success (2006)",
+    "more": "Dweck contrasts a fixed mindset, where failure reveals your limits, with a growth mindset, where failure is information about what to practise next. Praising effort and strategy rather than talent was one of her best-known recommendations.\n\nThe evidence has become more nuanced. A 2018 meta-analysis found weak overall links between mindset and achievement. A large 2019 national study in the US found that a short online mindset lesson raised grades slightly, mostly for lower-achieving students.\n\nThe useful version is not a poster slogan. It is concrete: when something goes wrong, ask what you would do differently next time, and then actually try it.",
+    "link": "https://en.wikipedia.org/wiki/Mindset"
+  },
+  {
+    "id": "learning-017",
+    "type": "fact",
+    "topic": "learning",
+    "tags": [
+      "planning",
+      "estimates",
+      "bias"
+    ],
+    "title": "Everyone's thesis took longer",
+    "text": "In a 1994 study, psychology students estimated their senior theses would take about 34 days. Even their worst-case guesses averaged under 49 days. The real average was 55.5 days, and only about 30% finished within the time they had predicted.",
+    "source": "Buehler, Griffin & Ross, Journal of Personality and Social Psychology (1994)",
+    "more": "Kahneman and Tversky named this the planning fallacy in 1979. We plan by imagining the specific steps going roughly as intended, and we underweight the dull fact that things rarely go as intended: illness, other people, revisions, plain procrastination.\n\nThe best-known fix is reference class forecasting. Instead of building an estimate from the inside, start from the outside: how long did similar projects actually take, for you or for others? Then adjust a little for what is genuinely different.\n\nIf you have no data, start collecting it. Write down estimates and actual times for a month. Most people find a fairly consistent multiplier, and using it is humbling and very useful.",
+    "link": "https://en.wikipedia.org/wiki/Planning_fallacy"
+  },
+  {
+    "id": "learning-018",
+    "type": "idea",
+    "topic": "learning",
+    "tags": [
+      "second-order",
+      "change",
+      "thinking"
+    ],
+    "title": "Chesterton's fence",
+    "text": "G. K. Chesterton imagined a reformer who finds a fence across a road and wants it gone because he sees no use for it. A wiser reformer says: first go and find out why it was put there. Only once you know its purpose can you judge whether removing it is safe.",
+    "author": "G. K. Chesterton",
+    "source": "The Thing, 'The Drift from Domesticity' (1929)",
+    "more": "The principle is about second-order thinking. Rules, processes and habits often exist because of a problem nobody remembers anymore, precisely because the fence solved it. Remove it and the problem can return.\n\nThat does not mean every fence is wise. The burden is on you to understand before you remove, not to keep everything forever. Often you will find the reason is long gone and the fence can go.\n\nIn practice: before deleting that odd line of code, cancelling a meeting or cutting a step in a process, spend ten minutes asking who added it and why. The answer is usually cheaper than rediscovering it the hard way.",
+    "link": "https://en.wikipedia.org/wiki/G._K._Chesterton"
+  },
+  {
+    "id": "learning-019",
+    "type": "question",
+    "topic": "learning",
+    "tags": [
+      "multitasking",
+      "focus",
+      "attention"
+    ],
+    "title": "Can you really multitask?",
+    "text": "Plenty of people say they are good at doing several things at once. What is actually happening in your head when you think you are multitasking?",
+    "source": "Monsell, Task switching, Trends in Cognitive Sciences (2003)",
+    "more": "For anything that needs attention, you are mostly switching, not doing two things at once. Each switch has a cost: in lab tasks, people are slower and make more errors right after changing tasks than after repeating the same one, and the cost remains even when they are warned a switch is coming.\n\nEach individual cost is small, often a fraction of a second, but it adds up over a day of constant toggling, and grows with more complex tasks. Add attention residue and the hidden price of just checking becomes clear.\n\nThe exception is pairing an automatic activity with a thinking one, like walking while talking. Two demanding tasks will always trade off against each other.",
+    "link": "https://en.wikipedia.org/wiki/Task_switching_(psychology)"
+  },
+  {
+    "id": "learning-020",
+    "type": "question",
+    "topic": "learning",
+    "tags": [
+      "learning-styles",
+      "myths",
+      "teaching"
+    ],
+    "title": "Are you a visual learner?",
+    "text": "Most teachers and students believe people learn best when taught in their preferred style: visual, auditory or hands-on. Does matching teaching to a person's learning style actually improve learning?",
+    "source": "Pashler, McDaniel, Rohrer & Bjork, Psychological Science in the Public Interest (2008)",
+    "more": "There is no good evidence that it does. In 2008, a panel led by Harold Pashler reviewed the research and set out what a proper test needs: sort learners by style, teach each group in more than one style, and check whether each group does best in its own style. Very few studies did this, and those that did mostly found no such match.\n\nPeople do have preferences, and some subjects suit some formats: maps are visual, music is auditory. But the best format depends on the content, not the person.\n\nThe practical upshot is to stop limiting yourself. Combining words and pictures, and actively testing yourself, helps nearly everyone.",
+    "link": "https://en.wikipedia.org/wiki/Learning_styles"
+  },
+  {
+    "id": "learning-021",
+    "type": "question",
+    "topic": "learning",
+    "tags": [
+      "practice",
+      "expertise",
+      "myths"
+    ],
+    "title": "Is 10,000 hours the magic number?",
+    "text": "Malcolm Gladwell's Outliers popularised the idea that about 10,000 hours of practice makes an expert. Is practice really what separates the best from everyone else?",
+    "source": "Macnamara, Hambrick & Oswald, Psychological Science (2014)",
+    "more": "Practice matters a lot, but it is not the whole story, and 10,000 is not a rule. Anders Ericsson, whose violin research inspired the idea, objected that Gladwell oversimplified it: the figure was an average at one age, and the kind of practice mattered as much as the amount.\n\nA 2014 meta-analysis by Brooke Macnamara and colleagues found deliberate practice explained about 26% of the differences in performance for games, 21% for music, 18% for sports, 4% for education and under 1% for professions. Starting age, aptitude, coaching and luck all play a part.\n\nSo practise, and practise well, with feedback and focus. Just do not expect a fixed number of hours to add up to mastery.",
+    "link": "https://en.wikipedia.org/wiki/Outliers_(book)"
+  }
+]

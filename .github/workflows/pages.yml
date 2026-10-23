@@ -4,7 +4,7 @@ name: Deploy PWA
 on:
   push:
     branches: [main]
-    paths: [apps/mobile/**, .github/workflows/pages.yml]
+    paths: [apps/mobile/**, packages/unrot-content/**, .github/workflows/pages.yml]
   workflow_dispatch:
 
 permissions:
@@ -30,6 +30,8 @@ jobs:
       EXPO_BASE_URL: /${{ github.event.repository.name }}
       # Optional: set this repo variable to turn on Google Drive backup on the web.
       EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID: ${{ vars.GOOGLE_WEB_CLIENT_ID }}
+      # Optional: set this repo variable (an https URL) to turn on Unrot sync on the web.
+      EXPO_PUBLIC_API_URL: ${{ vars.API_URL }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

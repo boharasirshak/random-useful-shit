@@ -44,8 +44,17 @@
       "expo-web-browser",
       [
         "expo-notifications",
-        { "enableRemoteNotifications": false }
-      ]
+        {
+          "enableRemoteNotifications": false
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "recordAudioAndroid": false
+        }
+      ],
+      "@kesha-antonov/react-native-background-downloader"
     ],
     "experiments": {
       "typedRoutes": true,

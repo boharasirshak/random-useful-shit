@@ -1,0 +1,5 @@
+{
+  "platforms": ["apple", "android"],
+  "apple": { "modules": ["SpeechFileModule"] },
+  "android": { "modules": ["expo.modules.speechfile.SpeechFileModule"] }
+}

@@ -1,6 +1,6 @@
 # 0002. No server; back up to Google Drive
 Date: 2026-10-22
-Status: accepted (revised same day: iCloud dropped, Google Drive on every platform)
+Status: accepted (revised same day: iCloud dropped, Google Drive on every platform). Still holds for the Calorie Tracker; ADR 0006 adds a shared server for tools that need one.
 
 ## Context
 

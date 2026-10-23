@@ -1,0 +1,347 @@
+[
+  {
+    "id": "space-001",
+    "type": "fact",
+    "topic": "space",
+    "tags": [
+      "light",
+      "sun",
+      "scale"
+    ],
+    "title": "You see the Sun as it was",
+    "text": "Sunlight takes about 8.3 minutes to reach Earth. So the Sun you see in the sky is the Sun as it was eight minutes ago. Light is the fastest thing there is, and even it needs time to cross space. That delay is also the best ruler we have.",
+    "source": "Wikipedia: Sunlight; Speed of light",
+    "more": "Light travels at exactly 299,792,458 metres per second in a vacuum; the metre is now defined by it. That's fast enough to circle Earth about seven and a half times in one second. But the Sun is around 150 million kilometres away, so the trip still takes over eight minutes.\n\nThis turns time into a measuring tape. The Moon is about 1.3 light-seconds away, the Sun about 8.3 light-minutes. The farther out we look, the further back in time we see. This thread climbs the cosmic distance ladder one rung at a time, from our own star to the edge of everything we can observe.",
+    "link": "https://en.wikipedia.org/wiki/Sunlight",
+    "thread": {
+      "id": "how-big-is-the-universe",
+      "title": "How big is the universe? (7 cards)",
+      "part": 1,
+      "of": 7
+    }
+  },
+  {
+    "id": "space-002",
+    "type": "fact",
+    "topic": "space",
+    "tags": [
+      "parallax",
+      "stars",
+      "distance"
+    ],
+    "title": "The first distance to a star",
+    "text": "In 1838, Friedrich Bessel became the first person to measure the distance to a star other than the Sun. He watched 61 Cygni shift very slightly as Earth circled the Sun, and calculated it was about 10.4 light-years away. The modern value is about 11.4.",
+    "source": "Wikipedia: 61 Cygni; Stellar parallax",
+    "more": "The method is parallax. Hold up a finger and look at it with one eye, then the other: it jumps against the background. As Earth swings from one side of its orbit to the other, nearby stars shift against more distant ones in the same way. Measure the shift, and geometry gives the distance.\n\nThe catch is that the shift is tiny. For 61 Cygni it's under a third of an arcsecond, smaller than a coin seen from 10 kilometres away. Astronomers hunted for stellar parallax for centuries. For most of the 20th century, though, parallax could only reach out a few hundred light-years, so a new ruler was needed.",
+    "link": "https://en.wikipedia.org/wiki/61_Cygni",
+    "thread": {
+      "id": "how-big-is-the-universe",
+      "title": "How big is the universe? (7 cards)",
+      "part": 2,
+      "of": 7
+    }
+  },
+  {
+    "id": "space-003",
+    "type": "fact",
+    "topic": "space",
+    "tags": [
+      "light-year",
+      "stars",
+      "scale"
+    ],
+    "title": "A light-year is a distance",
+    "text": "A light-year is how far light travels in a year: about 9.46 trillion kilometres. The nearest star after the Sun, Proxima Centauri, is about 4.25 light-years away. At the speed of Voyager 1, one of our fastest spacecraft, the trip would take about 75,000 years.",
+    "source": "Wikipedia: Light-year; Proxima Centauri; Voyager 1",
+    "more": "Voyager 1 is travelling at roughly 61,000 kilometres per hour, and it still needs tens of thousands of years to cover a distance light crosses in just over four. That gap is why every star in the night sky is, for now, completely out of reach.\n\nLight-years carry a hidden lesson too. When you look at Proxima Centauri, you see light that left it more than four years ago. And our galaxy, the Milky Way, is close to 90,000 light-years across, holding somewhere between 100 and 400 billion stars. Parallax mapped our neighbourhood. To measure the galaxy and what lies beyond it, astronomers needed a star whose true brightness they could know in advance.",
+    "link": "https://en.wikipedia.org/wiki/Light-year",
+    "thread": {
+      "id": "how-big-is-the-universe",
+      "title": "How big is the universe? (7 cards)",
+      "part": 3,
+      "of": 7
+    }
+  },
+  {
+    "id": "space-004",
+    "type": "fact",
+    "topic": "space",
+    "tags": [
+      "cepheids",
+      "distance",
+      "leavitt"
+    ],
+    "title": "Stars that reveal their own brightness",
+    "text": "Henrietta Swan Leavitt, measuring stars on photographic plates at Harvard, noticed in 1908 that certain pulsing stars, Cepheids, follow a rule: the slower they pulse, the brighter they truly are. By 1912 she had pinned the relationship down. Astronomers suddenly had a yardstick for the cosmos.",
+    "source": "Wikipedia: Henrietta Swan Leavitt",
+    "more": "Leavitt was one of the women Harvard College Observatory employed as human computers, cataloguing the positions and brightness of stars from glass plates. She was paid 30 cents an hour. Studying Cepheids in the Small Magellanic Cloud, she realised that since they were all at roughly the same distance from us, differences in how bright they looked reflected real differences in power.\n\nThat made Cepheids standard candles. Time a Cepheid's pulse and you know how bright it really is; compare that with how bright it appears, and you know how far away it is. Leavitt died in 1921, before her yardstick was used for one of the most dramatic measurements in astronomy.",
+    "link": "https://en.wikipedia.org/wiki/Henrietta_Swan_Leavitt",
+    "thread": {
+      "id": "how-big-is-the-universe",
+      "title": "How big is the universe? (7 cards)",
+      "part": 4,
+      "of": 7
+    }
+  },
+  {
+    "id": "space-005",
+    "type": "fact",
+    "topic": "space",
+    "tags": [
+      "galaxies",
+      "andromeda",
+      "hubble"
+    ],
+    "title": "The day the universe got bigger",
+    "text": "In the early 1920s, astronomers still argued over whether the Milky Way was the whole universe. Then Edwin Hubble found Cepheid stars in the Andromeda Nebula, applied Leavitt's rule, and showed it lay far outside our galaxy. Andromeda is a galaxy of its own, about 2.5 million light-years away.",
+    "source": "Wikipedia: Andromeda Galaxy",
+    "more": "In 1920, Harlow Shapley and Heber Curtis held the Great Debate over whether spiral nebulae were clouds inside our galaxy or separate island universes. Hubble settled it in 1925, using photographs from the 100-inch Hooker telescope at Mount Wilson.\n\nAlmost overnight, the universe went from one galaxy to an uncountable number of them. And the light-travel lesson still applies: the faint glow of Andromeda that reaches your eyes on a dark night left it about 2.5 million years ago, long before our own species existed. Next comes the strangest rung of the ladder.",
+    "link": "https://en.wikipedia.org/wiki/Andromeda_Galaxy",
+    "thread": {
+      "id": "how-big-is-the-universe",
+      "title": "How big is the universe? (7 cards)",
+      "part": 5,
+      "of": 7
+    }
+  },
+  {
+    "id": "space-006",
+    "type": "question",
+    "topic": "space",
+    "tags": [
+      "expansion",
+      "cosmology",
+      "light"
+    ],
+    "title": "Seeing farther than light could travel?",
+    "text": "The universe is about 13.8 billion years old, so no light can have travelled for longer than that. Yet the edge of the observable universe is about 46.5 billion light-years away. How can we see things farther away than light could travel in the entire age of the universe?",
+    "source": "Wikipedia: Observable universe",
+    "more": "The answer is that space itself has been expanding the whole time. In the late 1920s, astronomers including Hubble found that distant galaxies are moving away from us, and the farther they are, the faster they recede. Light from the most distant regions set out when those regions were much closer. While it travelled, the space it crossed kept stretching.\n\nSo 46.5 billion light-years is roughly where those sources are now, not where they were when the light left. The light arrives stretched to longer, redder wavelengths, which is how we measure the expansion. Beyond the observable edge, the universe very likely continues. We just can't receive light from it.",
+    "link": "https://en.wikipedia.org/wiki/Observable_universe",
+    "thread": {
+      "id": "how-big-is-the-universe",
+      "title": "How big is the universe? (7 cards)",
+      "part": 6,
+      "of": 7
+    }
+  },
+  {
+    "id": "space-007",
+    "type": "idea",
+    "topic": "space",
+    "tags": [
+      "earth",
+      "perspective",
+      "voyager"
+    ],
+    "title": "Home, from six billion kilometres",
+    "text": "In 1990, partly at Carl Sagan's urging, Voyager 1 turned its camera back toward home from over 6 billion kilometres away. Earth showed up as a speck smaller than one pixel. Sagan argued that this tiny dot is the clearest reminder that all our history and quarrels happen on one small, fragile world.",
+    "author": "Carl Sagan",
+    "source": "Pale Blue Dot (1994); Wikipedia: Pale Blue Dot",
+    "more": "The photo was taken on February 14, 1990, as part of a Family Portrait of the solar system. Soon afterwards, Voyager 1's cameras were switched off for good to save power. Earth takes up about 0.12 of a pixel, caught in a streak of scattered sunlight.\n\nIt's the right place to end this thread. We started with light taking eight minutes to arrive from the Sun, then climbed through parallax, light-years, Leavitt's pulsing stars and Hubble's galaxies to the edge of the observable universe. Sagan's point was that this sense of scale isn't just trivia to memorise. It can change how we see ourselves, and how gently we treat each other.",
+    "link": "https://en.wikipedia.org/wiki/Pale_Blue_Dot",
+    "thread": {
+      "id": "how-big-is-the-universe",
+      "title": "How big is the universe? (7 cards)",
+      "part": 7,
+      "of": 7
+    }
+  },
+  {
+    "id": "space-008",
+    "type": "quote",
+    "topic": "space",
+    "tags": [
+      "moon",
+      "telescope",
+      "galileo"
+    ],
+    "text": "I feel sure that the surface of the Moon is not perfectly smooth, free from inequalities and exactly spherical, as a large school of philosophers considers with regard to the Moon and the other heavenly bodies, but that, on the contrary, it is full of inequalities, uneven, full of hollows and protuberances, just like the surface of the Earth itself",
+    "author": "Galileo Galilei",
+    "source": "The Sidereal Messenger (1610), trans. Edward Stafford Carlos (1880)",
+    "more": "Galileo didn't invent the telescope, but he built improved versions and, crucially, pointed them at the sky. Through an instrument that made the Moon look about thirty times wider, he watched the line between light and dark. Bright points appeared inside the shadowed part, then grew and joined the lit region: mountain peaks catching the sunrise.\n\nThat mattered because the old view held that heavenly bodies were perfect spheres, made of a different substance from our messy Earth. A Moon with mountains and valleys was a world, not an ornament. Sidereus Nuncius was published on March 13, 1610, and it was the first scientific work based on observations through a telescope.",
+    "link": "https://www.gutenberg.org/ebooks/46036"
+  },
+  {
+    "id": "space-009",
+    "type": "quote",
+    "topic": "space",
+    "tags": [
+      "milky-way",
+      "stars",
+      "galileo"
+    ],
+    "text": "the Galaxy is nothing else but a mass of innumerable stars planted together in clusters. Upon whatever part of it you direct the telescope straightway a vast crowd of stars presents itself to view",
+    "author": "Galileo Galilei",
+    "source": "The Sidereal Messenger (1610), trans. Edward Stafford Carlos (1880)",
+    "more": "For all of human history, the Milky Way had been a soft band of light across the night sky, and philosophers argued about what it might be. Galileo's small telescope settled it in an instant: the glow was the combined light of stars too faint and too crowded for the naked eye to separate.\n\nIt was a first hint of how enormous the universe might be. If a faint smudge could hold countless suns, what else lay beyond the reach of our eyes? It took three more centuries to learn that the Milky Way is a vast disc-shaped galaxy, that we live inside it, and that it is only one galaxy among a great many.",
+    "link": "https://www.gutenberg.org/ebooks/46036"
+  },
+  {
+    "id": "space-010",
+    "type": "quote",
+    "topic": "space",
+    "tags": [
+      "solitude",
+      "perspective",
+      "milky-way"
+    ],
+    "text": "This whole earth which we inhabit is but a point in space. How far apart, think you, dwell the two most distant inhabitants of yonder star, the breadth of whose disk cannot be appreciated by our instruments? Why should I feel lonely? is not our planet in the Milky Way?",
+    "author": "Henry David Thoreau",
+    "source": "Walden, ch. 5, Solitude (1854)",
+    "more": "Thoreau lived alone in a small cabin by Walden Pond in Massachusetts from 1845 to 1847, and people kept asking whether he got lonely out there, especially on rainy and snowy nights. This was his reply.\n\nHis argument is a quietly cosmic one. Measured against the distances between stars, the distance between his cabin and the town is nothing. Loneliness, he goes on to say, isn't measured in miles at all. It's an odd and lovely comfort: you are never far from anyone, because all of us are riding the same speck of rock through the same galaxy.",
+    "link": "https://www.gutenberg.org/ebooks/205"
+  },
+  {
+    "id": "space-011",
+    "type": "quote",
+    "topic": "space",
+    "tags": [
+      "planets",
+      "life",
+      "copernicus"
+    ],
+    "text": "A Man that is of Copernicus's Opinion, that this Earth of ours is a Planet, carry'd round and enlighten'd by the Sun, like the rest of the Planets, cannot but sometimes think, that it's not improbable that the rest of the Planets have their Dress and Furniture, and perhaps their Inhabitants too as well as this Earth of ours",
+    "author": "Christiaan Huygens",
+    "source": "The Celestial Worlds Discover'd, Book I (English trans., 1698)",
+    "more": "Christiaan Huygens was one of the sharpest scientists of the 1600s. Grinding his own telescope lenses, he discovered Saturn's largest moon, Titan, and was the first to explain Saturn's odd appearance as a thin, flat ring. Shortly before his death in 1695 he finished this book, known in Latin as Cosmotheoros, and arranged for it to be published only after he died.\n\nHis reasoning is a direct consequence of the Copernican revolution. If Earth is just one planet among several, why should it be the only one with life? Huygens had no way to check. More than three centuries later, with thousands of planets found around other stars, we are still asking his question.",
+    "link": "https://www.gutenberg.org/ebooks/71191"
+  },
+  {
+    "id": "space-012",
+    "type": "quote",
+    "topic": "space",
+    "tags": [
+      "stargazing",
+      "curiosity",
+      "astronomy"
+    ],
+    "text": "one can not resist the temptation to utter a vigorous protest, and to declare that this glorious science is not the grinning mathematical skeleton that it has been represented to be.",
+    "author": "Garrett P. Serviss",
+    "source": "Astronomy with an Opera-glass, Introduction (1888)",
+    "more": "Serviss was an American journalist who wanted ordinary people to fall in love with the sky. For this book he surveyed the constellations visible from New York using only an opera glass, and promised readers he described nothing he hadn't seen himself.\n\nHe opens with a funny story. When Venus blazed in the evening sky in 1887, some New Yorkers decided it must be an electric balloon sent up every night by Thomas Edison. His cure for that kind of confusion was simple: you don't need an observatory to know the sky. A pair of binoculars and a few clear evenings will show you lunar craters, Jupiter's moons and star clusters the naked eye can't separate.",
+    "link": "https://www.gutenberg.org/ebooks/36741"
+  },
+  {
+    "id": "space-013",
+    "type": "fact",
+    "topic": "space",
+    "tags": [
+      "neutron-stars",
+      "density",
+      "stars"
+    ],
+    "title": "A teaspoon heavier than mountains",
+    "text": "A neutron star packs about 1.4 times the Sun's mass into a ball roughly 20 kilometres across. Its material is so dense that one teaspoon would have a mass of over 5.5 trillion kilograms, around 900 times the mass of the Great Pyramid of Giza.",
+    "source": "Wikipedia: Neutron star",
+    "more": "Neutron stars are what remain after some massive stars explode as supernovae. The core collapses under its own gravity so violently that its matter is crushed into a ball made mostly of neutrons, packed as tightly as the particles inside an atomic nucleus.\n\nThey are extreme in every way. As the core collapses it spins up, so newborn neutron stars can rotate several hundred times per second. Some sweep beams of radiation past Earth like lighthouses and are seen as pulsars, first discovered by Jocelyn Bell Burnell and Antony Hewish in 1967. When two neutron stars merge, they can forge heavy elements, including gold.",
+    "link": "https://en.wikipedia.org/wiki/Neutron_star"
+  },
+  {
+    "id": "space-014",
+    "type": "fact",
+    "topic": "space",
+    "tags": [
+      "venus",
+      "planets",
+      "rotation"
+    ],
+    "title": "A day longer than a year",
+    "text": "Venus takes about 243 Earth days to spin once on its axis, but only about 225 days to orbit the Sun. One rotation lasts longer than its whole year. It also spins backwards compared with most planets, so on Venus the Sun rises in the west.",
+    "source": "Wikipedia: Venus",
+    "more": "Because Venus spins slowly backwards while also moving around the Sun, the time from one sunrise to the next works out to about 117 Earth days. So a Venusian solar day is shorter than its rotation, but still very long.\n\nYou wouldn't enjoy the view. Venus is wrapped in a thick carbon dioxide atmosphere that traps heat in a runaway greenhouse effect, keeping the surface at around 464 °C. That makes it hotter than Mercury, even though Venus is nearly twice as far from the Sun. It's a planet almost the size of Earth that shows how differently two worlds can turn out.",
+    "link": "https://en.wikipedia.org/wiki/Venus"
+  },
+  {
+    "id": "space-015",
+    "type": "fact",
+    "topic": "space",
+    "tags": [
+      "voyager",
+      "exploration",
+      "interstellar"
+    ],
+    "title": "The farthest thing we ever made",
+    "text": "Voyager 1 launched on September 5, 1977. On August 25, 2012, it became the first spacecraft to enter interstellar space. It is the most distant human-made object, and in November 2026 it was expected to reach one light-day from Earth: a radio message takes a full day to arrive.",
+    "source": "Wikipedia: Voyager 1",
+    "more": "Voyager 1 flew past Jupiter and Saturn, sending back the first detailed images of those giant planets and their moons, then kept going. In 2012 it crossed the heliopause, the boundary where the Sun's wind of charged particles gives way to the thin gas between the stars.\n\nIt still carries the Golden Record, a gold-plated disc of sounds, music and images from Earth, intended for anyone who might someday find it. Its power source is slowly fading, and engineers have been switching instruments off one by one to keep it talking. Even after it falls silent, it will keep drifting outward for a very, very long time.",
+    "link": "https://en.wikipedia.org/wiki/Voyager_1"
+  },
+  {
+    "id": "space-016",
+    "type": "fact",
+    "topic": "space",
+    "tags": [
+      "mars",
+      "volcanoes",
+      "geology"
+    ],
+    "title": "The giant volcano of Mars",
+    "text": "Olympus Mons on Mars is about 21 kilometres high, roughly two and a half times the height of Mount Everest above sea level. It is about 600 kilometres wide and covers some 300,000 square kilometres, roughly the size of Italy. It is the tallest mountain on any planet we know.",
+    "source": "Wikipedia: Olympus Mons",
+    "more": "Olympus Mons is a shield volcano, built up by countless flows of runny lava, like the volcanoes of Hawaii but on a vastly bigger scale. Why is it so huge? Mars lacks moving tectonic plates. On Earth, plates slide over volcanic hotspots, spreading eruptions out into chains of islands. On Mars, the crust stays fixed over the hotspot, so a volcano can keep erupting in the same place until it reaches an enormous height.\n\nIts only real rival is Rheasilvia, a central peak on the asteroid Vesta, which is roughly tied with it as the tallest mountain yet found in the solar system. Earth has nothing remotely close.",
+    "link": "https://en.wikipedia.org/wiki/Olympus_Mons"
+  },
+  {
+    "id": "space-017",
+    "type": "fact",
+    "topic": "space",
+    "tags": [
+      "sun",
+      "solar-system",
+      "mass"
+    ],
+    "title": "The Sun is almost everything",
+    "text": "The Sun holds 99.86 percent of all the mass in the solar system. Jupiter and Saturn make up nearly 90 percent of what's left. Earth, the Moon and every other planet, moon, asteroid and comet are, by comparison, crumbs.",
+    "source": "Wikipedia: Solar System; Sun",
+    "more": "The Sun formed about 4.6 billion years ago, when a dense region of a gas cloud collapsed. Most of the material fell to the centre; the planets assembled from the thin disc of leftovers spinning around it.\n\nThat mass powers everything. In the Sun's core, hydrogen fuses into helium, and each second more than four billion kilograms of matter are converted into energy, as described by Einstein's E = mc². Even at that rate, the Sun has used up only a tiny fraction of its mass so far. It's about halfway through its stable, hydrogen-burning life, with billions of years still to go.",
+    "link": "https://en.wikipedia.org/wiki/Solar_System"
+  },
+  {
+    "id": "space-018",
+    "type": "idea",
+    "topic": "space",
+    "tags": [
+      "copernicus",
+      "heliocentrism",
+      "history"
+    ],
+    "title": "Moving the Sun to the centre",
+    "text": "Nicolaus Copernicus proposed that Earth is not the fixed centre of everything. In his model, Earth is one of several planets circling the Sun while spinning daily on its axis. The strange backward loops planets seem to make in our sky became simple: we watch them from a moving platform.",
+    "author": "Nicolaus Copernicus",
+    "source": "De revolutionibus orbium coelestium (1543)",
+    "more": "The idea wasn't completely new; the ancient Greek astronomer Aristarchus had suggested a Sun-centred system centuries earlier. But Copernicus worked it out mathematically in detail. His book appeared in 1543, the year he died. According to a well-known story, he was handed a printed copy on his deathbed.\n\nHis model still relied on perfect circles, which kept it from matching the planets exactly. Its real power lay in its simplicity and in the questions it raised. It took Kepler's ellipses and Galileo's telescope to turn it into something no one could reasonably deny.",
+    "link": "https://en.wikipedia.org/wiki/Nicolaus_Copernicus"
+  },
+  {
+    "id": "space-019",
+    "type": "idea",
+    "topic": "space",
+    "tags": [
+      "kepler",
+      "orbits",
+      "data"
+    ],
+    "title": "Eight minutes that changed astronomy",
+    "text": "Johannes Kepler spent years trying to fit the orbit of Mars with circles. His best circular model missed Tycho Brahe's observations by just eight minutes of arc, about a quarter of the Moon's apparent width. Kepler refused to ignore the gap, trusted the data, and found the true shape: an ellipse.",
+    "author": "Johannes Kepler",
+    "source": "Astronomia nova (1609)",
+    "more": "Tycho Brahe had spent decades making the most precise naked-eye measurements of the planets ever recorded. Eight arcminutes was larger than his observational error, and Kepler took that seriously. He wrote that those eight minutes alone would lead to the reform of all of astronomy.\n\nThey did. Kepler published his laws of planetary motion between 1609 and 1621: orbits are ellipses with the Sun at one focus, planets speed up when closer to the Sun, and there's a precise link between a planet's distance and its year. Decades later, Isaac Newton showed that gravity explains all three. It's a great lesson in honesty: the small discrepancy you're tempted to ignore can be the discovery.",
+    "link": "https://en.wikipedia.org/wiki/Astronomia_nova"
+  },
+  {
+    "id": "space-020",
+    "type": "question",
+    "topic": "space",
+    "tags": [
+      "aliens",
+      "fermi-paradox",
+      "life"
+    ],
+    "title": "Where is everybody?",
+    "text": "Our galaxy has somewhere between 100 and 400 billion stars, many far older than the Sun, and probably at least as many planets. If even a tiny fraction produced civilisations that could travel or signal between stars, some should have spread far by now. So why haven't we seen any sign of them?",
+    "source": "Wikipedia: Fermi paradox; Milky Way",
+    "more": "The puzzle is named after physicist Enrico Fermi. In 1950, over lunch at Los Alamos, a conversation about flying saucers moved on to other topics, and Fermi suddenly asked something like: where is everybody?\n\nThere are many possible answers, and each one says something striking. Maybe life is common but intelligence is rare. Maybe civilisations tend to destroy themselves or simply stay home. Maybe they're out there but too far apart in space and time, or communicate in ways we haven't thought to look for. Or maybe we really are alone. Every answer, if true, would be one of the most important facts we could ever learn.",
+    "link": "https://en.wikipedia.org/wiki/Fermi_paradox"
+  }
+]

@@ -1,0 +1,27 @@
+# Local stack. Dev: `docker compose up db redis -d`, then run the API with uv (see README).
+# Everything in containers: `docker compose up --build`.
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment: { POSTGRES_USER: app, POSTGRES_PASSWORD: app, POSTGRES_DB: app }
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U app"], interval: 2s, retries: 30 }
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+    healthcheck: { test: ["CMD", "redis-cli", "ping"], interval: 2s, retries: 30 }
+  api:
+    build: .
+    profiles: [full]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://app:app@db:5432/app
+      REDIS_URL: redis://redis:6379/0
+      GOOGLE_CLIENT_IDS: ${GOOGLE_CLIENT_IDS:-}
+      ADMIN_TOKEN: ${ADMIN_TOKEN:-}
+      UNROT_CATALOG: /content/unrot/cards.json
+    volumes: [../../packages/unrot-content:/content/unrot:ro]
+    ports: ["8000:8000"]
+    depends_on: { db: { condition: service_healthy }, redis: { condition: service_healthy } }
+volumes:
+  pgdata:
