@@ -16,13 +16,14 @@ export type PickInput = {
   hidden: string[]; // swiped left
   exclude: Set<string>; // already in the feed
   recent: string[]; // topics of the last few cards (up to 5), oldest first
+  recentTypes?: string[]; // their types (quote, idea, fact, question), oldest first
   now: number;
   random?: () => number;
 };
 
 const threadKey = (id: string, part: number) => `${id}#${part}`;
 
-export function pick({ cards, model, seen, hidden, exclude, recent, now, random = Math.random }: PickInput): Card | undefined {
+export function pick({ cards, model, seen, hidden, exclude, recent, recentTypes = [], now, random = Math.random }: PickInput): Card | undefined {
   const byPart = new Map(cards.filter(c => c.thread).map(c => [threadKey(c.thread!.id, c.thread!.part), c]));
   const shown = (id: string) => seen[id] != null || exclude.has(id);
   const no = new Set(hidden);
@@ -42,6 +43,12 @@ export function pick({ cards, model, seen, hidden, exclude, recent, now, random 
   const full = new Set(last.filter(t => last.filter(x => x === t).length >= 2));
   const varied = pool.filter(c => !full.has(c.topic));
   if (varied.length) pool = varied;
+  // And never three of one kind in a row: six quotes running is a wall of text.
+  const [t1, t2] = recentTypes.slice(-2);
+  if (t1 && t1 === t2) {
+    const mixed = pool.filter(c => c.type !== t1);
+    if (mixed.length) pool = mixed;
+  }
   // Explore: the topic you've seen least (and haven't clearly rejected), so new interests get found early.
   if (random() < EXPLORE) {
     const shownIn: Record<string, number> = {};

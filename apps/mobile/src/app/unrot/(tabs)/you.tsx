@@ -28,15 +28,15 @@ export default function YouScreen() {
         <Row title="Today" value={`${today.count} card${today.count === 1 ? '' : 's'}`} />
         <Row title="Read so far" value={`${seen} of ${cards}`} />
       </Section>
-      <TasteSection />
-      <Section>
-        <Row title="Change topics" onPress={() => router.push('/unrot/welcome')} right={chevron} />
-        <Row title="Show the gesture guide" onPress={() => { st().setCoached(false); router.navigate('/unrot'); }} right={chevron} />
-      </Section>
-      <Section header="Daily limit" footer="Reels never end. Unrot stops you after this many cards a day, with an option for ten more.">
+      <Section header="Cards a day" footer="Reels never end. Unrot stops you after this many, with an option for ten more.">
         <View style={{ padding: space.md }}>
           <Segmented inline options={LIMITS} value={String(limit) as (typeof LIMITS)[number][0]} onChange={v => st().setLimit(Number(v))} />
         </View>
+      </Section>
+      <TasteSection />
+      <Section>
+        <Row title="Change topics" onPress={() => router.push('/unrot/welcome')} right={chevron} />
+        <Row title="Show the gesture tips again" onPress={() => { st().relearn(); router.navigate('/unrot'); }} right={chevron} />
       </Section>
       <Section header="Sync" footer="Likes, saves and your taste sync with your account, like the rest of the app.">
         <Row title="Account and sync" onPress={() => router.push('/account')} right={chevron} />

@@ -9,7 +9,7 @@ const pdf = requireOptionalNativeModule<{ extractText(path: string, password: st
 export const canImport = !!pdf;
 
 export async function importPdf(): Promise<{ id: string; title: string; count: number } | null> {
-  if (!pdf) throw new Error('PDF reading needs the iPhone or Android app.');
+  if (!pdf) throw new Error('This build has no PDF module. Rebuild the app (npm run ios / android).');
   const picked = await File.pickFileAsync({ mimeTypes: 'application/pdf' });
   if (picked.canceled) return null;
   const file = picked.result;

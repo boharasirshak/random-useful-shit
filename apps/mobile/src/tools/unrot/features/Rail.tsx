@@ -1,31 +1,32 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
-import type { ComponentProps } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import type { ComponentProps, ReactNode } from 'react';
+import { Pressable, View } from 'react-native';
 import { tap } from '@/ui/haptics';
-import { INK } from './fonts';
+import { RiveView } from '@/ui/RiveView';
+import { C } from './style';
 
 type Icon = ComponentProps<typeof Ionicons>['name'];
-type Props = { liked: boolean; saved: boolean; onLike: () => void; onSave: () => void; onShare: () => void; onMore: () => void; onLess: () => void };
+type Props = { liked: boolean; saved: boolean; onLike: () => void; onSave: () => void; onShare: () => void; onMore: () => void };
 
-function Action({ icon, label, color = INK, onPress }: { icon: Icon; label: string; color?: string; onPress: () => void }) {
+function Action({ icon, label, color = C.ink, art, onPress }: { icon: Icon; label: string; color?: string; art?: ReactNode; onPress: () => void }) {
   return (
-    <Pressable onPress={() => { tap(); onPress(); }} accessibilityRole="button" accessibilityLabel={label} hitSlop={6}
-      style={({ pressed }) => ({ alignItems: 'center', gap: 3, transform: [{ scale: pressed ? 0.88 : 1 }] })}>
-      <Ionicons name={icon} size={30} color={color} style={{ textShadowColor: 'rgba(0,0,0,0.4)', textShadowRadius: 6 }} />
-      <Text style={{ color: INK, fontSize: 11, fontWeight: '600' }}>{label}</Text>
+    <Pressable onPress={() => { tap(); onPress(); }} accessibilityRole="button" accessibilityLabel={label} hitSlop={10}
+      style={({ pressed }) => ({ width: 44, height: 44, alignItems: 'center', justifyContent: 'center', opacity: pressed ? 0.5 : 1 })}>
+      {art ?? <Ionicons name={icon} size={27} color={color} />}
     </Pressable>
   );
 }
 
-// The buttons down the right edge. Every gesture has a button too, for people who don't swipe.
-export function Rail({ liked, saved, onLike, onSave, onShare, onMore, onLess }: Props) {
+// Four quiet buttons down the right edge, for everything the gestures do. "Not for me" lives in Go deeper and on a long press.
+export function Rail({ liked, saved, onLike, onSave, onShare, onMore }: Props) {
   return (
-    <View style={{ gap: 20, alignItems: 'center' }}>
-      <Action icon={liked ? 'heart' : 'heart-outline'} label={liked ? 'Liked' : 'Like'} color={liked ? '#FF375F' : INK} onPress={onLike} />
-      <Action icon={saved ? 'bookmark' : 'bookmark-outline'} label={saved ? 'Saved' : 'Save'} color={saved ? '#FFD60A' : INK} onPress={onSave} />
-      <Action icon="book-outline" label="Deeper" onPress={onMore} />
+    <View style={{ gap: 14, alignItems: 'center' }}>
+      <Action icon={liked ? 'heart' : 'heart-outline'} label={liked ? 'Unlike' : 'Like'} color={liked ? C.like : C.ink} onPress={onLike} />
+      <Action icon="bookmark-outline" label={saved ? 'Remove from saved' : 'Save'} onPress={onSave}
+        art={<RiveView artboard="UnrotSave" size={34} data={{ saved }} pointerEvents="none"
+          fallback={<Ionicons name={saved ? 'bookmark' : 'bookmark-outline'} size={26} color={C.ink} />} />} />
+      <Action icon="book-outline" label="Go deeper" onPress={onMore} />
       <Action icon="paper-plane-outline" label="Share" onPress={onShare} />
-      <Action icon="eye-off-outline" label="Less" onPress={onLess} />
     </View>
   );
 }

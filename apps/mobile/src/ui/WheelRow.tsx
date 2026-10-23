@@ -14,7 +14,8 @@ export function WheelRow({ label, wheels, startOpen = false }: { label: string; 
   const c = useColors();
   const [open, setOpen] = useState(startOpen);
   const text = (w: Wheel, n: number) => `${(w.format ?? String)(n)} ${w.suffix}`;
-  const shown = (w: Wheel) => (w.value ? text(w, w.value) : '–');
+  const set = (w: Wheel) => w.options.includes(w.value); // 0 can be a real value (0 in, 0 g); anything off the wheel is unset
+  const shown = (w: Wheel) => (set(w) ? text(w, w.value) : '–');
   const items = (w: Wheel) => w.options.map(o => <Picker.Item key={o} label={text(w, o)} value={String(o)} />);
 
   if (Platform.OS === 'web') {
@@ -44,7 +45,7 @@ export function WheelRow({ label, wheels, startOpen = false }: { label: string; 
       {open && (
         <View style={{ flexDirection: 'row', paddingHorizontal: space.sm }}>
           {wheels.map((w, i) => (
-            <Picker key={i} style={{ flex: 1 }} selectedValue={String(w.value || w.options[Math.floor(w.options.length / 2)])} onValueChange={v => w.onChange(Number(v))}>
+            <Picker key={i} style={{ flex: 1 }} selectedValue={String(set(w) ? w.value : w.options[Math.floor(w.options.length / 2)])} onValueChange={v => w.onChange(Number(v))}>
               {items(w)}
             </Picker>
           ))}

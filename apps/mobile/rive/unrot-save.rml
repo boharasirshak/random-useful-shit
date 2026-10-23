@@ -1,0 +1,149 @@
+<Rive version="1" kind="fragment">
+    <!-- Unrot save: bookmark. `saved=true` fills it yellow with a drop, bounce and sparkle; false empties it. Starts filled if saved is already true. -->
+    <Artboard defaultStateMachineId="8:70" viewModelId="8:60" styleId="8:3" x="1240" y="300" width="44" height="44" name="UnrotSave" id="8:2">
+        <LayoutComponentStyle name="Style" id="8:3"/>
+        <Shape x="34" y="9" opacity="0" scaleX="0" scaleY="0" name="Spark1" id="8:12"><Star width="10" height="10" points="4" innerRadius="0.32" name="P"/><Fill name="F"><SolidColor colorValue="FFF2F1EE" name="C"/></Fill></Shape>
+        <Shape x="9" y="12" opacity="0" scaleX="0" scaleY="0" name="Spark2" id="8:13"><Star width="7" height="7" points="4" innerRadius="0.32" name="P"/><Fill name="F"><SolidColor colorValue="FFF2F1EE" name="C"/></Fill></Shape>
+        <Node x="22" y="22" name="Base"><Node x="0" y="0" name="Mark" id="8:10"><Shape x="0" y="-12" opacity="0" scaleY="0" name="Filled" id="8:11"><PointsPath isClosed="true" isClockwise="true" name="P"><StraightVertex x="-9" y="0" radius="3"/><StraightVertex x="9" y="0" radius="3"/><StraightVertex x="9" y="24" radius="1.5"/><StraightVertex x="0" y="17" radius="1"/><StraightVertex x="-9" y="24" radius="1.5"/></PointsPath><Fill name="F"><SolidColor colorValue="FFF2F1EE" name="C"/></Fill><Stroke thickness="2.2" cap="round" join="round" name="S"><SolidColor colorValue="FFF2F1EE" name="C"/></Stroke></Shape><Shape x="0" y="0" name="Outline"><PointsPath isClosed="true" isClockwise="true" name="P"><StraightVertex x="-9" y="-12" radius="3"/><StraightVertex x="9" y="-12" radius="3"/><StraightVertex x="9" y="12" radius="1.5"/><StraightVertex x="0" y="5" radius="1"/><StraightVertex x="-9" y="12" radius="1.5"/></PointsPath><Stroke thickness="2.2" cap="round" join="round" name="S"><SolidColor colorValue="FFF5F1E8" name="C"/></Stroke></Shape></Node></Node>
+
+        <StateMachine name="UnrotSave" id="8:70">
+            <StateMachineLayer name="Main" id="8:71">
+                <AnyState x="800" y="-150"/><ExitState x="900" y="-150"/>
+                <EntryState x="0" y="0"><StateTransition stateToId="8:72"/></EntryState>
+                <AnimationState animationId="8:80" x="160" y="0" id="8:72">
+                    <StateTransition stateToId="8:75"><TransitionViewModelCondition><TransitionPropertyViewModelComparator><BindablePropertyBoolean><DataBindContext sourcePathIds="8:60-8:61" propertyKey="634"/></BindablePropertyBoolean></TransitionPropertyViewModelComparator><TransitionValueBooleanComparator value="true"/></TransitionViewModelCondition></StateTransition>
+                    <StateTransition stateToId="8:73" enableExitTime="true" exitTimeIsPercetange="true" exitTime="100"/>
+                </AnimationState>
+                <AnimationState animationId="8:81" x="400" y="-120" id="8:73">
+                    <StateTransition stateToId="8:74"><TransitionViewModelCondition><TransitionPropertyViewModelComparator><BindablePropertyBoolean><DataBindContext sourcePathIds="8:60-8:61" propertyKey="634"/></BindablePropertyBoolean></TransitionPropertyViewModelComparator><TransitionValueBooleanComparator value="true"/></TransitionViewModelCondition></StateTransition>
+                </AnimationState>
+                <AnimationState animationId="8:82" reset="true" x="640" y="-120" id="8:74">
+                    <StateTransition stateToId="8:75" enableExitTime="true" exitTimeIsPercetange="true" exitTime="100"/>
+                    <StateTransition stateToId="8:76"><TransitionViewModelCondition><TransitionPropertyViewModelComparator><BindablePropertyBoolean><DataBindContext sourcePathIds="8:60-8:61" propertyKey="634"/></BindablePropertyBoolean></TransitionPropertyViewModelComparator><TransitionValueBooleanComparator value="false"/></TransitionViewModelCondition></StateTransition>
+                </AnimationState>
+                <AnimationState animationId="8:83" x="640" y="120" id="8:75">
+                    <StateTransition stateToId="8:76"><TransitionViewModelCondition><TransitionPropertyViewModelComparator><BindablePropertyBoolean><DataBindContext sourcePathIds="8:60-8:61" propertyKey="634"/></BindablePropertyBoolean></TransitionPropertyViewModelComparator><TransitionValueBooleanComparator value="false"/></TransitionViewModelCondition></StateTransition>
+                </AnimationState>
+                <AnimationState animationId="8:84" reset="true" x="400" y="120" id="8:76">
+                    <StateTransition stateToId="8:73" enableExitTime="true" exitTimeIsPercetange="true" exitTime="100"/>
+                    <StateTransition stateToId="8:74"><TransitionViewModelCondition><TransitionPropertyViewModelComparator><BindablePropertyBoolean><DataBindContext sourcePathIds="8:60-8:61" propertyKey="634"/></BindablePropertyBoolean></TransitionPropertyViewModelComparator><TransitionValueBooleanComparator value="true"/></TransitionViewModelCondition></StateTransition>
+                </AnimationState>
+            </StateMachineLayer>
+        </StateMachine>
+
+        <LinearAnimation duration="15" name="Boot" id="8:80">
+            <KeyedObject objectId="8:10">
+                <KeyedProperty property="y"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:11">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:12">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:13">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+        </LinearAnimation>
+        <LinearAnimation duration="1" name="Empty" id="8:81">
+            <KeyedObject objectId="8:10">
+                <KeyedProperty property="y"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:11">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:12">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:13">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+        </LinearAnimation>
+        <LinearAnimation duration="30" name="ToFilled" id="8:82">
+            <KeyedObject objectId="8:10">
+                <KeyedProperty property="y"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="-3.5" frame="5" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1.5" frame="11" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="-0.8" frame="17" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0" frame="24" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1.04" frame="5" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.86" frame="11" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1.05" frame="17" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1" frame="24" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.97" frame="5" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1.12" frame="11" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.97" frame="17" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1" frame="24" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:11">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="hold"/><KeyFrameDouble value="1" frame="3" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="hold"/><KeyFrameDouble value="0" frame="3" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1" frame="11" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:12">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="hold"/><KeyFrameDouble value="1" frame="9" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="0" frame="0" interpolationType="hold"/><KeyFrameDouble value="0" frame="9" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1.1" frame="15" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0" frame="26" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="hold"/><KeyFrameDouble value="0" frame="9" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1.1" frame="15" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0" frame="26" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="rotation"><KeyFrameDouble value="0" frame="9" interpolationType="linear"/><KeyFrameDouble value="1.2" frame="26" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:13">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="hold"/><KeyFrameDouble value="1" frame="12" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="0" frame="0" interpolationType="hold"/><KeyFrameDouble value="0" frame="12" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.9" frame="18" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0" frame="29" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="hold"/><KeyFrameDouble value="0" frame="12" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.9" frame="18" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0" frame="29" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="rotation"><KeyFrameDouble value="0" frame="12" interpolationType="linear"/><KeyFrameDouble value="1.2" frame="29" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+        </LinearAnimation>
+        <LinearAnimation duration="1" name="Filled" id="8:83">
+            <KeyedObject objectId="8:10">
+                <KeyedProperty property="y"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:11">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:12">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:13">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+        </LinearAnimation>
+        <LinearAnimation duration="16" name="ToEmpty" id="8:84">
+            <KeyedObject objectId="8:10">
+                <KeyedProperty property="y"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.9" frame="5" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1" frame="16" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.9" frame="5" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1" frame="16" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:11">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0" frame="10" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0" frame="10" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:12">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="8:13">
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble></KeyedProperty>
+            </KeyedObject>
+        </LinearAnimation>
+    </Artboard>
+
+    <ViewModel defaultInstanceId="8:69" name="UnrotSave" id="8:60">
+        <ViewModelPropertyBoolean name="saved" id="8:61"/>
+        <ViewModelInstance exports="true" name="Default" id="8:69">
+            <ViewModelInstanceBoolean propertyValue="false" viewModelPropertyId="8:61"/>
+        </ViewModelInstance>
+    </ViewModel>
+</Rive>

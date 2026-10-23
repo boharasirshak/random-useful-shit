@@ -32,4 +32,12 @@ export const TOOLS: Tool[] = [
     color: '#12261C',
     logo: require('@/assets/tools/unrot.png'),
   },
+  {
+    id: 'reader',
+    name: 'Reader',
+    title: 'PDF Reader',
+    href: '/reader',
+    icon: 'book',
+    color: '#5856D6',
+  },
 ];

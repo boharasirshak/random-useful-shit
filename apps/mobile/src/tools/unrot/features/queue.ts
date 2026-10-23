@@ -7,7 +7,7 @@ export type Item = { key: string; kind: 'card' | 'review' | 'end'; id?: string }
 
 const REVIEW_EVERY = 6;
 
-// list: the feed so far; at: the index on screen now.
+// list: the feed so far; at: the index on screen now (-1 before the first card shows).
 export function extend(list: Item[], at: number, n: number): Item[] {
   const s = useUnrot.getState();
   const cards = getCards();
@@ -29,8 +29,8 @@ export function extend(list: Item[], at: number, n: number): Item[] {
       out.push({ key: `review-${due}`, kind: 'review', id: due });
       continue;
     }
-    const recent = out.slice(-5).flatMap(x => (x.id && byId.has(x.id) ? [byId.get(x.id)!.topic] : []));
-    const c = pick({ cards, model: s.model, seen: s.seen, hidden: s.hidden, exclude, recent, now });
+    const prev = out.slice(-5).flatMap(x => (x.id && byId.has(x.id) ? [byId.get(x.id)!] : []));
+    const c = pick({ cards, model: s.model, seen: s.seen, hidden: s.hidden, exclude, recent: prev.map(x => x.topic), recentTypes: prev.map(x => x.type), now });
     if (!c) break;
     out.push({ key: `card-${c.id}`, kind: 'card', id: c.id });
   }

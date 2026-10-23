@@ -1,39 +1,41 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
 import type { ReactNode } from 'react';
 import { Text, View } from 'react-native';
-import { cardBg, topic } from '@/tools/unrot/data/topics';
+import { topic } from '@/tools/unrot/data/topics';
 import type { Card } from '@/tools/unrot/lib/types';
-import { type } from '@/ui/theme';
-import { INK, INK_DIM, serif } from './fonts';
-import { TopicChip } from './TopicChip';
+import { Reveal } from './Reveal';
+import { C, sans } from './style';
 
-const KIND = { quote: 'Quote', idea: 'Big idea', fact: 'Did you know', question: 'Think about it' };
+const words = (s: string) => s.split(/\s+/).length;
+// Fewer words, bigger type, so a short line reads like a poster and the longest still fits without scrolling.
+const lead = (n: number) => (n <= 10 ? 34 : n <= 18 ? 30 : 26);
 
-// Shorter words get bigger type, like a poster.
-const size = (words: number) => (words <= 14 ? 32 : words <= 28 ? 27 : words <= 45 ? 23 : 20);
+type Props = { card: Card; width: number; height: number; top: number; bottom: number; active: boolean; children?: ReactNode };
 
-type Props = { card: Card; width: number; height: number; top: number; bottom: number; children?: ReactNode };
-
-// The front of a card: just the words, big, on the topic's color.
-export function CardFace({ card, width, height, top, bottom, children }: Props) {
-  const t = topic(card.topic);
-  const fs = size(card.text.split(/\s+/).length) - (card.type === 'quote' ? 0 : 3);
+// The front of a card: the words, big, a little above the middle of the screen. Ideas, facts and questions lead
+// with their title; quotes lead with the quote. The key phrase is the brightest, heaviest part. Topic sits quietly at the foot.
+export function CardFace({ card, width, height, top, bottom, active, children }: Props) {
+  const titled = !!card.title && card.type !== 'quote';
+  const size = lead(words(card.text));
+  const meta = [topic(card.topic).name, card.thread && `Part ${card.thread.part} of ${card.thread.of}`].filter(Boolean).join('  ·  ');
   return (
-    <View style={{ width, height, backgroundColor: cardBg(t.color), paddingTop: top, paddingBottom: bottom, paddingLeft: 24, paddingRight: 72, overflow: 'hidden' }}>
-      <Ionicons name={t.icon} size={width * 0.95} color={t.color} style={{ position: 'absolute', right: -width * 0.3, bottom: height * 0.06, opacity: 0.05 }} />
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
-        <TopicChip id={card.topic} />
-        {card.thread && <TopicChip id={card.topic} label={`${card.thread.part}/${card.thread.of} · ${card.thread.title}`} />}
+    <View style={{ width, height, backgroundColor: C.bg, paddingTop: top, paddingBottom: bottom, paddingLeft: 28, paddingRight: 76 }}>
+      <View style={{ flex: 1 }} />
+      <View style={{ gap: 20, maxWidth: 620 }}>
+        {titled && <Text style={sans(32, '700', { color: C.ink })}>{card.title}</Text>}
+        {titled ? (
+          <Reveal text={card.text} em={card.em} active={active} style={sans(20, '400', { color: C.body, lineHeight: 29 })} emStyle={{ color: C.ink, fontWeight: '600' }} />
+        ) : (
+          <Reveal text={card.text} em={card.em} active={active} style={sans(size, '500', { color: C.body })} emStyle={{ color: C.ink, fontWeight: '700' }} />
+        )}
+        {card.type === 'question' && <Text style={sans(15, '500', { color: C.dim })}>Swipe left for the answer</Text>}
+        <View style={{ gap: 2 }}>
+          {card.author && <Text style={sans(16, '600', { color: C.ink })}>{card.author}</Text>}
+          <Text style={sans(14, '400', { color: C.dim })} numberOfLines={2}>{card.source}</Text>
+        </View>
       </View>
-      <View style={{ flex: 1, justifyContent: 'center', gap: 14 }}>
-        <Text style={[type.footnote, { color: t.color, fontWeight: '700', letterSpacing: 1.2, textTransform: 'uppercase' }]}>{KIND[card.type]}</Text>
-        {card.title && card.type !== 'quote' && <Text style={[type.title2, { color: INK, fontSize: 25, lineHeight: 31 }]}>{card.title}</Text>}
-        {card.type === 'quote' && <Text style={{ fontFamily: serif, fontSize: 72, lineHeight: 72, height: 44, color: t.color }}>“</Text>}
-        <Text style={{ fontFamily: serif, fontSize: fs, lineHeight: Math.round(fs * 1.32), color: INK }}>{card.text}</Text>
-        {(card.author || card.type === 'quote') && <Text style={[type.headline, { color: INK, marginTop: 4 }]}>— {card.author}</Text>}
-        <Text style={[type.footnote, { color: INK_DIM }]} numberOfLines={2}>{card.source}</Text>
-      </View>
+      <View style={{ flex: 1.5 }} />
       {children}
+      <Text style={sans(13, '500', { color: C.dim, letterSpacing: 0.2 })} numberOfLines={1}>{meta}</Text>
     </View>
   );
 }

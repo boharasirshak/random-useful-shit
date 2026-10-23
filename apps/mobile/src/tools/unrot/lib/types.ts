@@ -8,6 +8,7 @@ export type Card = {
   tags: string[];
   title?: string;
   text: string;
+  em?: string; // the key phrase, highlighted (an exact part of text)
   author?: string;
   source: string;
   more: string; // the "go deeper" panel

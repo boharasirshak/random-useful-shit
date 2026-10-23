@@ -25,6 +25,8 @@ const CATEGORY: Record<Category, string> = { entree: 'Entrées', base: 'Bases', 
 const ONE: Record<string, string> = { entree: 'entrée', base: 'base', side: 'side', drink: 'drink' };
 const fmt = (n: number) => Math.round(n).toLocaleString();
 const CUSTOM = range(1, 300).map(n => n * 10); // 10–3,000 kcal
+const GRAMS = range(0, 300);
+const MACROS = [['p', 'Protein'], ['c', 'Carbs'], ['f', 'Fat']] as const;
 
 // Add Food, step 2: one place's menu. Order type and category are swipeable chips, so long menus stay tidy.
 export default function PlaceMenu() {
@@ -36,7 +38,9 @@ export default function PlaceMenu() {
   const { add } = useLogFood();
   const target = useBudget();
   const m = usePlaceMenu(place);
-  const [custom, setCustom] = useState(300);
+  const [custom, setCustom] = useState({ kcal: 300, p: 0, c: 0, f: 0 });
+  // Calories, then any macros you set as 1 g parts (0 g ones left out).
+  const customParts = [{ id: 'custom', qty: custom.kcal }, ...MACROS.map(([k]) => ({ id: `custom-${k}`, qty: custom[k] })).filter(p => p.qty)];
   const mealName = MEALS[meal];
   const active = m.build?.active != null ? m.build.slots[m.build.active].category : null;
   const picked = new Set(m.build ? [...m.build.slots.map(s => s.id), ...m.build.extras] : []);
@@ -46,7 +50,7 @@ export default function PlaceMenu() {
   const action = place === 'shake'
     ? { title: `Add to ${mealName} · ${fmt(shake)} kcal`, onPress: () => add({ parts: [{ id: 'shake', qty: 1 }] }) }
     : place === 'custom'
-      ? { title: `Add to ${mealName} · ${fmt(custom)} kcal`, onPress: () => add({ parts: [{ id: 'custom', qty: custom }] }) }
+      ? { title: `Add to ${mealName} · ${fmt(custom.kcal)} kcal`, onPress: () => add({ parts: customParts }) }
       : m.build
       ? isDone(m.build)
         ? { title: `Add to ${mealName}`, onPress: m.addBuild }
@@ -75,8 +79,11 @@ export default function PlaceMenu() {
         {place === 'shake' ? (
           <ShakeCard />
         ) : place === 'custom' ? (
-          <Section footer="For anything that isn’t on a menu.">
-            <WheelRow label="Calories" startOpen wheels={[{ value: custom, options: CUSTOM, suffix: 'kcal', format: fmt, onChange: setCustom }]} />
+          <Section footer="For anything that isn’t on a menu. Protein, carbs and fat are optional.">
+            <WheelRow label="Calories" startOpen wheels={[{ value: custom.kcal, options: CUSTOM, suffix: 'kcal', format: fmt, onChange: kcal => setCustom(s => ({ ...s, kcal })) }]} />
+            {MACROS.map(([k, label]) => (
+              <WheelRow key={k} label={label} wheels={[{ value: custom[k], options: GRAMS, suffix: 'g', onChange: g => setCustom(s => ({ ...s, [k]: g })) }]} />
+            ))}
           </Section>
         ) : m.build && m.order ? (
           <>

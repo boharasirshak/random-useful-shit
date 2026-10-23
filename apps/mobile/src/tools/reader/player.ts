@@ -2,7 +2,6 @@
 // expo-audio playlist, so background playback, lock-screen controls and speed are the OS's job, not ours.
 import { createAudioPlaylist, setAudioModeAsync, type AudioPlaylist } from 'expo-audio';
 import { Directory, File } from 'expo-file-system';
-import { Platform } from 'react-native';
 import { create } from 'zustand';
 import { makeSynth } from '@/tools/reader/engine';
 import { audioExt, type Marker, type Synth } from '@/tools/reader/engine/types';
@@ -29,12 +28,12 @@ type Book = { id: string; title: string; sentences: Sentence[] };
 
 const LOOKAHEAD = 6; // sentences rendered ahead of the cursor
 const KEEP = 30; // rendered files kept behind the cursor (lock-screen "previous" needs a few)
-const ext = audioExt(Platform.OS === 'ios');
 
 let playlist: AudioPlaylist | null = null;
 let book: Book | null = null;
 let synth: Synth;
 let dir: Directory;
+let ext = 'wav';
 let base = 0; // sentence index of track 0 in the playlist
 let rendered = new Map<number, Rendered>();
 let renderNext = 0;
@@ -83,6 +82,7 @@ export async function open(b: Book, voice: Voice, rate: number, at: number) {
 export function setVoice(voice: Voice) {
   if (!book) return;
   synth = makeSynth(voice);
+  ext = audioExt(voice);
   dir = audioDir(book.id, voiceKey(voice));
   rebuild(usePlayer.getState().index, wantPlay);
 }

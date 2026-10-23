@@ -13,7 +13,7 @@ export default function UnrotLayout() {
   if (!hydrated || !catalogReady) return null;
   const modal = Platform.OS === 'web' ? 'modal' : 'fullScreenModal';
   return (
-    <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: '#0A0A0C' } }}>
+    <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: '#0B0B0C' } }}>
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="welcome" options={{ presentation: modal, gestureEnabled: false }} />
       <Stack.Screen name="card/[id]" options={{ presentation: modal }} />

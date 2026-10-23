@@ -28,8 +28,10 @@ test('shake uses the user value, unknown ids count as 0', () => {
   assert.equal(entryKcal({ meal: 'snacks', qty: 1, parts: [{ id: 'gone', qty: 1 }] }, 200), 0);
 });
 
-test('custom calories: the part qty is the kcal', () => {
-  assert.equal(totalKcal([{ meal: 'snacks', qty: 2, parts: [{ id: 'custom', qty: 350 }] }], 200), 700);
+test('custom calories: the part qty is the kcal, macro parts add grams but no kcal', () => {
+  const e = { meal: 'snacks' as const, qty: 2, parts: [{ id: 'custom', qty: 350 }, { id: 'custom-p', qty: 20 }, { id: 'custom-f', qty: 10 }] };
+  assert.equal(totalKcal([e], 200), 700);
+  assert.deepEqual(totalMacros([e], 200, 30), { p: 40, c: 0, f: 20 });
 });
 
 test('stepping to zero removes the line', () => {

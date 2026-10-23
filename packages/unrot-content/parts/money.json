@@ -3,246 +3,391 @@
     "id": "money-001",
     "type": "quote",
     "topic": "money",
-    "tags": ["barter", "adam-smith", "origins"],
-    "text": "The butcher has more meat in his shop than he himself can consume, and the brewer and the baker would each of them be willing to purchase a part of it. But they have nothing to offer in exchange... and the butcher is already provided with all the bread and beer which he has immediate occasion for.",
+    "tags": [
+      "barter",
+      "adam-smith",
+      "origins"
+    ],
+    "text": "The butcher has more meat in his shop than he himself can consume … But they have nothing to offer in exchange…",
+    "em": "nothing to offer in exchange",
     "author": "Adam Smith",
     "source": "The Wealth of Nations, Book 1, ch. 4, Of the Origin and Use of Money (1776)",
-    "more": "This is the textbook story of where money came from. Imagine a world of barter. The butcher wants nothing the baker has right now, so no trade happens. Economists later named this the problem of the double coincidence of wants: both sides have to want what the other has, at the same moment.\n\nSmith's solution is that sensible people started keeping some commodity everyone would accept, like cattle, salt, shells or metal, and that commodity became money.\n\nIt's a tidy, logical story, and it has shaped economics for 250 years. The next card asks an awkward question: did it ever actually happen that way?",
+    "more": "This is the textbook story of where money came from. The brewer and the baker want the butcher's meat, but he already has all the bread and beer he needs, so no trade happens. Economists later called it the double coincidence of wants.\n\nSmith's fix is that people started keeping something everyone would accept, like cattle, salt, shells or metal, and that became money. The story has shaped economics for 250 years. The next card asks whether it ever happened.",
     "link": "https://www.gutenberg.org/ebooks/3300",
-    "thread": { "id": "where-money-came-from", "title": "Where money came from (8 cards)", "part": 1, "of": 8 }
+    "thread": {
+      "id": "where-money-came-from",
+      "title": "Where money came from (8 cards)",
+      "part": 1,
+      "of": 8
+    }
   },
   {
     "id": "money-002",
     "type": "idea",
     "topic": "money",
-    "tags": ["debt", "credit", "anthropology"],
+    "tags": [
+      "debt",
+      "credit",
+      "anthropology"
+    ],
     "title": "Debt came before money",
-    "text": "The anthropologist David Graeber pointed out that nobody has ever found a society that ran on everyday barter in the way the textbooks describe. Neighbours instead kept loose track of who owed whom. In his account, credit and debt came first, and coins and barter showed up later, mostly between strangers who didn't trust each other.",
+    "text": "Nobody has found a society that ran on everyday barter, David Graeber noted. Neighbours tracked who owed whom. In his account, debt came first, coins later.",
+    "em": "debt came first",
     "author": "David Graeber",
     "source": "Debt: The First 5,000 Years (2011)",
-    "more": "Graeber wasn't the first to say this. Anthropologists had long reported that barter, where it exists, tends to happen between outsiders, not between neighbours who see each other every day.\n\nWithin a village, if you need the butcher's meat now, you take it and owe him. The obligation is remembered, settled later, often in a different form. That's credit, and it needs trust and memory, not coins.\n\nSome of the earliest writing we have from Mesopotamia, thousands of years before coins, consists of accounts and records of what people owed. Which raises the question of what those debts were measured in.",
+    "more": "Graeber was an anthropologist, and others in his field had reported this long before him. Barter, where it exists, tends to happen between strangers who don't trust each other, rarely between neighbours who see each other daily.\n\nIn a village, if you need the butcher's meat now, you take it and owe him. The debt gets remembered and settled later, often in some other form. Some of the oldest writing from Mesopotamia, thousands of years before coins, is records of what people owed.",
     "link": "https://en.wikipedia.org/wiki/Debt:_The_First_5,000_Years",
-    "thread": { "id": "where-money-came-from", "title": "Where money came from (8 cards)", "part": 2, "of": 8 }
+    "thread": {
+      "id": "where-money-came-from",
+      "title": "Where money came from (8 cards)",
+      "part": 2,
+      "of": 8
+    }
   },
   {
     "id": "money-003",
     "type": "fact",
     "topic": "money",
-    "tags": ["mesopotamia", "silver", "origins"],
+    "tags": [
+      "mesopotamia",
+      "silver",
+      "origins"
+    ],
     "title": "The shekel was a weight first",
-    "text": "Before it was a coin, the shekel was a unit of weight in ancient Mesopotamia. The word is attested by about 2150 BC, and the Code of Hammurabi, around 1750 BC, prices things like a year of unskilled labour in shekels of silver. Money existed as a unit of account long before anyone stamped a coin.",
+    "text": "The shekel started as a unit of weight in Mesopotamia, attested by about 2150 BC. Hammurabi's code priced a year of unskilled labour in shekels of silver.",
+    "em": "started as a unit of weight",
     "source": "Wikipedia, Shekel",
-    "more": "The name comes from a Semitic root meaning to weigh, and it survives in Hebrew words for weight and for weighing. A shekel was simply a set amount of silver, weighed out on a scale.\n\nIn practice, a lot of everyday dealing in Mesopotamia didn't involve handing silver around at all. Temple and palace administrators recorded obligations in shekels, and debts could be settled in barley or other goods at an agreed rate.\n\nThat's the key shift in thinking: money is first a way of measuring and keeping score. The physical object, a lump of silver, a coin, a note, came later and was just a convenient token of that score.",
+    "more": "The name comes from a Semitic root meaning to weigh, and a shekel was simply a set amount of silver on a scale. The Code of Hammurabi dates to around 1750 BC.\n\nMuch everyday dealing involved no silver changing hands. Temple and palace administrators recorded debts in shekels, and people settled them in barley or other goods at an agreed rate. Money was a unit of account long before anyone stamped a coin.",
     "link": "https://en.wikipedia.org/wiki/Shekel",
-    "thread": { "id": "where-money-came-from", "title": "Where money came from (8 cards)", "part": 3, "of": 8 }
+    "thread": {
+      "id": "where-money-came-from",
+      "title": "Where money came from (8 cards)",
+      "part": 3,
+      "of": 8
+    }
   },
   {
     "id": "money-004",
     "type": "fact",
     "topic": "money",
-    "tags": ["coins", "lydia", "origins"],
+    "tags": [
+      "coins",
+      "lydia",
+      "origins"
+    ],
     "title": "The first coins came from Lydia",
-    "text": "The oldest coins we know of were made in Lydia, in what is now western Turkey, around the 7th century BC. They were stamped lumps of electrum, a natural mix of gold and silver. The stamp was the breakthrough: it promised a standard weight, so nobody had to weigh each piece.",
+    "text": "The oldest known coins come from Lydia, in today's western Turkey, around the 7th century BC. Their stamp promised a standard weight, so nobody had to weigh them.",
+    "em": "stamp promised a standard weight",
     "source": "Wikipedia, Lydia",
-    "more": "Lydia was rich in electrum, which washed down from its rivers, and its kings put that wealth to work. Herodotus later wrote that the Lydians were the first people known to have struck coins of gold and silver.\n\nThe most famous Lydian king was Croesus, whose name still means fabulously rich. He is credited with introducing coins of pure gold and pure silver, rather than the unpredictable natural alloy.\n\nCoins spread fast through the Greek world. A stamped coin was money you could trust without a scale, as long as you trusted whoever stamped it. That question of trust is about to get much bigger.",
+    "more": "They were lumps of electrum, a natural mix of gold and silver that washed down Lydia's rivers. Herodotus wrote that the Lydians were the first people known to strike coins of gold and silver.\n\nTheir most famous king, Croesus, whose name still means fabulously rich, is credited with the first coins of pure gold and pure silver. Coins spread fast through the Greek world. You could trust one without a scale, as long as you trusted whoever stamped it.",
     "link": "https://en.wikipedia.org/wiki/Lydia",
-    "thread": { "id": "where-money-came-from", "title": "Where money came from (8 cards)", "part": 4, "of": 8 }
+    "thread": {
+      "id": "where-money-came-from",
+      "title": "Where money came from (8 cards)",
+      "part": 4,
+      "of": 8
+    }
   },
   {
     "id": "money-005",
     "type": "fact",
     "topic": "money",
-    "tags": ["china", "paper-money", "song-dynasty"],
-    "title": "Paper money was a fix for heavy coins",
-    "text": "The first paper money appeared in Sichuan, China, in the 11th century, during the Song dynasty. Sichuan used iron coins, which were heavy and low in value, so merchants began issuing paper notes called jiaozi instead. Within a few years merchant groups standardized them, and the government soon took over issuing them.",
+    "tags": [
+      "china",
+      "paper-money",
+      "song-dynasty"
+    ],
+    "title": "Iron coins gave us paper money",
+    "text": "The first paper money appeared in Sichuan, China, in the 11th century. Iron coins there were heavy and worth little, so merchants issued notes called jiaozi.",
+    "em": "first paper money appeared in Sichuan",
     "source": "Wikipedia, Jiaozi (currency)",
-    "more": "The early notes were essentially receipts: deposit your iron cash, carry a slip of paper, and redeem it later. That's far easier than lugging strings of iron coins around a region of mountains and rivers.\n\nOnce the state took control, notes were printed with multiple colours and seals to fight counterfeiting, and the issuing office charged a small fee for exchanging coins into paper.\n\nHere money becomes almost pure promise. The paper itself is worth nothing. Its value rests entirely on believing the issuer will honour it, and on not issuing too much. Later Chinese governments learned the hard way what happens when they print too freely.",
+    "more": "The early notes worked like receipts. You deposited iron cash, carried the slip and redeemed it later, which beat hauling strings of coins through mountains and rivers. Merchant groups soon standardized them, and the Song government took over.\n\nState notes were printed in several colours with seals against counterfeiting. The paper itself was worthless, so its value rested on trust in the issuer and on not printing too much. Later Chinese governments learned that the hard way.",
     "link": "https://en.wikipedia.org/wiki/Jiaozi_(currency)",
-    "thread": { "id": "where-money-came-from", "title": "Where money came from (8 cards)", "part": 5, "of": 8 }
+    "thread": {
+      "id": "where-money-came-from",
+      "title": "Where money came from (8 cards)",
+      "part": 5,
+      "of": 8
+    }
   },
   {
     "id": "money-006",
     "type": "idea",
     "topic": "money",
-    "tags": ["coins", "inflation", "incentives"],
+    "tags": [
+      "coins",
+      "inflation",
+      "incentives"
+    ],
     "title": "Bad money drives out good",
-    "text": "Gresham's law says that when two forms of money must legally be accepted at the same face value, people hoard the more valuable one and spend the worse one. Mix full-silver coins with debased ones and the good coins vanish into drawers and melting pots, leaving only the bad ones in circulation.",
+    "text": "If a full silver coin and a debased one must legally be worth the same, people hoard the good one and spend the bad. That's Gresham's law.",
+    "em": "hoard the good one",
     "author": "Thomas Gresham",
     "source": "Gresham's law, named by Henry Dunning Macleod in 1857 after Sir Thomas Gresham (1519-1579)",
-    "more": "Gresham was a Tudor financier who advised Elizabeth I after her father, Henry VIII, had badly debased England's coinage. But he didn't discover the idea. Nicole Oresme and Nicolaus Copernicus described it, and the comic playwright Aristophanes joked about the same effect in ancient Athens.\n\nThe law is really about incentives. If the state says a coin with half the silver is worth the same as a full one, nobody sensible pays with the full one.\n\nIt also shows why debasement tempts rulers. Shaving metal from each coin lets a government spend more without raising taxes, quietly passing the cost to everyone holding money. Which leads to Keynes.",
+    "more": "Thomas Gresham was a Tudor financier who advised Elizabeth I after her father, Henry VIII, had badly debased England's coins. He didn't discover the idea. Nicole Oresme and Copernicus described it, and Aristophanes joked about it in ancient Athens. Henry Dunning Macleod named it after Gresham in 1857.\n\nDebasement tempts rulers because shaving metal from each coin lets a government spend more without raising taxes. The cost lands quietly on everyone holding money.",
     "link": "https://en.wikipedia.org/wiki/Gresham%27s_law",
-    "thread": { "id": "where-money-came-from", "title": "Where money came from (8 cards)", "part": 6, "of": 8 }
+    "thread": {
+      "id": "where-money-came-from",
+      "title": "Where money came from (8 cards)",
+      "part": 6,
+      "of": 8
+    }
   },
   {
     "id": "money-007",
     "type": "quote",
     "topic": "money",
-    "tags": ["inflation", "keynes", "currency"],
-    "text": "There is no subtler, no surer means of overturning the existing basis of society than to debauch the currency. The process engages all the hidden forces of economic law on the side of destruction, and does it in a manner which not one man in a million is able to diagnose.",
+    "tags": [
+      "inflation",
+      "keynes",
+      "currency"
+    ],
+    "text": "There is no subtler, no surer means of overturning the existing basis of society than to debauch the currency.",
+    "em": "to debauch the currency",
     "author": "John Maynard Keynes",
     "source": "The Economic Consequences of the Peace, ch. 6 (1919)",
-    "more": "Keynes wrote this in 1919, after resigning from the British delegation at the Paris peace talks in protest at the reparations being imposed on Germany. A few lines earlier he notes that Lenin is said to have called debauching the currency the best way to destroy capitalism.\n\nHis point is that inflation is a hidden tax and a hidden transfer. Through it, governments can confiscate, secretly and unobserved, a large part of their citizens' wealth, enriching some and ruining others, while everyone blames speculators.\n\nWithin four years Germany was in hyperinflation. The whole history in this thread comes down to this: money works only while people trust it.",
+    "more": "Keynes wrote this in 1919, after resigning from the British delegation at the Paris peace talks in protest at the reparations imposed on Germany. A few lines earlier he notes that Lenin is said to have called this the best way to destroy capitalism.\n\nHis point is that inflation is a hidden tax. Governments can quietly confiscate a large part of their citizens' wealth, enriching some and ruining others, while everyone blames speculators. Within four years Germany was in hyperinflation.",
     "link": "https://www.gutenberg.org/ebooks/15776",
-    "thread": { "id": "where-money-came-from", "title": "Where money came from (8 cards)", "part": 7, "of": 8 }
+    "thread": {
+      "id": "where-money-came-from",
+      "title": "Where money came from (8 cards)",
+      "part": 7,
+      "of": 8
+    }
   },
   {
     "id": "money-008",
     "type": "idea",
     "topic": "money",
-    "tags": ["trust", "harari", "stories"],
-    "title": "Money is a story we all believe",
-    "text": "Yuval Noah Harari calls money the most universal and efficient system of mutual trust ever invented. A banknote or a number in an app has almost no value in itself. It works because everyone believes everyone else will accept it, including strangers who share nothing else, not even a language or a religion.",
+    "tags": [
+      "trust",
+      "harari",
+      "stories"
+    ],
+    "title": "Money runs on mutual trust",
+    "text": "A banknote is just paper, yet total strangers accept it. Yuval Noah Harari calls money the most universal and efficient system of mutual trust ever invented.",
+    "em": "system of mutual trust ever invented",
     "author": "Yuval Noah Harari",
     "source": "Sapiens: A Brief History of Humankind, ch. 10 (English edition, 2014)",
-    "more": "This ties the whole thread together. Smith imagined money as a handy commodity. Graeber showed debts and trust came first. Mesopotamian scribes kept score in shekels of silver. Lydian kings stamped their guarantee on metal. Song China made it paper. Gresham and Keynes showed what happens when that trust is abused.\n\nAt every stage, the thing that mattered was not the object but the shared belief behind it. Most money today is not even paper. It's entries in bank databases.\n\nHarari's twist is that money isn't less real because it's imagined. Shared stories, like money, laws and nations, are exactly what let millions of strangers cooperate.",
+    "more": "It works between people who share nothing else, not even a language or a religion. Most money today isn't even paper. It's entries in bank databases.\n\nThis thread followed that trust. Smith imagined a handy commodity, Graeber put debt first, Mesopotamian scribes kept score in silver, Lydian kings stamped metal and Song China made it paper. For Harari, shared stories like money are what let millions of strangers cooperate.",
     "link": "https://en.wikipedia.org/wiki/Sapiens:_A_Brief_History_of_Humankind",
-    "thread": { "id": "where-money-came-from", "title": "Where money came from (8 cards)", "part": 8, "of": 8 }
+    "thread": {
+      "id": "where-money-came-from",
+      "title": "Where money came from (8 cards)",
+      "part": 8,
+      "of": 8
+    }
   },
   {
     "id": "money-009",
     "type": "quote",
     "topic": "money",
-    "tags": ["self-interest", "adam-smith", "markets"],
+    "tags": [
+      "self-interest",
+      "adam-smith",
+      "markets"
+    ],
     "text": "It is not from the benevolence of the butcher, the brewer, or the baker that we expect our dinner, but from their regard to their own interest.",
+    "em": "their regard to their own interest",
     "author": "Adam Smith",
     "source": "The Wealth of Nations, Book 1, ch. 2 (1776)",
-    "more": "This is probably the most quoted line in economics, and it's often misread as greed is good. Smith's point is narrower and more interesting. Trade lets strangers serve each other without needing to be friends. The baker doesn't have to love you. He just has to want your money, and you his bread.\n\nThe next sentence matters: we address ourselves, he says, not to their humanity but to their self-love, and talk of their advantages, not our needs.\n\nSmith also wrote a whole book, The Theory of Moral Sentiments, on sympathy and conscience. He didn't think people were only selfish. He thought markets work even when they are.",
+    "more": "This may be the most quoted line in economics, and it often gets misread as greed is good. Smith meant something narrower. Trade lets strangers serve each other without being friends. The baker doesn't have to love you, he just has to want your money.\n\nSmith also wrote a whole book, The Theory of Moral Sentiments, on sympathy and conscience. He didn't think people were only selfish. He thought markets work even when they are.",
     "link": "https://www.gutenberg.org/ebooks/3300"
   },
   {
     "id": "money-010",
     "type": "quote",
     "topic": "money",
-    "tags": ["monopoly", "adam-smith", "incentives"],
-    "text": "People of the same trade seldom meet together, even for merriment and diversion, but the conversation ends in a conspiracy against the public, or in some contrivance to raise prices.",
+    "tags": [
+      "monopoly",
+      "adam-smith",
+      "incentives"
+    ],
+    "text": "People of the same trade seldom meet together, even for merriment and diversion, but the conversation ends in a conspiracy against the public…",
+    "em": "a conspiracy against the public",
     "author": "Adam Smith",
     "source": "The Wealth of Nations, Book 1, ch. 10 (1776)",
-    "more": "People who think of Adam Smith as a cheerleader for business are often surprised by this line. Smith was deeply suspicious of merchants and manufacturers whenever they could escape competition. He saw them lobbying for monopolies, tariffs and guild privileges, all at the public's expense.\n\nHe was realistic about the fix, too. In the very next sentence he admits that such meetings can't be banned without trampling liberty. His argument is that the law should at least not make them easier, for example by requiring traders to register together.\n\nModern antitrust law grew out of the same worry: competitors cooperating to raise prices.",
+    "more": "The sentence ends: or in some contrivance to raise prices. People who see Smith as a cheerleader for business are often surprised. He distrusted merchants and manufacturers whenever they could escape competition, and watched them lobby for monopolies and tariffs at the public's expense.\n\nIn the next sentence he admits such meetings can't be banned without trampling liberty. He argued the law shouldn't make them easier, for example by making traders register together.",
     "link": "https://www.gutenberg.org/ebooks/3300"
   },
   {
     "id": "money-011",
     "type": "quote",
     "topic": "money",
-    "tags": ["cost", "thoreau", "time"],
-    "text": "...the cost of a thing is the amount of what I will call life which is required to be exchanged for it, immediately or in the long run.",
+    "tags": [
+      "cost",
+      "thoreau",
+      "time"
+    ],
+    "text": "…the cost of a thing is the amount of what I will call life which is required to be exchanged for it…",
+    "em": "what I will call life",
     "author": "Henry David Thoreau",
     "source": "Walden, ch. 1, Economy (1854)",
-    "more": "Thoreau applies this straight away to houses. An average house near Concord cost about eight hundred dollars, he says, and saving that much would take a labourer ten to fifteen years of his life. Was the house worth fifteen years?\n\nIt's a powerful way to reframe a price tag. Divide the cost of anything by what you earn per hour, after tax, and you get the hours of your life it really costs.\n\nThoreau's opening chapter of Walden is called Economy for a reason. Long before personal finance blogs, he was tracking every expense of his cabin down to the half cent, to see how little he actually needed.",
+    "more": "Thoreau applies it to houses right away. An average house near Concord cost about eight hundred dollars, and saving that would take a labourer ten to fifteen years of his life.\n\nThe same sum works on anything. Divide a price by what you earn per hour after tax, and you get the hours of life it costs. Thoreau tracked every expense of his Walden cabin down to the half cent, to see how little he needed.",
     "link": "https://www.gutenberg.org/ebooks/205"
   },
   {
     "id": "money-012",
     "type": "quote",
     "topic": "money",
-    "tags": ["bubbles", "crowds", "markets"],
-    "text": "Men, it has been well said, think in herds; it will be seen that they go mad in herds, while they only recover their senses slowly, and one by one.",
+    "tags": [
+      "bubbles",
+      "crowds",
+      "markets"
+    ],
+    "text": "…they go mad in herds, while they only recover their senses slowly, and one by one.",
+    "em": "they go mad in herds",
     "author": "Charles Mackay",
     "source": "Extraordinary Popular Delusions and the Madness of Crowds, Preface (1841)",
-    "more": "Mackay's book covers financial manias like the Mississippi Company scheme in France and the South Sea Bubble in Britain, both of which collapsed in 1720, and the Dutch tulip craze of the 1630s.\n\nHistorians now think he exaggerated some of it. Research by Anne Goldgar suggests tulip mania was a much smaller affair than his colourful account, with few documented ruinations. Mackay relied heavily on moralizing pamphlets.\n\nBut his central observation has held up through every boom since, from railway shares to dot-com stocks to crypto. Enthusiasm spreads socially and fast. Sobering up is a lonely process, one investor at a time.",
+    "more": "Mackay's book covers the Mississippi Company scheme in France and the South Sea Bubble in Britain, which both collapsed in 1720, plus the Dutch tulip craze of the 1630s.\n\nHe exaggerated some of it. Historian Anne Goldgar's research suggests tulip mania was much smaller than his account, with few documented ruinations, and he leaned on moralizing pamphlets. His main point has held up through railway shares, dot-com stocks and crypto.",
     "link": "https://www.gutenberg.org/ebooks/24518"
   },
   {
     "id": "money-013",
     "type": "idea",
     "topic": "money",
-    "tags": ["wealth", "saving", "housel"],
+    "tags": [
+      "wealth",
+      "saving",
+      "housel"
+    ],
     "title": "Wealth is what you don't see",
-    "text": "Morgan Housel points out that spending is visible and wealth isn't. When you see someone in an expensive car, the only thing you know for sure is that they have less money than before they bought it. Real wealth is the cars not bought, the money not spent, sitting quietly where nobody can see it.",
+    "text": "Spending is visible and wealth isn't, says Morgan Housel. All you know about someone in an expensive car is that they now have less money.",
+    "em": "Spending is visible and wealth isn't",
     "author": "Morgan Housel",
     "source": "The Psychology of Money, ch. 9 (2020)",
-    "more": "This creates a trap. We learn what being rich looks like by watching what rich people buy, but the things they didn't buy are invisible. So we copy the spending, not the saving.\n\nHousel makes a related point he calls the man in the car paradox. When people see someone in a flashy car, they rarely think about the driver. They imagine themselves in it. The admiration the buyer hoped for mostly goes to the car.\n\nHis advice is not to never spend. It's to recognize that wealth is optionality: savings that give you choices later, rather than possessions that signal status now."
+    "more": "Real wealth, in his telling, is the cars not bought and the money not spent, sitting where nobody can see it. Since we learn what rich looks like by watching what rich people buy, we copy the spending and miss the saving.\n\nHe calls a related idea the man in the car paradox. People who see a flashy car rarely think about the driver. They picture themselves in it. Housel sees wealth as choices for later, rather than status now."
   },
   {
     "id": "money-014",
     "type": "idea",
     "topic": "money",
-    "tags": ["incentives", "risk", "taleb"],
-    "title": "Never trust advice without skin in the game",
-    "text": "Nassim Taleb argues you should be wary of anyone who gets the upside of a decision while someone else bears the downside. Bankers paid bonuses for risks that blow up on taxpayers, or pundits who are never penalized for bad forecasts, have every reason to keep making the same mistakes.",
+    "tags": [
+      "incentives",
+      "risk",
+      "taleb"
+    ],
+    "title": "Skin in the game",
+    "text": "Nassim Taleb distrusts anyone who gets the upside of a decision while someone else bears the downside. Bankers whose risks blow up on taxpayers, for example.",
+    "em": "someone else bears the downside",
     "author": "Nassim Nicholas Taleb",
     "source": "Skin in the Game (2018)",
-    "more": "Taleb likes to cite one of the oldest examples on record: the Code of Hammurabi, almost 4,000 years old. If a builder's house collapsed and killed its owner, the builder was put to death. Harsh, but it made sure the person with the most knowledge about the risk also carried it.\n\nHis point isn't about punishment. It's about feedback. When people pay for their own mistakes, they learn, or they leave the field. When they don't, bad judgment survives and spreads.\n\nA useful habit from the book: before taking advice, ask what the adviser loses if they're wrong. If the answer is nothing, weigh the advice accordingly.",
+    "more": "Pundits who never pay for bad forecasts fit too. Taleb points to the Code of Hammurabi, almost 4,000 years old. If a house collapsed and killed its owner, the builder was put to death, so the person who knew the risk also carried it.\n\nFor Taleb this is about feedback more than punishment. People who pay for their mistakes learn or leave the field. People who don't keep making them. His test for advice is what the adviser loses if wrong.",
     "link": "https://en.wikipedia.org/wiki/Skin_in_the_Game_(book)"
   },
   {
     "id": "money-015",
     "type": "idea",
     "topic": "money",
-    "tags": ["incentives", "metrics", "policy"],
+    "tags": [
+      "incentives",
+      "metrics",
+      "policy"
+    ],
     "title": "When a number becomes a goal",
-    "text": "Charles Goodhart observed that any statistic used to steer policy tends to stop behaving reliably once people start managing toward it. Make a measure the target, and people will find ways to hit the number without delivering the thing the number was supposed to show.",
+    "text": "Economist Charles Goodhart noticed that a statistic used to steer policy stops behaving once people manage toward it. They hit the number without delivering what it measured.",
+    "em": "hit the number",
     "author": "Charles Goodhart",
     "source": "Problems of Monetary Management: The UK Experience (1975)",
-    "more": "Goodhart, an economist at the Bank of England, was writing about money supply figures. When the government targeted a particular measure of money, the financial system shifted its behaviour, and the measure stopped tracking what policymakers cared about.\n\nThe anthropologist Marilyn Strathern later put it in the snappy general form people now quote, and the idea turned out to apply almost everywhere. Hospitals measured on waiting times, schools judged on test scores, programmers paid by lines of code, call centres timed by call length.\n\nThe lesson isn't to stop measuring. It's to watch for gaming, rotate measures, and never forget the goal behind the number.",
+    "more": "Goodhart, at the Bank of England, was writing about money supply figures. When the government targeted one measure of money, the financial system changed its behaviour, and the measure stopped tracking what policymakers cared about.\n\nThe anthropologist Marilyn Strathern later gave it the snappy general form people quote now. It shows up in hospitals measured on waiting times, schools judged on test scores and programmers paid by lines of code.",
     "link": "https://en.wikipedia.org/wiki/Goodhart%27s_law"
   },
   {
     "id": "money-016",
     "type": "idea",
     "topic": "money",
-    "tags": ["psychology", "risk", "kahneman"],
-    "title": "Losses hurt more than gains feel good",
-    "text": "Daniel Kahneman and Amos Tversky found that people feel a loss much more sharply than an equal gain. Offered a coin flip that wins 150 dollars or loses 100, most people refuse, even though the odds favour them. Losses loom roughly one and a half to two and a half times larger.",
+    "tags": [
+      "psychology",
+      "risk",
+      "kahneman"
+    ],
+    "title": "The coin flip people refuse",
+    "text": "Offered a coin flip that wins 150 dollars or loses 100, most people say no, even though the odds favour them. Losses loom larger than gains.",
+    "em": "Losses loom larger than gains",
     "author": "Daniel Kahneman",
     "source": "Thinking, Fast and Slow, part 4 (2011); Kahneman and Tversky, Prospect Theory (1979)",
-    "more": "Loss aversion was a central piece of prospect theory, published by Kahneman and Tversky in 1979, work that later earned Kahneman the Nobel prize in economics. Tversky died before it was awarded.\n\nIt explains a lot of everyday behaviour. Investors hang on to losing stocks to avoid making the loss real. Shoppers respond more to avoiding a fee than to an equivalent discount. Negotiators fight harder to avoid giving something up than to gain something new.\n\nKnowing about the bias doesn't make it disappear, but it helps. A good check is to ask whether you'd make the same choice if it were framed as a gain instead of a loss.",
+    "more": "Daniel Kahneman and Amos Tversky measured this. Losses feel roughly one and a half to two and a half times as strong as equal gains. Loss aversion was a core part of their prospect theory, published in 1979, which later earned Kahneman the Nobel prize in economics. Tversky died before it was awarded.\n\nIt shows up in daily life. Investors hold losing stocks to avoid making the loss real, and shoppers react more to dodging a fee than to the same discount.",
     "link": "https://en.wikipedia.org/wiki/Loss_aversion"
   },
   {
     "id": "money-017",
     "type": "idea",
     "topic": "money",
-    "tags": ["trade", "ricardo", "specialization"],
-    "title": "Trade pays even if you're worse at everything",
-    "text": "David Ricardo showed that two countries can both gain from trade even if one is better at producing everything. What matters is comparative advantage: each should specialize in what it gives up least to make. His example had Portugal making both wine and cloth more cheaply than England, yet both still gained by trading.",
+    "tags": [
+      "trade",
+      "ricardo",
+      "specialization"
+    ],
+    "title": "Portugal, England, wine and cloth",
+    "text": "David Ricardo showed two countries both gain from trade even when one is better at making everything. Each sticks to what it gives up least to make.",
+    "em": "both gain from trade",
     "author": "David Ricardo",
     "source": "On the Principles of Political Economy and Taxation, ch. 7 (1817)",
-    "more": "In Ricardo's numbers, Portugal needs 80 workers a year to make a batch of wine and 90 for cloth. England needs 120 for wine and 100 for cloth. Portugal is better at both. But it's much better at wine, so it should make wine and buy cloth, while England does the reverse, and both end up with more.\n\nThe same logic works for people. A brilliant lawyer who types faster than her assistant should still hand over the typing, because her time is worth far more doing law.\n\nComparative advantage is one of the least intuitive ideas in economics, and one of the most robust.",
+    "more": "In Ricardo's numbers, Portugal needs 80 workers a year for a batch of wine and 90 for cloth. England needs 120 for wine and 100 for cloth. Portugal is better at both but much better at wine, so it makes wine and buys cloth, England does the reverse, and both end up with more.\n\nIt's called comparative advantage, and it works for people too. A lawyer who types faster than her assistant still gains by handing over the typing.",
     "link": "https://en.wikipedia.org/wiki/Comparative_advantage"
   },
   {
     "id": "money-018",
     "type": "fact",
     "topic": "money",
-    "tags": ["incentives", "vietnam", "unintended-consequences"],
+    "tags": [
+      "incentives",
+      "vietnam",
+      "unintended-consequences"
+    ],
     "title": "The great Hanoi rat bounty",
-    "text": "In 1902 the French colonial government in Hanoi, fearing plague, paid a bounty of one cent for every rat tail handed in. Hundreds of thousands of rats were killed. Then officials started noticing live rats running around without tails. People were cutting off the tails and letting the rats go free to breed.",
+    "text": "In 1902 colonial Hanoi paid one cent per rat tail. Soon officials spotted live rats without tails. People cut off tails and freed the rats to breed.",
+    "em": "live rats without tails",
     "source": "Wikipedia, Great Hanoi Rat Massacre (citing historian Michael Vann)",
-    "more": "The authorities had paid for a proxy, tails, rather than the thing they wanted, fewer rats. A tailless rat that goes on breeding produces more future tails, so the scheme gave people a reason to keep the rat population going. There were reports of rat farming too.\n\nThe bounty was eventually cancelled, and other anti-plague measures were tried instead.\n\nEconomists call this a perverse incentive, and it's a perfect real-world example of Goodhart's law. A similar tale about a cobra bounty in British India is often told, but the Hanoi case is the one with solid documentation, thanks to the historian Michael Vann's work in colonial archives.",
+    "more": "The French colonial government feared plague, and hundreds of thousands of rats were killed. But it paid for a proxy, tails, instead of what it wanted, fewer rats. A tailless rat that keeps breeding makes more tails, and there were reports of rat farming too. The bounty was cancelled.\n\nA similar cobra bounty story from British India gets told a lot, but the Hanoi case is the one historian Michael Vann documented in colonial archives.",
     "link": "https://en.wikipedia.org/wiki/Great_Hanoi_Rat_Massacre"
   },
   {
     "id": "money-019",
     "type": "fact",
     "topic": "money",
-    "tags": ["gold", "mali", "inflation"],
-    "title": "The king who moved the price of gold",
-    "text": "In 1324 Mansa Musa, ruler of the Mali Empire, passed through Cairo on pilgrimage to Mecca and gave away so much gold that, according to the historian al-Umari, its value in Egypt dropped. A measure of gold that had been worth 25 silver dirhams fell below 22, and stayed there for at least twelve years.",
+    "tags": [
+      "gold",
+      "mali",
+      "inflation"
+    ],
+    "title": "Mansa Musa's gold in Cairo",
+    "text": "In 1324 Mansa Musa of Mali gave away so much gold in Cairo, on his way to Mecca, that its value there dropped, says the historian al-Umari.",
+    "em": "gave away so much gold",
     "source": "Al-Umari, as cited in Wikipedia, Mansa Musa",
-    "more": "Mali controlled some of the richest gold sources of the medieval world, and Musa travelled with an enormous entourage and a vast supply of gold. His visit made Mali famous across the Muslim world and onto European maps.\n\nThe story is often inflated online into Musa single-handedly wrecking Egypt's economy. The historian Warren Schultz argues the drop was within normal price swings of the period, so treat the dramatic version with care.\n\nThere's a twist, too. Musa apparently ran short on the way home and borrowed from Cairo merchants. Even the richest man around can spend faster than he plans.",
+    "more": "Al-Umari says a measure of gold worth 25 silver dirhams fell below 22 and stayed there for at least twelve years. Mali controlled some of the richest gold sources of the medieval world, and the trip put it on European maps.\n\nOnline the story gets inflated into Musa wrecking Egypt's economy. The historian Warren Schultz argues the drop was within normal price swings of the period. Musa also ran short on the way home and borrowed from Cairo merchants.",
     "link": "https://en.wikipedia.org/wiki/Mansa_Musa"
   },
   {
     "id": "money-020",
     "type": "question",
     "topic": "money",
-    "tags": ["psychology", "math", "intuition"],
+    "tags": [
+      "psychology",
+      "math",
+      "intuition"
+    ],
     "title": "The bat and the ball",
-    "text": "A bat and a ball cost 1.10 dollars in total. The bat costs 1.00 dollar more than the ball. How much does the ball cost? Answer quickly, then check.",
+    "text": "A bat and a ball cost 1.10 dollars in total. The bat costs 1.00 dollar more than the ball. How much does the ball cost?",
+    "em": "How much does the ball cost?",
     "source": "Shane Frederick, Cognitive Reflection and Decision Making, Journal of Economic Perspectives (2005)",
-    "more": "Five cents. The answer that jumps to mind is ten cents, but then the bat would cost 1.10 and the total would be 1.20. With a 5 cent ball and a 1.05 dollar bat, the total is 1.10 and the difference is exactly one dollar.\n\nThe puzzle comes from Shane Frederick's Cognitive Reflection Test, and Daniel Kahneman made it famous in Thinking, Fast and Slow. Many students at top universities get it wrong, not because the math is hard, but because a quick, confident answer arrives first and nobody checks it.\n\nIt's a small lesson with big uses in money decisions: the fast answer feels right, so it rarely gets questioned.",
+    "more": "Five cents. Ten cents jumps to mind, but then the bat would be 1.10 and the total 1.20. A 5 cent ball and a 1.05 dollar bat add up to 1.10, exactly a dollar apart.\n\nThe puzzle is from Shane Frederick's Cognitive Reflection Test, and Daniel Kahneman made it famous in Thinking, Fast and Slow. Plenty of students at top universities miss it. The math is easy. A quick, confident answer shows up first, and nobody checks it.",
     "link": "https://en.wikipedia.org/wiki/Cognitive_reflection_test"
   },
   {
     "id": "money-021",
     "type": "question",
     "topic": "money",
-    "tags": ["compounding", "math", "growth"],
+    "tags": [
+      "compounding",
+      "math",
+      "growth"
+    ],
     "title": "Grains on a chessboard",
-    "text": "Put one grain of wheat on the first square of a chessboard, two on the second, four on the third, doubling each time. Roughly how many grains will be on the whole board?",
+    "text": "One grain of wheat on the first square of a chessboard, two on the second, four on the third, doubling each time. Roughly how many grains in total?",
+    "em": "doubling each time",
     "source": "Wikipedia, Wheat and chessboard problem",
-    "more": "18,446,744,073,709,551,615, which is 2 to the power of 64, minus one. That's more than 18 quintillion grains, far more wheat than humanity has ever grown.\n\nThe legend says the inventor of chess asked a king for this reward, and the king laughed at how modest it seemed. The first half of the board is manageable. The first 32 squares hold about four billion grains in total. The second half is where things explode.\n\nThat's the shape of compound growth, whether in savings, debt or a pandemic. Early on it looks like nothing. Most of the action comes at the end, which is why starting early, or stopping early, matters so much.",
+    "more": "About 18.4 quintillion, or 2 to the power of 64 minus one. That's 18,446,744,073,709,551,615 grains, far more wheat than humanity has ever grown.\n\nIn the legend, the inventor of chess asks a king for this reward, and the king laughs at how modest it sounds. The first 32 squares hold only about four billion grains in total. The second half is where it explodes. Compound growth in savings or debt has the same shape.",
     "link": "https://en.wikipedia.org/wiki/Wheat_and_chessboard_problem"
   }
 ]

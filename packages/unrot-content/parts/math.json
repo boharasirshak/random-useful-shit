@@ -8,10 +8,11 @@
       "history",
       "pascal"
     ],
-    "title": "Probability was born over a dice game",
-    "text": "Around 1654, a gambler asked Blaise Pascal how to split the pot fairly when a game is stopped before it ends. Pascal worked it out in letters with Pierre de Fermat. Their answer, counting the ways each player could still win, laid the foundations of the mathematics of probability.",
+    "title": "Probability started with a gambler",
+    "text": "A gambler asked Blaise Pascal how to split a pot fairly when a game stops early. His letters with Pierre de Fermat laid the foundations of probability.",
+    "em": "gambler asked Blaise Pascal",
     "source": "Pascal-Fermat correspondence on the problem of points (1654)",
-    "more": "The puzzle is called the problem of points. Suppose two players are racing to win a set number of rounds, and the game stops when one needs 1 more win and the other needs 3. Splitting the pot by rounds already won seems fair, but it is not. Pascal and Fermat's insight was to look forward: list every way the remaining rounds could go, and divide the pot by each player's share of those futures.\n\nHere the second player needs three wins in a row, a chance of 1 in 8, so a fair split is 7 to 1.\n\nThat shift, from what has happened to the weighted set of what could happen, is the core of expected value. The rest of this thread builds on it.",
+    "more": "This puzzle, from 1654, is the problem of points. Say two players race to win a set number of rounds, and the game stops when one needs 1 more win and the other needs 3. Pascal and Fermat looked forward: list every way the remaining rounds could go, and split the pot by each player's share of those futures.\n\nThe second player needs three wins in a row, a 1 in 8 chance, so a fair split is 7 to 1. That idea is the core of expected value.",
     "link": "https://en.wikipedia.org/wiki/Problem_of_points",
     "thread": {
       "id": "probability-fools-you",
@@ -30,9 +31,10 @@
       "birthdays"
     ],
     "title": "The birthday puzzle",
-    "text": "How many people need to be in a room for there to be a better than even chance that two of them share a birthday? Make a guess before you open the answer.",
+    "text": "How many people need to be in a room for a better than even chance that two of them share a birthday?",
+    "em": "two of them share a birthday",
     "source": "The birthday problem (assuming 365 equally likely birthdays)",
-    "more": "Just 23. With 23 people, the chance of a shared birthday is about 50.7%. With 70 people it is over 99.9%.\n\nMost guesses are far higher because we picture someone matching our own birthday. But the question is about any pair, and 23 people form 253 different pairs. Each pair has only a small chance of matching, but there are a lot of pairs.\n\nThe neat way to calculate it is to find the chance that nobody matches: 365/365 × 364/365 × 363/365 and so on for 23 people, which comes to about 49.3%. Computing the opposite event is one of the most useful tricks in probability, and it explains why coincidences are far more common than they feel.",
+    "more": "Just 23. With 23 people the chance of a shared birthday is about 50.7%. With 70 it's over 99.9%.\n\nMost guesses are far higher because we picture someone matching our own birthday. But any pair counts, and 23 people form 253 pairs. The neat way to calculate it is the chance that nobody matches: 365/365 × 364/365 × 363/365 and so on for 23 people, which comes to about 49.3%.",
     "link": "https://en.wikipedia.org/wiki/Birthday_problem",
     "thread": {
       "id": "probability-fools-you",
@@ -50,10 +52,11 @@
       "puzzle",
       "monty-hall"
     ],
-    "title": "The Monty Hall problem",
-    "text": "You pick one of three doors. A car is behind one, goats behind the other two. The host, who knows where the car is, opens one of the other doors to reveal a goat, then offers to let you switch. Should you?",
+    "title": "Three doors, two goats",
+    "text": "You pick one of three doors. One hides a car, two hide goats. The host, who knows which is which, opens another door: goat. Should you switch?",
+    "em": "Should you switch?",
     "source": "Marilyn vos Savant, 'Ask Marilyn', Parade (1990)",
-    "more": "Yes. Switching wins two times out of three; sticking wins one time in three.\n\nYour first pick is right one time in three, and nothing the host does changes that. So two times in three the car is behind one of the other doors, and the host has just shown you which of them it is not. Switching collects that two-thirds. If it still feels wrong, imagine 100 doors. You pick one, the host opens 98 goats and leaves one other door closed. Would you switch now?\n\nWhen Marilyn vos Savant gave this answer in 1990, about 10,000 readers wrote in, nearly 1,000 of them with PhDs, mostly to say she was wrong. Even Paul Erdős stayed unconvinced until he saw a computer simulation.",
+    "more": "Yes. Switching wins two times in three. Your first pick is right one time in three, and the host's reveal doesn't change that. So the other closed door holds the car two times in three.\n\nWhen Marilyn vos Savant gave this answer in 1990, about 10,000 readers wrote in, nearly 1,000 of them with PhDs, mostly to say she was wrong. Even Paul Erdős stayed unconvinced until he saw a computer simulation.",
     "link": "https://en.wikipedia.org/wiki/Monty_Hall_problem",
     "thread": {
       "id": "probability-fools-you",
@@ -72,10 +75,11 @@
       "evidence"
     ],
     "title": "How evidence should change your mind",
-    "text": "Thomas Bayes, an English minister, worked out how evidence should change a belief. Start with how plausible something was beforehand. Then ask how much more likely the new evidence is if it is true than if it is false. Combine the two. The result, published after his death in 1763, is Bayes' theorem.",
+    "text": "Bayes' theorem, in odds form: new odds = old odds × how much likelier the evidence is if the idea is true. Thomas Bayes's essay came out in 1763.",
+    "em": "new odds = old odds",
     "author": "Thomas Bayes",
     "source": "An Essay towards solving a Problem in the Doctrine of Chances, Philosophical Transactions (1763)",
-    "more": "In odds form it is pleasingly simple: new odds = old odds × how much more likely the evidence is if the idea is true. If something was a long shot at odds of 1 to 9, and you see evidence three times as likely if it is true, the odds become 3 to 9, which is 1 to 3, a 25% chance.\n\nTwo lessons fall out. The starting point matters: a single piece of evidence cannot make a rare thing likely on its own. And beliefs should move step by step with each piece of evidence, not jump between certain and impossible.\n\nBayes's friend Richard Price edited and published the essay. The next card shows what goes wrong when we ignore the starting point.",
+    "more": "Say something is a long shot at odds of 1 to 9, and you see evidence three times as likely if it's true. The odds become 3 to 9, which is 1 to 3, a 25% chance. So one piece of evidence can't make a rare thing likely on its own.\n\nBayes was an English minister and died before publishing. His friend Richard Price edited the essay and published it.",
     "link": "https://en.wikipedia.org/wiki/Bayes%27_theorem",
     "thread": {
       "id": "probability-fools-you",
@@ -94,9 +98,10 @@
       "medicine"
     ],
     "title": "You tested positive. How worried?",
-    "text": "A disease affects 1 in 100 people. A test catches 90% of real cases, and wrongly flags 9% of healthy people. You test positive. Roughly what is the chance you actually have the disease?",
+    "text": "A disease affects 1 in 100 people. A test catches 90% of cases and wrongly flags 9% of healthy people. You test positive. What's the chance you have it?",
+    "em": "wrongly flags 9% of healthy people",
     "source": "Gigerenzer & Hoffrage, How to improve Bayesian reasoning without instruction, Psychological Review (1995)",
-    "more": "About 9%, not 90%. Picture 1,000 people. Ten have the disease, and 9 of them test positive. Of the 990 healthy people, about 89 test positive by mistake. That makes 98 positives, of which only 9 are real: roughly 1 in 11.\n\nThis is the base rate fallacy. The rarity of the disease, its base rate, outweighs the accuracy of the test. Gerd Gigerenzer and others found that many doctors get questions like this badly wrong when given percentages, and far more often right when given the same information as counts of people, as above.\n\nSo when percentages confuse you, translate them into a crowd of 1,000 and count. And a positive result usually means: get a second test.",
+    "more": "About 9%, not 90%. Take 1,000 people. Ten have the disease, and 9 of them test positive. Of the 990 healthy people, about 89 test positive by mistake. That's 98 positives, and only 9 are real: roughly 1 in 11.\n\nThis is the base rate fallacy. The rarity of the disease outweighs the accuracy of the test. Gerd Gigerenzer and others found many doctors get this badly wrong with percentages, and far more often right with counts of people.",
     "link": "https://en.wikipedia.org/wiki/Base_rate_fallacy",
     "thread": {
       "id": "probability-fools-you",
@@ -115,9 +120,10 @@
       "fallacy"
     ],
     "title": "Black came up 26 times",
-    "text": "In 1913, the roulette wheel at the Monte Carlo Casino landed on black 26 times in a row. Gamblers lost millions of francs betting on red, sure it was overdue. But a wheel has no memory: on every one of those spins, red was exactly as likely as before.",
+    "text": "A Monte Carlo roulette wheel landed on black 26 times in a row in 1913. Gamblers lost millions betting red was due. The wheel had no memory.",
+    "em": "The wheel had no memory",
     "source": "Monte Carlo Casino (1913), the standard example of the gambler's fallacy",
-    "more": "This is the gambler's fallacy: believing a random process will balance itself out in the short run. The law of large numbers does say that over many spins the share of black settles near its expected value, but it gets there by swamping early streaks with more data, not by correcting them.\n\nA run of 26 of either colour on a wheel with one zero has a probability of about 1 in 68 million. Rare, but with enough wheels spinning for enough years, rare things happen somewhere.\n\nThe same error shows up when people feel a girl is due after three boys, or that a falling stock must bounce. Before expecting things to even out, ask whether the process has any memory.",
+    "more": "The gambler's fallacy is believing a random process will balance itself out in the short run. The law of large numbers says the share of black settles near its expected value over many spins. It gets there by drowning out streaks with more data. Nothing corrects them.\n\nA run of 26 of one colour on a single-zero wheel has odds of about 1 in 68 million. Rare, but with enough wheels spinning for enough years, rare things happen somewhere.",
     "link": "https://en.wikipedia.org/wiki/Gambler%27s_fallacy",
     "thread": {
       "id": "probability-fools-you",
@@ -136,10 +142,11 @@
       "thinking"
     ],
     "title": "Out of how many?",
-    "text": "Psychologist Gerd Gigerenzer argues most people are not hopeless at probability, just badly served by how it is presented. Turn percentages into counts, ask for the base rate, and think about all the ways things could turn out, not just the one story in front of you.",
+    "text": "Gerd Gigerenzer blames most probability mistakes on how numbers are shown. Give people '9 out of 1,000' instead of '0.9%', and far more get the answer right.",
+    "em": "9 out of 1,000",
     "author": "Gerd Gigerenzer",
     "source": "Calculated Risks: How to Know When Numbers Deceive You (2002)",
-    "more": "This thread as a checklist. Look forward at all the possible outcomes, as Pascal and Fermat did. Expect coincidences, because many small chances add up, as in the birthday puzzle. Ask what the person giving you information knows, as with Monty Hall. Start from the base rate and update with evidence, like Bayes. Translate percentages into a crowd of people. And remember that dice and roulette wheels have no memory.\n\nGigerenzer calls this risk literacy and argues it can be taught, even to children, once numbers are presented as natural frequencies.\n\nNone of it needs heavy maths. It needs one habit: whenever you hear a probability, ask, out of how many?",
+    "more": "Gigerenzer calls this risk literacy and argues it can be taught, even to children, once numbers are shown as natural frequencies.\n\nThis thread as a checklist. Look forward at every possible outcome, like Pascal and Fermat. Expect coincidences, because many small chances add up. Ask what the person giving you information knows, like the Monty Hall host. Start from the base rate and update, like Bayes. And roulette wheels have no memory.",
     "link": "https://en.wikipedia.org/wiki/Gerd_Gigerenzer",
     "thread": {
       "id": "probability-fools-you",
@@ -157,10 +164,11 @@
       "proof",
       "russell"
     ],
-    "text": "Mathematics, rightly viewed, possesses not only truth, but supreme beauty—a beauty cold and austere, like that of sculpture, without appeal to any part of our weaker nature...",
+    "text": "Mathematics, rightly viewed, possesses not only truth, but supreme beauty—a beauty cold and austere, like that of sculpture…",
+    "em": "not only truth, but supreme beauty",
     "author": "Bertrand Russell",
     "source": "Mysticism and Logic, 'The Study of Mathematics' (1918; essay first published 1907)",
-    "more": "Russell wrote this while deep in the work that became Principia Mathematica, an attempt to build mathematics from pure logic. For him the beauty lay in the certainty and economy of a proof: a few assumptions, a chain of steps, and a conclusion that could not be otherwise.\n\nMany mathematicians describe the same feeling about results like Euclid's proof that the primes never run out, or Euler's identity, which ties e, i, π, 1 and 0 together in one short line.\n\nIf maths at school felt like a list of procedures, this is the part that usually got left out. The procedures are the scaffolding. The ideas they hold up are the sculpture.",
+    "more": "Russell wrote this while working toward Principia Mathematica, an attempt to build maths from pure logic. For him the beauty was in a proof's certainty and economy: a few assumptions, a chain of steps, and a conclusion that couldn't be otherwise.\n\nMathematicians say the same about Euclid's proof that the primes never run out, or Euler's identity, which ties e, i, π, 1 and 0 together in one short line.",
     "link": "https://www.gutenberg.org/ebooks/25447"
   },
   {
@@ -173,9 +181,10 @@
       "russell"
     ],
     "text": "Thus mathematics may be defined as the subject in which we never know what we are talking about, nor whether what we are saying is true.",
+    "em": "what we are talking about",
     "author": "Bertrand Russell",
     "source": "Mysticism and Logic, 'Mathematics and the Metaphysicians' (1918; essay first published 1901)",
-    "more": "It is a joke with a serious point. Russell is describing pure mathematics as logic: you start from assumptions and deduce what follows, without caring whether the assumptions describe anything real. A proof says 'if these, then that'. Whether 'these' are true is someone else's problem.\n\nThat is why mathematics is so reusable. The same theorems about abstract symmetry groups apply to crystals, Rubik's cubes and particle physics, because the maths never committed to what the objects were.\n\nIt also explains a common frustration. Asking 'but what is a vector, really?' misses that mathematicians mostly care about what vectors do: the rules they obey.",
+    "more": "It's a joke with a serious point. Russell is describing pure maths as logic: start from assumptions and deduce what follows, without caring whether the assumptions describe anything real. A proof says 'if these, then that'.\n\nThat's why maths is so reusable. The same theorems about abstract symmetry groups apply to crystals, Rubik's cubes and particle physics, because the maths never committed to what the objects were.",
     "link": "https://www.gutenberg.org/ebooks/25447"
   },
   {
@@ -187,10 +196,11 @@
       "creativity",
       "poincare"
     ],
-    "text": "At the moment when I put my foot on the step the idea came to me, without anything in my former thoughts seeming to have paved the way for it, that the transformations I had used to define the Fuchsian functions were identical with those of non-Euclidean geometry.",
+    "text": "At the moment when I put my foot on the step the idea came to me … that the transformations … were identical with those of non-Euclidean geometry.",
+    "em": "my foot on the step",
     "author": "Henri Poincaré",
     "source": "Science and Method, book I, ch. 3 'Mathematical Creation' (1908; trans. G. B. Halsted, 1913)",
-    "more": "Poincaré had worked hard on the problem for weeks, then left it behind for a geology trip. The answer arrived as he stepped onto a bus, in the middle of a conversation about something else. He checked it later at his leisure, and it was right.\n\nHe described a pattern in this and similar experiences: intense conscious work, then a break, then a sudden insight, then careful verification. He was clear that the sudden part never came without the hard part first.\n\nPsychologists call the break incubation, and studies suggest it does help with some creative problems. The practical version: work hard on a problem, then walk away from it, and keep a notebook handy.",
+    "more": "Poincaré had worked hard on the problem for weeks, then left it for a geology trip. The answer came as he stepped onto a bus, in the middle of a conversation about something else. He checked it later, and it was right.\n\nHe saw a pattern: hard conscious work, a break, a sudden insight, then careful checking. The sudden part never came without the hard part. Psychologists call the break incubation, and studies suggest it helps with some creative problems.",
     "link": "https://www.gutenberg.org/ebooks/39713"
   },
   {
@@ -203,9 +213,10 @@
       "poincare"
     ],
     "text": "The scientist does not study nature because it is useful; he studies it because he delights in it, and he delights in it because it is beautiful.",
+    "em": "because it is beautiful",
     "author": "Henri Poincaré",
     "source": "Science and Method, book I, ch. 1 'The Choice of Facts' (1908; trans. G. B. Halsted, 1913)",
-    "more": "Poincaré goes on to say he does not mean the beauty of colours and appearances, but a deeper beauty that comes from the harmonious order of the parts, something a pure intelligence can grasp. He argues this taste for simplicity and harmony is not a luxury; it steers scientists toward the facts and theories that turn out to matter.\n\nMathematicians still talk this way. An elegant proof is valued not only for being pretty, but because it usually shows why something is true, not just that it is.\n\nIf you are learning maths, watch for the moment a result stops feeling like a rule to memorise and starts feeling inevitable. That is the delight he meant.",
+    "more": "Poincaré goes on to say he doesn't mean the beauty of colours and appearances, but a deeper beauty that comes from the harmonious order of the parts. He argues this taste for simplicity and harmony steers scientists toward the facts and theories that turn out to matter.\n\nMathematicians still talk this way. An elegant proof is prized because it usually shows why something is true, as well as that it is.",
     "link": "https://www.gutenberg.org/ebooks/39713"
   },
   {
@@ -218,10 +229,11 @@
       "euclid"
     ],
     "title": "The primes never run out",
-    "text": "Suppose you had a complete list of primes. Multiply them all together and add 1. The result leaves a remainder of 1 when divided by any prime on your list, so it is either prime itself or built from primes you missed. Either way, the list was incomplete. This argument is about 2,300 years old.",
+    "text": "Euclid's proof: list every prime, multiply them, add 1. The result is prime or built from primes you missed. So no list is complete.",
+    "em": "multiply them, add 1",
     "author": "Euclid",
     "source": "Elements, book IX, proposition 20 (c. 300 BC)",
-    "more": "This is one of the most admired proofs in mathematics: it is short, needs no equipment, and settles a question about infinity with a finite argument.\n\nA common misreading is that all the primes multiplied together, plus 1, is always prime. It is not. 2 × 3 × 5 × 7 × 11 × 13 + 1 = 30,031, which is 59 × 509. The proof only needs it to contain some new prime, and neither 59 nor 509 was on the list.\n\nEuclid himself phrased it more cautiously: there are more primes than any given collection of them. Mathematicians now know of at least 200 different proofs of the same fact.",
+    "more": "Divide the new number by any prime on the list and you get remainder 1, so none of them divides it. The argument is about 2,300 years old.\n\nA common misreading is that the product plus 1 is always prime. 2 × 3 × 5 × 7 × 11 × 13 + 1 = 30,031, which is 59 × 509. The proof only needs some new prime, and neither 59 nor 509 was on the list.",
     "link": "https://en.wikipedia.org/wiki/Euclid%27s_theorem"
   },
   {
@@ -234,10 +246,11 @@
       "proof"
     ],
     "title": "Some infinities are bigger",
-    "text": "Georg Cantor showed that you cannot list all the real numbers, even with an infinitely long list. Whatever list you make, he could build a number that differs from the first entry in its first digit, the second entry in its second digit, and so on. So there are more real numbers than counting numbers.",
+    "text": "Cantor proved no infinite list holds every real number. Change digit 1 of entry 1, digit 2 of entry 2, and so on. The result isn't on the list.",
+    "em": "The result isn't on the list",
     "author": "Georg Cantor",
     "source": "Über eine elementare Frage der Mannigfaltigkeitslehre (1891)",
-    "more": "This diagonal argument shocked mathematicians. Before Cantor, infinity was simply infinity. After him there was a hierarchy: the countable infinity of 1, 2, 3 and so on, and larger, uncountable ones like the points on a line.\n\nThe same trick, building something that disagrees with every item on a list, later powered Gödel's incompleteness theorems and Alan Turing's proof that some problems cannot be solved by any computer.\n\nCantor faced fierce opposition in his lifetime, notably from Leopold Kronecker. David Hilbert later defended him, declaring that no one would drive mathematicians out of the paradise Cantor had created.",
+    "more": "This diagonal argument, from 1891, means there are more real numbers than counting numbers. Before Cantor, infinity was just infinity. After him there was a hierarchy, with the countable infinity of 1, 2, 3 at the bottom.\n\nThe same trick later powered Gödel's incompleteness theorems and Turing's proof that some problems no computer can solve. Leopold Kronecker fiercely opposed Cantor. David Hilbert defended him: no one would drive mathematicians out of the paradise Cantor had created.",
     "link": "https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument"
   },
   {
@@ -249,11 +262,12 @@
       "paradox",
       "hilbert"
     ],
-    "title": "The hotel that's full but has room",
-    "text": "Picture a hotel with infinitely many rooms, every one occupied. A new guest arrives. No problem: move each guest from room n to room n + 1, and room 1 is free. Even infinitely many new guests fit: move everyone to room 2n, and all the odd rooms open up.",
+    "title": "Full hotel, room for more",
+    "text": "A hotel has infinitely many rooms, all full. A new guest arrives. Move everyone from room n to room n + 1, and room 1 is free.",
+    "em": "room 1 is free",
     "author": "David Hilbert",
     "source": "Lecture 'Über das Unendliche' (1924-25); popularised in George Gamow, One Two Three... Infinity (1947)",
-    "more": "Hilbert used the story to show how differently infinite sets behave from finite ones. In a finite hotel, full means no more guests. In an infinite one, the guests can be matched one-to-one with only some of the rooms, which is one way of defining what infinite means.\n\nThe hotel can even absorb infinitely many coaches, each with infinitely many passengers, using a clever numbering scheme. What it cannot do is give a room to one guest for every real number. That is the bigger infinity from the Cantor card, and no room plan will fit them all.\n\nThe paradox is not a contradiction. It is a reminder that intuitions built on finite things do not automatically scale up.",
+    "more": "Even infinitely many new guests fit: move everyone to room 2n and all the odd rooms open up. David Hilbert used the story to show how differently infinite sets behave. In an infinite hotel, the guests can be matched one-to-one with only some of the rooms.\n\nThere's one thing it can't do: give a room to one guest for every real number. That's Cantor's bigger infinity, and no room plan fits them all.",
     "link": "https://en.wikipedia.org/wiki/Hilbert%27s_paradox_of_the_Grand_Hotel"
   },
   {
@@ -265,11 +279,12 @@
       "physics",
       "noether"
     ],
-    "title": "Symmetry means something is conserved",
-    "text": "Emmy Noether proved that every continuous symmetry in physics comes with a conservation law. If the laws of physics are the same tomorrow as today, energy is conserved. If they are the same here as over there, momentum is conserved. Her 1918 theorem is a pillar of modern physics.",
+    "title": "Why energy is conserved",
+    "text": "Emmy Noether proved every continuous symmetry comes with a conservation law. If physics works the same tomorrow as today, energy is conserved.",
+    "em": "comes with a conservation law",
     "author": "Emmy Noether",
     "source": "Invariante Variationsprobleme (1918)",
-    "more": "Before Noether, conservation laws were facts found by experiment. After her, they followed from symmetries, which are often easier to spot. Rotational symmetry, the laws being the same in every direction, gives conservation of angular momentum.\n\nShe did this work while barred from a proper paid post at Göttingen because she was a woman. David Hilbert and Felix Klein brought her in to help with problems in Einstein's general relativity, and for a while her lectures had to be advertised under Hilbert's name.\n\nShe went on to reshape abstract algebra. When she died in 1935, Einstein wrote that she was the most significant creative mathematical genius since the higher education of women began.",
+    "more": "If the laws are the same here as over there, momentum is conserved. Before her 1918 theorem, conservation laws were facts found by experiment.\n\nShe did this while barred from a proper paid post at Göttingen because she was a woman. David Hilbert and Felix Klein brought her in to help with problems in Einstein's general relativity, and for a while her lectures had to be advertised under Hilbert's name.",
     "link": "https://en.wikipedia.org/wiki/Noether%27s_theorem"
   },
   {
@@ -282,10 +297,11 @@
       "godel"
     ],
     "title": "True but unprovable",
-    "text": "In 1931, Kurt Gödel, then in his mid-twenties, proved that any consistent set of axioms strong enough to do basic arithmetic leaves some true statements it cannot prove. Mathematics cannot be wrapped up in one complete rulebook.",
+    "text": "Kurt Gödel proved in 1931, in his mid-twenties, that any consistent set of axioms that can do basic arithmetic has true statements it can't prove.",
+    "em": "true statements it can't prove",
     "author": "Kurt Gödel",
     "source": "On Formally Undecidable Propositions of Principia Mathematica and Related Systems (1931)",
-    "more": "Gödel's trick was to make arithmetic talk about itself. He encoded statements as numbers, then built one that says, roughly, 'this statement cannot be proved in this system'. If the system could prove it, it would be proving something false. So if the system is consistent, the statement is true and unprovable.\n\nHis second theorem adds that such a system cannot prove its own consistency. Together they ended David Hilbert's hope for a complete, provably safe foundation for all of mathematics.\n\nThe theorems are often stretched to make claims about minds, religion or law. Be wary: they apply to formal systems with precise rules, not to everything that happens to be complicated.",
+    "more": "His trick was to make arithmetic talk about itself. He encoded statements as numbers, then built one that says, roughly, 'this statement can't be proved in this system'. If the system is consistent, that statement is true and unprovable.\n\nHis second theorem says such a system can't prove its own consistency. Together they ended David Hilbert's hope for a complete, provably safe foundation for maths. They apply only to formal systems with precise rules.",
     "link": "https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems"
   },
   {
@@ -298,9 +314,10 @@
       "history"
     ],
     "title": "A rather dull taxi number",
-    "text": "Visiting Srinivasa Ramanujan in hospital, G. H. Hardy remarked that his taxi's number, 1729, seemed rather dull. Ramanujan disagreed at once: it is the smallest number that can be written as the sum of two cubes in two different ways. 1729 = 1³ + 12³ = 9³ + 10³.",
+    "text": "Visiting Ramanujan in hospital, G. H. Hardy said his taxi's number, 1729, seemed rather dull. Ramanujan disagreed: it's the smallest number that's a sum of two cubes two ways.",
+    "em": "sum of two cubes two ways",
     "source": "G. H. Hardy's recollection of a visit to Ramanujan in Putney, London (c. 1918)",
-    "more": "Ramanujan grew up in southern India with little formal training in advanced mathematics. In 1913 he began writing to Hardy at Cambridge, sending pages of startling formulas. Hardy saw that the work was extraordinary and arranged for him to come to England.\n\nThe taxi story stuck because it captures his close, personal familiarity with numbers, though 1729 was not a lucky guess: it already appeared in one of his notebooks, and the French mathematician Frénicle de Bessy had noted it in 1657. Numbers like it are now called taxicab numbers.\n\nRamanujan died in 1920, aged 32. His notebooks are still yielding results, and ideas like his mock theta functions opened whole new areas of research.",
+    "more": "1729 = 1³ + 12³ = 9³ + 10³. It wasn't a lucky guess: the number was already in one of his notebooks, and Frénicle de Bessy had noted it in 1657. Numbers like it are now called taxicab numbers.\n\nRamanujan grew up in southern India with little formal training in advanced maths. In 1913 he began sending Hardy pages of startling formulas, and Hardy arranged for him to come to England. He died in 1920, aged 32.",
     "link": "https://en.wikipedia.org/wiki/1729_(number)"
   },
   {
@@ -313,9 +330,10 @@
       "networks"
     ],
     "title": "Seven bridges, no route",
-    "text": "The city of Königsberg had seven bridges linking two islands and the riverbanks. Could you take a walk crossing each bridge exactly once? In 1736 Leonhard Euler proved you could not, and in doing so laid the foundations of graph theory, the maths behind networks and route planning.",
+    "text": "Königsberg had seven bridges linking two islands and the riverbanks. Could you walk across each exactly once? In 1736 Leonhard Euler proved you couldn't.",
+    "em": "Euler proved you couldn't",
     "source": "Euler, Solutio problematis ad geometriam situs pertinentis (presented 1736)",
-    "more": "Euler's leap was to throw away everything irrelevant: the shapes of the land, the lengths of the bridges, the distances. All that mattered was which pieces of land connected to which. That turns the map into dots and lines, what we now call a graph.\n\nThen the argument is simple. Every time you pass through a piece of land you use two bridges, one in and one out. So apart from where you start and finish, every piece of land needs an even number of bridges. In Königsberg all four had an odd number, so no such walk exists.\n\nThe same abstraction now plans delivery routes, maps social networks and finds directions on your phone.",
+    "more": "Euler threw away everything irrelevant, like the shapes of the land and the lengths of the bridges. All that mattered was which pieces of land connected to which. That turns the map into dots and lines, a graph, and it laid the foundations of graph theory.\n\nEvery time you pass through a piece of land you use two bridges, one in and one out. So apart from the start and finish, every piece needs an even number of bridges. In Königsberg all four had an odd number.",
     "link": "https://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg"
   },
   {
@@ -328,9 +346,10 @@
       "proof"
     ],
     "title": "The margin was too small",
-    "text": "Around 1637, Pierre de Fermat wrote in the margin of a book that no whole numbers satisfy aⁿ + bⁿ = cⁿ for any n above 2, and that he had a marvellous proof the margin was too narrow to contain. Mathematicians tried for 358 years. Andrew Wiles finally proved it in 1994.",
+    "text": "Around 1637, Fermat wrote in a margin that aⁿ + bⁿ = cⁿ has no whole-number answers for n above 2. He claimed a proof the margin couldn't hold.",
+    "em": "the margin couldn't hold",
     "source": "Fermat's note in his copy of Diophantus's Arithmetica (c. 1637); Wiles, Annals of Mathematics (1995)",
-    "more": "Fermat almost certainly did not have a valid proof. The tools Wiles used, from the theory of elliptic curves and modular forms, did not exist in Fermat's time.\n\nWiles worked on it largely in secret for about seven years. The proof he announced in 1993 turned out to have a gap, and fixing it took another year, partly with help from his former student Richard Taylor. The full proof was published in 1995.\n\nThe theorem itself has few practical uses. Its value lay in what people built while chasing it: whole branches of number theory grew out of failed attempts, and Wiles's proof connected areas of mathematics that had seemed unrelated.",
+    "more": "It took 358 years. Andrew Wiles proved it in 1994, after about seven years of working largely in secret. The proof he announced in 1993 had a gap, and fixing it took another year, partly with help from his former student Richard Taylor. It was published in 1995.\n\nFermat almost certainly had no valid proof. Wiles used elliptic curves and modular forms, tools that didn't exist in Fermat's time.",
     "link": "https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem"
   },
   {
@@ -343,9 +362,10 @@
       "patterns"
     ],
     "title": "Add up 1 to 100, fast",
-    "text": "Can you add up all the whole numbers from 1 to 100 in your head in under a minute? There is a trick that makes it almost instant. Try to find it before opening the answer.",
+    "text": "There's a trick that adds every whole number from 1 to 100 in seconds, in your head. What's the total, and what's the trick?",
+    "em": "from 1 to 100",
     "source": "Carl Friedrich Gauss, popular schoolroom story",
-    "more": "The answer is 5,050. Pair the numbers from the outside in: 1 + 100 = 101, 2 + 99 = 101, 3 + 98 = 101, and so on. There are 50 such pairs, so the total is 50 × 101.\n\nThe same idea gives a general formula: the sum of the numbers from 1 to n is n(n + 1)/2.\n\nThe trick is famously credited to a young Carl Friedrich Gauss, said to have stunned his teacher with the answer. The story comes from later retellings and has grown along the way, so treat the details as legend. The method is real, though, and so is the lesson: before grinding through a calculation, look for structure.",
+    "more": "5,050. Pair the numbers from the outside in: 1 + 100 = 101, 2 + 99 = 101, and so on. There are 50 pairs, so the total is 50 × 101. In general, 1 to n adds up to n(n + 1)/2.\n\nThe trick is famously credited to a young Carl Friedrich Gauss, said to have stunned his teacher. The story comes from later retellings and grew along the way, so the details are legend. The method is real.",
     "link": "https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss"
   },
   {
@@ -358,9 +378,10 @@
       "limits"
     ],
     "title": "Is 0.999... equal to 1?",
-    "text": "Write a decimal point followed by nines that go on forever. Is that number a tiny bit less than 1, or is it exactly 1?",
+    "text": "Write a decimal point followed by nines that go on forever. Is that number a tiny bit less than 1, or exactly 1?",
+    "em": "a tiny bit less than 1",
     "source": "0.999..., standard result in real analysis",
-    "more": "It is exactly 1. One quick argument: 1/3 = 0.333..., and three times that is 0.999..., but three times 1/3 is 1.\n\nAnother: if 0.999... were less than 1, there would be a gap between them. But name any gap, however tiny, and after enough nines the number is closer to 1 than that. The only gap smaller than every positive amount is zero.\n\nThe discomfort comes from picturing the nines as a process that never finishes. In mathematics, 0.999... names the limit of 0.9, 0.99, 0.999 and so on, and that limit is 1. Plenty of numbers have two decimal spellings: 0.5 can also be written 0.4999...",
+    "more": "Exactly 1. Quick argument: 1/3 = 0.333..., and three times that is 0.999..., but three times 1/3 is 1.\n\nThe discomfort comes from picturing the nines as a process that never finishes. In maths, 0.999... names the limit of 0.9, 0.99, 0.999 and so on, and that limit is 1. If it were less than 1 there'd be a gap, but after enough nines it's closer to 1 than any gap you can name.",
     "link": "https://en.wikipedia.org/wiki/0.999..."
   }
 ]

@@ -71,8 +71,11 @@ export const MENU: MenuItem[] = [
   { id: 'panda-hot-and-sour-soup-cup', restaurant: 'panda', name: "Hot & Sour Soup (cup)", kcal: 140, category: 'appetizer', p: 9, c: 16, f: 4 },
   { id: 'panda-hot-and-sour-soup-bowl', restaurant: 'panda', name: "Hot & Sour Soup (bowl)", kcal: 170, category: 'appetizer', p: 10, c: 20, f: 6 },
   { id: 'shake', restaurant: 'shake', name: "Protein Shake", kcal: null, category: 'shake' },
-  // Any amount: 1 kcal each, and the part's qty is the calories (e.g. qty 350 = 350 kcal).
+  // Any amount: 1 kcal (or 1 g) each, and the part's qty is the amount (e.g. qty 350 = 350 kcal).
   { id: 'custom', restaurant: 'custom', name: "Custom", kcal: 1, category: 'custom' },
+  { id: 'custom-p', restaurant: 'custom', name: "Protein", kcal: 0, category: 'custom', p: 1 },
+  { id: 'custom-c', restaurant: 'custom', name: "Carbs", kcal: 0, category: 'custom', c: 1 },
+  { id: 'custom-f', restaurant: 'custom', name: "Fat", kcal: 0, category: 'custom', f: 1 },
 ];
 
 export const RESTAURANTS: Record<Restaurant, string> = { cfa: 'Chick-fil-A', panda: 'Panda Express', shake: 'Protein shake', custom: 'Custom calories' };

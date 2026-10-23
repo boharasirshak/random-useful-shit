@@ -42,6 +42,12 @@ test('no topic gets more than 2 of the last 5 cards', () => {
   assert.equal(got?.id, 'b');
 });
 
+test('never three cards of one kind in a row', () => {
+  const cards = [card('a', 'space', { type: 'quote' }), card('b', 'space', { type: 'fact' })];
+  const got = pick({ ...base, cards, model: seed(['space']), recentTypes: ['quote', 'quote'], random: noExplore() });
+  assert.equal(got?.id, 'b');
+});
+
 test('exploring goes to the least-seen topic', () => {
   const cards = [card('a', 'space'), card('b', 'space'), card('c', 'math'), card('d', 'math')];
   const seen = { a: now - 30 * DAY, b: now - 30 * DAY, c: now - 30 * DAY };

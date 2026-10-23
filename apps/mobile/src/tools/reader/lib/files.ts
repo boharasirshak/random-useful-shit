@@ -26,4 +26,4 @@ export function audioDir(id: string, voiceKey: string) {
   return d;
 }
 
-export const filePath = (f: File) => decodeURI(f.uri.replace(/^file:\/\//, ''));
+export const filePath = (f: { uri: string }) => decodeURI(f.uri.replace(/^file:\/\//, ''));

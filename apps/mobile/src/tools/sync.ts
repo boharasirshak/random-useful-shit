@@ -13,6 +13,6 @@ export const SYNCED: Synced[] = [
   {
     tool: 'unrot',
     store: useUnrot,
-    spec: { fields: ['model', 'topics', 'welcomed', 'coached', 'limit', 'hidden'], maps: ['liked', 'saved', 'seen'] },
+    spec: { fields: ['model', 'topics', 'welcomed', 'lessons', 'limit', 'hidden'], maps: ['liked', 'saved', 'seen'] },
   },
 ];

@@ -5,10 +5,11 @@
     "topic": "eastern",
     "tags": ["buddhism", "suffering", "origins"],
     "title": "The prince who saw old age",
-    "text": "According to tradition, Prince Siddhartha grew up shielded from suffering. Venturing outside the palace, he finally saw an old man, a sick man and a corpse, then a calm wandering ascetic. Shaken, he left home to find out whether a life could be free of suffering.",
+    "text": "Legend says Prince Siddhartha grew up shielded from suffering. Outside the palace he saw an old man, a sick man, a corpse and a wandering ascetic. He left home.",
+    "em": "shielded from suffering",
     "author": "Siddhartha Gautama (the Buddha)",
     "source": "The legend of the Four Sights, from traditional biographies of the Buddha",
-    "more": "Siddhartha Gautama lived in what is now Nepal and northern India, probably around the 5th century BC, though scholars disagree on the exact dates. The story of the four sights is legend, but it captures the question Buddhism starts with: if ageing, illness and death come to everyone, how should we live?\n\nAfter years of extreme self-denial that nearly killed him, he is said to have found a middle way and reached awakening while meditating under a tree. ‘Buddha’ simply means ‘awakened one’. This thread walks through what he taught, one idea at a time, starting from that first honest look at suffering.",
+    "more": "Siddhartha Gautama lived in what’s now Nepal and northern India, probably around the 5th century BC, though scholars disagree on the dates. The four sights are legend, but they capture Buddhism’s starting question: if ageing, illness and death come for everyone, how should we live?\n\nAfter years of extreme self-denial that nearly killed him, he’s said to have found a middle way and reached awakening while meditating under a tree. ‘Buddha’ means ‘awakened one’.",
     "link": "https://en.wikipedia.org/wiki/Four_sights",
     "thread": { "id": "buddhism-in-7", "title": "Buddhism in 7 cards", "part": 1, "of": 7 }
   },
@@ -18,10 +19,11 @@
     "topic": "eastern",
     "tags": ["buddhism", "suffering", "diagnosis"],
     "title": "A diagnosis in four steps",
-    "text": "The Buddha’s first teaching is shaped like a doctor’s diagnosis. Life involves dukkha: suffering, unease, the sense that things never quite satisfy. It has a cause: craving. It can end. And there is a path that leads to its ending.",
+    "text": "The Buddha’s first teaching reads like a doctor’s diagnosis. Life involves dukkha, or suffering. Its cause is craving. It can end. And there’s a path to ending it.",
+    "em": "reads like a doctor’s diagnosis",
     "author": "Siddhartha Gautama (the Buddha)",
     "source": "Dhammacakkappavattana Sutta (Samyutta Nikaya 56.11)",
-    "more": "These are the Four Noble Truths, said to be the subject of the Buddha’s first sermon, given to five former companions in a deer park at Sarnath, near Varanasi. Dukkha is often translated as suffering, but it’s broader: the stress of wanting things to be other than they are, the background itch of dissatisfaction even when life is going fine.\n\nThe structure matters as much as the content. Name the problem honestly, find its cause, trust that a cure is possible, then follow a treatment. It’s a practical, almost clinical approach to the human condition. The next cards unpack each step, starting with the cause.",
+    "more": "These are the Four Noble Truths, said to be the subject of the Buddha’s first sermon, given to five former companions in a deer park at Sarnath, near Varanasi.\n\nDukkha is usually translated as suffering, but it’s broader. It covers the stress of wanting things to be other than they are, and the background itch of dissatisfaction even when life is going fine.",
     "link": "https://en.wikipedia.org/wiki/Four_Noble_Truths",
     "thread": { "id": "buddhism-in-7", "title": "Buddhism in 7 cards", "part": 2, "of": 7 }
   },
@@ -31,9 +33,10 @@
     "topic": "eastern",
     "tags": ["craving", "desire", "restlessness"],
     "text": "The thirst of a thoughtless man grows like a creeper; he runs from life to life, like a monkey seeking fruit in the forest.",
+    "em": "like a monkey seeking fruit",
     "author": "The Buddha",
     "source": "Dhammapada, verse 334 (trans. F. Max Müller, 1881)",
-    "more": "The second truth names the cause of suffering: taṇhā, which literally means ‘thirst’, and Müller keeps that image. Craving isn’t just wanting things; it’s a restless reaching that never settles. Get the fruit, and your hand is already moving to the next branch.\n\nThe Buddha didn’t say that wanting food or love is evil. The trouble is clinging: needing things to be a certain way, and suffering when they aren’t. You can see it in miniature in any phone session: one more scroll, one more check. Next time you reach for something, pause and notice the reaching itself. That noticing is where practice begins.",
+    "more": "The second truth names the cause of suffering: taṇhā, which literally means ‘thirst’, and Müller keeps that image. Craving here is a restless reaching that never settles. Get the fruit, and your hand is already moving to the next branch.\n\nThe Buddha didn’t call wanting food or love evil. The trouble is clinging, needing things to be a certain way and suffering when they aren’t.",
     "link": "https://www.gutenberg.org/ebooks/2017",
     "thread": { "id": "buddhism-in-7", "title": "Buddhism in 7 cards", "part": 3, "of": 7 }
   },
@@ -43,9 +46,10 @@
     "topic": "eastern",
     "tags": ["impermanence", "change", "acceptance"],
     "text": "‘All created things perish,’ he who knows and sees this becomes passive in pain; this is the way to purity.",
+    "em": "All created things perish",
     "author": "The Buddha",
     "source": "Dhammapada, verse 277 (trans. F. Max Müller, 1881)",
-    "more": "This verse states the first of the three marks of existence: impermanence. Everything that arises from causes, from moods to mountains to relationships, eventually passes. Müller’s phrase ‘passive in pain’ means something like ‘no longer pushed around by suffering’.\n\nWhy would seeing impermanence help? Because so much pain comes from treating changing things as if they were permanent: expecting a good moment to last forever, or a bad one never to end. Seeing clearly that both will pass makes it easier to enjoy the first without grasping and get through the second without despair. Try noticing one thing today that has already changed.",
+    "more": "Impermanence is the first of the three marks of existence. Everything that arises from causes, from moods to mountains, eventually passes. Müller’s ‘passive in pain’ means something like ‘no longer pushed around by suffering’.\n\nThe idea is that a lot of pain comes from treating changing things as permanent, like expecting a good moment to last forever or a bad one never to end.",
     "link": "https://www.gutenberg.org/ebooks/2017",
     "thread": { "id": "buddhism-in-7", "title": "Buddhism in 7 cards", "part": 4, "of": 7 }
   },
@@ -55,10 +59,11 @@
     "topic": "eastern",
     "tags": ["self", "ego", "buddhism"],
     "title": "Look for the self in charge",
-    "text": "The Buddha asked his listeners to examine their body, feelings, perceptions, mental habits and consciousness. Each one changes, and none is fully under our control. So which of them is a permanent self? None, he argued. This is anattā, not-self.",
+    "text": "The Buddha asked listeners to look at their body, feelings, perceptions, mental habits and consciousness. All of them change. Which one is a permanent self? None, he said.",
+    "em": "Which one is a permanent self?",
     "author": "Siddhartha Gautama (the Buddha)",
     "source": "Anattalakkhana Sutta (Samyutta Nikaya 22.59)",
-    "more": "This is traditionally the Buddha’s second sermon, and it holds his hardest and most misunderstood idea. He wasn’t saying you don’t exist. He was saying that what you call ‘me’ is a process, a flowing bundle of changing parts, not a fixed thing hidden behind them.\n\nIt connects directly to the earlier cards. If craving causes suffering, a lot of that craving is about protecting and enlarging this imagined fixed self: its image, its status, its need to be right. Loosening that grip can feel surprisingly light. Next time your pride is stung, ask yourself what exactly is being hurt.",
+    "more": "This is anattā, or not-self, traditionally the subject of the Buddha’s second sermon. It’s his hardest and most misunderstood idea. He wasn’t saying you don’t exist. What you call ‘me’, he said, is a process, a flowing bundle of changing parts, with no fixed thing hidden behind them.\n\nIt links back to craving. A lot of what we crave is protection for this imagined fixed self, its image and its need to be right.",
     "link": "https://en.wikipedia.org/wiki/Anatt%C4%81",
     "thread": { "id": "buddhism-in-7", "title": "Buddhism in 7 cards", "part": 5, "of": 7 }
   },
@@ -68,10 +73,11 @@
     "topic": "eastern",
     "tags": ["balance", "ethics", "mindfulness"],
     "title": "The middle way out",
-    "text": "Having tried both palace luxury and near-starvation, the Buddha rejected both extremes. His fourth truth is a middle path with eight parts: right view, intention, speech, action, livelihood, effort, mindfulness and concentration. It’s less a list of rules than a training in wisdom, ethics and attention.",
+    "text": "Having tried palace luxury and near-starvation, the Buddha rejected both. His fourth truth is an eightfold path: right view, intention, speech, action, livelihood, effort, mindfulness and concentration.",
+    "em": "an eightfold path",
     "author": "Siddhartha Gautama (the Buddha)",
     "source": "Dhammacakkappavattana Sutta (Samyutta Nikaya 56.11)",
-    "more": "The eight parts are traditionally grouped into three areas. Wisdom covers view and intention: seeing how things are and meaning well. Ethics covers speech, action and livelihood: how you treat others and earn your living. Meditation covers effort, mindfulness and concentration: training the mind itself.\n\n‘Right’ here means something like skilful, not obedient. The parts work together like the spokes of a wheel, which is why an eight-spoked wheel became a symbol of Buddhism. The middle way also works as everyday advice. When you keep swinging between extremes, the answer is often a steady, sustainable practice somewhere in between.",
+    "more": "The eight parts are traditionally grouped into three areas. Wisdom covers view and intention. Ethics covers speech, action and livelihood. Meditation covers effort, mindfulness and concentration.\n\n‘Right’ here means something like skilful, not obedient. The parts work together like the spokes of a wheel, which is why an eight-spoked wheel became a symbol of Buddhism.",
     "link": "https://en.wikipedia.org/wiki/Noble_Eightfold_Path",
     "thread": { "id": "buddhism-in-7", "title": "Buddhism in 7 cards", "part": 6, "of": 7 }
   },
@@ -80,10 +86,11 @@
     "type": "quote",
     "topic": "eastern",
     "tags": ["mind", "thoughts", "habits"],
-    "text": "All that we are is the result of what we have thought: it is founded on our thoughts, it is made up of our thoughts. If a man speaks or acts with an evil thought, pain follows him, as the wheel follows the foot of the ox that draws the carriage.",
+    "text": "All that we are is the result of what we have thought: it is founded on our thoughts, it is made up of our thoughts.",
+    "em": "what we have thought",
     "author": "The Buddha",
     "source": "Dhammapada, verse 1 (trans. F. Max Müller, 1881)",
-    "more": "The Dhammapada, a collection of verses from the early Buddhist canon, opens with this line, and it makes a fitting end to this thread. Suffering, craving, impermanence and the illusion of a fixed self all have to be worked with through the mind, and the mind can be trained.\n\nThe next verse completes the pair: act with a pure thought, and happiness follows like a shadow that never leaves. That isn’t magical thinking. It’s a claim about cause and effect: habits of attention and intention shape what we experience. Start small. Catch one unkind or anxious thought today, and choose what to do with it.",
+    "more": "The Dhammapada, a collection of verses from the early Buddhist canon, opens with this line. The verse goes on: speak or act with an evil thought, and pain follows you the way the wheel follows the ox that pulls the cart.\n\nThe next verse is its mirror image. Act with a pure thought, and happiness follows like a shadow that never leaves. It’s a claim about cause and effect: habits of attention and intention shape what we experience.",
     "link": "https://www.gutenberg.org/ebooks/2017",
     "thread": { "id": "buddhism-in-7", "title": "Buddhism in 7 cards", "part": 7, "of": 7 }
   },
@@ -92,10 +99,11 @@
     "type": "quote",
     "topic": "eastern",
     "tags": ["taoism", "space", "simplicity"],
-    "text": "The thirty spokes unite in the one nave; but it is on the empty space (for the axle), that the use of the wheel depends. Clay is fashioned into vessels; but it is on their empty hollowness, that their use depends.",
+    "text": "The thirty spokes unite in the one nave; but it is on the empty space (for the axle), that the use of the wheel depends.",
+    "em": "on the empty space",
     "author": "Laozi",
     "source": "Tao Teh King, chapter 11 (trans. James Legge, 1891)",
-    "more": "This short chapter of the Tao Te Ching goes on to doors and windows: a room is useful because of the space they cut out of the walls. Laozi’s point is that what isn’t there matters as much as what is. We notice the solid parts of things and overlook the emptiness that makes them work.\n\nIt’s a handy lens for a crowded life. A calendar with no gaps can’t take anything new. A conversation with no pauses leaves no room to listen. A page with no white space is hard to read. Try protecting one empty hour this week, and see what it makes possible.",
+    "more": "The chapter goes on to clay pots and then to doors and windows. A pot holds things because it’s hollow. A room is useful because of the gaps cut into its walls.\n\nLaozi’s point is that what isn’t there matters as much as what is. We notice the solid parts of things and overlook the emptiness that makes them work.",
     "link": "https://www.gutenberg.org/ebooks/216"
   },
   {
@@ -103,10 +111,11 @@
     "type": "quote",
     "topic": "eastern",
     "tags": ["beginnings", "patience", "taoism"],
-    "text": "The tree which fills the arms grew from the tiniest sprout; the tower of nine storeys rose from a (small) heap of earth; the journey of a thousand li commenced with a single step.",
+    "text": "The tree which fills the arms grew from the tiniest sprout … the journey of a thousand li commenced with a single step.",
+    "em": "commenced with a single step",
     "author": "Laozi",
     "source": "Tao Teh King, chapter 64 (trans. James Legge, 1891)",
-    "more": "This is the source of a line you’ve probably seen as ‘a journey of a thousand miles begins with a single step’. A li is a traditional Chinese measure of distance, historically about a third of a mile. The chapter is about handling things while they are small: problems are easiest to solve early, and great things grow from humble starts.\n\nThe motivational reading is fine, but Laozi’s emphasis is subtler. Pay attention to the small and the early, because that’s where outcomes are decided. Tiny habits, small kindnesses and minor warning signs all count. Big results are mostly made of little moments nobody noticed.",
+    "more": "This is where the famous thousand-miles line comes from. A li is a traditional Chinese measure of distance, historically about a third of a mile. The chapter is about handling things while they’re small. Problems are easiest to fix early, and big things grow from humble starts.\n\nLaozi’s stress is on the small and the early, because that’s where outcomes get decided. Tiny habits and minor warning signs both count.",
     "link": "https://www.gutenberg.org/ebooks/216"
   },
   {
@@ -114,10 +123,11 @@
     "type": "quote",
     "topic": "eastern",
     "tags": ["knowledge", "humility", "learning"],
-    "text": "Yu, shall I teach you what knowledge is? When you know a thing, to hold that you know it; and when you do not know a thing, to allow that you do not know it;—this is knowledge.",
+    "text": "Yu, shall I teach you what knowledge is? … when you do not know a thing, to allow that you do not know it;—this is knowledge.",
+    "em": "allow that you do not know",
     "author": "Confucius",
     "source": "Analects, Book 2.17 (trans. James Legge, 1861)",
-    "more": "Yu was Zilu, one of Confucius’ most loyal and most impulsive disciples. The Analects is a collection of short sayings and conversations recorded by Confucius’ followers, and this one reads like a gentle correction for a student who liked to sound certain.\n\nConfucius’ point is that knowing where your knowledge ends is itself knowledge, maybe the most useful kind. Pretending to know shuts learning down; admitting you don’t opens it up. Socrates made a strikingly similar point in Athens a few generations later. Try saying ‘I don’t know’ once this week in a moment where you would normally bluff.",
+    "more": "Yu was Zilu, one of Confucius’ most loyal and most impulsive disciples. The Analects is a collection of short sayings and conversations recorded by Confucius’ followers, and this one reads like a gentle correction for a student who liked to sound sure of himself.\n\nKnowing where your knowledge ends counts as knowledge too. Socrates made a strikingly similar point in Athens a few generations later.",
     "link": "https://www.gutenberg.org/ebooks/3330"
   },
   {
@@ -126,9 +136,10 @@
     "topic": "eastern",
     "tags": ["learning", "people", "self-improvement"],
     "text": "When I walk along with two others, they may serve me as my teachers. I will select their good qualities and follow them, their bad qualities and avoid them.",
+    "em": "serve me as my teachers",
     "author": "Confucius",
     "source": "Analects, Book 7.21 (trans. James Legge, 1861)",
-    "more": "Confucius was famous as a teacher, yet he described himself first as a learner. In his view, every companion is a lesson. Someone with a good quality shows you something to copy; someone with a bad one shows you something to avoid, and maybe something to look for in yourself.\n\nThis makes learning available everywhere, not just in books or classrooms. A rude stranger, a generous colleague and a patient friend are all teaching, if you pay attention. Elsewhere in the Analects he says that when you see someone falling short, you should turn inward and examine yourself. Treat the next three people you talk to as teachers.",
+    "more": "Confucius was famous as a teacher, but he described himself first as a learner. In his view every companion is a lesson. Someone with a good quality shows you what to copy. Someone with a bad one shows you what to avoid, and maybe what to check for in yourself.\n\nElsewhere in the Analects he says that seeing someone fall short is a cue to turn inward and examine yourself.",
     "link": "https://www.gutenberg.org/ebooks/3330"
   },
   {
@@ -136,10 +147,11 @@
     "type": "quote",
     "topic": "eastern",
     "tags": ["mastery", "flow", "taoism"],
-    "text": "A good cook changes his chopper once a year,—because he cuts. An ordinary cook, once a month,—because he hacks. But I have had this chopper nineteen years, and although I have cut up many thousand bullocks, its edge is as if fresh from the whetstone.",
+    "text": "A good cook changes his chopper once a year,—because he cuts. An ordinary cook, once a month,—because he hacks. But I have had this chopper nineteen years…",
+    "em": "this chopper nineteen years",
     "author": "Zhuangzi",
     "source": "Chuang Tzu, chapter 3 (trans. Herbert A. Giles, 1889)",
-    "more": "In this story, the cook of Prince Hui carves an ox so smoothly it looks like a dance. When the prince praises his skill, the cook explains that he no longer sees the whole animal. He follows its natural structure, sliding the blade through the gaps at the joints, so it never grinds against bone.\n\nThe prince says the cook has taught him how to take care of his life. Zhuangzi’s lesson: don’t force your way through things. Study how they are put together and work with that grain. It’s also a picture of mastery, effort refined until it looks effortless. Where are you hacking when you could be cutting?",
+    "more": "In this story the cook of Prince Hui carves an ox so smoothly it looks like a dance. When the prince praises his skill, the cook explains that he no longer sees the whole animal. He follows its natural structure, sliding the blade through the gaps at the joints, so it never grinds against bone. After many thousand bullocks the edge still looks fresh from the whetstone.\n\nThe prince says the cook has taught him how to take care of his life.",
     "link": "https://www.gutenberg.org/ebooks/59709"
   },
   {
@@ -147,10 +159,11 @@
     "type": "quote",
     "topic": "eastern",
     "tags": ["wisdom", "effort", "upanishads"],
-    "text": "Arise! Awake! Having reached the Great Ones (illumined Teachers), gain understanding. The path is as sharp as a razor, impassable and difficult to travel, so the wise declare.",
+    "text": "Arise! Awake! … The path is as sharp as a razor, impassable and difficult to travel, so the wise declare.",
+    "em": "as sharp as a razor",
     "author": "Katha Upanishad",
     "source": "Katha Upanishad, Part 3, verse 14 (trans. Swami Paramananda, 1919)",
-    "more": "The Katha Upanishad tells of Nachiketas, a boy who goes to the house of Death and refuses to leave without learning what happens after we die. Death, impressed by his persistence, teaches him about the deepest self, which he says is never born and never dies.\n\nThis verse is the wake-up call at the heart of that teaching. Understanding doesn’t arrive by accident: you seek out people who know more, and you accept that the path is narrow and demanding. Somerset Maugham took the title of his novel The Razor’s Edge from it. Is there a question you care about enough to be as stubborn as Nachiketas?",
+    "more": "The Katha Upanishad tells of Nachiketas, a boy who goes to the house of Death and refuses to leave without learning what happens after we die. Death, impressed, teaches him about the deepest self, which he says is never born and never dies.\n\nThis verse is the wake-up call at the heart of that teaching. The full verse also says to seek out the Great Ones, illumined teachers. Somerset Maugham took the title of The Razor’s Edge from it.",
     "link": "https://www.gutenberg.org/ebooks/3283"
   },
   {
@@ -159,10 +172,11 @@
     "topic": "eastern",
     "tags": ["taoism", "effortless", "flow"],
     "title": "Doing by not forcing",
-    "text": "Wu wei is often translated as ‘non-action’, but it doesn’t mean doing nothing. It means acting without strain or force, the way water finds its path or an expert moves without overthinking. Laozi says the Tao never forces anything, and yet nothing is left undone.",
+    "text": "Wu wei, often translated ‘non-action’, means acting without force, the way water finds its path. Laozi says the Tao never forces anything, yet nothing is left undone.",
+    "em": "yet nothing is left undone",
     "author": "Laozi",
     "source": "Tao Te Ching, chapters 37 and 48",
-    "more": "Wu wei is one of the core ideas of Taoism. The Tao Te Ching contrasts the sage, who acts in harmony with how things naturally unfold, with rulers and people who meddle, push and grasp, and so make things worse.\n\nIn modern terms it’s close to what psychologists call flow: full engagement without the feeling of strain. It applies to people too. Over-managing a team, a child or a relationship often backfires, while setting good conditions and stepping back works better. Next time you’re pushing hard and getting nowhere, ask where the grain runs, and whether you could go with it.",
+    "more": "Wu wei is one of the core ideas of Taoism, and it doesn’t mean doing nothing. The Tao Te Ching contrasts the sage, who acts in tune with how things naturally unfold, with rulers and people who meddle and grasp, and so make things worse.\n\nIn modern terms it’s close to what psychologists call flow, full engagement without the feeling of strain. Over-managing a team or a child often backfires for the same reason.",
     "link": "https://en.wikipedia.org/wiki/Wu_wei"
   },
   {
@@ -171,10 +185,11 @@
     "topic": "eastern",
     "tags": ["compassion", "human-nature", "confucianism"],
     "title": "The child at the well",
-    "text": "Mencius asked us to imagine suddenly seeing a small child about to fall into a well. Anyone, he said, would feel alarm and compassion: not to win the parents’ favour or the neighbours’ praise, but instantly. That flash shows the sprouts of goodness are in everyone.",
+    "text": "Mencius said anyone seeing a child about to fall into a well feels instant alarm and compassion. That flash, he argued, shows everyone has the sprouts of goodness.",
+    "em": "the sprouts of goodness",
     "author": "Mencius",
     "source": "Mencius, Book 2A.6",
-    "more": "Mencius, a Confucian thinker of the 4th century BC, argued that human nature is good. Not finished and perfect, but containing four ‘sprouts’: compassion, shame, respect and a sense of right and wrong. Like seedlings, they need cultivating, and they can be stunted by neglect or harsh conditions.\n\nThe later Confucian Xunzi argued the opposite: that people are innately bad and goodness has to be built through education and ritual. The debate still echoes today. Mencius’ practical advice is a gardener’s: notice your small moral impulses, like the urge to help or to apologise, and act on them before they wither.",
+    "more": "Mencius, a Confucian thinker of the 4th century BC, argued human nature is good. Not finished, but containing four ‘sprouts’: compassion, shame, respect and a sense of right and wrong. Like seedlings, they need tending and can be stunted by neglect. Nobody feels that alarm at the well to win the parents’ favour or the neighbours’ praise, he said.\n\nThe later Confucian Xunzi argued the opposite: people are bad by nature, and goodness has to be built through education and ritual.",
     "link": "https://en.wikipedia.org/wiki/Mencius"
   },
   {
@@ -183,10 +198,11 @@
     "topic": "eastern",
     "tags": ["zen", "curiosity", "learning"],
     "title": "Keep a beginner’s mind",
-    "text": "Shunryu Suzuki warned that expertise can quietly narrow the mind: the surer we are, the fewer possibilities we notice. Zen practice, as he taught it, means keeping a beginner’s openness, and meeting even familiar things as if for the first time.",
+    "text": "Zen teacher Shunryu Suzuki warned that expertise quietly narrows the mind. The surer we are, the less we notice. He taught meeting even familiar things like a beginner.",
+    "em": "expertise quietly narrows the mind",
     "author": "Shunryu Suzuki",
     "source": "Zen Mind, Beginner’s Mind (1970)",
-    "more": "Suzuki was a Japanese Soto Zen priest who moved to the United States and founded the San Francisco Zen Center, one of the most influential Zen communities in the West. His book, edited from informal talks, became one of the most popular introductions to Zen.\n\nBeginner’s mind, shoshin in Japanese, isn’t about pretending to know nothing. It’s about not letting what you know block what you could notice. Experts often miss things precisely because they already know what to expect. Try it with something routine, like your commute, a colleague or a meal. Look at it as if you had never seen it before.",
+    "more": "Suzuki was a Japanese Soto Zen priest who moved to the United States and founded the San Francisco Zen Center, one of the most influential Zen communities in the West. His 1970 book Zen Mind, Beginner’s Mind, edited from informal talks, became one of the most popular introductions to Zen.\n\nBeginner’s mind, shoshin in Japanese, means not letting what you know block what you could notice. Experts often miss things because they already know what to expect.",
     "link": "https://en.wikipedia.org/wiki/Zen_Mind,_Beginner%27s_Mind"
   },
   {
@@ -195,10 +211,11 @@
     "topic": "eastern",
     "tags": ["taoism", "history", "mystery"],
     "title": "Laozi may never have existed",
-    "text": "The Tao Te Ching is traditionally credited to Laozi, said to be an older contemporary of Confucius. But modern scholars are divided: some see him as largely or wholly legendary, and the text itself seems to have been transmitted and added to over time.",
+    "text": "The Tao Te Ching is credited to Laozi, said to be an older contemporary of Confucius. Some modern scholars think he’s largely or wholly legendary.",
+    "em": "largely or wholly legendary",
     "author": "Laozi",
     "source": "Wikipedia: Laozi",
-    "more": "Laozi simply means ‘Old Master’. The best-known legend has him growing weary of a declining kingdom and heading west to live as a hermit. At the frontier gate, a guard named Yinxi recognised him and asked him to write down his wisdom before leaving. The result, supposedly, was the Tao Te Ching.\n\nArchaeology has added twists. Bamboo slips found at Guodian in 1993, dated to before 300 BC, contain early versions of parts of the text, which supports the idea of a book that grew over time. That suits Taoism: a text about the nameless Way, by an author who barely has a name himself.",
+    "more": "Laozi just means ‘Old Master’. The best-known legend has him tiring of a declining kingdom and heading west. At the frontier gate a guard named Yinxi recognised him and asked him to write down his wisdom first. The result, supposedly, was the Tao Te Ching.\n\nArchaeology points to a messier story. Bamboo slips found at Guodian in 1993, dated to before 300 BC, hold early versions of parts of the text, which fits a book that grew over time.",
     "link": "https://en.wikipedia.org/wiki/Laozi"
   },
   {
@@ -207,9 +224,10 @@
     "topic": "eastern",
     "tags": ["taoism", "books", "translation"],
     "title": "A tiny book, endlessly translated",
-    "text": "The Tao Te Ching runs to only about 5,200 to 5,500 Chinese characters in 81 short chapters. Yet it is one of the most translated texts in world literature, often ranked next to the Bible.",
+    "text": "Only about 5,200 to 5,500 Chinese characters in 81 short chapters, yet the Tao Te Ching is among the most translated books ever, often ranked next to the Bible.",
+    "em": "about 5,200 to 5,500 Chinese characters",
     "source": "Wikipedia: Tao Te Ching",
-    "more": "The book was first translated into a European language, French, in the early 19th century, and since then translators have kept coming back to it. Part of the reason is its style: short, paradoxical lines with few grammatical markers, which leave a lot of room for interpretation. Compare any two English versions of the same chapter and they can read like different poems.\n\nThat’s worth remembering whenever you see a neat ‘Lao Tzu quote’ online. Many are loose modern paraphrases, and some aren’t in the book at all. Older public-domain translations, like James Legge’s, are clunkier but closer to the text, and free to read.",
+    "more": "It was first translated into a European language, French, in the early 19th century, and translators keep coming back. Part of the reason is the style: short, paradoxical lines with few grammatical markers, which leave a lot of room for interpretation. Two English versions of the same chapter can read like different poems.\n\nMany ‘Lao Tzu quotes’ online are loose modern paraphrases, and some aren’t in the book at all. Older translations like James Legge’s are clunkier but closer to the text.",
     "link": "https://en.wikipedia.org/wiki/Tao_Te_Ching"
   },
   {
@@ -218,9 +236,10 @@
     "topic": "eastern",
     "tags": ["zen", "meditation", "history"],
     "title": "Zen literally means meditation",
-    "text": "‘Zen’ is the Japanese reading of the Chinese ‘Chan’, which comes from the Sanskrit dhyāna, meaning meditation. The school took shape in Tang dynasty China by blending Indian Mahayana Buddhism with Taoist ideas, then spread to Korea, Vietnam and Japan.",
+    "text": "‘Zen’ is the Japanese reading of the Chinese ‘Chan’, from the Sanskrit dhyāna, meaning meditation. It took shape in Tang dynasty China, mixing Indian Mahayana Buddhism with Taoist ideas.",
+    "em": "from the Sanskrit dhyāna",
     "source": "Wikipedia: Zen",
-    "more": "The name is the whole programme. Zen puts meditation, rather than studying scriptures or performing rituals, at the centre of practice. In Korea the same tradition is called Seon, and in Vietnam Thiền.\n\nThe Taoist influence shows in Zen’s love of paradox, simplicity and nature, and in its suspicion of explanations that get in the way of direct experience. That mix later shaped Japanese gardens, tea ceremony and ink painting. So when something is called ‘very zen’ today, it’s borrowing from a 1,000-plus-year-old fusion of Indian and Chinese thought, whose core instruction is simply to sit and pay attention.",
+    "more": "The name is the whole programme. Zen puts meditation at the centre of practice, ahead of studying scriptures or performing rituals. From China it spread to Korea, where it’s called Seon, to Vietnam, where it’s Thiền, and to Japan.\n\nThe Taoist influence shows in Zen’s love of paradox, simplicity and nature, and its suspicion of explanations that get between you and direct experience. That mix later shaped Japanese gardens, tea ceremony and ink painting.",
     "link": "https://en.wikipedia.org/wiki/Zen"
   },
   {
@@ -228,11 +247,12 @@
     "type": "question",
     "topic": "eastern",
     "tags": ["identity", "dreams", "reality"],
-    "title": "Are you the dreamer or the dream?",
-    "text": "Zhuangzi dreamed he was a butterfly, fluttering about, unaware he was Zhuangzi. Then he woke up. Was he a man who had dreamed of being a butterfly, or a butterfly now dreaming it was a man? How would you tell?",
+    "title": "Man or butterfly?",
+    "text": "Zhuangzi dreamed he was a butterfly, then woke up. Was he a man who’d dreamed of being a butterfly, or a butterfly now dreaming it was a man?",
+    "em": "Zhuangzi dreamed he was a butterfly",
     "author": "Zhuangzi",
     "source": "Chuang Tzu, chapter 2 (trans. Herbert A. Giles, 1889)",
-    "more": "This is one of the most famous passages in Chinese philosophy. Western thinkers raised a similar doubt much later; Descartes worried he could never be completely sure he wasn’t dreaming. But Zhuangzi’s mood is different. He isn’t anxious about certainty. He enjoys the puzzle, and ends by noting that there must be some difference between a man and a butterfly, and calling the shift between them a transformation.\n\nHis deeper point is that the lines we draw between self and world, waking and dreaming, are less fixed than they feel. Instead of clinging to one identity, he suggests flowing with change. Hold your certainties a little more lightly.",
+    "more": "Zhuangzi never settles it. He just notes there must be some difference between a man and a butterfly, and calls the shift between them a transformation.\n\nIt’s one of the most famous passages in Chinese philosophy. Descartes later worried he could never be completely sure he wasn’t dreaming, but Zhuangzi’s mood is different. He isn’t anxious about certainty. He enjoys the puzzle, and the lines between self and world, waking and dreaming, look less fixed to him than they feel.",
     "link": "https://www.gutenberg.org/ebooks/59709"
   },
   {
@@ -241,10 +261,11 @@
     "topic": "eastern",
     "tags": ["zen", "koan", "mind"],
     "title": "The sound of one hand",
-    "text": "You know the sound of two hands clapping. What is the sound of one hand? Don’t reach for a clever answer. Stay with the question, and notice what your mind does when logic runs out.",
+    "text": "You know the sound of two hands clapping. What is the sound of one hand?",
+    "em": "the sound of one hand",
     "author": "Hakuin Ekaku",
     "source": "Koan devised by Hakuin Ekaku, 18th-century Japan",
-    "more": "This koan comes from the Japanese Zen master Hakuin Ekaku, who in later life used it to stir up ‘great doubt’ in beginners. Koans are puzzles used in Zen training, especially in the Rinzai school, and they are designed so that ordinary reasoning can’t crack them.\n\nThe aim isn’t to find the right answer but to wear out the habit of treating everything as a problem for the thinking mind. Students may work on one koan for months or years, presenting responses to a teacher. You don’t need a monastery to try the spirit of it: sit with a question you can’t solve, without rushing to resolve it.",
+    "more": "There’s no logical answer, by design. This koan comes from the Japanese Zen master Hakuin Ekaku, who in later life used it to stir up ‘great doubt’ in beginners. Koans are puzzles used in Zen training, especially in the Rinzai school, built so ordinary reasoning can’t crack them.\n\nThe aim is to wear out the habit of treating everything as a problem for the thinking mind. Students may work on one koan for months or years, presenting responses to a teacher.",
     "link": "https://en.wikipedia.org/wiki/Hakuin_Ekaku"
   }
 ]

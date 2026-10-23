@@ -118,11 +118,14 @@ Everything is saved on the device first and works offline. With `EXPO_PUBLIC_API
 
 A vertical feed, one card per screen, like Reels, but every card is a verified quote, a book's idea in plain words, or a checked fact, each with its source.
 
-- **Swipe up**: next card. **Swipe right**: "Go deeper", the context behind the card and a link to the source. **Swipe left**: not for me, fewer like this (with Undo). **Double tap**: like. The buttons on the right do the same, for people who don't swipe.
+- **Swipe up**: next card (a quick flick counts as a mild "not interested"). **Swipe left**: "Go deeper", the story behind the card, its source, related ideas, and "Not for me"; swipe right to come back. **Double tap**: like. **Press and hold**: not for me, fewer like this (Undo shows at the bottom). Swiping right on a card does nothing on purpose: thumbs read right as "yes", and iOS uses it for Back. Four buttons on the right (like, save, go deeper, share) cover the same, for people who don't swipe.
+- **Teaching**: first run is four short steps (hello, topics, cards a day, a promise) with Sprout, the mascot, asking one thing per screen. Gestures are taught one at a time on real cards, and each tip disappears once you've done it.
+- **Look**: quiet black. Warm white type in the platform's own font (SF Pro on iPhone), emphasis by brightness and weight, no topic colours, no labels over the words. The only colours are a like's red and Sprout's lime. Tokens live in `src/tools/unrot/features/style.ts`. Each card's key phrase (`em` in the content) is the brightest part, and the text brightens a phrase at a time when the card lands.
+- **Animations**: Sprout, the like heart, the save bookmark, and the plant on the end-of-day card are Rive (web shows simple fallbacks). Gesture tips are a fingertip dot drawn with Reanimated, so they look the same everywhere.
 - **It learns on the phone.** A logistic-regression taste model (one bias per topic, weights for type, author and tags) updates on every like, save, share, "go deeper", reading time, quick skip and swipe-left. 20% of picks explore your least-seen topic; no topic gets more than 2 of any 5 cards.
 - **Threads**: 7-card mini-courses. Like or save a part and the next part comes up next.
 - **Saved cards come back** to check you still remember them, after 1, 3, 7, 21 and 60 days.
-- **It ends.** After the daily limit (25 by default) you get "That's enough for today".
+- **It ends.** After the daily goal (picked at first run; 25 by default) you get "That's enough for today". A hairline at the top fills as you go.
 - **Online extras.** Likes, saves and taste sync like everything else (see Account and sync). New cards arrive from the server without an app release, and "Go deeper" shows related ideas found by meaning (embeddings on the server).
 
 Cards live in `packages/unrot-content` (one JSON file per topic, checked by `node build.mjs`); Metro watches that folder.

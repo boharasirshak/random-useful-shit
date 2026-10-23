@@ -16,14 +16,14 @@ export function TasteSection() {
   const authors = favorites(model, 'author:', 4);
   return (
     <>
-      <Section header="Your taste" footer={`Learned from ${model.n} reactions: likes, saves, reading time, and swipes. Swiping left teaches it the most.`}>
+      <Section header="Your taste" footer={model.n < 15 ? 'Still learning. These start from the topics you picked and sharpen as you read, like and save.' : `Learned from ${model.n} reactions: likes, saves, reading time, and cards you said weren’t for you.`}>
         {rows.map(({ t, v }) => (
           <View key={t.id} style={{ flexDirection: 'row', alignItems: 'center', gap: space.md, paddingHorizontal: space.lg, minHeight: 44 }}
             accessible accessibilityLabel={`${t.name}: ${Math.round(v * 100)} percent`}>
-            <Ionicons name={t.icon} size={18} color={t.color} />
+            <Ionicons name={t.icon} size={18} color={c.secondary} />
             <Text style={[type.subhead, { color: c.label, width: 112 }]} numberOfLines={1}>{t.name}</Text>
             <View style={{ flex: 1, height: 8, borderRadius: 4, backgroundColor: c.fill, overflow: 'hidden' }}>
-              <View style={{ width: `${Math.round(v * 100)}%`, height: '100%', borderRadius: 4, backgroundColor: t.color }} />
+              <View style={{ width: `${Math.round(v * 100)}%`, height: '100%', borderRadius: 4, backgroundColor: c.label, opacity: 0.85 }} />
             </View>
           </View>
         ))}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Switch, Text, View } from 'react-native';
-import { api, syncBlocked } from '@/shared/api';
+import { api, API, syncBlocked } from '@/shared/api';
 import { useAccount } from '@/shared/account/store';
 import { useGoogleIdToken } from '@/shared/google';
 import { signedIn, signedOut, syncNow, type Session } from '@/shared/sync/engine';
@@ -56,7 +56,7 @@ export default function AccountScreen() {
     return (
       <Screen title="Account" back="Apps">
         <Section footer="Everything works offline and stays on this device.">
-          <Row title="Sync is off" subtitle={syncBlocked} />
+          <Row title="Sync isn’t available" subtitle={API ? 'Update the app to turn it on.' : 'This version of the app has no server to sync with.'} />
         </Section>
       </Screen>
     );

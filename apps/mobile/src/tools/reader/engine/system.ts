@@ -19,7 +19,7 @@ export const systemVoices = () => native?.getVoices() ?? Promise.resolve([]);
 export const openVoiceSettings = () => native?.openVoiceSettings() ?? Promise.resolve(false);
 
 export const systemSynth = (voiceId?: string): Synth => async (text, out) => {
-  if (!native) throw new Error('Speech needs the iPhone or Android app.');
+  if (!native) throw new Error('This build has no speech module. Rebuild the app (npm run ios / android).');
   const r = await native.synthesizeToFile(text, voiceId ?? null, filePath(out));
   return { duration: r.duration, markers: r.markers };
 };

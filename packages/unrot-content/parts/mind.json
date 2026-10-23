@@ -8,11 +8,12 @@
       "bias",
       "kahneman"
     ],
-    "title": "Two speeds of thought",
-    "text": "Daniel Kahneman describes two modes of thinking. System 1 is fast, automatic and effortless: it reads a face and finishes 2 + 2. System 2 is slow and deliberate: it works out 17 × 24. Most of the time System 1 runs the show, and System 2 signs off on its answers without checking.",
+    "title": "Fast thinking, slow thinking",
+    "text": "System 1 knows 2 + 2 instantly. System 2 grinds through 17 × 24. Most of the day, System 2 approves System 1's answers without checking.",
+    "em": "approves System 1's answers without checking",
     "author": "Daniel Kahneman",
     "source": "Thinking, Fast and Slow, part I (2011)",
-    "more": "Kahneman is clear that the two systems are characters in a story, not two places in the brain. The labels came from psychologists Keith Stanovich and Richard West; Kahneman made them famous.\n\nThe point is not that fast thinking is bad. It gets almost everything right, which is exactly why we trust it when it is wrong. Its errors cluster in predictable places: numbers, probabilities, unfamiliar situations, and anything where a vivid story is easier than the boring statistics.\n\nThe rest of this thread walks through those predictable places. The habit to build is small: notice when an answer arrived suspiciously fast on a question that deserved a slow one.",
+    "more": "Daniel Kahneman says the two systems are characters in a story, not places in the brain. The labels came from psychologists Keith Stanovich and Richard West. Kahneman made them famous.\n\nFast thinking gets almost everything right, which is why we trust it when it's wrong. Its mistakes bunch up in predictable spots: numbers, probabilities, unfamiliar situations, and anything where a vivid story is easier than dull statistics. The next cards go through those spots.",
     "link": "https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow",
     "thread": {
       "id": "brain-shortcuts",
@@ -30,10 +31,11 @@
       "bias",
       "numbers"
     ],
-    "title": "A spinning wheel moved their answers",
-    "text": "In a classic study, people watched a wheel of fortune stop on 10 or 65, then estimated the share of African countries in the UN. Those who saw 10 guessed 25% on average. Those who saw 65 guessed 45%. A number with nothing to do with the question dragged their answers toward it.",
+    "title": "A spinning wheel moved their guesses",
+    "text": "After seeing a wheel stop on 10, people's average guess for the share of UN members that are African was 25%. After 65, it was 45%.",
+    "em": "After 65, it was 45%",
     "source": "Tversky & Kahneman, Judgment under Uncertainty: Heuristics and Biases, Science (1974)",
-    "more": "This is anchoring. When we estimate, we start from whatever number is lying around and adjust, and we usually adjust too little. Anchoring is one of the sturdiest findings in psychology and replicated strongly in the large Many Labs project in 2014, though studies using obviously random anchors, like a visible dice roll, have found weaker effects.\n\nYou meet anchors constantly: the first price in a negotiation, the 'was $200' on a sale tag, a manager's guess in a planning meeting before anyone else speaks.\n\nTwo counter-moves help. Write down your own estimate before you see anyone else's number. And when an anchor is on the table, deliberately argue for a value far from it before settling.",
+    "more": "Psychologists call it anchoring. We start from whatever number is lying around and adjust too little. It replicated strongly in the Many Labs project in 2014, though studies using obviously random anchors, like a visible dice roll, found weaker effects.\n\nWriting your own estimate down before you hear anyone else's blunts it. So does arguing for a number far from the anchor before settling. Anchors show up as the first price in a negotiation, or the 'was $200' on a sale tag.",
     "link": "https://en.wikipedia.org/wiki/Anchoring_effect",
     "thread": {
       "id": "brain-shortcuts",
@@ -51,10 +53,11 @@
       "bias",
       "memory"
     ],
-    "title": "The letter K trick",
-    "text": "Are there more English words that start with K, or that have K as the third letter? Most people say start with K, because those words are easier to think of. In fact K turns up in third place more often: ask, like, make, take. How easily examples come to mind is not a measure of how common they are.",
+    "title": "The letter K question",
+    "text": "People guess more English words start with K than have it third. Starting words are just easier to recall. K is third more often: ask, like, make, take.",
+    "em": "K is third more often",
     "source": "Tversky & Kahneman, Availability: A heuristic for judging frequency and probability, Cognitive Psychology (1973)",
-    "more": "This is the availability heuristic: we judge how common something is by how easily examples come to mind. Usually that works, because common things are easier to recall. But plenty of things are memorable for reasons that have nothing to do with frequency.\n\nPlane crashes, shark attacks and dramatic crimes are vivid and heavily covered, so they feel more common than quiet killers like heart disease. One recent bad experience with a supplier can outweigh years of good service in your head.\n\nWhen you catch yourself saying 'this happens all the time', ask where your examples came from. If the answer is the news, your feed or one memorable story, go and find the actual count.",
+    "more": "The availability heuristic: we judge how common something is by how easily examples come to mind. Usually that works, because common things are easier to recall. But some things stick in memory for reasons that have nothing to do with how often they happen.\n\nPlane crashes and shark attacks get heavy coverage, so they feel more common than quiet killers like heart disease. One recent bad experience with a supplier can outweigh years of good service in your head.",
     "link": "https://en.wikipedia.org/wiki/Availability_heuristic",
     "thread": {
       "id": "brain-shortcuts",
@@ -72,10 +75,11 @@
       "bias",
       "evidence"
     ],
-    "text": "The human understanding, when any proposition has been once laid down (either from general admission and belief, or from the pleasure it affords), forces everything else to add fresh support and confirmation...",
+    "text": "The human understanding, when any proposition has been once laid down … forces everything else to add fresh support and confirmation...",
+    "em": "add fresh support and confirmation",
     "author": "Francis Bacon",
     "source": "Novum Organum, book I, aphorism 46 (1620; ed. Joseph Devey)",
-    "more": "Bacon described confirmation bias more than three centuries before psychologists named it. Once we hold a belief, we notice the evidence that fits, explain away the evidence that does not, and feel more certain with every pass.\n\nIn the same aphorism he tells a great story. A man is shown a temple's paintings of sailors who made vows to the gods and escaped shipwreck, and is pressed to admit the power of the gods. He asks where the portraits are of those who made their vows and drowned anyway.\n\nThe fix is the same as Bacon's: go looking for the cases that would prove you wrong, and count them with the same care as the ones that prove you right.",
+    "more": "Bacon described confirmation bias three centuries before psychologists named it. Once we hold a belief, we notice the evidence that fits and explain away the evidence that doesn't.\n\nIn the same aphorism he tells a story. A man is shown a temple's paintings of sailors who made vows to the gods and escaped shipwreck, and is pressed to admit the gods' power. He asks where the portraits are of those who made their vows and drowned anyway.",
     "link": "https://www.gutenberg.org/ebooks/45988",
     "thread": {
       "id": "brain-shortcuts",
@@ -94,10 +98,11 @@
       "statistics"
     ],
     "title": "The planes that never came back",
-    "text": "In World War II, statistician Abraham Wald analysed damage on bombers returning from missions. The catch: every plane he could study had survived. Hits in places where returning planes showed little damage were likely the hits that brought planes down, so those were the places that needed protecting.",
+    "text": "Abraham Wald studied damage on WWII bombers that made it home. The spots with few holes needed armour most. Planes hit there probably never came back.",
+    "em": "probably never came back",
     "author": "Abraham Wald",
     "source": "Statistical Research Group memoranda on aircraft vulnerability, Columbia University (1943)",
-    "more": "This is survivorship bias: drawing conclusions from the winners because the losers are no longer around to be counted. Bacon's drowned sailors from the last card are the same idea.\n\nIt hides in everyday advice. Studying successful founders who dropped out of college tells you nothing until you also count the dropouts who failed. Old buildings seem better made partly because the badly made ones fell down. Investment funds that closed after bad years quietly vanish from performance tables.\n\nThe popular version of Wald's story is simplified; his real memos were careful statistics for estimating how vulnerable each part of a plane was. But the lesson holds: before you learn from a sample, ask what filtered it.",
+    "more": "Survivorship bias means learning from the winners because the losers aren't around to be counted. Bacon's drowned sailors on the last card are the same idea.\n\nIt hides in everyday advice. Successful founders who dropped out of college tell you nothing until you count the dropouts who failed. Old buildings seem better made partly because the bad ones fell down. Wald's real memos were careful statistics on how vulnerable each part of a plane was, and the popular story simplifies them.",
     "link": "https://en.wikipedia.org/wiki/Survivorship_bias",
     "thread": {
       "id": "brain-shortcuts",
@@ -116,9 +121,10 @@
       "introspection"
     ],
     "title": "Everyone is biased except me",
-    "text": "In a survey of more than 600 Americans, over 85% said they were less biased than the average American. Only one person said they were more biased. Psychologists call this the bias blind spot: we spot bias easily in other people and almost never in ourselves.",
+    "text": "In a survey of over 600 Americans, more than 85% said they were less biased than the average American. Exactly one said they were more biased.",
+    "em": "less biased than the average American",
     "source": "Scopelliti et al., Management Science (2015); term coined by Pronin, Lin & Ross (2002)",
-    "more": "Emily Pronin's explanation is the introspection illusion. To judge someone else, we look at their behaviour. To judge ourselves, we look inward, search our thoughts for biased motives, find none, and conclude we are fair. But biases do not show up in introspection; they work below it.\n\nThat is why reading about biases, like this thread, mostly makes people better at diagnosing their friends. Knowing a bias exists does not switch it off.\n\nWhat helps is treating yourself the way you treat others: look at your track record, not your intentions. If you have underestimated every project for a year, your sincere feeling that this one is different counts for very little.",
+    "more": "The name for this is the bias blind spot. Emily Pronin's explanation is the introspection illusion. We judge other people by what they do. We judge ourselves by looking inward, finding no biased motives and deciding we're fair. But bias doesn't show up when you look inward. It works below that.\n\nSo reading about biases mostly makes people better at diagnosing their friends. Pronin, Lin and Ross coined the term in 2002.",
     "link": "https://en.wikipedia.org/wiki/Bias_blind_spot",
     "thread": {
       "id": "brain-shortcuts",
@@ -136,11 +142,12 @@
       "bias",
       "premortem"
     ],
-    "title": "Fix the process, not your brain",
-    "text": "Since you cannot introspect your way out of bias, change the process instead. Before a big decision, run a premortem: imagine it is a year later and the plan has failed, then have everyone write down why. Psychologist Gary Klein argues this surfaces risks people were too polite or too confident to raise.",
+    "title": "Pretend the plan already failed",
+    "text": "Before a big decision, assume it's a year later and the plan has failed. Everyone writes down why. This is Gary Klein's premortem.",
+    "em": "Everyone writes down why",
     "author": "Gary Klein",
     "source": "Performing a Project Premortem, Harvard Business Review (2007)",
-    "more": "This ties the thread together. System 1 will keep anchoring, grabbing vivid examples, defending its first conclusion and ignoring the planes that never came back. You will not feel it happening. So build checks into the routine instead of relying on vigilance.\n\nA few with decent support: write down your own estimate before hearing anyone else's. Ask what you would expect to see if you were wrong, then go and look; in experiments by Lord, Lepper and Preston, simply asking people to consider the opposite reduced biased reading of evidence. Keep a decision journal so your track record can correct your feelings.\n\nThe premortem works because it turns doubt into an assignment rather than an insult.",
+    "more": "Klein argues it surfaces risks people were too polite or too confident to raise. Doubt becomes an assignment instead of an insult.\n\nIt fits this thread. You can't feel your own biases working, so the checks have to live in the routine. Others with decent support: write your estimate before hearing anyone else's, and keep a decision journal. In experiments by Lord, Lepper and Preston, just asking people to consider the opposite reduced biased reading of evidence.",
     "link": "https://en.wikipedia.org/wiki/Pre-mortem",
     "thread": {
       "id": "brain-shortcuts",
@@ -158,10 +165,11 @@
       "focus",
       "experience"
     ],
-    "text": "Millions of items of the outward order are present to my senses which never properly enter into my experience. Why? Because they have no interest for me. My experience is what I agree to attend to.",
+    "text": "Millions of items … are present to my senses which never properly enter into my experience. … My experience is what I agree to attend to.",
+    "em": "what I agree to attend to",
     "author": "William James",
     "source": "The Principles of Psychology, vol. 1, ch. 11 'Attention' (1890)",
-    "more": "James wrote this in 1890, long before smartphones. His point is that the world does not simply pour in. At every moment you select a sliver of what is available, and that selection, repeated day after day, becomes the texture of your life.\n\nThe modern twist is that many companies now compete to do the selecting for you. Feeds, notifications and autoplay are all bids for the 'agree' part of his sentence.\n\nA useful test at the end of a day: what did I actually attend to, and would I have chosen it on purpose? You cannot attend to everything. You can decide more often what wins.",
+    "more": "William James wrote this in 1890. His point is that the world doesn't just pour in. At every moment you pick a sliver of what's there, and those picks, repeated day after day, become the texture of your life.\n\nToday a lot of companies compete to do the picking for you. Feeds and notifications are both bids for the 'agree' part of his sentence.",
     "link": "https://www.gutenberg.org/ebooks/57628"
   },
   {
@@ -173,10 +181,11 @@
       "character",
       "behaviour"
     ],
-    "text": "Could the young but realize how soon they will become mere walking bundles of habits, they would give more heed to their conduct while in the plastic state. We are spinning our own fates, good or evil, and never to be undone.",
+    "text": "Could the young but realize how soon they will become mere walking bundles of habits … We are spinning our own fates, good or evil, and never to be undone.",
+    "em": "mere walking bundles of habits",
     "author": "William James",
     "source": "The Principles of Psychology, vol. 1, ch. 4 'Habit' (1890)",
-    "more": "James's chapter on habit is one of the most quoted things in psychology, and it holds up well. He argues that habits are physical: repeated actions wear paths into the nervous system, and those paths make the next repetition easier.\n\nHis advice is concrete. Launch a new habit with as strong and decided a start as you can. Allow no exceptions until it is firmly rooted, because a single lapse undoes more than one success builds. And act on every good resolution at the first chance, rather than just enjoying the feeling of having resolved.\n\nThe flip side of 'never to be undone' is hopeful: the same mechanism that locks in bad habits will lock in good ones.",
+    "more": "James's chapter on habit holds up well. He argued habits are physical: repeated actions wear paths into the nervous system, and each path makes the next repetition easier.\n\nHis advice was concrete. Start a new habit as strongly and decidedly as you can. Allow no exceptions until it's rooted, because one lapse undoes more than one success builds. And act on a good resolution at the first chance, instead of just enjoying the feeling of having made it.",
     "link": "https://www.gutenberg.org/ebooks/57628"
   },
   {
@@ -189,9 +198,10 @@
       "attention"
     ],
     "text": "I have discovered that all the unhappiness of men arises from one single fact, that they cannot stay quietly in their own chamber.",
+    "em": "stay quietly in their own chamber",
     "author": "Blaise Pascal",
     "source": "Pensées, no. 139 (1670; trans. W. F. Trotter)",
-    "more": "Pascal was writing about diversion: the way we chase games, gossip, work and ventures largely to avoid being alone with our own thoughts. He took the restlessness as a clue to how uncomfortable that solitude is.\n\nA 2014 study led by Timothy Wilson made this vivid. Many participants left alone in a bare room for 6 to 15 minutes, with nothing to do but think, chose to give themselves a mild electric shock rather than sit quietly, even though they had earlier said they would pay to avoid it. Men were much more likely to do it than women.\n\nYou do not need Pascal's theology to take the point. Try ten minutes with no input at all, and notice how quickly you reach for something.",
+    "more": "Pascal meant diversion: chasing games, gossip, work and ventures mostly to avoid being alone with our own thoughts.\n\nA 2014 study led by Timothy Wilson made it vivid. Many people left alone in a bare room for 6 to 15 minutes, with nothing to do but think, chose to give themselves a mild electric shock, even though they'd said earlier they would pay to avoid one. Men did it far more often than women.",
     "link": "https://www.gutenberg.org/ebooks/18269"
   },
   {
@@ -204,9 +214,10 @@
       "evidence"
     ],
     "title": "Only a third replicated",
-    "text": "In 2015, a team of 270 researchers tried to repeat 100 published psychology studies. Of 97 originally significant results, only 36% came out significant again, and effects were on average about half as large. It became a landmark of what is now called the replication crisis.",
+    "text": "270 researchers redid 100 published psychology studies in 2015. Of 97 originally significant results, only 36% were significant again. Effects averaged about half the original size.",
+    "em": "only 36% were significant again",
     "source": "Open Science Collaboration, Estimating the reproducibility of psychological science, Science (2015)",
-    "more": "This does not mean psychology is broken or that two-thirds of findings are false. A failed replication can come from a weak original, a weak replication, or real differences between the two studies. But it showed that a single published result, especially a small and surprising one, is weaker evidence than it looks.\n\nThe field responded with better habits: registering hypotheses before collecting data, larger samples, and many-lab replications of famous effects.\n\nFor readers, the lesson is a filter. Be more confident in findings that have been repeated by independent teams with big samples, and less confident in clever one-off studies that made great headlines.",
+    "more": "It became a landmark of what's now called the replication crisis. It doesn't mean two-thirds of psychology is false. A failed replication can come from a weak original, a weak redo, or real differences between the two. But one published result, especially a small surprising one, is weaker evidence than it looks.\n\nThe field changed habits after this: registering hypotheses before collecting data, bigger samples, and many-lab replications of famous effects.",
     "link": "https://en.wikipedia.org/wiki/Replication_crisis"
   },
   {
@@ -218,10 +229,11 @@
       "willpower",
       "myths"
     ],
-    "title": "Two famous ideas that didn't hold up",
-    "text": "Ego depletion said willpower is a tank that runs dry. Power posing said standing like a superhero changes your hormones and your boldness. Both became hugely popular. In large, careful replications, both main effects largely vanished, and one of the power posing paper's own authors publicly abandoned it.",
+    "title": "Willpower tanks and power poses",
+    "text": "Ego depletion said willpower runs out like fuel. Power posing said a superhero stance changes your hormones and boldness. In big careful replications, both main effects largely vanished.",
+    "em": "both main effects largely vanished",
     "source": "Hagger et al., Perspectives on Psychological Science (2016); Dana Carney's public statement (2016)",
-    "more": "The ego depletion replication involved 23 labs following a pre-registered protocol and found an effect close to zero. A later 36-lab project with over 3,500 participants found the same. For power posing, a larger study in 2015 found no hormone changes, and in 2016 co-author Dana Carney wrote that she no longer believed the effect was real. Amy Cuddy still argues posture can change how powerful people feel, a much smaller claim.\n\nNone of this means effort never feels tiring or posture never matters. It means the big, simple versions taught in talks and books were not supported.\n\nA good rule: when a finding promises a dramatic change from a tiny trick, wait for the replications.",
+    "more": "The ego depletion replication ran in 23 labs with a pre-registered protocol and found an effect close to zero. A later 36-lab project with over 3,500 people found the same. For power posing, a larger 2015 study found no hormone changes, and in 2016 co-author Dana Carney wrote that she no longer believed the effect was real.\n\nAmy Cuddy still argues posture can change people's feelings of power, a much smaller claim.",
     "link": "https://en.wikipedia.org/wiki/Ego_depletion"
   },
   {
@@ -233,10 +245,11 @@
       "experience",
       "pain"
     ],
-    "title": "Why a longer pain can feel better",
-    "text": "Volunteers held one hand in painfully cold water for 60 seconds, and the other for 60 seconds plus 30 more while the water warmed by one degree. Asked which trial to repeat, most chose the longer one. Memory judged each by its worst moment and its ending, not by the total.",
+    "title": "They chose the longer pain",
+    "text": "One trial: 60 seconds of painfully cold water. The other: the same, plus 30 seconds while it warmed one degree. Most people chose to repeat the longer one.",
+    "em": "chose to repeat the longer one",
     "source": "Kahneman, Fredrickson, Schreiber & Redelmeier, Psychological Science (1993)",
-    "more": "This is the peak-end rule. When we remember an experience, we roughly average the most intense moment and the final moment, and largely ignore how long it lasted. Kahneman calls that second blind spot duration neglect.\n\nLater work with colonoscopy patients found the same pattern: ending a procedure more gently made people remember it as less unpleasant, even though it lasted longer.\n\nYou can use this. End meetings, workouts, holidays and hard conversations on a good note, because the ending carries outsized weight in memory. And when you judge a past experience, remember that your memory is a highlight reel, not a full recording.",
+    "more": "This is the peak-end rule. Memory roughly averages the worst moment and the last moment, and mostly ignores how long the thing lasted. Kahneman calls that second blind spot duration neglect.\n\nLater work with colonoscopy patients found the same pattern. Ending the procedure more gently made people remember it as less unpleasant, even though it lasted longer.",
     "link": "https://en.wikipedia.org/wiki/Peak%E2%80%93end_rule"
   },
   {
@@ -248,10 +261,11 @@
       "skill",
       "myths"
     ],
-    "title": "Do the least skilled think they're best?",
-    "text": "The Dunning-Kruger effect is often summed up as: the less people know, the more they think they are geniuses. Is that what the research actually found?",
+    "title": "Are the clueless the most confident?",
+    "text": "Dunning-Kruger is usually summed up as: the less people know, the more they think they're geniuses. Is that what the 1999 research found?",
+    "em": "they think they're geniuses",
     "source": "Kruger & Dunning, Journal of Personality and Social Psychology (1999)",
-    "more": "Not quite. In the 1999 studies, people scoring in the bottom quarter on tests of logic, grammar and humour placed themselves around the 62nd percentile on average, when they were really near the 12th. So they overestimated a lot, but still rated themselves only somewhat above average, not as the best.\n\nThere is also a live debate about how much of the pattern is a statistical artefact. Almost everyone rates themselves a bit above average, and when self-ratings and real scores are imperfectly correlated, regression to the mean alone produces a similar-looking chart.\n\nThe sturdy lesson is gentler: we are all poor judges of our own skill in areas we know little about, so outside feedback beats self-assessment.",
+    "more": "Not quite. In the 1999 studies, people in the bottom quarter on tests of logic, grammar and humour put themselves around the 62nd percentile on average. They were really near the 12th. A big overestimate, but they rated themselves only somewhat above average, not top.\n\nThere's also a live debate about how much is a statistical artefact. Almost everyone rates themselves a bit above average, and regression to the mean alone can produce a similar-looking chart.",
     "link": "https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect"
   },
   {
@@ -264,9 +278,10 @@
       "childhood"
     ],
     "title": "Does a marshmallow predict your future?",
-    "text": "Children who waited longer for a second marshmallow in the famous Stanford experiments did better years later. Does that mean a four-year-old's self-control sets the course of their life?",
+    "text": "Kids who waited longer for a second marshmallow in the Stanford experiments did better years later. Does a four-year-old's self-control set the course of their life?",
+    "em": "set the course of their life",
     "source": "Watts, Duncan & Quan, Psychological Science (2018)",
-    "more": "Probably much less than the story suggests. The original follow-ups were small. In 2018, Tyler Watts, Greg Duncan and Haonan Quan ran a conceptual replication with a sample over ten times larger and far more diverse. The link to later achievement was about half the original size, and it shrank further once they accounted for family background and early cognitive ability.\n\nThat fits a simpler story: children from less secure homes have good reason to take a reward now, because promised rewards are less reliable in their lives. Other work found children wait longer when the adult has proved trustworthy.\n\nSelf-control still matters, but the test is not a destiny meter. Context and trust shape how long anyone will wait.",
+    "more": "Much less than the story suggests. The original follow-ups were small. In 2018 Tyler Watts, Greg Duncan and Haonan Quan ran a conceptual replication with a sample over ten times larger and far more diverse. The link to later achievement was about half the original size, and shrank further after accounting for family background and early cognitive ability.\n\nOther work found children wait longer when the adult has proved trustworthy.",
     "link": "https://en.wikipedia.org/wiki/Stanford_marshmallow_experiment"
   },
   {
@@ -279,9 +294,10 @@
       "personality"
     ],
     "title": "Left-brained or right-brained?",
-    "text": "Logical people are left-brained and creative people right-brained, or so countless personality quizzes say. Is there anything to it?",
+    "text": "Personality quizzes love to say logical people are left-brained and creative people are right-brained. Is there anything to it?",
+    "em": "logical people are left-brained",
     "source": "Nielsen et al., PLOS ONE (2013)",
-    "more": "Some functions really are lopsided. For most people, key language areas sit in the left hemisphere, and the split-brain studies of Roger Sperry and Michael Gazzaniga in the 1960s showed the two halves can handle information differently.\n\nBut the leap to personality types does not hold. A 2013 University of Utah study analysed brain scans from more than 1,000 people and found no sign that individuals tend to be left-dominant or right-dominant overall. Creativity and logic both draw on networks spread across both hemispheres.\n\nSo if a quiz tells you which side you are, it is telling you about your self-image, not your brain.",
+    "more": "Not as a personality type. Some functions are lopsided. For most people, key language areas sit in the left hemisphere, and the split-brain studies of Roger Sperry and Michael Gazzaniga in the 1960s showed the two halves handle information differently.\n\nBut a 2013 University of Utah study looked at brain scans from more than 1,000 people and found no sign that individuals are left-dominant or right-dominant overall. Creativity and logic both use networks spread across both sides.",
     "link": "https://en.wikipedia.org/wiki/Lateralization_of_brain_function"
   },
   {
@@ -293,11 +309,12 @@
       "language",
       "coping"
     ],
-    "title": "More words, calmer feelings",
-    "text": "Lisa Feldman Barrett found that people differ in emotional granularity. Some just feel bad; others can tell irritated from disappointed from anxious. More precise labels seem to help people cope, because a specific feeling points to a specific response.",
+    "title": "Stressed, or dreading Tuesday?",
+    "text": "Some people just feel bad. Others can tell irritated from disappointed from anxious. Lisa Feldman Barrett calls this emotional granularity, and sharper labels seem to help people cope.",
+    "em": "emotional granularity",
     "author": "Lisa Feldman Barrett",
     "source": "How Emotions Are Made (2017)",
-    "more": "Barrett first noticed this in the 1990s, when some study participants used words like anxious, sad and angry almost interchangeably while others drew sharp lines between them. Research since then links higher granularity with more flexible emotion regulation, and lower granularity with conditions like depression and anxiety, although cause and effect are hard to untangle.\n\nThe practical part is easy to try. When you feel off, go one level more specific. Not 'stressed' but 'behind', 'dreading Tuesday' or 'embarrassed about that email'. Each points to a different next step.\n\nBuilding vocabulary helps too: reading fiction, borrowing words from other languages, or keeping a list of feeling words nearby for a while.",
+    "more": "Barrett noticed it in the 1990s. Some study participants used anxious, sad and angry almost interchangeably, while others drew sharp lines between them. Later research links higher granularity with more flexible emotion regulation, and lower granularity with depression and anxiety, though cause and effect are hard to untangle.\n\nA specific feeling points to a specific response. 'Stressed' doesn't say much. 'Behind on work' or 'embarrassed about that email' each suggest a different next step.",
     "link": "https://en.wikipedia.org/wiki/Emotional_granularity"
   },
   {
@@ -310,10 +327,11 @@
       "money"
     ],
     "title": "Losses hit about twice as hard",
-    "text": "Kahneman and Tversky showed that losing $100 feels worse than winning $100 feels good. Many people turn down a coin flip that pays $150 on heads and costs $100 on tails, even though it is a good bet. In typical studies, losses weigh roughly twice as much as equal gains.",
+    "text": "People often refuse a coin flip where heads wins $150 and tails loses $100. It's a good bet. Losing $100 hurts more than winning $100 feels good.",
+    "em": "Losing $100 hurts more",
     "author": "Daniel Kahneman and Amos Tversky",
     "source": "Prospect Theory: An Analysis of Decision under Risk, Econometrica (1979)",
-    "more": "Loss aversion helps explain why we hold losing investments too long, why 'don't lose your discount' can work better than 'get a discount', and why people value things more once they own them.\n\nIt is not a universal law. Later research found it weaker or absent for small stakes, and some researchers argue that effects blamed on it, like sticking with the status quo, are better explained by simple inertia. The ratio of about two is an average, not a constant.\n\nA useful habit: when you are agonising over a choice, reframe it. Ask what you would pick if you were starting fresh with nothing to lose, and see whether the answer changes.",
+    "more": "Kahneman and Tversky found that in typical studies, losses weigh roughly twice as much as equal gains. That helps explain why people hold losing investments too long, and why 'don't lose your discount' can beat 'get a discount'.\n\nIt isn't a universal law. Later research found it weaker or absent for small stakes, and some researchers say effects blamed on it, like sticking with the status quo, are better explained by plain inertia. The figure of two is an average.",
     "link": "https://en.wikipedia.org/wiki/Loss_aversion"
   },
   {
@@ -326,10 +344,11 @@
       "nudge"
     ],
     "title": "The box that's already ticked",
-    "text": "In countries where you must opt in to be an organ donor, registered consent tends to be low. In similar countries where you must opt out, it is near universal. The question is the same; only the default changed. Doing nothing is a choice, and whoever sets the default makes it for most people.",
+    "text": "Where you must opt in to be an organ donor, registered consent tends to be low. In similar opt-out countries, it's near universal. Only the default changed.",
+    "em": "Only the default changed",
     "author": "Eric Johnson and Daniel Goldstein",
     "source": "Do Defaults Save Lives?, Science (2003)",
-    "more": "Defaults work for several reasons: switching takes effort, the default feels like a recommendation, and staying put feels safer than acting. Richard Thaler and Cass Sunstein built much of their book Nudge around this, and automatic enrolment in workplace pensions is one of its biggest success stories.\n\nThere is a caveat to the organ example. Actual donation rates differ far less than registration rates, because families, hospitals and infrastructure matter a lot.\n\nIn your own life, look for defaults working against you: subscriptions that renew, the phone on the desk, the snacks in sight. Then set new defaults that do the right thing when you are not thinking about it.",
+    "more": "Eric Johnson and Daniel Goldstein made this famous in Science in 2003. Defaults work for several reasons: switching takes effort, the default feels like a recommendation, and staying put feels safer. Thaler and Sunstein built much of Nudge around this, and automatic enrolment in workplace pensions is one of its biggest successes.\n\nOne caveat. Actual donation rates differ far less than registration rates, because families, hospitals and infrastructure matter a lot.",
     "link": "https://en.wikipedia.org/wiki/Default_effect"
   },
   {
@@ -342,10 +361,11 @@
       "bias"
     ],
     "title": "They're careless, I'm just busy",
-    "text": "When someone cuts us off in traffic, we decide they are a selfish driver. When we do it, we know we were late and distracted. Psychologist Lee Ross named the first half of this the fundamental attribution error: we explain other people's actions by their character and underrate their circumstances.",
+    "text": "Someone cuts you off: selfish driver. You cut someone off: you were late. Lee Ross named the first half the fundamental attribution error.",
+    "em": "the fundamental attribution error",
     "author": "Lee Ross",
     "source": "The Intuitive Psychologist and His Shortcomings, Advances in Experimental Social Psychology (1977)",
-    "more": "The classic demonstration came in 1967. Edward Jones and Victor Harris had people read essays praising or attacking Fidel Castro. Even when readers were told the writers had been assigned their side, they still judged the writers to believe what they had argued.\n\nThe effect is real but varies. It appears weaker in cultures that pay more attention to context, and later reviews found the self-versus-others version less consistent than once thought.\n\nIt is still a good prompt. When someone annoys you, come up with one plausible situational explanation before settling on a verdict about their character. You will often be right, and you will be easier to work with either way.",
+    "more": "It means explaining other people's actions by their character and underrating their circumstances. The classic demonstration came in 1967. Edward Jones and Victor Harris had people read essays praising or attacking Fidel Castro. Even when told the writers had been assigned a side, readers still judged them to believe what they'd argued.\n\nThe effect is real but varies. It seems weaker in cultures that pay more attention to context, and later reviews found the self-versus-others version less consistent than once thought.",
     "link": "https://en.wikipedia.org/wiki/Fundamental_attribution_error"
   },
   {
@@ -357,11 +377,12 @@
       "reappraisal",
       "stress"
     ],
-    "title": "Change the story, not the face",
-    "text": "Psychologist James Gross compared two ways of handling emotion. Suppression means hiding what you feel. Reappraisal means changing how you interpret the situation, like reading pre-talk nerves as readiness. Reappraisal tends to work better; suppression tends to cost memory, effort and closeness with others.",
+    "title": "Nerves or readiness?",
+    "text": "James Gross compared two ways of handling emotion. Suppression hides it. Reappraisal reads the situation differently, like treating pre-talk nerves as readiness. Reappraisal tends to work better.",
+    "em": "Reappraisal tends to work better",
     "author": "James Gross",
     "source": "Gross & John, Journal of Personality and Social Psychology (2003)",
-    "more": "Gross's model sorts emotion regulation by timing. Reappraisal acts early, changing the meaning of a situation before the emotional response fully builds. Suppression acts late, clamping down on the expression of a feeling that is already running.\n\nIn lab studies, suppressing feelings did not reduce how bad people felt, raised physiological arousal, and impaired memory for what was happening. In daily life, people who habitually reappraise tend to report more positive emotion and closer relationships than habitual suppressors.\n\nReappraisal is not pretending things are fine. It is finding an interpretation that is also true and more useful: this deadline means people rely on me; this argument means we both care. Try it on something small first.",
+    "more": "Gross sorts emotion regulation by timing. Reappraisal acts early, changing what a situation means before the feeling fully builds. Suppression acts late, clamping down on a feeling that's already running.\n\nIn lab studies, suppressing didn't make people feel less bad. It raised physiological arousal and hurt memory for what was happening. In daily life, people who habitually reappraise tend to report more positive emotion and closer relationships than habitual suppressors.",
     "link": "https://en.wikipedia.org/wiki/Emotional_self-regulation"
   }
 ]

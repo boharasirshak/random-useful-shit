@@ -8,11 +8,12 @@
       "ancient-greece",
       "matter"
     ],
-    "title": "The first guess at atoms",
-    "text": "Around 400 BC, Democritus reasoned that if you keep cutting matter in half, you must eventually reach pieces that cannot be cut. He called them atoms, meaning uncuttable, and claimed that everything around us is just atoms moving through empty space.",
+    "title": "Democritus and the uncuttable bit",
+    "text": "Around 400 BC, Democritus figured that if you keep cutting matter in half, you eventually hit pieces that can't be cut. He called them atoms, meaning uncuttable.",
+    "em": "called them atoms, meaning uncuttable",
     "author": "Democritus",
     "source": "Known through later ancient writers (c. 5th to 4th century BC); Wikipedia: Democritus",
-    "more": "Democritus lived roughly from 460 to 370 BC and built on ideas from the earlier thinker Leucippus. None of his own books survive; we know his views through later writers who quoted or argued with him.\n\nHe had no way to test any of this. It was pure reasoning: matter can't be divisible forever, so there must be a smallest piece, too small for the senses to detect. For about two thousand years the idea stayed there, admired by some and dismissed by many.\n\nThis thread follows how a philosopher's hunch became one of the best-tested facts in science, and what it took to find real evidence.",
+    "more": "Democritus lived roughly from 460 to 370 BC and built on ideas from the earlier thinker Leucippus. None of his own books survive. We know his views from later writers who quoted him or argued with him.\n\nHe had no way to test any of it. It was pure reasoning, and for about two thousand years it stayed that way. This thread follows how the guess finally got real evidence.",
     "link": "https://en.wikipedia.org/wiki/Democritus",
     "thread": {
       "id": "are-atoms-real",
@@ -30,10 +31,11 @@
       "chemistry",
       "dalton"
     ],
-    "title": "Chemistry counts in whole numbers",
-    "text": "In the early 1800s, John Dalton saw that elements combine in simple whole-number ratios. Carbon and oxygen form two different gases, and for the same amount of carbon, one contains exactly twice as much oxygen as the other. Never 1.37 times. Always whole steps.",
+    "title": "Dalton's whole-number clue",
+    "text": "John Dalton noticed in the early 1800s that carbon and oxygen form two gases. For the same carbon, one has exactly twice the oxygen. Never 1.37 times.",
+    "em": "exactly twice the oxygen",
     "source": "Dalton, A New System of Chemical Philosophy (1808); Wikipedia: John Dalton, Law of multiple proportions",
-    "more": "The two gases are carbon monoxide and carbon dioxide. Dalton's explanation was simple: each element is made of identical atoms with a characteristic weight, and compounds form when whole atoms join. You can't add half an atom, so the ratios jump in whole numbers. His New System of Chemical Philosophy (1808) laid this out with the first table of relative atomic weights.\n\nIt was a huge step, but many scientists stayed cautious. Atoms were a handy bookkeeping device, they said, not necessarily real objects. Nobody had seen one. The decisive evidence would come from an unexpected place: a botanist's microscope.",
+    "more": "The two gases are carbon monoxide and carbon dioxide. Dalton's explanation was that each element is made of identical atoms with their own weight, and compounds form when whole atoms join. You can't add half an atom, so the ratios jump in whole steps. His New System of Chemical Philosophy (1808) had the first table of relative atomic weights.\n\nPlenty of scientists still treated atoms as handy bookkeeping. Nobody had seen one. The next clue came from a botanist's microscope.",
     "link": "https://en.wikipedia.org/wiki/John_Dalton",
     "thread": {
       "id": "are-atoms-real",
@@ -51,10 +53,11 @@
       "microscope",
       "brownian-motion"
     ],
-    "title": "The jiggle that would not stop",
-    "text": "In 1827, botanist Robert Brown watched tiny particles from pollen grains suspended in water. They jittered and zigzagged nonstop, for no visible reason. He repeated it with specks of glass and rock dust, and those jiggled too. So it wasn't life. Something invisible was shoving them.",
+    "title": "Pollen that wouldn't sit still",
+    "text": "In 1827, Robert Brown saw tiny particles from pollen grains jitter nonstop in water. Specks of glass did it too. So did rock dust.",
+    "em": "jitter nonstop in water",
     "source": "Wikipedia: Brownian motion",
-    "more": "Brown was careful. A natural first guess was that the motion came from some vital force in the pollen, so he tested particles of inorganic matter. They danced in exactly the same way, which ruled out biology.\n\nFor decades the motion stayed a curiosity. People suspected heat currents, vibrations or evaporation, but the jiggling carried on no matter how still things were kept, and it never ran down. The real explanation, when it finally arrived in 1905, turned this odd observation into the first direct window onto the molecular world, and settled an argument that had lasted since Democritus.",
+    "more": "Brown was careful. The obvious guess was some life force in the pollen, so he tried particles that had never been alive. They danced the same way, which ruled out biology.\n\nFor decades nobody could explain it. People blamed heat currents, vibration or evaporation, but the jiggling never ran down, however still things were kept. The answer came in 1905, and it settled an argument that had lasted since Democritus.",
     "link": "https://en.wikipedia.org/wiki/Brownian_motion",
     "thread": {
       "id": "are-atoms-real",
@@ -72,10 +75,11 @@
       "einstein",
       "measurement"
     ],
-    "title": "Fingerprints of invisible molecules",
-    "text": "In 1905 Einstein showed that Brownian motion is exactly what you'd expect if water were made of countless molecules randomly battering each particle, and he predicted how far a particle should drift over time. In 1908 Jean Perrin measured it. The numbers matched. Atoms had left fingerprints.",
+    "title": "Einstein predicts, Perrin measures",
+    "text": "Einstein explained the jiggle in 1905: countless water molecules hitting each particle. He predicted how far it should drift. Jean Perrin measured it in 1908. It matched.",
+    "em": "Jean Perrin measured it",
     "source": "Wikipedia: Brownian motion; Nobel Prize in Physics 1926",
-    "more": "Einstein's insight was statistical. One molecule is far too small to budge a visible particle, but enormous numbers of them hitting from all sides, slightly unevenly from moment to moment, add up to a random walk. His formula tied the size of that wandering to how many molecules a given amount of substance contains.\n\nPerrin's painstaking experiments with tiny suspended grains confirmed the prediction, and most remaining sceptics were won over. Perrin received the 1926 Nobel Prize in Physics for his work on the discontinuous structure of matter. Atoms had gone from a useful hypothesis to something measured.",
+    "more": "One molecule is far too small to budge a visible grain. But huge numbers of them hitting from all sides, a little unevenly from moment to moment, add up to a random walk. Einstein's formula tied the size of that wandering to how many molecules a given amount of substance contains.\n\nPerrin's careful experiments with tiny grains won over most of the remaining sceptics. He got the 1926 Nobel Prize in Physics for his work on the discontinuous structure of matter.",
     "link": "https://en.wikipedia.org/wiki/Jean_Baptiste_Perrin",
     "thread": {
       "id": "are-atoms-real",
@@ -93,10 +97,11 @@
       "nucleus",
       "rutherford"
     ],
-    "title": "Atoms are almost entirely empty",
-    "text": "In 1909, Hans Geiger and Ernest Marsden fired alpha particles at thin metal foil. Most passed straight through, but about 1 in 8,000 bounced back. Rutherford later compared it to an artillery shell rebounding off tissue paper. The explanation: nearly all of an atom's mass sits in a tiny nucleus.",
+    "title": "Shells bouncing off tissue paper",
+    "text": "Hans Geiger and Ernest Marsden fired alpha particles at thin metal foil in 1909. Most went straight through. About 1 in 8,000 bounced back.",
+    "em": "About 1 in 8,000 bounced back",
     "source": "Wikipedia: Rutherford scattering experiments; Atomic nucleus",
-    "more": "Rutherford worked out what this meant in 1911. If an atom's positive charge and mass were spread out evenly, as the leading model assumed, nothing should ever bounce backward. Only a tiny, dense, positively charged core could fling a fast alpha particle back toward its source.\n\nThat core, the nucleus, is astonishingly small. Depending on the element, an atom is roughly 27,000 to 60,000 times wider than its nucleus. If a nucleus were the size of a pea, its atom would be a few hundred metres across. Everything you touch is mostly empty space, which raises an obvious question.",
+    "more": "Rutherford later compared it to an artillery shell rebounding off tissue paper. In 1911 he worked out why. If an atom's charge and mass were spread evenly, as the leading model said, nothing should bounce back. Only a tiny, dense, positive core could do that.\n\nThat core, the nucleus, is tiny. Depending on the element, an atom is roughly 27,000 to 60,000 times wider than its nucleus. If the nucleus were a pea, the atom would be a few hundred metres across.",
     "link": "https://en.wikipedia.org/wiki/Rutherford_scattering_experiments",
     "thread": {
       "id": "are-atoms-real",
@@ -115,9 +120,10 @@
       "matter"
     ],
     "title": "Why can't you walk through walls?",
-    "text": "If atoms are almost entirely empty space, then your hand and a table are mostly nothing. So why does your hand stop when it meets the table, instead of drifting through it like two clouds of gnats passing each other?",
+    "text": "Atoms are almost entirely empty space. So when your hand hits a table, why does it stop instead of passing through like two clouds of gnats?",
+    "em": "two clouds of gnats",
     "source": "Wikipedia: Pauli exclusion principle",
-    "more": "Two things stop you. First, the outer parts of atoms are clouds of negatively charged electrons, and when two atoms get close, those clouds repel each other electrically. What you feel as touch is that repulsion, not solid lumps meeting.\n\nSecond, and deeper, is the Pauli exclusion principle, formulated by Wolfgang Pauli in 1925: no two electrons can occupy the same quantum state. Electrons can't all pile into the same space, so atoms resist being squeezed together. In the late 1960s, Freeman Dyson and Andrew Lenard proved that this rule is why ordinary matter is stable and takes up room at all. Emptiness, it turns out, can be very firm.",
+    "more": "Electrons, and a quantum rule about where they can be. The outer parts of atoms are clouds of negatively charged electrons, and those clouds push each other away when atoms get close. What you feel as touch is that push.\n\nUnder that is the Pauli exclusion principle, from Wolfgang Pauli in 1925: no two electrons can share the same quantum state, so atoms resist being squeezed. In the late 1960s Freeman Dyson and Andrew Lenard proved this is why ordinary matter is stable and takes up room.",
     "link": "https://en.wikipedia.org/wiki/Pauli_exclusion_principle",
     "thread": {
       "id": "are-atoms-real",
@@ -135,11 +141,12 @@
       "feynman",
       "knowledge"
     ],
-    "title": "The one sentence worth saving",
-    "text": "Richard Feynman asked: if a catastrophe wiped out all scientific knowledge and only one sentence could be passed on, which would carry the most information? His pick was the atomic hypothesis. Everything is built from atoms, tiny bits forever in motion that pull on each other when close and push back when pressed together.",
+    "title": "Feynman's one-sentence rescue plan",
+    "text": "If all science were wiped out and one sentence could survive, Richard Feynman would keep this: everything is made of atoms, tiny bits always moving.",
+    "em": "everything is made of atoms",
     "author": "Richard Feynman",
     "source": "The Feynman Lectures on Physics, Vol. I, ch. 1, Atoms in Motion (1963)",
-    "more": "Feynman's point was that this one idea unlocks an enormous amount, given a little imagination: why water evaporates, what temperature really is, why solids hold their shape and gases spread out.\n\nIt also ties this thread together. The idea began as Democritus's pure guess, became Dalton's bookkeeping for chemistry, showed itself in Brown's jiggling particles, was measured by Einstein and Perrin, and was cracked open by Rutherford to reveal a mostly empty interior held firm by quantum rules. Each step needed the one before it. That's how science usually works: not a single flash of genius, but a long relay in which every runner tests what the last one handed over.",
+    "more": "His full sentence adds that atoms pull on each other when a little apart and push back when squeezed together. With a bit of imagination, he said, that one idea explains a huge amount, like why water evaporates and what temperature really is.\n\nIt also sums up this thread. Democritus guessed it, Dalton used it for chemistry, Brown saw its effects, Einstein and Perrin measured it, and Rutherford found the empty inside held firm by quantum rules.",
     "link": "https://en.wikipedia.org/wiki/The_Feynman_Lectures_on_Physics",
     "thread": {
       "id": "are-atoms-real",
@@ -157,10 +164,11 @@
       "chemistry",
       "curiosity"
     ],
-    "text": "There is not a law under which any part of this universe is governed which does not come into play, and is touched upon in these phenomena. There is no better, there is no more open door by which you can enter into the study of natural philosophy, than by considering the physical phenomena of a candle.",
+    "text": "…there is no more open door by which you can enter into the study of natural philosophy, than by considering the physical phenomena of a candle.",
+    "em": "the physical phenomena of a candle",
     "author": "Michael Faraday",
     "source": "The Chemical History of a Candle, Lecture I (1861)",
-    "more": "Faraday gave these talks as a course of six lectures for a young audience at the Royal Institution in London, and they were published in 1861. Using little more than candles, he showed how the wax melts into a cup, climbs the wick, turns to vapour and burns, and how burning produces water and carbon dioxide.\n\nHis larger point still holds. You don't need exotic equipment to meet the laws of nature; gravity, heat, chemistry and light are all at work in one small flame. Faraday himself had little formal schooling and began as a bookbinder's apprentice, which may be why he believed so firmly that anyone could learn to look at the world this way.",
+    "more": "Faraday gave these talks as a course of six lectures for a young audience at the Royal Institution in London, and they were published in 1861. With little more than candles, he showed wax melting into a cup, climbing the wick, turning to vapour and burning into water and carbon dioxide.\n\nFaraday had little formal schooling. He started out as a bookbinder's apprentice, which may be why he was so sure anyone could learn to look at the world this way.",
     "link": "https://www.gutenberg.org/ebooks/14474"
   },
   {
@@ -172,10 +180,11 @@
       "facts",
       "theory"
     ],
-    "text": "Science is built up with facts, as a house is with stones. But a collection of facts is no more a science than a heap of stones is a house.",
+    "text": "…a collection of facts is no more a science than a heap of stones is a house.",
+    "em": "a heap of stones",
     "author": "Henri Poincaré",
     "source": "Science and Hypothesis, ch. 9, in The Foundations of Science (Halsted trans., 1913)",
-    "more": "Henri Poincaré was one of the great mathematicians and physicists of his era, and he thought hard about what scientists are actually doing. His point here is that data alone explains nothing. A pile of measurements becomes science only when someone finds the pattern that ties them together.\n\nRight after this line he adds that, above all, the scientist must foresee. A good theory is like a well-built house: you can walk into rooms no one has entered yet and trust the floor to hold. Gathering facts is necessary, but the real work is organising them into something that predicts what you haven't measured.",
+    "more": "Henri Poincaré was one of the great mathematicians and physicists of his time, and he thought hard about what scientists actually do. The line before this one says science is built up with facts, as a house is with stones.\n\nHis point is that data alone explains nothing. A pile of measurements becomes science when someone finds the pattern that ties it together. Right after this line he adds that, above all, the scientist must foresee.",
     "link": "https://www.gutenberg.org/ebooks/39713"
   },
   {
@@ -188,9 +197,10 @@
       "method"
     ],
     "text": "To doubt everything and to believe everything are two equally convenient solutions; each saves us from thinking.",
+    "em": "each saves us from thinking",
     "author": "Henri Poincaré",
     "source": "Science and Hypothesis, Introduction, in The Foundations of Science (Halsted trans., 1913)",
-    "more": "Poincaré wrote this in the introduction to Science and Hypothesis, first published in French in 1902. He was pushing back against two lazy attitudes toward science: treating every claim as settled truth, or dismissing the whole enterprise as arbitrary guesswork.\n\nHis alternative was harder. He wanted readers to examine each hypothesis on its own terms, asking which are necessary, which are convenient conventions, and which can be checked by experiment. That habit of sorting, rather than swallowing or rejecting everything wholesale, is still one of the best defences against both gullibility and cynicism.",
+    "more": "Poincaré wrote this in the introduction to Science and Hypothesis, first published in French in 1902. He was pushing back on two lazy habits. One treats every scientific claim as settled truth. The other waves the whole thing off as arbitrary guesswork.\n\nHe wanted readers to sort hypotheses instead. Which ones are necessary, which are handy conventions, and which can be checked by experiment?",
     "link": "https://www.gutenberg.org/ebooks/39713"
   },
   {
@@ -202,10 +212,11 @@
       "curiosity",
       "nature"
     ],
-    "text": "The scientist does not study nature because it is useful; he studies it because he delights in it, and he delights in it because it is beautiful. If nature were not beautiful, it would not be worth knowing, and if nature were not worth knowing, life would not be worth living.",
+    "text": "The scientist does not study nature because it is useful; he studies it because he delights in it, and he delights in it because it is beautiful.",
+    "em": "because it is beautiful",
     "author": "Henri Poincaré",
     "source": "Science and Method, Book I, ch. 1, in The Foundations of Science (Halsted trans., 1913)",
-    "more": "Science and Method appeared in French in 1908. In this chapter, titled The Choice of Facts, Poincaré asks how scientists decide what is worth studying when there are endless facts available. His answer is surprising from a hard-headed mathematician: they are guided by a sense of beauty.\n\nHe immediately clarifies that he doesn't mean colours or surface appearances. He means a deeper beauty, the harmonious order of the parts, which a pure intelligence can grasp. Simple laws that unite many facts tend to be both beautiful and useful, which is exactly why chasing that kind of beauty has served science so well.",
+    "more": "Science and Method came out in French in 1908. In this chapter, The Choice of Facts, Poincaré asks how scientists pick what to study when there are endless facts available. His answer, surprising from a hard-headed mathematician, is a sense of beauty.\n\nHe means something deeper than colours and surfaces: the harmonious order of the parts. Simple laws that tie many facts together tend to be both beautiful and useful.",
     "link": "https://www.gutenberg.org/ebooks/39713"
   },
   {
@@ -218,9 +229,10 @@
       "education"
     ],
     "text": "Science is, I believe, nothing but trained and organized common sense, differing from the latter only as a veteran may differ from a raw recruit",
+    "em": "trained and organized common sense",
     "author": "Thomas Henry Huxley",
     "source": "On the Educational Value of the Natural History Sciences (1854), in Lay Sermons, Addresses and Reviews (1870)",
-    "more": "Thomas Henry Huxley, the biologist later famous as Darwin's fiercest public defender, gave this address in 1854 to argue that science deserved a place in ordinary education. Science, he said, was not a mysterious priesthood. It uses the same reasoning everyone uses daily, just sharpened by practice and checked more carefully.\n\nThat's a hopeful thought. The habits behind good science, like noticing, comparing, testing a guess and changing your mind when the evidence says so, are available to anyone. What separates the veteran from the recruit is training, not a different kind of brain.",
+    "more": "Thomas Henry Huxley, later famous as Darwin's fiercest public defender, gave this talk in 1854 to argue that science belonged in ordinary education. In his view it used the same reasoning everyone uses daily, sharpened by practice and checked more carefully.\n\nSo the habits behind it, like noticing, comparing, testing a guess and changing your mind, are open to anyone. The veteran and the recruit have the same kind of brain. One of them has had more training.",
     "link": "https://www.gutenberg.org/ebooks/16729"
   },
   {
@@ -232,10 +244,11 @@
       "geometry",
       "history"
     ],
-    "title": "Measuring the Earth with shadows",
-    "text": "In the 3rd century BC, Eratosthenes learned that at noon on the summer solstice, the Sun shone straight down into a well at Syene, while rods in Alexandria still cast shadows. The shadow angle was about 7.2 degrees, one fiftieth of a circle. So Earth's circumference was fifty times the distance between the cities.",
+    "title": "Earth measured with a shadow",
+    "text": "On the solstice the noon Sun shone straight down a well at Syene. Alexandria's rods cast a 7.2 degree shadow. So Eratosthenes multiplied the distance by 50.",
+    "em": "multiplied the distance by 50",
     "source": "Wikipedia: Eratosthenes",
-    "more": "The logic is lovely. The Sun is so far away that its rays arrive essentially parallel. On a flat Earth, rods in both cities would cast identical shadows. The difference in angle tells you how much the surface curves between them.\n\nEratosthenes put the answer at around 250,000 stadia. Nobody is sure exactly how long his stadion was, so historians still argue about his precision, but by many estimates he came impressively close to the true figure of about 40,000 kilometres. His own book on the method is lost; we know it through a simplified retelling by the later writer Cleomedes. All it took was a shadow, a distance and geometry.",
+    "more": "This was in the 3rd century BC. 7.2 degrees is one fiftieth of a circle. The Sun is so far away that its rays arrive almost parallel, so on a flat Earth both cities would see the same shadow. The difference shows how much the ground curves between them.\n\nHe got around 250,000 stadia. Nobody knows exactly how long his stadion was, but by many estimates he came close to the real 40,000 kilometres. His own book is lost. We know the method through a later writer, Cleomedes.",
     "link": "https://en.wikipedia.org/wiki/Eratosthenes"
   },
   {
@@ -247,10 +260,11 @@
       "light",
       "sun"
     ],
-    "title": "Found on the Sun before Earth",
-    "text": "Helium was detected on the Sun before anyone found it on Earth. During a solar eclipse in 1868, astronomers saw a yellow line in sunlight that matched no known element. Norman Lockyer proposed a new one and named it after the Greek word for Sun. It was isolated on Earth in 1895.",
+    "title": "An element found on the Sun",
+    "text": "During a solar eclipse in 1868, astronomers saw a yellow line in sunlight that matched no known element. Norman Lockyer named it helium, after the Greek for Sun.",
+    "em": "matched no known element",
     "source": "Wikipedia: Helium",
-    "more": "Every element emits and absorbs light at its own set of colours, like a barcode. Spread sunlight into a spectrum and those barcodes appear as sharp lines. The new yellow line sat close to two known lines of sodium, and at first it was assumed to be sodium.\n\nLockyer's bold guess went unconfirmed for 27 years, until William Ramsay found helium in gas released from a uranium mineral. Rare as it is on Earth, helium is the second most abundant element in the universe, after hydrogen, and most of it was made in the Big Bang. We just had to look up to find it first.",
+    "more": "Every element gives off light at its own set of colours, like a barcode. Spread sunlight into a spectrum and those barcodes show up as sharp lines. The new yellow line sat close to two sodium lines, so at first people assumed it was sodium.\n\nNobody found helium on Earth until 1895, when William Ramsay got it from gas released by a uranium mineral. It's rare here, but it's the second most abundant element in the universe, after hydrogen.",
     "link": "https://en.wikipedia.org/wiki/Helium"
   },
   {
@@ -262,10 +276,11 @@
       "radioactivity",
       "nobel"
     ],
-    "title": "Two Nobels in two sciences",
-    "text": "Marie Curie won the Nobel Prize in Physics in 1903 and the Nobel Prize in Chemistry in 1911. She remains the only person ever to win Nobel Prizes in two different scientific fields. She was also the first woman to win a Nobel Prize at all.",
+    "title": "Marie Curie's two different Nobels",
+    "text": "Marie Curie won the Nobel Prize in Physics in 1903 and in Chemistry in 1911. Nobody else has won Nobels in two different sciences.",
+    "em": "two different sciences",
     "source": "Wikipedia: Marie Curie",
-    "more": "The 1903 physics prize, shared with her husband Pierre and with Henri Becquerel, recognised research on radioactivity, a term Marie Curie coined. The 1911 chemistry prize was hers alone, for discovering the elements polonium and radium. She named polonium after her native Poland.\n\nThe Curies had no proper laboratory and did much of their work in a converted shed, handling radioactive material long before its dangers were understood. Her papers are still radioactive and are kept in lead-lined boxes; visitors who consult them wear protective clothing. She died in 1934 of aplastic anaemia, very likely caused by her years of radiation exposure.",
+    "more": "She was also the first woman to win a Nobel at all. The 1903 prize, shared with her husband Pierre and with Henri Becquerel, was for research on radioactivity, a word she coined. The 1911 prize was hers alone, for discovering polonium and radium. She named polonium after Poland.\n\nHer papers are still radioactive and kept in lead-lined boxes. She died in 1934 of aplastic anaemia, very likely from years of radiation exposure.",
     "link": "https://en.wikipedia.org/wiki/Marie_Curie"
   },
   {
@@ -277,10 +292,11 @@
       "elements",
       "periodic-table"
     ],
-    "title": "A metal that melts in your hand",
-    "text": "Gallium is a soft, silvery metal that melts at about 29.76 °C, cooler than your body. Hold a piece in your palm and it slowly slumps into a shiny puddle. Leave it in a cool room and it turns solid again.",
+    "title": "Metal that melts in your hand",
+    "text": "Gallium is a silvery metal that melts at about 29.76 °C, below body temperature. Hold a piece and it slumps into a shiny puddle in your palm.",
+    "em": "slumps into a shiny puddle",
     "source": "Wikipedia: Gallium",
-    "more": "Gallium is one of only four metals that are liquid at or near room temperature, alongside mercury, caesium and rubidium. It also starred in a great moment for chemistry. In 1871, Dmitri Mendeleev predicted an undiscovered element he called eka-aluminium, leaving a gap for it in his periodic table and forecasting its properties.\n\nWhen Paul-Émile Lecoq de Boisbaudran discovered gallium in 1875, it fit. Mendeleev had predicted a density of about 5.9 grams per cubic centimetre; the measured value is 5.904. Successes like this convinced chemists that the periodic table wasn't just a tidy chart but a real map of how elements behave.",
+    "more": "Gallium is one of four metals that are liquid at or near room temperature, along with mercury, caesium and rubidium.\n\nIn 1871 Dmitri Mendeleev left a gap in his periodic table for an unknown element he called eka-aluminium, and predicted its properties. Paul-Émile Lecoq de Boisbaudran found gallium in 1875. Mendeleev had predicted a density of about 5.9 grams per cubic centimetre. The measured value is 5.904.",
     "link": "https://en.wikipedia.org/wiki/Gallium"
   },
   {
@@ -292,10 +308,11 @@
       "myths",
       "materials"
     ],
-    "title": "Old windows are not melting",
-    "text": "You may have heard that old church windows are thicker at the bottom because glass is a slowly flowing liquid. It isn't true. The panes were uneven from the day they were made. One study estimated medieval glass flows at most about a nanometre in a billion years.",
+    "title": "Old church windows aren't melting",
+    "text": "Old church windows are said to be thicker at the bottom because glass flows. One study found medieval glass flows at most a nanometre in a billion years.",
+    "em": "a nanometre in a billion years",
     "source": "Wikipedia: Glass (Reputed flow)",
-    "more": "Older methods of making flat glass produced sheets with ripples and uneven thickness. The near-perfect float glass we use today only became widespread in the 1960s. So the lumps and sags in old windows were there from the start.\n\nGlass is an amorphous solid: its atoms are jumbled like a liquid's, but locked in place like a solid's. A 2017 study looked at glass from Westminster Abbey dating to 1268 and calculated how fast it could possibly flow at room temperature. Even across the entire age of the universe, the change would be far too small to see.",
+    "more": "The lumps were there from the start. Older ways of making flat glass gave ripples and uneven thickness, and smooth float glass only became common in the 1960s.\n\nGlass is an amorphous solid. Its atoms are jumbled like a liquid's but locked in place like a solid's. A 2017 study looked at glass from Westminster Abbey dating to 1268. Even over the age of the universe, any flow at room temperature would be too small to see.",
     "link": "https://en.wikipedia.org/wiki/Glass"
   },
   {
@@ -307,10 +324,11 @@
       "ice",
       "chemistry"
     ],
-    "title": "Why ice floats",
-    "text": "Most substances shrink when they freeze. Water does the opposite: it expands by about 9 percent, so ice floats. That is why lakes freeze from the top down, leaving liquid water underneath where fish can survive the winter.",
+    "title": "Why lakes freeze from the top",
+    "text": "Most things shrink when they freeze. Water expands by about 9 percent, so ice floats. Lakes freeze top down, and fish get through winter in the water below.",
+    "em": "expands by about 9 percent",
     "source": "Wikipedia: Ice",
-    "more": "The reason is hydrogen bonding. In liquid water, molecules tumble past each other and pack fairly closely. As water freezes, each molecule locks into a hexagonal lattice held at fixed angles, and that open structure takes up more room. Ice at ordinary pressure has a density of about 0.917 grams per cubic centimetre, against roughly 1 for liquid water.\n\nThe consequences are huge. Floating ice insulates the water below, so lakes rarely freeze solid. Water that freezes in cracks pries rocks apart, slowly turning mountains into soil. And it's why a forgotten bottle in the freezer can burst. Water isn't entirely alone in this; gallium also expands when it solidifies.",
+    "more": "The cause is hydrogen bonding. In liquid water, molecules tumble past each other and pack fairly close. When water freezes, each molecule locks into an open hexagonal lattice that takes up more room. Ice has a density of about 0.917 grams per cubic centimetre, against roughly 1 for liquid water.\n\nFloating ice insulates the water under it, so lakes rarely freeze solid. Water freezing in cracks also splits rocks. Gallium expands when it solidifies too.",
     "link": "https://en.wikipedia.org/wiki/Ice"
   },
   {
@@ -323,10 +341,11 @@
       "philosophy"
     ],
     "title": "Good theories stick their necks out",
-    "text": "Karl Popper argued that what makes a theory scientific isn't that evidence supports it, since almost any idea can find supporters. It's that the theory forbids something: it makes a risky prediction that could turn out wrong. A claim no possible observation could ever refute isn't strong. It just isn't science.",
+    "text": "Karl Popper said a theory is scientific if it forbids something, making a risky prediction that could turn out wrong. If nothing could ever refute it, it isn't science.",
+    "em": "it forbids something",
     "author": "Karl Popper",
     "source": "The Logic of Scientific Discovery (1934)",
-    "more": "Popper was struck by a contrast. Einstein's general relativity predicted exactly how much starlight should bend passing the Sun, and the 1919 eclipse observations could have proved it wrong. Meanwhile, some fashionable theories of his day seemed able to explain any outcome at all, which Popper saw as a weakness dressed up as strength.\n\nPhilosophers still debate his criterion, called falsifiability, and real science is messier than any single rule. But as a working test it's powerful. When someone offers you an idea, ask: what result would show this is wrong? If the answer is nothing, be careful.",
+    "more": "Popper noticed a contrast. Einstein's general relativity said exactly how much starlight should bend near the Sun, and the 1919 eclipse could have proved it wrong. Some popular theories of his day seemed able to explain any result at all, which Popper saw as a weakness.\n\nThe criterion is called falsifiability. Philosophers still argue about it, and real science is messier than any single rule. As a rough check it still works well.",
     "link": "https://en.wikipedia.org/wiki/Falsifiability"
   },
   {
@@ -338,10 +357,11 @@
       "information",
       "thought-experiment"
     ],
-    "title": "Can a demon beat the laws of heat?",
-    "text": "Imagine a tiny being guarding a door between two boxes of gas. It lets only fast molecules through one way and slow ones the other. Without pushing anything, it makes one side hot and the other cold, apparently beating the law that heat flows from hot to cold. What's the catch?",
+    "title": "Can a tiny demon beat physics?",
+    "text": "Maxwell's demon minds a door between two gas boxes. It lets fast molecules through one way, slow ones the other. One side heats up for free. Who pays?",
+    "em": "One side heats up for free",
     "source": "Wikipedia: Maxwell's demon",
-    "more": "James Clerk Maxwell proposed this puzzle in 1867 to show that the second law of thermodynamics is statistical rather than absolute. It nagged physicists for a century.\n\nThe resolution involves information. To sort molecules, the demon must measure them and remember the results. In 1929 Leo Szilard linked measurement to entropy, and later work by Rolf Landauer and Charles Bennett showed that the unavoidable cost lies in erasing the demon's memory to make room for new measurements. Erasing information always gives off heat, enough to cancel out what the sorting gains. The second law survives, and we learned something remarkable along the way: information is physical.",
+    "more": "The demon's memory pays. James Clerk Maxwell posed the puzzle in 1867 to show the second law of thermodynamics is statistical, and it bugged physicists for a century.\n\nTo sort molecules, the demon has to measure them and remember the results. In 1929 Leo Szilard linked measurement to entropy. Later, Rolf Landauer and Charles Bennett showed the unavoidable cost is wiping the demon's memory to make room. Erasing information always gives off heat, enough to cancel the gain.",
     "link": "https://en.wikipedia.org/wiki/Maxwell%27s_demon"
   }
 ]

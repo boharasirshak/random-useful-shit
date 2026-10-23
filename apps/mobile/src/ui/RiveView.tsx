@@ -4,7 +4,8 @@ import Rive, { Alignment, AutoBind, Fit, type RiveRef } from 'rive-react-native'
 import FILE from '../../assets/rive/random-useful-shit.riv';
 
 // Every animation lives in one Rive file (../../../*.rml → assets/rive/, see README). Pick one by artboard name.
-export type Artboard = 'Flame' | 'DayComplete' | 'AddTick' | 'ScaleHop' | 'Medal';
+export type Artboard = 'Flame' | 'DayComplete' | 'AddTick' | 'ScaleHop' | 'Medal'
+  | 'UnrotSprout' | 'UnrotHeart' | 'UnrotSave' | 'UnrotGrow';
 // View-model values the host sets: numbers, booleans, or '#RRGGBB' colors.
 export type RiveData = Record<string, number | boolean | string>;
 export type RiveHandle = { trigger: (name: string) => void };

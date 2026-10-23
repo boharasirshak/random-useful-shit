@@ -13,7 +13,7 @@ type Data = {
   model: Model;
   topics: string[]; // picked on the welcome screen
   welcomed: boolean;
-  coached: boolean; // has seen the gesture hints
+  lessons: string[]; // gestures already learned (features/Hint.tsx)
   seen: Record<string, number>; // id → last shown
   hidden: string[]; // swiped left
   liked: Record<string, number>; // id → when
@@ -23,9 +23,10 @@ type Data = {
 };
 
 type State = Data & {
-  welcome: (topics: string[]) => void;
+  welcome: (topics: string[], limit: number) => void;
   setTopics: (topics: string[]) => void;
-  setCoached: (v?: boolean) => void;
+  learned: (lesson: string) => void;
+  relearn: () => void;
   signal: (card: Card, s: Signal) => void;
   toggleLike: (card: Card) => void;
   toggleSave: (card: Card) => void;
@@ -45,7 +46,7 @@ export const useUnrot = create<State>()(
       model: seed([]),
       topics: [],
       welcomed: false,
-      coached: false,
+      lessons: [],
       seen: {},
       hidden: [],
       liked: {},
@@ -53,14 +54,15 @@ export const useUnrot = create<State>()(
       limit: 25,
       today: { day: dayKey(), count: 0, extra: 0 },
       // Picked topics seed the biases; a model already learned (e.g. restored) keeps what it knows.
-      welcome: topics => set(s => ({ topics, welcomed: true, model: s.model.n ? s.model : seed(topics) })),
+      welcome: (topics, limit) => set(s => ({ topics, limit, welcomed: true, model: s.model.n ? s.model : seed(topics) })),
       setTopics: topics => set(s => {
         const b = { ...s.model.b };
         for (const t of topics) if (!s.topics.includes(t)) b[t] = Math.max(b[t] ?? 0, 1);
         for (const t of s.topics) if (!topics.includes(t)) b[t] = Math.min(b[t] ?? 0, 0);
         return { topics, model: { ...s.model, b } };
       }),
-      setCoached: (coached = true) => set({ coached }),
+      learned: lesson => set(s => (s.lessons.includes(lesson) ? {} : { lessons: [...s.lessons, lesson] })),
+      relearn: () => set({ lessons: [] }),
       signal: (card, s) => set(st => ({ model: learn(st.model, card, s) })),
       toggleLike: card => set(s => {
         if (s.liked[card.id]) {
@@ -94,11 +96,11 @@ export const useUnrot = create<State>()(
       resetTaste: () => set(s => ({ model: seed(s.topics) })),
       clearHistory: () => set({ seen: {}, hidden: [] }),
     }),
-    // v2: the anonymous sync code went away; accounts sync everything now.
-    { name: 'unrot', storage: createJSONStorage(() => AsyncStorage), version: 2,
+    // v2: the anonymous sync code went away (accounts sync everything). v3: gestures changed, so everyone learns them again.
+    { name: 'unrot', storage: createJSONStorage(() => AsyncStorage), version: 3,
       migrate: saved => {
-        const { sync: _s, code: _c, syncedAt: _a, ...rest } = saved as Data & { sync?: boolean; code?: string; syncedAt?: number };
-        return rest as Data;
+        const { sync: _s, code: _c, syncedAt: _a, coached: _o, ...rest } = saved as Data & { sync?: boolean; code?: string; syncedAt?: number; coached?: boolean };
+        return { ...rest, lessons: [] } as Data;
       } },
   ),
 );

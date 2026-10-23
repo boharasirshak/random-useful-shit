@@ -4,7 +4,7 @@ import { Pressable, Text, useWindowDimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useCards } from '@/tools/unrot/data/catalog';
 import { FeedItem } from '@/tools/unrot/features/FeedItem';
-import { INK } from '@/tools/unrot/features/fonts';
+import { C } from '@/tools/unrot/features/style';
 import { shareCard } from '@/tools/unrot/features/share';
 import { useUnrot } from '@/tools/unrot/store/app';
 import { type } from '@/ui/theme';
@@ -20,21 +20,21 @@ export default function CardScreen() {
   const st = useUnrot.getState;
   const close = () => (router.canGoBack() ? router.back() : router.replace('/unrot/saved'));
   return (
-    <View style={{ flex: 1, backgroundColor: '#0A0A0C' }}>
+    <View style={{ flex: 1, backgroundColor: C.bg }}>
       {card ? (
-        <FeedItem card={card} width={width} height={height} top={insets.top + 52} bottom={insets.bottom + 24}
+        <FeedItem card={card} width={width} height={height} top={insets.top + 52} bottom={insets.bottom + 24} active
           liked={liked} saved={saved} hidden={false}
           onLike={() => { if (!st().liked[card.id]) st().toggleLike(card); }} onToggleLike={() => st().toggleLike(card)}
           onSave={() => st().toggleSave(card)} onShare={() => { shareCard(card).then(ok => ok && st().signal(card, 'share')); }}
           onMore={() => {}} onOpenChange={() => {}} onHide={() => { st().hide(card); close(); }} />
       ) : (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text style={[type.headline, { color: INK }]}>This card is gone from the catalog.</Text>
+          <Text style={[type.headline, { color: C.ink }]}>This card is gone from the catalog.</Text>
         </View>
       )}
       <Pressable onPress={close} accessibilityRole="button" accessibilityLabel="Close" hitSlop={10}
-        style={{ position: 'absolute', top: insets.top + 8, left: 16, width: 34, height: 34, borderRadius: 17, backgroundColor: 'rgba(255,255,255,0.14)', alignItems: 'center', justifyContent: 'center' }}>
-        <Ionicons name="close" size={20} color={INK} />
+        style={{ position: 'absolute', top: insets.top + 8, left: 16, width: 34, height: 34, borderRadius: 17, backgroundColor: C.raised, alignItems: 'center', justifyContent: 'center' }}>
+        <Ionicons name="close" size={20} color={C.ink} />
       </Pressable>
     </View>
   );
