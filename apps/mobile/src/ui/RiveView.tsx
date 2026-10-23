@@ -32,8 +32,9 @@ export const RiveView = forwardRef<RiveHandle, RiveViewProps>(function RiveView(
       else r.setColor(k, v);
     }
   }, [json]);
-  useEffect(() => { if (started.current) apply(); }, [apply]);
-  useImperativeHandle(ref, () => ({ trigger: name => rive.current?.trigger(name) }), []);
+  // A state machine pauses once it settles, and the native setters don't wake it, so later changes (like, save) need a play().
+  useEffect(() => { if (started.current) { apply(); rive.current?.play(); } }, [apply]);
+  useImperativeHandle(ref, () => ({ trigger: name => { rive.current?.trigger(name); rive.current?.play(); } }), []);
 
   return (
     <View pointerEvents={pointerEvents} style={{ width: size, height: size }}>
