@@ -1,6 +1,6 @@
 import { useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, TextInput, View } from 'react-native';
 import { RESTAURANTS, type Category, type Restaurant } from '@/tools/calories/data/menu';
 import { AddBar } from '@/tools/calories/features/add/AddBar';
 import { BuilderPanel } from '@/tools/calories/features/add/BuilderPanel';
@@ -38,7 +38,7 @@ export default function PlaceMenu() {
   const { add } = useLogFood();
   const target = useBudget();
   const m = usePlaceMenu(place);
-  const [custom, setCustom] = useState({ kcal: 300, p: 0, c: 0, f: 0 });
+  const [custom, setCustom] = useState({ name: '', kcal: 300, p: 0, c: 0, f: 0 });
   // Calories, then any macros you set as 1 g parts (0 g ones left out).
   const customParts = [{ id: 'custom', qty: custom.kcal }, ...MACROS.map(([k]) => ({ id: `custom-${k}`, qty: custom[k] })).filter(p => p.qty)];
   const mealName = MEALS[meal];
@@ -50,7 +50,7 @@ export default function PlaceMenu() {
   const action = place === 'shake'
     ? { title: `Add to ${mealName} · ${fmt(shake)} kcal`, onPress: () => add({ parts: [{ id: 'shake', qty: 1 }] }) }
     : place === 'custom'
-      ? { title: `Add to ${mealName} · ${fmt(custom.kcal)} kcal`, onPress: () => add({ parts: customParts }) }
+      ? { title: `Add to ${mealName} · ${fmt(custom.kcal)} kcal`, onPress: () => add({ name: custom.name.trim() || undefined, parts: customParts }) }
       : m.build
       ? isDone(m.build)
         ? { title: `Add to ${mealName}`, onPress: m.addBuild }
@@ -80,6 +80,11 @@ export default function PlaceMenu() {
           <ShakeCard />
         ) : place === 'custom' ? (
           <Section footer="For anything that isn’t on a menu. Protein, carbs and fat are optional.">
+            <View style={{ minHeight: 44, flexDirection: 'row', alignItems: 'center', paddingHorizontal: space.lg, gap: space.sm }}>
+              <Text style={[type.body, { color: c.label }]}>Name</Text>
+              <TextInput value={custom.name} onChangeText={name => setCustom(s => ({ ...s, name }))} placeholder="Optional" placeholderTextColor={c.tertiary}
+                accessibilityLabel="Name" returnKeyType="done" maxLength={40} style={[type.body, { color: c.label, flex: 1, textAlign: 'right', paddingVertical: 10 }]} />
+            </View>
             <WheelRow label="Calories" startOpen wheels={[{ value: custom.kcal, options: CUSTOM, suffix: 'kcal', format: fmt, onChange: kcal => setCustom(s => ({ ...s, kcal })) }]} />
             {MACROS.map(([k, label]) => (
               <WheelRow key={k} label={label} wheels={[{ value: custom[k], options: GRAMS, suffix: 'g', onChange: g => setCustom(s => ({ ...s, [k]: g })) }]} />

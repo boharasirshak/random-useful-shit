@@ -5,7 +5,7 @@ import { Fragment } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { byId } from '@/tools/calories/data/menu';
 import { Thumb } from '@/tools/calories/features/Thumb';
-import { entryKcal, MEAL_SHARE, MEALS, totalKcal, type Entry, type Meal } from '@/tools/calories/lib/log';
+import { entryKcal, isCustom, MEAL_SHARE, MEALS, totalKcal, type Entry, type Meal } from '@/tools/calories/lib/log';
 import { useApp } from '@/tools/calories/store/app';
 import { useBudget } from '@/tools/calories/store/derived';
 import { useUi } from '@/tools/calories/store/ui';
@@ -69,7 +69,7 @@ export function MealCard({ meal }: { meal: Meal }) {
             <View style={{ flex: 1, minWidth: 0 }}>
               <Text style={[type.subhead, { color: c.label, fontWeight: '500' }]} numberOfLines={1}>{e.name ?? name(e.parts[0].id)}</Text>
               <Text style={[type.caption, nums, { color: c.secondary }]} numberOfLines={1}>
-                {e.name ? e.parts.map(p => qtyLabel(p.qty) + name(p.id)).join(' · ') : `${fmt(entryKcal(e, shake))} kcal each`}
+                {e.name && !isCustom(e) ? e.parts.map(p => qtyLabel(p.qty) + name(p.id)).join(' · ') : `${fmt(entryKcal(e, shake))} kcal each`}
               </Text>
             </View>
             <View style={{ alignItems: 'flex-end', gap: 4 }}>

@@ -45,6 +45,8 @@ export function removeEntry(entries: Entry[] = [], e: Omit<Entry, 'qty'>): Entry
 }
 
 export type Order = Omit<Entry, 'qty' | 'meal'>; // what you ate, regardless of meal
+// Custom calories: `name` is what you typed, not a combo, so its parts (kcal and grams) aren't worth listing.
+export const isCustom = (o: Order) => o.parts[0]?.id === 'custom';
 // Identity of an order: same name and same parts = same order.
 export const orderKey = (o: Order) => (o.name ?? '') + JSON.stringify(o.parts);
 

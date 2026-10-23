@@ -9,7 +9,7 @@ import { MealTitle } from '@/tools/calories/features/add/MealTitle';
 import { PlaceBadge } from '@/tools/calories/features/add/PlaceBadge';
 import { TopBar } from '@/tools/calories/features/add/TopBar';
 import { useLogFood } from '@/tools/calories/features/add/useLogFood';
-import { countOrder, entryKcal, orderKey, recentOrders, type Order } from '@/tools/calories/lib/log';
+import { countOrder, entryKcal, isCustom, orderKey, recentOrders, type Order } from '@/tools/calories/lib/log';
 import { useApp } from '@/tools/calories/store/app';
 import { useUi } from '@/tools/calories/store/ui';
 import { tap } from '@/ui/haptics';
@@ -41,7 +41,7 @@ export default function AddHome() {
   const mealEntries = (logs[day] ?? []).filter(e => e.meal === meal);
   // One row for any order: + becomes ✓ once it's in this meal, ♥ pins it to Favorites.
   const row = (o: Order, key: string | number, subtitle?: string) => (
-    <FoodRow key={key} thumb={mainId(o)} title={o.name ?? byId[o.parts[0].id]?.name ?? 'Food'} subtitle={subtitle ?? (o.name ? detail(o) : undefined)}
+    <FoodRow key={key} thumb={mainId(o)} title={o.name ?? byId[o.parts[0].id]?.name ?? 'Food'} subtitle={subtitle ?? (o.name && !isCustom(o) ? detail(o) : undefined)}
       kcal={entryKcal({ ...o, meal, qty: 1 }, shake)} count={countOrder(mealEntries, o)}
       fav={favKeys.has(orderKey(o))} onFav={() => toggleFavorite(o)} onAdd={() => add(o)} />
   );
