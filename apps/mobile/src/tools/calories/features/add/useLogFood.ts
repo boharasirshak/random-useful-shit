@@ -15,6 +15,8 @@ export function useLogFood() {
     added,
     // A warning buzz instead of success when this takes the day over target. times: e.g. two plates at once.
     add: (o: Order, times = 1) => {
+      useUi.getState().rollover();
+      const { day, meal } = useUi.getState();
       for (let i = 0; i < times; i++) addFood(day, { meal, ...o });
       const s = useApp.getState();
       (target != null && totalKcal(s.logs[day], s.shake) > target ? warning : success)();

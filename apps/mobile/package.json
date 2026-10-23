@@ -49,9 +49,11 @@
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
+    "phone": "expo run:ios --configuration Release --device",
     "web": "expo start --web",
     "lint": "expo lint",
     "test": "node --test \"src/**/*.test.ts\"",
+    "rive": "rive rive --once",
     "typecheck": "tsc --noEmit",
     "build:web": "expo export -p web && workbox generateSW workbox-config.js"
   },

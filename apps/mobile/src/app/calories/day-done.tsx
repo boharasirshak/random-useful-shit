@@ -6,7 +6,7 @@ import Animated, { FadeInUp, ZoomIn } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { KIND_COLOR, medalLabel, useMotivation } from '@/tools/calories/features/motivation/useMotivation';
 import { shift, today } from '@/tools/calories/lib/dates';
-import { totalKcal } from '@/tools/calories/lib/log';
+import { isClosed, totalKcal } from '@/tools/calories/lib/log';
 import { useApp } from '@/tools/calories/store/app';
 import { useBudget } from '@/tools/calories/store/derived';
 import { Button } from '@/ui/Button';
@@ -14,6 +14,7 @@ import { Confetti } from '@/ui/Confetti';
 import { success, tap } from '@/ui/haptics';
 import { Medal } from '@/ui/Medal';
 import { Ring } from '@/ui/Ring';
+import { RiveView } from '@/ui/RiveView';
 import { nums, space, type, useColors } from '@/ui/theme';
 
 const fmt = (n: number) => Math.round(Math.abs(n)).toLocaleString();
@@ -26,7 +27,7 @@ export default function DayDone() {
   const insets = useSafeAreaInsets();
   const { day = today() } = useLocalSearchParams<{ day?: string }>();
   const eaten = useApp(s => totalKcal(s.logs[day], s.shake));
-  const done = useApp(s => s.done);
+  const closed = useApp(s => isClosed(s.logs, s.done, today()));
   const markAwardsSeen = useApp(s => s.markAwardsSeen);
   const target = useBudget();
   const { streak, longest, fresh } = useMotivation();
@@ -50,9 +51,12 @@ export default function DayDone() {
     <View style={{ flex: 1, backgroundColor: c.bg }}>
       <ScrollView contentContainerStyle={{ paddingTop: insets.top + space.xxl, paddingHorizontal: space.xl, paddingBottom: space.xl, alignItems: 'center', gap: space.lg }}>
         <Animated.View entering={ZoomIn.springify().damping(12)}>
-          <Ring size={168} stroke={18} progress={target ? Math.min(1, eaten / target) : 1} color={under ? c.green : c.orange}>
-            <Ionicons name="checkmark" size={64} color={under ? c.green : c.orange} />
-          </Ring>
+          <RiveView artboard="DayComplete" size={200} data={{ progress: target ? Math.min(1, eaten / target) : 1, color: under ? c.green : c.orange }}
+            fallback={
+              <Ring size={168} stroke={18} progress={target ? Math.min(1, eaten / target) : 1} color={under ? c.green : c.orange}>
+                <Ionicons name="checkmark" size={64} color={under ? c.green : c.orange} />
+              </Ring>
+            } />
         </Animated.View>
         <Animated.View entering={FadeInUp.delay(250)} style={{ alignItems: 'center', gap: space.xs }}>
           <Text style={[type.largeTitle, { color: c.label, textAlign: 'center' }]}>{under ? 'Day Complete' : 'Day Logged'}</Text>
@@ -64,7 +68,7 @@ export default function DayDone() {
 
         <Animated.View entering={FadeInUp.delay(450)} style={{ alignItems: 'center', gap: space.sm, marginTop: space.md }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
-            <Ionicons name="flame" size={28} color="#FF9500" />
+            <RiveView artboard="Flame" size={34} data={{ lit: streak > 0 }} fireOnPlay="flare" fallback={<Ionicons name="flame" size={28} color="#FF9500" />} />
             <Text style={[type.title2, nums, { color: c.label }]}>{streak}-day streak</Text>
           </View>
           {record && <Text style={[type.footnote, { color: '#FF9500', fontWeight: '700' }]}>New record</Text>}
@@ -72,8 +76,8 @@ export default function DayDone() {
             {week.map(d => (
               <View key={d} style={{ alignItems: 'center', gap: 4 }}>
                 <Text style={[type.caption, { color: c.secondary }]}>{letter(d)}</Text>
-                <View style={{ width: 30, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center', backgroundColor: done[d] ? '#FF9500' : c.fill }}>
-                  {done[d] && <Ionicons name="checkmark" size={16} color="#fff" />}
+                <View style={{ width: 30, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center', backgroundColor: closed(d) ? '#FF9500' : c.fill }}>
+                  {closed(d) && <Ionicons name="checkmark" size={16} color="#fff" />}
                 </View>
               </View>
             ))}

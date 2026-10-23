@@ -2,6 +2,7 @@
 import { useMemo } from 'react';
 import { awards, type Award, type Kind } from '@/tools/calories/lib/awards';
 import { today } from '@/tools/calories/lib/dates';
+import { closedDays, isClosed } from '@/tools/calories/lib/log';
 import { currentStreak, longestRun } from '@/tools/calories/lib/streak';
 import { useApp } from '@/tools/calories/store/app';
 import { useBudget } from '@/tools/calories/store/derived';
@@ -24,8 +25,8 @@ export function useMotivation() {
     return {
       list,
       fresh: list.filter(a => a.earned && !seen.includes(a.id)),
-      streak: currentStreak(done, t),
-      longest: longestRun(Object.keys(done).filter(d => done[d]).sort()),
+      streak: currentStreak(isClosed(logs, done, t), t),
+      longest: longestRun(closedDays(logs, done, t)),
     };
   }, [logs, done, weights, shake, target, goal, seen, t]);
 }

@@ -1,10 +1,10 @@
-// Streaks of closed days ("Done for the Day"), like Apple Fitness and Duolingo.
+// Streaks of closed days (see isClosed in log.ts), like Apple Fitness and Duolingo.
 import { shift } from './dates.ts';
 
 // Days in a row up to today. Today not closed yet doesn't break it; the streak counts back from yesterday.
-export function currentStreak(done: Record<string, boolean>, today: string) {
-  let day = done[today] ? today : shift(today, -1), n = 0;
-  while (done[day]) { n++; day = shift(day, -1); }
+export function currentStreak(closed: (day: string) => boolean, today: string) {
+  let day = closed(today) ? today : shift(today, -1), n = 0;
+  while (closed(day)) { n++; day = shift(day, -1); }
   return n;
 }
 

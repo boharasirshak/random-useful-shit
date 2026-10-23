@@ -13,7 +13,7 @@ export function weighInNews(weights: Record<string, number>, day: string): Weigh
   const prev = before.length ? weights[before[before.length - 1]] : null;
   const delta = prev == null || lb == null ? null : Math.round((lb - prev) * 10) / 10;
   const newLow = lb != null && before.length > 0 && lb < Math.min(...before.map(d => weights[d]));
-  const streak = currentStreak(Object.fromEntries(days.map(d => [d, true])), day);
+  const streak = currentStreak(d => weights[d] != null, day);
   const d = delta == null ? '' : Math.abs(delta).toFixed(1);
   const line = delta == null ? 'First one logged. Every trend starts with a single dot.'
     : newLow ? pick(['Lowest weight yet. That’s the plan working.', 'New low! Screenshot-worthy.', 'A new low. Remember this feeling.'], day)

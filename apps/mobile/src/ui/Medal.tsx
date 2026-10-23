@@ -1,9 +1,23 @@
-import { Platform } from 'react-native';
+import { Platform, Text } from 'react-native';
 import Svg, { Circle, Defs, LinearGradient, Stop, Text as SvgText } from 'react-native-svg';
+import { RiveView } from './RiveView';
 import { useColors } from './theme';
 
+type Props = { size: number; color: string; label: string; earned: boolean };
+
 // Award medal in the Apple Fitness spirit: concentric line art. Earned = metallic color with the number; locked = faint outline.
-export function Medal({ size, color, label, earned }: { size: number; color: string; label: string; earned: boolean }) {
+// Native draws it with Rive (shine sweep, tap to bounce) and overlays the number; web gets the SVG.
+export function Medal({ size, color, label, earned }: Props) {
+  const c = useColors();
+  const font = Platform.select({ web: '-apple-system, BlinkMacSystemFont, sans-serif' });
+  return (
+    <RiveView artboard="Medal" size={size} data={{ color, earned }} fallback={<SvgMedal size={size} color={color} label={label} earned={earned} />}>
+      <Text style={{ fontSize: size * 0.3, fontWeight: '800', fontFamily: font, color: earned ? color : c.tertiary }}>{label}</Text>
+    </RiveView>
+  );
+}
+
+function SvgMedal({ size, color, label, earned }: Props) {
   const c = useColors();
   const font = Platform.select({ web: '-apple-system, BlinkMacSystemFont, sans-serif' });
   const s = size / 2, id = `g${color.replace('#', '')}`;

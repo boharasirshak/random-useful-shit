@@ -31,9 +31,12 @@ export function addEntry(entries: Entry[] = [], e: Omit<Entry, 'qty'>): Entry[] 
   return entries.map((x, j) => (j === i ? { ...x, qty: x.qty + 1 } : x));
 }
 
-// Days whose eating is final: marked "Done for the Day", or any earlier day with food logged (they close at midnight).
+// A day is closed once its eating is final: marked "Done for the Day", or any earlier day with food logged.
+// Today stays open (and counts live everywhere) until midnight, when it closes on its own.
+export const isClosed = (logs: Logs, done: Record<string, boolean>, today: string) => (day: string) =>
+  !!done[day] || (day < today && (logs[day]?.length ?? 0) > 0);
 export const closedDays = (logs: Logs, done: Record<string, boolean>, today: string) =>
-  [...new Set([...Object.keys(done).filter(d => done[d]), ...Object.keys(logs).filter(d => d < today && logs[d].length)])].sort();
+  [...new Set([...Object.keys(done), ...Object.keys(logs)])].filter(isClosed(logs, done, today)).sort();
 
 // Undo one add: lowers the matching line by one (removing it at zero).
 export function removeEntry(entries: Entry[] = [], e: Omit<Entry, 'qty'>): Entry[] {

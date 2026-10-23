@@ -2,6 +2,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { Pressable, Text, View } from 'react-native';
 import { Thumb } from '@/tools/calories/features/Thumb';
 import { select } from '@/ui/haptics';
+import { RiveView } from '@/ui/RiveView';
 import { nums, space, type, useColors } from '@/ui/theme';
 
 type Props = {
@@ -28,7 +29,8 @@ export function FoodRow({ thumb, title, subtitle, kcal, count, fav, onFav, onAdd
         </Pressable>
       )}
       <View style={{ alignItems: 'center', minWidth: 30 }}>
-        <Ionicons name={count ? 'checkmark-circle' : 'add-circle'} size={30} color={count ? c.green : c.tint} />
+        <RiveView artboard="AddTick" size={40} data={{ added: count > 0 }} pointerEvents="none"
+          fallback={<Ionicons name={count ? 'checkmark-circle' : 'add-circle'} size={30} color={count ? c.green : c.tint} />} />
         {count > 1 && <Text style={[type.caption, nums, { color: c.green, fontWeight: '700', marginTop: -2 }]}>×{count}</Text>}
       </View>
     </Pressable>

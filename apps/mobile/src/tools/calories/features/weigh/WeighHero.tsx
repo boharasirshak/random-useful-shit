@@ -9,6 +9,7 @@ import { Button } from '@/ui/Button';
 import { Confetti } from '@/ui/Confetti';
 import { success, tap } from '@/ui/haptics';
 import { Ring } from '@/ui/Ring';
+import { RiveView } from '@/ui/RiveView';
 import { nums, radius, space, type, useColors } from '@/ui/theme';
 import { range, WheelRow } from '@/ui/WheelRow';
 
@@ -65,7 +66,8 @@ export function WeighHero() {
       <View style={{ alignItems: 'center', paddingTop: space.xl, paddingHorizontal: space.lg, gap: space.md }}>
         <Ring size={210} stroke={18} progress={progress} color={c.green}>
           <View style={{ alignItems: 'center' }}>
-            {logged ? <Ionicons name={news?.newLow ? 'trophy' : 'checkmark-circle'} size={24} color={news?.newLow ? '#FF9500' : c.green} /> : <Hop />}
+            {news?.newLow ? <Ionicons name="trophy" size={24} color="#FF9500" />
+              : <RiveView artboard="ScaleHop" size={40} data={{ logged }} pointerEvents="none" fallback={logged ? <Ionicons name="checkmark-circle" size={24} color={c.green} /> : <Hop />} />}
             <Text style={[type.largeTitle, nums, { color: c.label, fontSize: 44, lineHeight: 52 }]}>{shown.toFixed(1)}</Text>
             <Text style={[type.subhead, { color: c.secondary }]}>lb</Text>
           </View>

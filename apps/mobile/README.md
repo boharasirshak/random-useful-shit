@@ -16,8 +16,11 @@ npm install
 npx expo start                     # dev server; press w for web
 npm run ios                        # build + install the dev client in the Simulator (slow the first time)
 npm run ios -- --device "iPhone"   # same, on a plugged-in or Wi-Fi-paired iPhone
+npm run phone                      # standalone Release build on your iPhone: no Metro, no Mac needed after install
 npm run android                    # same for Android
 ```
+
+`npm run phone` installs a **Release** build with the JS bundled in, so the app runs on its own for the 7 days a free Apple ID allows (then run it again). First launch: Settings → General → VPN & Device Management → trust your Apple ID.
 
 Phones run a **development build** with `expo-dev-client`, not Expo Go, because the app uses native modules (Google sign-in redirect, haptics, SwiftUI pickers). Build it once; after that, `npx expo start` is all you need day to day. The dev client finds the server on your network (or scan the QR code), shows errors on screen, and has a dev menu (shake the phone). Rebuild only when you add or upgrade a package with native code. Add packages with `npx expo install <pkg>` so versions match the Expo SDK.
 
@@ -76,8 +79,19 @@ src/
   ui/                           Shared iOS design kit: theme, Screen, Section, Row, Segmented, Field,
                                 Stepper, Button, LineChart, AppIcon, haptics, confirm
 assets/menu/                    Menu photos, one folder per restaurant (+ CREDITS.md)
+assets/rive/                    Built Rive animations (one .riv, built from rive/)
+rive/                           Rive source: rive.yaml + one .rml per artboard (Rive CLI project)
 public/                         PWA files: index.html, manifest.json, icons
 app.json / app.config.ts        Expo config (app.config.ts adds the Google iOS URL scheme from .env)
+```
+
+## Animations (Rive)
+
+The small interactive animations (streak flame, Day Complete ring, the + → ✓ on food rows, the weigh-in scale, award medals) are one Rive file, `assets/rive/random-useful-shit.riv`, built from the `.rml` files in `rive/` with the [Rive CLI](https://rive.app). Each artboard is driven by view-model values the app sets (`src/ui/RiveView.tsx`); on web `RiveView.web.tsx` shows the plain fallback instead.
+
+```sh
+npm run rive            # rebuild assets/rive/*.riv after editing an .rml (needs `rive` on PATH)
+rive rive               # live previewer; `main:` in rive/rive.yaml picks the artboard
 ```
 
 ## Adding a tool

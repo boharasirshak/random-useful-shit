@@ -27,12 +27,12 @@ const DEFS: [string, string, string, Kind, keyof Stats, number][] = [
 type Input = { logs: Logs; done: Record<string, boolean>; weights: Record<string, number>; shake: number; target: number | null; goal: number; today: string };
 
 export function awards({ logs, done, weights, shake, target, goal, today }: Input): Award[] {
-  const finished = Object.keys(done).filter(d => done[d]).sort();
+  const finished = closedDays(logs, done, today);
   const okDay = (d: string) => target != null && totalKcal(logs[d], shake) <= target;
   const w = Object.keys(weights).sort();
   const first = w.length ? weights[w[0]] : 0, last = w.length ? weights[w[w.length - 1]] : 0;
   const stats: Stats = {
-    closed: closedDays(logs, done, today).length,
+    closed: finished.length,
     longest: longestRun(finished),
     under: finished.filter(okDay).length,
     perfect: longestRun(finished, okDay),

@@ -1,0 +1,8 @@
+# Rive animations for the app. One artboard per .rml; `rive .` here previews, `npm run rive` (apps/mobile) builds into ../assets/rive.
+name: random-useful-shit
+main: Flame
+output:
+  dir: ../assets/rive
+logs:
+  file: build/rive.log
+  problems: build/problems.log

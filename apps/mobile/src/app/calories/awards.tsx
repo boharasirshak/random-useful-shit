@@ -7,6 +7,7 @@ import type { Award, Kind } from '@/tools/calories/lib/awards';
 import { useApp } from '@/tools/calories/store/app';
 import { GlassButton } from '@/ui/GlassButton';
 import { Medal } from '@/ui/Medal';
+import { RiveView } from '@/ui/RiveView';
 import { Screen } from '@/ui/Screen';
 import { nums, radius, space, type, useColors } from '@/ui/theme';
 
@@ -36,7 +37,7 @@ export default function Awards() {
     <Screen title="Awards" sheet accessory={<GlassButton icon="checkmark" label="Done" prominent onPress={close} />}>
       <View style={{ marginHorizontal: space.lg, backgroundColor: c.card, borderRadius: radius.lg, padding: space.lg, flexDirection: 'row', alignItems: 'center', gap: space.lg }}>
         <View style={{ width: 72, height: 72, borderRadius: 36, backgroundColor: streak ? '#FF950022' : c.fill, alignItems: 'center', justifyContent: 'center' }}>
-          <Ionicons name="flame" size={40} color={streak ? '#FF9500' : c.tertiary} />
+          <RiveView artboard="Flame" size={56} data={{ lit: streak > 0 }} fireOnPlay={streak ? 'flare' : undefined} fallback={<Ionicons name="flame" size={40} color={streak ? '#FF9500' : c.tertiary} />} />
         </View>
         <View style={{ flex: 1 }}>
           <Text style={[type.largeTitle, nums, { color: c.label }]}>{streak} <Text style={[type.title3, { color: c.secondary }]}>day streak</Text></Text>

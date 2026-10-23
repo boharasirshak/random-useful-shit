@@ -120,14 +120,14 @@ export function useQuestions(): Fold[] {
     {
       title: 'What does “Done for the Day” do?',
       body: <>
-        <P>It tells the app you’re finished logging. You get to see how you did, and your streak goes up by one. You can reopen the day any time to fix something.</P>
-        <P>Your streak counts days in a row that you close. Today doesn’t break it until the day is over.</P>
+        <P>It closes the day early: you see how you did and the streak ticks up right away. You don’t have to press it. Any day you logged food closes on its own at midnight and counts the same.</P>
+        <P>Your streak counts closed days in a row. Today doesn’t break it until the day is over. To fix an old day, tap it in the week strip and edit it there.</P>
       </>,
     },
     {
       title: 'Why did my goal date move?',
       body: <>
-        <P>When a day is over, the app uses what you really ate that day instead of your target. Days under your target move your goal date closer. Days over push it back. Days with nothing logged count as on target.</P>
+        <P>The app uses what you really ate instead of your target, and today counts as you log. Days under your target move your goal date closer. Days over push it back. Days with nothing logged count as on target.</P>
       </>,
     },
     {

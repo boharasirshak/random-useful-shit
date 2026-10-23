@@ -1,0 +1,104 @@
+<Rive version="1" kind="fragment">
+    <!-- Weigh-in scale. Hops until `logged=true`: then it lands, the needle swings and a green badge pops. Tap toggles it. -->
+    <Artboard defaultStateMachineId="4:70" viewModelId="4:60" styleId="4:3" x="550" y="0" width="64" height="64" name="ScaleHop" id="4:2">
+        <LayoutComponentStyle name="Style" id="4:3"/>
+        <Node x="51" y="15" scaleX="0" scaleY="0" name="Badge" id="4:20">
+            <Shape name="Tick"><PointsPath isClosed="false" isClockwise="true" name="P"><StraightVertex x="-4" y="0"/><StraightVertex x="-1.2" y="3"/><StraightVertex x="4" y="-3"/></PointsPath>
+                <Stroke thickness="2.4" cap="round" join="round" name="S"><SolidColor colorValue="FFFFFFFF" name="C"/></Stroke></Shape>
+            <Shape name="Dot"><Ellipse width="19" height="19" name="P"/><Fill name="F"><SolidColor colorValue="FF34C759" name="C"/></Fill></Shape>
+        </Node>
+        <Node x="32" y="36" name="Scale" id="4:10">
+            <Shape x="0" y="2" rotation="-0.8" name="Needle" id="4:13"><Rectangle width="2.4" height="10" originY="1" cornerRadiusTL="1.2" name="P"/><Fill name="F"><SolidColor colorValue="FF007AFF" name="C"/></Fill></Shape>
+            <Shape x="0" y="-4" name="Window"><Rectangle width="24" height="13" cornerRadiusTL="4" name="P"/><Fill name="F"><SolidColor colorValue="FFFFFFFF" name="C"/></Fill></Shape>
+            <Shape name="Body" id="4:11"><Rectangle width="46" height="32" cornerRadiusTL="9" name="P"/><Fill name="F"><SolidColor colorValue="FF007AFF" name="C"/></Fill></Shape>
+            <Shape x="0" y="17" opacity="0.18" name="Shadow" id="4:14"><Ellipse width="44" height="6" name="P"/><Fill name="F"><SolidColor colorValue="FF000000" name="C"/></Fill></Shape>
+        </Node>
+
+        <StateMachine name="ScaleHop" id="4:70">
+            <DataConverterBooleanNegate name="Not" id="4:95"/>
+            <StateMachineListenerSingle targetId="4:11" listenerTypeValue="click" name="Tap" id="4:90">
+                <ListenerViewModelChange fromViewModelProperty="true" fromDataBindId="4:96">
+                    <BindablePropertyBoolean>
+                        <DataBindContext sourcePathIds="4:60-4:61" propertyKey="634" id="4:96" converterId="4:95"/>
+                        <DataBindContext sourcePathIds="4:60-4:61" propertyKey="634" direction="true"/>
+                    </BindablePropertyBoolean>
+                </ListenerViewModelChange>
+            </StateMachineListenerSingle>
+            <StateMachineLayer name="Main" id="4:71">
+                <AnyState x="600" y="0"/><ExitState x="680" y="0"/>
+                <EntryState x="0" y="0"><StateTransition stateToId="4:72"/></EntryState>
+                <AnimationState animationId="4:80" x="160" y="0" id="4:72">
+                    <StateTransition stateToId="4:73" duration="120"><TransitionViewModelCondition>
+                            <TransitionPropertyViewModelComparator><BindablePropertyBoolean><DataBindContext sourcePathIds="4:60-4:61" propertyKey="634"/></BindablePropertyBoolean></TransitionPropertyViewModelComparator>
+                            <TransitionValueBooleanComparator value="true"/>
+                        </TransitionViewModelCondition></StateTransition>
+                </AnimationState>
+                <AnimationState animationId="4:81" reset="true" x="320" y="0" id="4:73">
+                    <StateTransition stateToId="4:74" enableExitTime="true" exitTimeIsPercetange="true" exitTime="100"/>
+                </AnimationState>
+                <AnimationState animationId="4:82" x="480" y="0" id="4:74">
+                    <StateTransition stateToId="4:75"><TransitionViewModelCondition>
+                            <TransitionPropertyViewModelComparator><BindablePropertyBoolean><DataBindContext sourcePathIds="4:60-4:61" propertyKey="634"/></BindablePropertyBoolean></TransitionPropertyViewModelComparator>
+                            <TransitionValueBooleanComparator value="false"/>
+                        </TransitionViewModelCondition></StateTransition>
+                </AnimationState>
+                <AnimationState animationId="4:83" reset="true" x="320" y="120" id="4:75">
+                    <StateTransition stateToId="4:72" enableExitTime="true" exitTimeIsPercetange="true" exitTime="100"/>
+                </AnimationState>
+            </StateMachineLayer>
+        </StateMachine>
+
+        <!-- Hop: up, land with a squash, rest. 1.2s loop. -->
+        <LinearAnimation loopValue="loop" duration="72" name="Hop" id="4:80">
+            <KeyedObject objectId="4:10">
+                <KeyedProperty property="y"><KeyFrameDouble value="36" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="27" frame="14" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="36" frame="28"/><KeyFrameDouble value="36" frame="72"/></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1.06" frame="10" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1" frame="27" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.88" frame="32" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1" frame="44"/><KeyFrameDouble value="1" frame="72"/></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.96" frame="10" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1" frame="27" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1.1" frame="32" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1" frame="44"/><KeyFrameDouble value="1" frame="72"/></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="4:14">
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.7" frame="14" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1" frame="28"/><KeyFrameDouble value="1" frame="72"/></KeyedProperty>
+                <KeyedProperty property="y"><KeyFrameDouble value="17" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="26" frame="14" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="17" frame="28"/><KeyFrameDouble value="17" frame="72"/></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="4:13">
+                <KeyedProperty property="rotation"><KeyFrameDouble value="-0.8" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="-0.45" frame="14" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="-0.8" frame="32"/><KeyFrameDouble value="-0.8" frame="72"/></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="4:20"><KeyedProperty property="scaleX"><KeyFrameDouble value="0" frame="0"/></KeyedProperty><KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0"/></KeyedProperty></KeyedObject>
+        </LinearAnimation>
+        <!-- Land: settle, swing the needle, pop the badge. 1s. -->
+        <LinearAnimation duration="60" name="Land" id="4:81">
+            <KeyedObject objectId="4:10">
+                <KeyedProperty property="y"><KeyFrameDouble value="36" frame="0"/></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.9" frame="6" interpolationType="elastic"><ElasticInterpolator easingValue="easeOut" amplitude="1" period="0.5"/></KeyFrameDouble><KeyFrameDouble value="1" frame="26"/></KeyedProperty>
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1.08" frame="6" interpolationType="elastic"><ElasticInterpolator easingValue="easeOut" amplitude="1" period="0.5"/></KeyFrameDouble><KeyFrameDouble value="1" frame="26"/></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="4:14"><KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0"/></KeyedProperty><KeyedProperty property="y"><KeyFrameDouble value="17" frame="0"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="4:13"><KeyedProperty property="rotation"><KeyFrameDouble value="-0.8" frame="4" interpolationType="elastic"><ElasticInterpolator easingValue="easeOut" amplitude="1" period="0.4"/></KeyFrameDouble><KeyFrameDouble value="0.6" frame="40"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="4:20">
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="0" frame="0"/><KeyFrameDouble value="0" frame="18" interpolationType="elastic"><ElasticInterpolator easingValue="easeOut" amplitude="1" period="0.5"/></KeyFrameDouble><KeyFrameDouble value="1" frame="44"/></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="0" frame="0"/><KeyFrameDouble value="0" frame="18" interpolationType="elastic"><ElasticInterpolator easingValue="easeOut" amplitude="1" period="0.5"/></KeyFrameDouble><KeyFrameDouble value="1" frame="44"/></KeyedProperty>
+            </KeyedObject>
+        </LinearAnimation>
+        <LinearAnimation duration="1" name="Logged" id="4:82">
+            <KeyedObject objectId="4:10"><KeyedProperty property="y"><KeyFrameDouble value="36" frame="0"/></KeyedProperty><KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0"/></KeyedProperty><KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="4:14"><KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0"/></KeyedProperty><KeyedProperty property="y"><KeyFrameDouble value="17" frame="0"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="4:13"><KeyedProperty property="rotation"><KeyFrameDouble value="0.6" frame="0"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="4:20"><KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0"/></KeyedProperty><KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0"/></KeyedProperty></KeyedObject>
+        </LinearAnimation>
+        <LinearAnimation duration="20" name="Unland" id="4:83">
+            <KeyedObject objectId="4:10"><KeyedProperty property="y"><KeyFrameDouble value="36" frame="0"/></KeyedProperty><KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0"/></KeyedProperty><KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="4:14"><KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0"/></KeyedProperty><KeyedProperty property="y"><KeyFrameDouble value="17" frame="0"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="4:13"><KeyedProperty property="rotation"><KeyFrameDouble value="0.6" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="-0.8" frame="20"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="4:20">
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0" frame="12"/></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0" frame="12"/></KeyedProperty>
+            </KeyedObject>
+        </LinearAnimation>
+    </Artboard>
+
+    <ViewModel defaultInstanceId="4:63" name="ScaleHop" id="4:60">
+        <ViewModelPropertyBoolean name="logged" id="4:61"/>
+        <ViewModelInstance exports="true" name="Default" id="4:63">
+            <ViewModelInstanceBoolean propertyValue="false" viewModelPropertyId="4:61"/>
+        </ViewModelInstance>
+    </ViewModel>
+</Rive>

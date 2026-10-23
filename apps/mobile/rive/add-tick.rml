@@ -1,0 +1,95 @@
+<Rive version="1" kind="fragment">
+    <!-- Add Food's + button. `added=true` pops it into a green check (0.5s); false brings the + back. Tap toggles it. -->
+    <Artboard defaultStateMachineId="3:70" viewModelId="3:60" styleId="3:3" x="450" y="0" width="44" height="44" name="AddTick" id="3:2">
+        <LayoutComponentStyle name="Style" id="3:3"/>
+        <Shape x="22" y="22" name="Check" id="3:14">
+            <PointsPath isClosed="false" isClockwise="true" name="P">
+                <StraightVertex x="-6.5" y="0.5"/><StraightVertex x="-2" y="5"/><StraightVertex x="6.5" y="-4.5"/>
+            </PointsPath>
+            <Stroke thickness="3.2" cap="round" join="round" name="S"><SolidColor colorValue="FFFFFFFF" name="C"/><TrimPath start="0" end="0" name="Trim" id="3:15"/></Stroke>
+        </Shape>
+        <Node x="22" y="22" name="Plus" id="3:12">
+            <Shape name="H"><Rectangle width="14" height="3.2" cornerRadiusTL="1.6" name="P"/><Fill name="F"><SolidColor colorValue="FFFFFFFF" name="C"/></Fill></Shape>
+            <Shape name="V"><Rectangle width="3.2" height="14" cornerRadiusTL="1.6" name="P"/><Fill name="F"><SolidColor colorValue="FFFFFFFF" name="C"/></Fill></Shape>
+        </Node>
+        <Shape x="22" y="22" name="Disc" id="3:10">
+            <Ellipse width="30" height="30" name="P"/>
+            <Fill name="F"><SolidColor colorValue="FF007AFF" name="C" id="3:11"/></Fill>
+        </Shape>
+
+        <StateMachine name="AddTick" id="3:70">
+            <DataConverterBooleanNegate name="Not" id="3:95"/>
+            <StateMachineListenerSingle targetId="3:10" listenerTypeValue="click" name="Tap" id="3:90">
+                <ListenerViewModelChange fromViewModelProperty="true" fromDataBindId="3:96">
+                    <BindablePropertyBoolean>
+                        <DataBindContext sourcePathIds="3:60-3:61" propertyKey="634" id="3:96" converterId="3:95"/>
+                        <DataBindContext sourcePathIds="3:60-3:61" propertyKey="634" direction="true"/>
+                    </BindablePropertyBoolean>
+                </ListenerViewModelChange>
+            </StateMachineListenerSingle>
+            <StateMachineLayer name="Main" id="3:71">
+                <AnyState x="600" y="0"/><ExitState x="680" y="0"/>
+                <EntryState x="0" y="0"><StateTransition stateToId="3:72"/></EntryState>
+                <AnimationState animationId="3:80" x="160" y="0" id="3:72">
+                    <StateTransition stateToId="3:73"><TransitionViewModelCondition>
+                            <TransitionPropertyViewModelComparator><BindablePropertyBoolean><DataBindContext sourcePathIds="3:60-3:61" propertyKey="634"/></BindablePropertyBoolean></TransitionPropertyViewModelComparator>
+                            <TransitionValueBooleanComparator value="true"/>
+                        </TransitionViewModelCondition></StateTransition>
+                </AnimationState>
+                <AnimationState animationId="3:81" reset="true" x="320" y="0" id="3:73">
+                    <StateTransition stateToId="3:74" enableExitTime="true" exitTimeIsPercetange="true" exitTime="100"/>
+                </AnimationState>
+                <AnimationState animationId="3:82" x="480" y="0" id="3:74">
+                    <StateTransition stateToId="3:75"><TransitionViewModelCondition>
+                            <TransitionPropertyViewModelComparator><BindablePropertyBoolean><DataBindContext sourcePathIds="3:60-3:61" propertyKey="634"/></BindablePropertyBoolean></TransitionPropertyViewModelComparator>
+                            <TransitionValueBooleanComparator value="false"/>
+                        </TransitionViewModelCondition></StateTransition>
+                </AnimationState>
+                <AnimationState animationId="3:83" reset="true" x="320" y="120" id="3:75">
+                    <StateTransition stateToId="3:72" enableExitTime="true" exitTimeIsPercetange="true" exitTime="100"/>
+                </AnimationState>
+            </StateMachineLayer>
+        </StateMachine>
+
+        <LinearAnimation duration="1" name="Plus" id="3:80">
+            <KeyedObject objectId="3:11"><KeyedProperty property="colorValue"><KeyFrameColor value="FF007AFF" frame="0"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="3:12"><KeyedProperty property="rotation"><KeyFrameDouble value="0" frame="0"/></KeyedProperty><KeyedProperty property="opacity"><KeyFrameDouble value="1" frame="0"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="3:15"><KeyedProperty property="end"><KeyFrameDouble value="0" frame="0"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="3:10"><KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0"/></KeyedProperty><KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0"/></KeyedProperty></KeyedObject>
+        </LinearAnimation>
+        <LinearAnimation duration="30" name="ToCheck" id="3:81">
+            <KeyedObject objectId="3:11"><KeyedProperty property="colorValue"><KeyFrameColor value="FF007AFF" frame="0" interpolationType="linear"/><KeyFrameColor value="FF34C759" frame="10"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="3:12">
+                <KeyedProperty property="rotation"><KeyFrameDouble value="0" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.7854" frame="12"/></KeyedProperty>
+                <KeyedProperty property="opacity"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0" frame="10"/></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="3:15"><KeyedProperty property="end"><KeyFrameDouble value="0" frame="0"/><KeyFrameDouble value="0" frame="8" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1" frame="22"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="3:10">
+                <KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.82" frame="6" interpolationType="elastic"><ElasticInterpolator easingValue="easeOut" amplitude="1" period="0.5"/></KeyFrameDouble><KeyFrameDouble value="1" frame="30"/></KeyedProperty>
+                <KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0.82" frame="6" interpolationType="elastic"><ElasticInterpolator easingValue="easeOut" amplitude="1" period="0.5"/></KeyFrameDouble><KeyFrameDouble value="1" frame="30"/></KeyedProperty>
+            </KeyedObject>
+        </LinearAnimation>
+        <LinearAnimation duration="1" name="Check" id="3:82">
+            <KeyedObject objectId="3:11"><KeyedProperty property="colorValue"><KeyFrameColor value="FF34C759" frame="0"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="3:12"><KeyedProperty property="rotation"><KeyFrameDouble value="0.7854" frame="0"/></KeyedProperty><KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="0"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="3:15"><KeyedProperty property="end"><KeyFrameDouble value="1" frame="0"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="3:10"><KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0"/></KeyedProperty><KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0"/></KeyedProperty></KeyedObject>
+        </LinearAnimation>
+        <LinearAnimation duration="18" name="ToPlus" id="3:83">
+            <KeyedObject objectId="3:11"><KeyedProperty property="colorValue"><KeyFrameColor value="FF34C759" frame="0" interpolationType="linear"/><KeyFrameColor value="FF007AFF" frame="12"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="3:12">
+                <KeyedProperty property="rotation"><KeyFrameDouble value="0.7854" frame="4" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0" frame="18"/></KeyedProperty>
+                <KeyedProperty property="opacity"><KeyFrameDouble value="0" frame="4" interpolationType="cubic"><CubicEaseInterpolator x1="0" y1="0" x2="0.58" y2="1"/></KeyFrameDouble><KeyFrameDouble value="1" frame="16"/></KeyedProperty>
+            </KeyedObject>
+            <KeyedObject objectId="3:15"><KeyedProperty property="end"><KeyFrameDouble value="1" frame="0" interpolationType="cubic"><CubicEaseInterpolator x1="0.42" y1="0" x2="1" y2="1"/></KeyFrameDouble><KeyFrameDouble value="0" frame="10"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="3:10"><KeyedProperty property="scaleX"><KeyFrameDouble value="1" frame="0"/></KeyedProperty><KeyedProperty property="scaleY"><KeyFrameDouble value="1" frame="0"/></KeyedProperty></KeyedObject>
+        </LinearAnimation>
+    </Artboard>
+
+    <ViewModel defaultInstanceId="3:63" name="AddTick" id="3:60">
+        <ViewModelPropertyBoolean name="added" id="3:61"/>
+        <ViewModelInstance exports="true" name="Default" id="3:63">
+            <ViewModelInstanceBoolean propertyValue="false" viewModelPropertyId="3:61"/>
+        </ViewModelInstance>
+    </ViewModel>
+</Rive>

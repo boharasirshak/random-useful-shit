@@ -2,8 +2,8 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { router } from 'expo-router';
 import { Pressable, Text, View } from 'react-native';
 import Animated, { FadeIn, ZoomIn } from 'react-native-reanimated';
-import { shift } from '@/tools/calories/lib/dates';
-import { totalKcal } from '@/tools/calories/lib/log';
+import { shift, today } from '@/tools/calories/lib/dates';
+import { isClosed, totalKcal } from '@/tools/calories/lib/log';
 import { useApp } from '@/tools/calories/store/app';
 import { useBudget } from '@/tools/calories/store/derived';
 import { useUi } from '@/tools/calories/store/ui';
@@ -18,11 +18,13 @@ export function DoneForDay() {
   const c = useColors();
   const day = useUi(s => s.day);
   const done = useApp(s => s.done);
+  const logs = useApp(s => s.logs);
   const setDone = useApp(s => s.setDone);
   const eaten = useApp(s => totalKcal(s.logs[day], s.shake));
   const target = useBudget();
+  const closed = isClosed(logs, done, today());
 
-  if (!done[day]) {
+  if (!closed(day)) {
     return (
       <View style={{ paddingHorizontal: space.lg }}>
         <Button title="Done for the Day" disabled={!eaten} onPress={() => { setDone(day, true); router.push({ pathname: '/calories/day-done', params: { day } }); }} />
@@ -31,7 +33,7 @@ export function DoneForDay() {
   }
 
   let streak = 0;
-  while (done[shift(day, -streak)]) streak++;
+  while (closed(shift(day, -streak))) streak++;
   const diff = target == null ? null : target - eaten;
   const under = diff != null && diff >= 0;
 
@@ -50,9 +52,11 @@ export function DoneForDay() {
           <Text style={[type.footnote, { color: c.label, fontWeight: '600' }]}>{streak}-day streak</Text>
         </View>
       )}
-      <Pressable onPress={() => { tap(); setDone(day, false); }} hitSlop={8} accessibilityRole="button">
-        <Text style={[type.subhead, { color: c.tint }]}>Reopen day</Text>
-      </Pressable>
+      {done[day] && (
+        <Pressable onPress={() => { tap(); setDone(day, false); }} hitSlop={8} accessibilityRole="button">
+          <Text style={[type.subhead, { color: c.tint }]}>Reopen day</Text>
+        </Pressable>
+      )}
     </Animated.View>
   );
 }

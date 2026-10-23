@@ -1,6 +1,6 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { router } from 'expo-router';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { byId, MENU, RESTAURANTS, type Restaurant } from '@/tools/calories/data/menu';
 import { AddBar } from '@/tools/calories/features/add/AddBar';
@@ -32,7 +32,8 @@ export default function AddHome() {
   const toggleFavorite = useApp(s => s.toggleFavorite);
   const shake = useApp(s => s.shake);
   const { add } = useLogFood();
-  const [query, setQuery] = useState('');
+  const query = useUi(s => s.query);
+  const setQuery = useUi(s => s.setQuery);
   const q = query.trim().toLowerCase();
   const results = q ? MENU.filter(m => m.name.toLowerCase().includes(q) || RESTAURANTS[m.restaurant].toLowerCase().includes(q)).slice(0, 40) : [];
   const favKeys = new Set(favorites.map(orderKey));

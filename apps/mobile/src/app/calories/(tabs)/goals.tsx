@@ -21,10 +21,11 @@ export default function GoalsScreen() {
   const shake = useApp(s => s.shake);
   const ready = profileReady(profile);
   const t = today();
-  // Closed days count with what you actually ate, so over/under days bend the plan.
+  // Closed days count with what you actually ate, so over/under days bend the plan. Today counts live as you log.
   const projection = useMemo(() => {
     if (!ready) return null;
-    const eaten = Object.fromEntries(closedDays(logs, done, t).map(d => [d, totalKcal(logs[d], shake)]));
+    const days = logs[t]?.length ? [...closedDays(logs, done, t), t] : closedDays(logs, done, t);
+    const eaten = Object.fromEntries(days.map(d => [d, totalKcal(logs[d], shake)]));
     return project(profile, weights, t, stepWeeks, eaten);
   }, [ready, profile, weights, t, stepWeeks, logs, done, shake]);
 
