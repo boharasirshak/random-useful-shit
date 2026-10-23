@@ -28,6 +28,10 @@ test('shake uses the user value, unknown ids count as 0', () => {
   assert.equal(entryKcal({ meal: 'snacks', qty: 1, parts: [{ id: 'gone', qty: 1 }] }, 200), 0);
 });
 
+test('custom calories: the part qty is the kcal', () => {
+  assert.equal(totalKcal([{ meal: 'snacks', qty: 2, parts: [{ id: 'custom', qty: 350 }] }], 200), 700);
+});
+
 test('stepping to zero removes the line', () => {
   assert.deepEqual(stepEntry(addEntry([], orange), 0, -1), []);
 });

@@ -35,7 +35,7 @@ export default function AddHome() {
   const query = useUi(s => s.query);
   const setQuery = useUi(s => s.setQuery);
   const q = query.trim().toLowerCase();
-  const results = q ? MENU.filter(m => m.name.toLowerCase().includes(q) || RESTAURANTS[m.restaurant].toLowerCase().includes(q)).slice(0, 40) : [];
+  const results = q ? MENU.filter(m => m.id !== 'custom').filter(m => m.name.toLowerCase().includes(q) || RESTAURANTS[m.restaurant].toLowerCase().includes(q)).slice(0, 40) : [];
   const favKeys = new Set(favorites.map(orderKey));
   const recents = recentOrders(logs, undefined, RECENT + favorites.length).filter(o => !favKeys.has(orderKey(o))).slice(0, RECENT);
   const mealEntries = (logs[day] ?? []).filter(e => e.meal === meal);
@@ -78,7 +78,7 @@ export default function AddHome() {
                   <PlaceBadge place={p} />
                   <View style={{ flex: 1 }}>
                     <Text style={[type.body, { color: c.label }]}>{RESTAURANTS[p]}</Text>
-                    <Text style={[type.footnote, { color: c.secondary }]}>{p === 'shake' ? `${shake} kcal per shake` : `${MENU.filter(m => m.restaurant === p).length} items`}</Text>
+                    <Text style={[type.footnote, { color: c.secondary }]}>{p === 'shake' ? `${shake} kcal per shake` : p === 'custom' ? 'Any amount' : `${MENU.filter(m => m.restaurant === p).length} items`}</Text>
                   </View>
                   <Ionicons name="chevron-forward" size={18} color={c.tertiary} />
                 </Pressable>

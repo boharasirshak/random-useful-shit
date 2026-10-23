@@ -10,4 +10,5 @@ export const PLACE_LOOK: Record<Restaurant, Look> = {
   cfa: { logo: require('../../../../../assets/brands/chick-fil-a.png'), pad: 0.03 },
   panda: { logo: require('../../../../../assets/brands/panda-express.png'), pad: 0.06 },
   shake: { icon: 'nutrition', color: '#007AFF' },
+  custom: { icon: 'restaurant', color: '#8E8E93' },
 };

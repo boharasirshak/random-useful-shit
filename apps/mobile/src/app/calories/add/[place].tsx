@@ -1,4 +1,5 @@
 import { useLocalSearchParams } from 'expo-router';
+import { useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { RESTAURANTS, type Category, type Restaurant } from '@/tools/calories/data/menu';
 import { AddBar } from '@/tools/calories/features/add/AddBar';
@@ -15,12 +16,15 @@ import { useBudget } from '@/tools/calories/store/derived';
 import { useApp } from '@/tools/calories/store/app';
 import { useUi } from '@/tools/calories/store/ui';
 import { Chips } from '@/ui/Chips';
+import { Section } from '@/ui/Section';
 import { Stepper } from '@/ui/Stepper';
 import { nums, space, type, useColors } from '@/ui/theme';
+import { range, WheelRow } from '@/ui/WheelRow';
 
-const CATEGORY: Record<Category, string> = { entree: 'Entrées', base: 'Bases', side: 'Sides', appetizer: 'Appetizers', drink: 'Drinks', sauce: 'Sauces', shake: 'Shake' };
+const CATEGORY: Record<Category, string> = { entree: 'Entrées', base: 'Bases', side: 'Sides', appetizer: 'Appetizers', drink: 'Drinks', sauce: 'Sauces', shake: 'Shake', custom: 'Custom' };
 const ONE: Record<string, string> = { entree: 'entrée', base: 'base', side: 'side', drink: 'drink' };
 const fmt = (n: number) => Math.round(n).toLocaleString();
+const CUSTOM = range(1, 300).map(n => n * 10); // 10–3,000 kcal
 
 // Add Food, step 2: one place's menu. Order type and category are swipeable chips, so long menus stay tidy.
 export default function PlaceMenu() {
@@ -32,6 +36,7 @@ export default function PlaceMenu() {
   const { add } = useLogFood();
   const target = useBudget();
   const m = usePlaceMenu(place);
+  const [custom, setCustom] = useState(300);
   const mealName = MEALS[meal];
   const active = m.build?.active != null ? m.build.slots[m.build.active].category : null;
   const picked = new Set(m.build ? [...m.build.slots.map(s => s.id), ...m.build.extras] : []);
@@ -40,7 +45,9 @@ export default function PlaceMenu() {
 
   const action = place === 'shake'
     ? { title: `Add to ${mealName} · ${fmt(shake)} kcal`, onPress: () => add({ parts: [{ id: 'shake', qty: 1 }] }) }
-    : m.build
+    : place === 'custom'
+      ? { title: `Add to ${mealName} · ${fmt(custom)} kcal`, onPress: () => add({ parts: [{ id: 'custom', qty: custom }] }) }
+      : m.build
       ? isDone(m.build)
         ? { title: `Add to ${mealName}`, onPress: m.addBuild }
         : { title: `Pick ${next ? ONE[next.category] : 'items'}`, disabled: true, onPress: () => {} }
@@ -67,6 +74,10 @@ export default function PlaceMenu() {
 
         {place === 'shake' ? (
           <ShakeCard />
+        ) : place === 'custom' ? (
+          <Section footer="For anything that isn’t on a menu.">
+            <WheelRow label="Calories" startOpen wheels={[{ value: custom, options: CUSTOM, suffix: 'kcal', format: fmt, onChange: setCustom }]} />
+          </Section>
         ) : m.build && m.order ? (
           <>
             <BuilderPanel build={m.build} canHalf={m.order.slots.includes('base')} onFocus={m.focusSlot} onHalf={m.toggleHalf} onRemoveExtra={m.dropExtra} />

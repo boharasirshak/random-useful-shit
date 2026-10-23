@@ -5,8 +5,8 @@
 // fries S/L); drinks are all sugar, so carbs = kcal / 4.
 // ids are stable: logs store ids, so rename `name` freely but never change an `id`.
 
-export type Restaurant = 'cfa' | 'panda' | 'shake';
-export type Category = 'entree' | 'base' | 'side' | 'appetizer' | 'drink' | 'sauce' | 'shake';
+export type Restaurant = 'cfa' | 'panda' | 'shake' | 'custom';
+export type Category = 'entree' | 'base' | 'side' | 'appetizer' | 'drink' | 'sauce' | 'shake' | 'custom';
 export type MenuItem = {
   id: string;
   restaurant: Restaurant;
@@ -71,9 +71,11 @@ export const MENU: MenuItem[] = [
   { id: 'panda-hot-and-sour-soup-cup', restaurant: 'panda', name: "Hot & Sour Soup (cup)", kcal: 140, category: 'appetizer', p: 9, c: 16, f: 4 },
   { id: 'panda-hot-and-sour-soup-bowl', restaurant: 'panda', name: "Hot & Sour Soup (bowl)", kcal: 170, category: 'appetizer', p: 10, c: 20, f: 6 },
   { id: 'shake', restaurant: 'shake', name: "Protein Shake", kcal: null, category: 'shake' },
+  // Any amount: 1 kcal each, and the part's qty is the calories (e.g. qty 350 = 350 kcal).
+  { id: 'custom', restaurant: 'custom', name: "Custom", kcal: 1, category: 'custom' },
 ];
 
-export const RESTAURANTS: Record<Restaurant, string> = { cfa: 'Chick-fil-A', panda: 'Panda Express', shake: 'Protein shake' };
+export const RESTAURANTS: Record<Restaurant, string> = { cfa: 'Chick-fil-A', panda: 'Panda Express', shake: 'Protein shake', custom: 'Custom calories' };
 
 // How each place sells a meal: slots filled in order, plus optional add-ons.
 export type Order = { slots: Category[]; extras?: Category } | null;
