@@ -63,6 +63,9 @@ test('closed days use what you ate: over target pushes the goal later and shows 
   assert.ok(over.balance > 3000);
   assert.ok(over.goalShift! > 0);
   assert.ok(over.future[0].y > base.future[0].y);
+  // Plan stays the perfect line; Theoretical (past) is what the eating actually buys.
+  assert.deepEqual(over.plan, base.plan);
+  assert.ok(over.past[over.past.length - 1].y > over.plan[over.past.length - 1].y);
 });
 
 test('plateau: eating today\'s target forever levels off above the goal, and flattens out', () => {

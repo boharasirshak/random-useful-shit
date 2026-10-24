@@ -13,6 +13,7 @@ const light = {
   green: '#34C759',
   red: '#FF3B30',
   orange: '#FF9500',
+  purple: '#AF52DE',
   imageWell: '#FFFFFF',
   segment: '#FFFFFF', // selected segment
 };
@@ -28,6 +29,7 @@ const dark: typeof light = {
   green: '#30D158',
   red: '#FF453A',
   orange: '#FF9F0A',
+  purple: '#BF5AF2',
   imageWell: '#FFFFFF', // menu photos are shot on white
   segment: '#636366',
 };

@@ -6,14 +6,15 @@ import { stepsFrom, type StepWeek } from './steps.ts';
 export type Projection = {
   weighIns: Point[];
   trend: Point[];
-  past: Point[]; // plan, start → today
-  future: Point[]; // plan, today → goal
+  plan: Point[]; // the perfect plan: every day on target, start → goal
+  past: Point[]; // theoretical: the model run on what you actually ate, start → today
+  future: Point[]; // eating the target from today's theoretical weight, today → goal
   target: number; // kcal/day to eat now
   floored: boolean; // target was raised to the safe minimum
   lbPerWeek: number; // plan's rate over the next 2 weeks (only differs from p.rate when floored or early on)
   goalDate: number | null;
   trendPerWeek: number | null; // actual trend over the last 2 weeks
-  vsPlan: number | null; // trend minus plan at the last weigh-in (negative = ahead of plan)
+  vsPlan: number | null; // trend minus the perfect plan at the last weigh-in (negative = ahead of plan)
   balance: number; // kcal over (+) or under (−) target, summed over closed days
   steady: Point[]; // plateau: keep eating today's target forever from today, never lowering it
   plateauLb: number; // where that levels off
@@ -53,11 +54,12 @@ export function project(p: Profile, weights: Record<string, number>, today: stri
     return { lbs, balance, end };
   };
   const { lbs, balance, end: found } = run(true);
-  // The same plan as if every day had hit the target, to say how far closed days moved the goal date.
-  const ideal = Object.keys(eaten).length ? run(false).end : found;
+  // The same plan as if every day had hit the target: the Plan line, and how far closed days moved the goal date.
+  const perfect = Object.keys(eaten).length ? run(false) : { lbs, end: found };
+  const ideal = perfect.end;
   const reached = found >= 0;
-  const end = reached ? found : lbs.length - 1;
-  const pts = lbs.slice(0, end + 1).map((y, i) => ({ x: ts(start) + i * DAY_MS, y }));
+  const toPts = (ys: number[], last: number) => ys.slice(0, (last >= 0 ? last : ys.length - 1) + 1).map((y, i) => ({ x: ts(start) + i * DAY_MS, y }));
+  const pts = toPts(lbs, found);
 
   const nowLb = weighIns.length ? weighIns[weighIns.length - 1].y : p.weight;
   const now = on(elapsed);
@@ -71,12 +73,13 @@ export function project(p: Profile, weights: Record<string, number>, today: stri
   if (smooth.length > 1) {
     const last = smooth[smooth.length - 1], back = smooth[Math.max(0, smooth.length - 15)];
     trendPerWeek = (back.y - last.y) / ((last.x - back.x) / DAY_MS / 7);
-    vsPlan = last.y - lbs[Math.round((last.x - ts(start)) / DAY_MS)];
+    vsPlan = last.y - perfect.lbs[Math.round((last.x - ts(start)) / DAY_MS)];
   }
 
   return {
     weighIns,
     trend: smooth,
+    plan: toPts(perfect.lbs, ideal),
     past: pts.slice(0, elapsed + 1),
     future: pts.slice(elapsed),
     target,

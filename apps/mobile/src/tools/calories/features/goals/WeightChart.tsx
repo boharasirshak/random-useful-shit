@@ -15,7 +15,7 @@ const n1 = (n: number) => Math.abs(n).toFixed(1);
 const shortDate = (ms: number) => new Date(ms).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
 
 // One card, two graphs, picked with a switch (a swipe would fight the drag-to-scrub on the chart):
-// Weight — plan vs actual weight; Lost — pounds lost so far, climbing toward the goal.
+// Weight — plan, theoretical and actual weight; Lost — pounds lost so far, climbing toward the goal.
 export function WeightChart({ p, goal, today }: { p: Projection; goal: number; today: string }) {
   const c = useColors();
   const [graph, setGraph] = useState<Graph>('weight');
@@ -25,25 +25,29 @@ export function WeightChart({ p, goal, today }: { p: Projection; goal: number; t
   // Visible window. "All" = plan start → goal day (at least a month out), so a 3-year plateau line can't squash everything.
   const now = ts(today);
   const from = range === 'all' ? -Infinity : now + WINDOW[range][0] * DAY_MS;
-  const planEnd = p.future.length ? p.future[p.future.length - 1].x : now;
+  const planEnd = Math.max(now, ...[p.plan, p.future].map(l => l[l.length - 1]?.x ?? now));
   const to = range === 'all' ? Math.max(planEnd, now + 30 * DAY_MS) : now + WINDOW[range][1] * DAY_MS;
   const inWin = (pts: Point[]) => pts.filter(pt => pt.x >= from && pt.x <= to);
 
-  const start = p.past[0]?.y ?? p.future[0]?.y ?? 0; // weight the plan started from
+  const start = p.plan[0]?.y ?? 0; // weight the plan started from
+  // Plan = every day on target (solid up to today); Theoretical = the same model fed what you actually ate.
+  const planPast = p.plan.filter(pt => pt.x <= now), planAhead = p.plan.filter(pt => pt.x >= now);
   const lost = (pts: Point[]) => pts.map(pt => ({ x: pt.x, y: start - pt.y }));
   const lostNow = p.trend.length ? start - p.trend[p.trend.length - 1].y : 0;
   const toGo = goal ? Math.max(0, start - lostNow - goal) : null;
 
   const lines: Series[] = graph === 'weight' ? [
-    { points: inWin(p.past), color: c.tint, label: 'Plan' },
-    { points: inWin(p.future), color: c.tint, dash: '6 5', label: 'Plan' },
+    { points: inWin(planPast), color: c.tint, label: 'Plan' },
+    { points: inWin(planAhead), color: c.tint, dash: '6 5', label: 'Plan' },
+    { points: inWin(p.past), color: c.purple, label: 'Theoretical' },
     { points: inWin(p.trend), color: c.green, width: 3, label: 'Trend' },
     { points: inWin(p.weighIns), color: c.secondary, dots: true, label: 'Weigh-ins' },
     { points: inWin(p.steady), color: c.orange, dash: '2 4', width: 1.5, label: 'Same kcal' },
   ] : [
     { points: inWin(lost(p.trend)), color: c.green, width: 3, fill: true, label: 'Lost' },
-    { points: inWin(lost(p.past)), color: c.tint, label: 'Plan' },
-    { points: inWin(lost(p.future)), color: c.tint, dash: '6 5', label: 'Plan' },
+    { points: inWin(lost(planPast)), color: c.tint, label: 'Plan' },
+    { points: inWin(lost(planAhead)), color: c.tint, dash: '6 5', label: 'Plan' },
+    { points: inWin(lost(p.past)), color: c.purple, label: 'Theoretical' },
   ];
   const xs = lines.flatMap(s => s.points.map(pt => pt.x));
   const goalY = graph === 'weight' ? goal : start - goal;
