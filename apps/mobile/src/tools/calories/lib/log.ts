@@ -97,3 +97,7 @@ export function totalMacros(entries: Entry[] = [], shake: number, shakeProtein: 
   }
   return t;
 }
+
+// Sodium in mg. The shake and custom calories have none on record.
+export const totalSodium = (entries: Entry[] = []) =>
+  entries.reduce((t, e) => t + e.qty * e.parts.reduce((s, p) => s + (byId[p.id]?.na ?? 0) * p.qty, 0), 0);

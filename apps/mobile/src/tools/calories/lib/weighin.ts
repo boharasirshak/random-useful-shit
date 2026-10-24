@@ -1,4 +1,7 @@
 // What to say after a weigh-in: the change since last time, a new low, and the weigh-in streak. Kind either way.
+import { shift } from './dates.ts';
+import { totalSodium, type Logs } from './log.ts';
+import { LB } from './model.ts';
 import { currentStreak } from './streak.ts';
 
 export type WeighInNews = { delta: number | null; newLow: boolean; streak: number; line: string };
@@ -29,4 +32,19 @@ export function milestone(current: number, goal: number) {
   const next = Math.max(Math.ceil(current / 5) * 5 - 5, goal || 0);
   const from = next + 5;
   return { next, toGo: current - next, progress: Math.min(1, Math.max(0, (from - current) / (from - next))) };
+}
+
+// Salt bloat: water your body is holding on to because of recent salty days, in lb, on the morning of `day`.
+// Your body keeps fluid at ~3.2 g sodium per litre, so sodium kept over the usual holds water with it, and the
+// kidneys clear about half of what's left each day. Days with nothing logged count as usual.
+// ponytail: fixed 2,300 mg "usual" and 50%/day clearance; per-person baseline from their own average if this feels off.
+export const NA_USUAL = 2300;
+export function saltWater(logs: Logs, day: string) {
+  let kept = 0; // mg
+  for (let i = 7; i >= 1; i--) {
+    const entries = logs[shift(day, -i)];
+    const na = entries?.length ? totalSodium(entries) : NA_USUAL;
+    kept = Math.max(0, (kept + na - NA_USUAL) / 2);
+  }
+  return kept / 3220 / LB; // 3,220 mg per litre, 1 L = 1 kg
 }

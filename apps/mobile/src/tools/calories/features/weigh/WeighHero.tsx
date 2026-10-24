@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Animated, { Easing, FadeIn, useAnimatedStyle, useSharedValue, withRepeat, withSequence, withTiming, ZoomIn } from 'react-native-reanimated';
 import { today } from '@/tools/calories/lib/dates';
-import { milestone, weighInNews } from '@/tools/calories/lib/weighin';
+import { milestone, saltWater, weighInNews } from '@/tools/calories/lib/weighin';
 import { useApp } from '@/tools/calories/store/app';
 import { Button } from '@/ui/Button';
 import { Confetti } from '@/ui/Confetti';
@@ -30,6 +30,7 @@ function Hop() {
 export function WeighHero() {
   const c = useColors();
   const weights = useApp(s => s.weights);
+  const logs = useApp(s => s.logs);
   const profile = useApp(s => s.profile);
   const setWeight = useApp(s => s.setWeight);
   const t = today();
@@ -55,6 +56,7 @@ export function WeighHero() {
   };
 
   const news = logged ? weighInNews(weights, t) : null;
+  const salt = saltWater(logs, t);
   const down = news?.delta != null && news.delta < 0;
   const deltaColor = news?.delta == null || news.delta === 0 ? c.secondary : down ? c.green : c.orange;
   const whole = Math.floor(draft), tenth = Math.round((draft - whole) * 10);
@@ -80,6 +82,11 @@ export function WeighHero() {
               </Animated.View>
             )}
             <Text style={[type.subhead, { color: c.label, textAlign: 'center' }]}>{news.line}</Text>
+            {salt >= 0.2 && (
+              <Text style={[type.footnote, nums, { color: c.secondary, textAlign: 'center' }]}>
+                About {salt.toFixed(1)} lb is likely salt water from recent meals. Without it: {(weights[t] - salt).toFixed(1)} lb.
+              </Text>
+            )}
           </Animated.View>
         ) : (
           <Text style={[type.headline, { color: c.label }]}>{lastDay ? 'Hop on the scale' : 'Your first weigh-in'}</Text>

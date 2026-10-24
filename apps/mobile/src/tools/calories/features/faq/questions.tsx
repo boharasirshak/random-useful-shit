@@ -100,8 +100,15 @@ export function useQuestions(): Fold[] {
     {
       title: 'Why doesn’t the trend line follow every weigh-in?',
       body: <>
-        <P>Your weight goes up and down 1 to 3 pounds a day from water, salt and food in your stomach. The green trend line smooths that out so you can see where you’re really heading.</P>
+        <P>Your weight goes up and down 1 to 3 pounds a day from water, salt and food in your stomach. The green “Yours” line smooths that out so you can see where you’re really heading.</P>
         <Smoothing c={c} />
+      </>,
+    },
+    {
+      title: 'What’s the salt water number?',
+      body: <>
+        <P>Salty food makes your body hold on to extra water. A big Panda Express day can add about a pound on the scale the next morning. That’s water, not fat, and it leaves over the next few days.</P>
+        <P>The app adds up the sodium you logged. When you’ve had more than 2,300 mg a day lately, it shows about how much of your weigh-in is salt water, and what you’d weigh without it.</P>
       </>,
     },
     {
@@ -139,7 +146,7 @@ export function useQuestions(): Fold[] {
     {
       title: 'Where do the food numbers come from?',
       body: <>
-        <P>From the official nutrition pages of Chick-fil-A and Panda Express. A few sizes, like 12-count nuggets and large fries, are worked out from the official size.</P>
+        <P>From the official nutrition pages of Chick-fil-A and Panda Express. A few sizes, like 12-count nuggets and large fries, are worked out from the official size. Panda’s sodium comes from a copy of its chart, since its site can’t be read directly.</P>
       </>,
     },
     {

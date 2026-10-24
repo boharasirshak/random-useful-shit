@@ -1,6 +1,7 @@
 import { Text, View } from 'react-native';
-import { totalKcal, totalMacros } from '@/tools/calories/lib/log';
+import { totalKcal, totalMacros, totalSodium } from '@/tools/calories/lib/log';
 import { macroTargets } from '@/tools/calories/lib/model';
+import { NA_USUAL } from '@/tools/calories/lib/weighin';
 import { useApp } from '@/tools/calories/store/app';
 import { useBudget, useCurrentWeight } from '@/tools/calories/store/derived';
 import { useUi } from '@/tools/calories/store/ui';
@@ -8,12 +9,12 @@ import { Ring } from '@/ui/Ring';
 import { nums, radius, space, type, useColors } from '@/ui/theme';
 
 // Activity-ring colors, one per thing you're tracking.
-const COLOR = { kcal: '#FF375F', p: '#30D158', c: '#64D2FF', f: '#BF5AF2' };
+const COLOR = { kcal: '#FF375F', p: '#30D158', c: '#64D2FF', f: '#BF5AF2', na: '#FF9F0A' };
 const SIZE = 150, STROKE = 13, GAP = 3;
 const fmt = (n: number) => Math.round(n).toLocaleString();
 
 // The day at a glance, Apple Fitness style: rings for calories, protein and carbs, calories left in the middle,
-// and the numbers (plus fat) beside them.
+// and the numbers (plus fat and sodium) beside them.
 export function DayRing() {
   const c = useColors();
   const day = useUi(s => s.day);
@@ -25,6 +26,7 @@ export function DayRing() {
   const target = useBudget();
   const eaten = totalKcal(entries, shake);
   const m = totalMacros(entries, shake, shakeProtein);
+  const na = totalSodium(entries);
   const t = target == null ? null : macroTargets(target, goal || lb);
   const left = target == null ? null : target - eaten;
 
@@ -64,6 +66,7 @@ export function DayRing() {
         {row('p', 'Protein', m.p, t?.p ?? null, ' g')}
         {row('c', 'Carbs', m.c, t?.c ?? null, ' g')}
         {row('f', 'Fat', m.f, t?.f ?? null, ' g')}
+        {row('na', 'Sodium', na, NA_USUAL, ' mg')}
       </View>
     </View>
   );
