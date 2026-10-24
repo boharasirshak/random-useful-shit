@@ -1,12 +1,13 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { router } from 'expo-router';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { byId, MENU, RESTAURANTS, type Restaurant } from '@/tools/calories/data/menu';
 import { AddBar } from '@/tools/calories/features/add/AddBar';
 import { FoodRow } from '@/tools/calories/features/add/FoodRow';
 import { MealTitle } from '@/tools/calories/features/add/MealTitle';
 import { PlaceBadge } from '@/tools/calories/features/add/PlaceBadge';
+import { SwipeRow } from '@/tools/calories/features/add/SwipeRow';
 import { TopBar } from '@/tools/calories/features/add/TopBar';
 import { useLogFood } from '@/tools/calories/features/add/useLogFood';
 import { countOrder, entryKcal, isCustom, orderKey, recentOrders, type Order } from '@/tools/calories/lib/log';
@@ -17,7 +18,8 @@ import { Heading } from '@/ui/Heading';
 import { hairline, radius, space, type, useColors } from '@/ui/theme';
 
 const PLACES = Object.keys(RESTAURANTS) as Restaurant[];
-const RECENT = 5;
+const RECENT = 3; // shown until you tap Show More
+const RECENT_MAX = 20;
 const mainId = (o: Order) => (o.parts.find(p => byId[p.id]?.category !== 'base') ?? o.parts[0]).id;
 const detail = (o: Order) => o.parts.map(p => byId[p.id]?.name).filter(Boolean).join(', ');
 
@@ -37,11 +39,15 @@ export default function AddHome() {
   const q = query.trim().toLowerCase();
   const results = q ? MENU.filter(m => m.restaurant !== 'custom').filter(m => m.name.toLowerCase().includes(q) || RESTAURANTS[m.restaurant].toLowerCase().includes(q)).slice(0, 40) : [];
   const favKeys = new Set(favorites.map(orderKey));
-  const recents = recentOrders(logs, undefined, RECENT + favorites.length).filter(o => !favKeys.has(orderKey(o))).slice(0, RECENT);
+  const hidden = useUi(s => s.hiddenRecents);
+  const hideRecent = useUi(s => s.hideRecent);
+  const [moreRecents, setMoreRecents] = useState(false);
+  const allRecents = recentOrders(logs, undefined, RECENT_MAX + favorites.length + hidden.length).filter(o => !favKeys.has(orderKey(o)) && !hidden.includes(orderKey(o))).slice(0, RECENT_MAX);
+  const recents = moreRecents ? allRecents : allRecents.slice(0, RECENT);
   const mealEntries = (logs[day] ?? []).filter(e => e.meal === meal);
   // One row for any order: + becomes ✓ once it's in this meal, ♥ pins it to Favorites.
-  const row = (o: Order, key: string | number, subtitle?: string) => (
-    <FoodRow key={key} thumb={mainId(o)} title={o.name ?? byId[o.parts[0].id]?.name ?? 'Food'} subtitle={subtitle ?? (o.name && !isCustom(o) ? detail(o) : undefined)}
+  const row = (o: Order, key: string | number, subtitle?: string, onRemove?: () => void) => (
+    <FoodRow key={key} onRemove={onRemove} thumb={mainId(o)} title={o.name ?? byId[o.parts[0].id]?.name ?? 'Food'} subtitle={subtitle ?? (o.name && !isCustom(o) ? detail(o) : undefined)}
       kcal={entryKcal({ ...o, meal, qty: 1 }, shake)} count={countOrder(mealEntries, o)}
       fav={favKeys.has(orderKey(o))} onFav={() => toggleFavorite(o)} onAdd={() => add(o)} />
   );
@@ -69,7 +75,16 @@ export default function AddHome() {
         ) : (
           <>
             {favorites.length > 0 && <View>{header('Favorites')}{card(favorites.map(o => row(o, orderKey(o))))}</View>}
-            {recents.length > 0 && <View>{header('Recent')}{card(recents.map(o => row(o, orderKey(o))))}</View>}
+            {recents.length > 0 && <View>{header('Recent')}{card([
+              // Swipe right to add, left to take it off Recent.
+              ...recents.map(o => <SwipeRow key={orderKey(o)} onAdd={() => add(o)} onRemove={() => hideRecent(orderKey(o), true)}>{row(o, orderKey(o), undefined, () => hideRecent(orderKey(o), true))}</SwipeRow>),
+              ...(allRecents.length > RECENT ? [
+                <Pressable key="more" onPress={() => { tap(); setMoreRecents(m => !m); }} accessibilityRole="button"
+                  style={({ pressed }) => ({ paddingHorizontal: space.lg, paddingVertical: space.md, backgroundColor: pressed ? c.fill : 'transparent' })}>
+                  <Text style={[type.body, { color: c.tint }]}>{moreRecents ? 'Show Less' : 'Show More'}</Text>
+                </Pressable>,
+              ] : []),
+            ])}</View>}
             <View>
               {header('Places')}
               {card(PLACES.map(p => (

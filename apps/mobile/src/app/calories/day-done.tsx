@@ -27,7 +27,10 @@ export default function DayDone() {
   const insets = useSafeAreaInsets();
   const { day = today() } = useLocalSearchParams<{ day?: string }>();
   const eaten = useApp(s => totalKcal(s.logs[day], s.shake));
-  const closed = useApp(s => isClosed(s.logs, s.done, today()));
+  // Select the data, not isClosed(...): a selector that returns a new function every time makes zustand re-render forever.
+  const logs = useApp(s => s.logs);
+  const done = useApp(s => s.done);
+  const closed = isClosed(logs, done, today());
   const markAwardsSeen = useApp(s => s.markAwardsSeen);
   const target = useBudget();
   const { streak, longest, fresh } = useMotivation();

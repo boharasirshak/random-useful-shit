@@ -1,6 +1,6 @@
 // Adding food from anywhere in Add Food: log it, buzz, and remember it for Undo.
 import { byId } from '@/tools/calories/data/menu';
-import { totalKcal, type Order } from '@/tools/calories/lib/log';
+import { orderKey, totalKcal, type Order } from '@/tools/calories/lib/log';
 import { useApp } from '@/tools/calories/store/app';
 import { useBudget } from '@/tools/calories/store/derived';
 import { useUi } from '@/tools/calories/store/ui';
@@ -16,6 +16,7 @@ export function useLogFood() {
     // A warning buzz instead of success when this takes the day over target. times: e.g. two plates at once.
     add: (o: Order, times = 1) => {
       useUi.getState().rollover();
+      useUi.getState().hideRecent(orderKey(o), false);
       const { day, meal } = useUi.getState();
       for (let i = 0; i < times; i++) addFood(day, { meal, ...o });
       const s = useApp.getState();

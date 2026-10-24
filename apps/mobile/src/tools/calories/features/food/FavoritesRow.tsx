@@ -19,8 +19,9 @@ export function FavoritesRow() {
   const shake = useApp(s => s.shake);
   const addFood = useApp(s => s.addFood);
   const day = useUi(s => s.day);
+  const locked = useApp(s => !!s.done[day]); // Done for the Day: nothing to add until it's reopened
   const target = useBudget();
-  if (!favorites.length) return null;
+  if (!favorites.length || locked) return null;
   const meal = mealForHour(new Date().getHours());
 
   const add = (o: Order) => {

@@ -10,18 +10,20 @@ type Props = {
   count: number; // already in this meal: the + becomes a green ✓ (tap again to add another)
   fav?: boolean; onFav?: () => void;
   onAdd: () => void;
+  onRemove?: () => void; // for VoiceOver, where the swipe to remove isn't reachable
 };
 
-// List row that logs on tap: photo, name, details, calories, ♥ to pin it, and + / ✓.
-export function FoodRow({ thumb, title, subtitle, kcal, count, fav, onFav, onAdd }: Props) {
+// List row that logs on tap: photo, name, details (wrapped, so a plate shows everything in it), calories, ♥ to pin it, and + / ✓.
+export function FoodRow({ thumb, title, subtitle, kcal, count, fav, onFav, onAdd, onRemove }: Props) {
   const c = useColors();
   return (
-    <Pressable onPress={onAdd} accessibilityRole="button" accessibilityLabel={`Add ${title}, ${Math.round(kcal)} calories${count ? `, ${count} added` : ''}`}
+    <Pressable onPress={onAdd} accessibilityActions={onRemove ? [{ name: 'remove', label: 'Remove from Recent' }] : undefined} onAccessibilityAction={onRemove} accessibilityRole="button" accessibilityLabel={`Add ${title}, ${Math.round(kcal)} calories${count ? `, ${count} added` : ''}`}
       style={({ pressed }) => ({ flexDirection: 'row', alignItems: 'center', gap: space.md, paddingLeft: space.lg, paddingRight: space.md, paddingVertical: space.sm, backgroundColor: pressed ? c.fill : 'transparent' })}>
       <Thumb id={thumb} size={44} />
       <View style={{ flex: 1, minWidth: 0 }}>
         <Text style={[type.body, { color: c.label }]} numberOfLines={1}>{title}</Text>
-        <Text style={[type.footnote, nums, { color: c.secondary }]} numberOfLines={1}>{subtitle ? `${subtitle} · ` : ''}{Math.round(kcal).toLocaleString()} kcal</Text>
+        {subtitle && <Text style={[type.footnote, { color: c.secondary }]}>{subtitle}</Text>}
+        <Text style={[type.footnote, nums, { color: c.secondary }]} numberOfLines={1}>{Math.round(kcal).toLocaleString()} kcal</Text>
       </View>
       {onFav && (
         <Pressable onPress={() => { select(); onFav(); }} hitSlop={8} accessibilityRole="button" accessibilityLabel={fav ? `Unfavorite ${title}` : `Favorite ${title}`} style={{ padding: 4 }}>

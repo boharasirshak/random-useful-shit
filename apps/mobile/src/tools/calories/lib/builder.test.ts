@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { ORDERS } from '../data/menu.ts';
-import { buildKcal, isDone, pick, setHalf, startBuild, toParts } from './builder.ts';
+import { buildKcal, fromParts, isDone, pick, setHalf, startBuild, toParts } from './builder.ts';
 
 test('Panda plate fills base then entrées; half & half splits the base', () => {
   let b = setHalf(startBuild(ORDERS.panda!.Plate!), true);
@@ -30,4 +30,15 @@ test('turning half & half off merges the base back', () => {
   b = setHalf(b, false);
   assert.deepEqual(b.slots.map(s => [s.category, s.qty, s.id]), [['base', 1, 'panda-chow-mein'], ['entree', 1, null]]);
   assert.equal(b.active, 1);
+});
+
+test('a logged plate or meal rebuilds into the same build, so it can be edited', () => {
+  let plate = setHalf(startBuild(ORDERS.panda!.Plate!), true);
+  for (const id of ['panda-chow-mein', 'panda-fried-rice', 'panda-orange-chicken', 'panda-orange-chicken']) plate = pick(plate, id);
+  assert.deepEqual(fromParts(ORDERS.panda!.Plate!, toParts(plate)), plate);
+
+  const meal = ORDERS.cfa!.Meal!;
+  let b = startBuild(meal);
+  for (const id of ['cfa-chicken-sandwich', 'cfa-waffle-fries-m', 'cfa-sweet-tea-m', 'cfa-chick-fil-a-sauce', 'cfa-chick-fil-a-sauce']) b = pick(b, id, meal.extras);
+  assert.deepEqual(fromParts(meal, toParts(b)), b);
 });

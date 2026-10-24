@@ -87,7 +87,7 @@ export function useQuestions(): Fold[] {
         <P>Here’s why it happens. A smaller body burns fewer calories, about 7 less per day for every pound you lose. Your body also slows down a bit to save energy. So if you keep eating the same amount, the gap between what you eat and what you burn shrinks until it’s gone.</P>
         <P>The app fixes this by lowering your target as you lose weight, so you keep going. On Goals, tap “Same kcal” to see what would happen if you didn’t lower it. The orange line flattens out.</P>
         <PlanCurve c={c} />
-        <P>A flat week or two is usually just water, not a real plateau. If your green trend line stays flat for 3 weeks while you’re under your target, check your portions.</P>
+        <P>A flat week or two is usually just water, not a real plateau. If your green “Yours” line stays flat for 3 weeks while you’re under your target, check your portions.</P>
       </>,
     },
     {
@@ -128,7 +128,7 @@ export function useQuestions(): Fold[] {
       title: 'What does “Done for the Day” do?',
       body: <>
         <P>It closes the day early: you see how you did and the streak ticks up right away. You don’t have to press it. Any day you logged food closes on its own at midnight and counts the same.</P>
-        <P>Your streak counts closed days in a row. Today doesn’t break it until the day is over. To fix an old day, tap it in the week strip and edit it there.</P>
+        <P>Your streak counts closed days in a row. Today doesn’t break it until the day is over. To fix an old day, tap it in the week strip and edit it there. A day you marked done is locked so it can’t change by accident: tap Reopen day under it first.</P>
       </>,
     },
     {

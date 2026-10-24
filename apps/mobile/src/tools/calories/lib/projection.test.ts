@@ -41,6 +41,14 @@ test('plan runs from the first weigh-in; actual trend is compared against it', (
   assert.equal(typeof r.vsPlan, 'number');
 });
 
+test('changing the starting weight redraws the plan, even after weigh-ins', () => {
+  const weights = { [shift(day, -14)]: 210, [day]: 207 };
+  const a = project(p, weights, day), b = project({ ...p, weight: 215 }, weights, day);
+  assert.equal(b.plan[0].y, 215);
+  assert.equal(b.past[0].y, 215);
+  assert.ok(b.vsPlan! < a.vsPlan!); // same weigh-ins against a heavier start = further ahead
+});
+
 test('backups round-trip and reject junk', () => {
   const data = { profile: p, shake: 160, shakeProtein: 30, logs: {}, weights: { [day]: 210 }, done: {}, stepWeeks: [], favorites: [], seenAwards: [], reminder: { on: false, hour: 7, minute: 30 } };
   assert.deepEqual(fromBackup(JSON.parse(JSON.stringify(toBackup(data)))).data, data);

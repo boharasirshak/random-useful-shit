@@ -29,6 +29,7 @@ type State = AppData & {
   setShakeProtein: (g: number) => void;
   addFood: (day: string, entry: Omit<Entry, 'qty'>) => void;
   stepFood: (day: string, index: number, by: number) => void;
+  editFood: (day: string, index: number, entry: Entry) => void; // swap one line for its edited version
   undoFood: (day: string, entry: Omit<Entry, 'qty'>) => void;
   setWeight: (day: string, lb: number) => void;
   removeWeight: (day: string) => void;
@@ -61,6 +62,7 @@ export const useApp = create<State>()(
       setShakeProtein: shakeProtein => set({ shakeProtein }),
       addFood: (day, entry) => set(s => ({ logs: { ...s.logs, [day]: addEntry(s.logs[day], entry) } })),
       stepFood: (day, index, by) => set(s => ({ logs: { ...s.logs, [day]: stepEntry(s.logs[day] ?? [], index, by) } })),
+      editFood: (day, index, entry) => set(s => ({ logs: { ...s.logs, [day]: (s.logs[day] ?? []).map((x, i) => (i === index ? entry : x)) } })),
       undoFood: (day, entry) => set(s => ({ logs: { ...s.logs, [day]: removeEntry(s.logs[day], entry) } })),
       setWeight: (day, lb) => set(s => ({ weights: { ...s.weights, [day]: lb } })),
       removeWeight: day => set(s => {

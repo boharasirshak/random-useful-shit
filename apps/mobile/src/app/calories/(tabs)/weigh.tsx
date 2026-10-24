@@ -48,7 +48,7 @@ export default function WeighScreen() {
           <Heading title="Last 30 days" />
           <View style={{ marginHorizontal: space.lg, backgroundColor: c.card, borderRadius: radius.lg, padding: space.md }}>
             <LineChart height={160} unit=" lb" series={[
-              { points: trend(points), color: c.green, width: 3, label: 'Trend' },
+              { points: trend(points), color: c.green, width: 3, label: 'Yours' },
               { points, color: c.secondary, dots: true, label: 'Weigh-ins' },
             ]} />
           </View>

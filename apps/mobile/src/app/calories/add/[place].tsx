@@ -1,4 +1,4 @@
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { ScrollView, Text, TextInput, View } from 'react-native';
 import { RESTAURANTS, type Category, type Restaurant } from '@/tools/calories/data/menu';
@@ -9,12 +9,12 @@ import { PlaceBadge } from '@/tools/calories/features/add/PlaceBadge';
 import { ShakeCard } from '@/tools/calories/features/add/ShakeCard';
 import { TopBar } from '@/tools/calories/features/add/TopBar';
 import { useLogFood } from '@/tools/calories/features/add/useLogFood';
-import { usePlaceMenu, type Filter } from '@/tools/calories/features/add/usePlaceMenu';
+import { ALA_CARTE, usePlaceMenu, type Filter } from '@/tools/calories/features/add/usePlaceMenu';
 import { buildKcal, isDone } from '@/tools/calories/lib/builder';
-import { MEALS } from '@/tools/calories/lib/log';
+import { isCustom, MEALS, type Entry } from '@/tools/calories/lib/log';
 import { useBudget } from '@/tools/calories/store/derived';
 import { useApp } from '@/tools/calories/store/app';
-import { useUi } from '@/tools/calories/store/ui';
+import { useUi, type CustomFood } from '@/tools/calories/store/ui';
 import { Chips } from '@/ui/Chips';
 import { Section } from '@/ui/Section';
 import { Stepper } from '@/ui/Stepper';
@@ -27,18 +27,34 @@ const fmt = (n: number) => Math.round(n).toLocaleString();
 const CUSTOM = range(1, 300).map(n => n * 10); // 10–3,000 kcal
 const GRAMS = range(0, 300);
 const MACROS = [['p', 'Protein'], ['c', 'Carbs'], ['f', 'Fat']] as const;
+// A logged custom food back as the form: calories is the `custom` part, macros the `custom-p/c/f` grams.
+const customOf = (e: Entry): CustomFood => {
+  const g = (id: string) => e.parts.find(p => p.id === id)?.qty ?? 0;
+  return { name: e.name ?? '', kcal: g('custom'), p: g('custom-p'), c: g('custom-c'), f: g('custom-f') };
+};
 
 // Add Food, step 2: one place's menu. Order type and category are swipeable chips, so long menus stay tidy.
+// With ?edit=<index> it edits that line of the day's log instead (opened by tapping it on Food).
 export default function PlaceMenu() {
-  const { place: raw } = useLocalSearchParams<{ place: string }>();
+  const { place: raw, edit } = useLocalSearchParams<{ place: string; edit?: string }>();
   const place = (raw in RESTAURANTS ? raw : 'cfa') as Restaurant;
   const c = useColors();
-  const meal = useUi(s => s.meal);
+  const day = useUi(s => s.day);
   const shake = useApp(s => s.shake);
+  const editFood = useApp(s => s.editFood);
+  const [editing] = useState(() => {
+    const entry = edit == null ? undefined : useApp.getState().logs[day]?.[Number(edit)];
+    return entry && { index: Number(edit), entry };
+  });
+  const meal = useUi(s => editing ? editing.entry.meal : s.meal);
   const { add } = useLogFood();
   const target = useBudget();
-  const m = usePlaceMenu(place);
-  const [custom, setCustom] = useState({ name: '', kcal: 300, p: 0, c: 0, f: 0 });
+  const m = usePlaceMenu(place, editing || undefined);
+  const stored = useUi(s => s.custom);
+  const setStored = useUi(s => s.setCustom);
+  const [customDraft, setCustomDraft] = useState(() => (editing && isCustom(editing.entry) ? customOf(editing.entry) : null));
+  const custom = customDraft ?? stored;
+  const setCustom = (patch: Partial<CustomFood> | null) => (customDraft ? setCustomDraft({ ...customDraft, ...patch }) : setStored(patch));
   // Calories, then any macros you set as 1 g parts (0 g ones left out).
   const customParts = [{ id: 'custom', qty: custom.kcal }, ...MACROS.map(([k]) => ({ id: `custom-${k}`, qty: custom[k] })).filter(p => p.qty)];
   const mealName = MEALS[meal];
@@ -50,10 +66,12 @@ export default function PlaceMenu() {
   const action = place === 'shake'
     ? { title: `Add to ${mealName} · ${fmt(shake)} kcal`, onPress: () => add({ parts: [{ id: 'shake', qty: 1 }] }) }
     : place === 'custom'
-      ? { title: `Add to ${mealName} · ${fmt(custom.kcal)} kcal`, onPress: () => add({ name: custom.name.trim() || undefined, parts: customParts }) }
+      ? editing
+        ? { title: `Save Changes · ${fmt(custom.kcal)} kcal`, onPress: () => { editFood(day, editing.index, { ...editing.entry, name: custom.name.trim() || undefined, parts: customParts }); router.back(); } }
+        : { title: `Add to ${mealName} · ${fmt(custom.kcal)} kcal`, onPress: () => { add({ name: custom.name.trim() || undefined, parts: customParts }); setCustom(null); } }
       : m.build
       ? isDone(m.build)
-        ? { title: `Add to ${mealName}`, onPress: m.addBuild }
+        ? { title: editing ? 'Save Changes' : `Add to ${mealName}`, onPress: m.addBuild }
         : { title: `Pick ${next ? ONE[next.category] : 'items'}`, disabled: true, onPress: () => {} }
       : undefined;
 
@@ -74,7 +92,7 @@ export default function PlaceMenu() {
     <View style={{ flex: 1, backgroundColor: c.bg }}>
       <TopBar back={mealName} title={m.name} badge={<PlaceBadge place={place} size={40} />} />
       <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingTop: space.md, paddingBottom: space.xl, gap: space.lg, width: '100%', maxWidth: 720, alignSelf: 'center' }}>
-        {m.orders && <Chips options={Object.keys(m.orders).map(o => [o, o] as [string, string])} value={m.orderName} onChange={m.setOrder} />}
+        {m.orders && <Chips options={Object.keys(m.orders).filter(o => !editing || o !== ALA_CARTE).map(o => [o, o] as [string, string])} value={m.orderName} onChange={m.setOrder} />}
 
         {place === 'shake' ? (
           <ShakeCard />
@@ -82,12 +100,12 @@ export default function PlaceMenu() {
           <Section footer="For anything that isn’t on a menu. Protein, carbs and fat are optional.">
             <View style={{ minHeight: 44, flexDirection: 'row', alignItems: 'center', paddingHorizontal: space.lg, gap: space.sm }}>
               <Text style={[type.body, { color: c.label }]}>Name</Text>
-              <TextInput value={custom.name} onChangeText={name => setCustom(s => ({ ...s, name }))} placeholder="Optional" placeholderTextColor={c.tertiary}
+              <TextInput value={custom.name} onChangeText={name => setCustom({ name })} placeholder="Optional" placeholderTextColor={c.tertiary}
                 accessibilityLabel="Name" returnKeyType="done" maxLength={40} style={[type.body, { color: c.label, flex: 1, textAlign: 'right', paddingVertical: 10 }]} />
             </View>
-            <WheelRow label="Calories" startOpen wheels={[{ value: custom.kcal, options: CUSTOM, suffix: 'kcal', format: fmt, onChange: kcal => setCustom(s => ({ ...s, kcal })) }]} />
+            <WheelRow label="Calories" startOpen wheels={[{ value: custom.kcal, options: CUSTOM, suffix: 'kcal', format: fmt, onChange: kcal => setCustom({ kcal }) }]} />
             {MACROS.map(([k, label]) => (
-              <WheelRow key={k} label={label} wheels={[{ value: custom[k], options: GRAMS, suffix: 'g', onChange: g => setCustom(s => ({ ...s, [k]: g })) }]} />
+              <WheelRow key={k} label={label} wheels={[{ value: custom[k], options: GRAMS, suffix: 'g', onChange: g => setCustom({ [k]: g }) }]} />
             ))}
           </Section>
         ) : m.build && m.order ? (

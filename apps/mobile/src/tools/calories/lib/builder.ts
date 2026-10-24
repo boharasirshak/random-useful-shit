@@ -44,6 +44,23 @@ export function setHalf(b: Build, on: boolean): Build {
 
 export const isDone = (b: Build) => b.slots.every(s => s.id);
 
+// The other way round, to edit a logged plate: refill the slots from its parts, the rest are add-ons.
+// Two halves of the same base were merged into one part, so they come back as a whole base.
+export function fromParts(order: NonNullable<Order>, parts: Part[]): Build {
+  const left = parts.map(p => ({ ...p }));
+  const take = (category: Category, qty: number) => {
+    const p = left.find(x => x.qty >= qty && byId[x.id]?.category === category);
+    if (!p) return null;
+    p.qty -= qty;
+    return p.id;
+  };
+  let b = startBuild(order);
+  if (parts.some(p => p.qty % 1 && byId[p.id]?.category === 'base')) b = setHalf(b, true);
+  const slots = b.slots.map(s => ({ ...s, id: take(s.category, s.qty) }));
+  const extras = left.flatMap(p => (byId[p.id]?.category === order.extras ? Array<string>(Math.floor(p.qty)).fill(p.id) : []));
+  return { ...b, slots, extras, active: firstEmpty(slots) };
+}
+
 export function toParts(b: Build): Part[] {
   const parts: Part[] = [];
   for (const { id, qty } of [...b.slots, ...b.extras.map(id => ({ id, qty: 1 }))]) {

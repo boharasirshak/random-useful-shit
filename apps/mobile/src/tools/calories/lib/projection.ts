@@ -27,7 +27,8 @@ export function project(p: Profile, weights: Record<string, number>, today: stri
   const weighIns = Object.entries(weights).sort().map(([d, lb]) => ({ x: ts(d), y: lb }));
   const smooth = trend(weighIns);
 
-  // The plan starts at your first weigh-in (or today, at your starting weight) and eats the target every day.
+  // The plan starts at your starting weight, on the day of your first weigh-in (or today), and eats the target every day.
+  // So changing Start weight redraws Planned and Expected from the new number.
   // The target is recalculated from the plan's own weight each day, like you'd do in real life.
   const start = Object.keys(weights).sort()[0] ?? today;
   const elapsed = Math.max(0, daysBetween(start, today));
@@ -44,7 +45,7 @@ export function project(p: Profile, weights: Record<string, number>, today: stri
   });
   const run = (actual: boolean) => {
     let balance = 0;
-    const lbs = simulate(weights[start] ?? p.weight, on(0), days, (i, lb) => {
+    const lbs = simulate(p.weight, on(0), days, (i, lb) => {
       const target = planIntake(lb * LB, on(i));
       if (!actual || i > elapsed || ate[i] == null) return target;
       balance += ate[i]! - target;

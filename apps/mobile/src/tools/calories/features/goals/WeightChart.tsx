@@ -15,7 +15,7 @@ const n1 = (n: number) => Math.abs(n).toFixed(1);
 const shortDate = (ms: number) => new Date(ms).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
 
 // One card, two graphs, picked with a switch (a swipe would fight the drag-to-scrub on the chart):
-// Weight — plan, theoretical and actual weight; Lost — pounds lost so far, climbing toward the goal.
+// Weight — planned, expected and your actual weight; Lost — pounds lost so far, climbing toward the goal.
 export function WeightChart({ p, goal, today }: { p: Projection; goal: number; today: string }) {
   const c = useColors();
   const [graph, setGraph] = useState<Graph>('weight');
@@ -30,24 +30,24 @@ export function WeightChart({ p, goal, today }: { p: Projection; goal: number; t
   const inWin = (pts: Point[]) => pts.filter(pt => pt.x >= from && pt.x <= to);
 
   const start = p.plan[0]?.y ?? 0; // weight the plan started from
-  // Plan = every day on target (solid up to today); Theoretical = the same model fed what you actually ate.
+  // Planned = every day on target (solid up to today); Expected = the same model fed what you actually ate; Yours = your weigh-ins, smoothed.
   const planPast = p.plan.filter(pt => pt.x <= now), planAhead = p.plan.filter(pt => pt.x >= now);
   const lost = (pts: Point[]) => pts.map(pt => ({ x: pt.x, y: start - pt.y }));
   const lostNow = p.trend.length ? start - p.trend[p.trend.length - 1].y : 0;
   const toGo = goal ? Math.max(0, start - lostNow - goal) : null;
 
   const lines: Series[] = graph === 'weight' ? [
-    { points: inWin(planPast), color: c.tint, label: 'Plan' },
-    { points: inWin(planAhead), color: c.tint, dash: '6 5', label: 'Plan' },
-    { points: inWin(p.past), color: c.purple, label: 'Theoretical' },
-    { points: inWin(p.trend), color: c.green, width: 3, label: 'Trend' },
+    { points: inWin(planPast), color: c.tint, label: 'Planned' },
+    { points: inWin(planAhead), color: c.tint, dash: '6 5', label: 'Planned' },
+    { points: inWin(p.past), color: c.purple, label: 'Expected' },
+    { points: inWin(p.trend), color: c.green, width: 3, label: 'Yours' },
     { points: inWin(p.weighIns), color: c.secondary, dots: true, label: 'Weigh-ins' },
     { points: inWin(p.steady), color: c.orange, dash: '2 4', width: 1.5, label: 'Same kcal' },
   ] : [
-    { points: inWin(lost(p.trend)), color: c.green, width: 3, fill: true, label: 'Lost' },
-    { points: inWin(lost(planPast)), color: c.tint, label: 'Plan' },
-    { points: inWin(lost(planAhead)), color: c.tint, dash: '6 5', label: 'Plan' },
-    { points: inWin(lost(p.past)), color: c.purple, label: 'Theoretical' },
+    { points: inWin(lost(p.trend)), color: c.green, width: 3, fill: true, label: 'Yours' },
+    { points: inWin(lost(planPast)), color: c.tint, label: 'Planned' },
+    { points: inWin(lost(planAhead)), color: c.tint, dash: '6 5', label: 'Planned' },
+    { points: inWin(lost(p.past)), color: c.purple, label: 'Expected' },
   ];
   const xs = lines.flatMap(s => s.points.map(pt => pt.x));
   const goalY = graph === 'weight' ? goal : start - goal;
@@ -72,8 +72,8 @@ export function WeightChart({ p, goal, today }: { p: Projection; goal: number; t
         <View style={{ flexDirection: 'row', gap: space.sm }}>
           {stat(p.goalShift ? `Goal by (${p.goalShift > 0 ? '+' : '−'}${Math.abs(p.goalShift)}d)` : 'Goal by', !goal ? 'Set a goal' : p.goalDate ? shortDate(p.goalDate) : '2 yr+',
             p.goalShift ? (p.goalShift > 0 ? c.orange : c.green) : c.label)}
-          {stat('Trend', p.trendPerWeek == null ? '–' : `${p.trendPerWeek >= 0 ? '−' : '+'}${n1(p.trendPerWeek)} lb/wk`)}
-          {stat(behind ? 'Behind plan' : ahead ? 'Ahead of plan' : 'vs Plan', p.vsPlan == null ? '–' : behind || ahead ? `${n1(p.vsPlan)} lb` : 'On plan',
+          {stat('Your pace', p.trendPerWeek == null ? '–' : `${p.trendPerWeek >= 0 ? '−' : '+'}${n1(p.trendPerWeek)} lb/wk`)}
+          {stat(behind ? 'Behind plan' : ahead ? 'Ahead of plan' : 'vs Planned', p.vsPlan == null ? '–' : behind || ahead ? `${n1(p.vsPlan)} lb` : 'On plan',
             behind ? c.red : p.vsPlan != null ? c.green : c.label)}
         </View>
       ) : (
