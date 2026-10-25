@@ -59,6 +59,12 @@ export const useAmbient = create<State>()(
         }
         return FILES[sound as 'white' | 'pink' | 'brown'];
       };
+      // Field recordings sit 10 dB or so under the music, so they get a lift at the same volume setting.
+      const gain = () => {
+        const { sound, volume, tracks } = get();
+        const t = sound.startsWith('track:') ? tracks.find(x => x.id === sound.slice(6)) : undefined;
+        return Math.min(1, volume * (t?.kind === 'nature' ? 2 : 1));
+      };
       const play = async () => {
         release();
         const src = source();
@@ -66,7 +72,7 @@ export const useAmbient = create<State>()(
         await setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: true }).catch(() => {});
         player = createAudioPlayer(src);
         player.loop = true;
-        player.volume = get().volume;
+        player.volume = gain();
         player.play();
         set({ playing: true });
       };
@@ -85,7 +91,7 @@ export const useAmbient = create<State>()(
         },
         setVolume: volume => {
           set({ volume });
-          if (player) player.volume = volume;
+          if (player) player.volume = gain();
         },
         pickMine: async () => {
           const picked = await File.pickFileAsync({ mimeTypes: ['audio/*'] });
