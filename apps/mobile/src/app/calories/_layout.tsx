@@ -5,6 +5,7 @@ import { syncReminders } from '@/tools/calories/features/weigh/reminders';
 import { shift, today } from '@/tools/calories/lib/dates';
 import { weighInNews } from '@/tools/calories/lib/weighin';
 import { useApp, useHydrated } from '@/tools/calories/store/app';
+import { useCatalog } from '@/tools/calories/store/catalog';
 import { useUi } from '@/tools/calories/store/ui';
 import { useColors } from '@/ui/theme';
 
@@ -23,11 +24,13 @@ export default function CaloriesLayout() {
   }, [hydrated, reminder, weighed, streak]);
   // The selected day follows the clock: past midnight, or coming back to the app, it moves on to the new day
   // (unless you picked a day yourself). Yesterday closes on its own; tap it in the week strip to edit it.
+  useEffect(() => { useCatalog.getState().load(); }, []); // the downloaded food catalog, if there is one
   useEffect(() => {
     const roll = () => useUi.getState().rollover();
     roll();
     const tick = setInterval(roll, 30_000);
-    const sub = AppState.addEventListener('change', s => { if (s === 'active') roll(); });
+    // Coming back also resumes the photo download, if one was wanted (it only runs while the app is open).
+    const sub = AppState.addEventListener('change', s => { if (s === 'active') { roll(); useCatalog.getState().resumePhotos(); } });
     return () => { clearInterval(tick); sub.remove(); };
   }, []);
   if (!hydrated) return null;

@@ -1,0 +1,13 @@
+{
+  "name": "food-data",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scrape": "node scrape.mjs",
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.57.0",
+    "uploadthing": "7.7.4"
+  }
+}

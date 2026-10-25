@@ -1,5 +1,5 @@
 // Meal builder: fill the slots of a Panda bowl/plate or a Chick-fil-A meal, in order.
-import { byId, type Category, type Order } from '../data/menu.ts';
+import { byId, extrasOf, type Category, type Order } from '../data/menu.ts';
 import { itemKcal, type Part } from './log.ts';
 
 export type Slot = { category: Category; qty: number; id: string | null };
@@ -17,14 +17,14 @@ export const startBuild = (order: NonNullable<Order>): Build => ({
   half: false,
 });
 
-// Tap an item: fills the active slot if it fits, otherwise counts as an add-on (e.g. a sauce).
-export function pick(b: Build, id: string, extras?: Category): Build {
+// Tap an item: fills the active slot if it fits, otherwise counts as an add-on (a sauce, a topping).
+export function pick(b: Build, id: string, extras: Category[] = []): Build {
   const category = byId[id]?.category;
   if (b.active != null && b.slots[b.active].category === category) {
     const slots = b.slots.map((s, i) => (i === b.active ? { ...s, id } : s));
     return { ...b, slots, active: firstEmpty(slots) };
   }
-  if (category && category === extras) return { ...b, extras: [...b.extras, id] };
+  if (category && extras.includes(category)) return { ...b, extras: [...b.extras, id] };
   return b;
 }
 
@@ -57,7 +57,7 @@ export function fromParts(order: NonNullable<Order>, parts: Part[]): Build {
   let b = startBuild(order);
   if (parts.some(p => p.qty % 1 && byId[p.id]?.category === 'base')) b = setHalf(b, true);
   const slots = b.slots.map(s => ({ ...s, id: take(s.category, s.qty) }));
-  const extras = left.flatMap(p => (byId[p.id]?.category === order.extras ? Array<string>(Math.floor(p.qty)).fill(p.id) : []));
+  const extras = left.flatMap(p => (extrasOf(order).includes(byId[p.id]?.category as Category) ? Array<string>(Math.floor(p.qty)).fill(p.id) : []));
   return { ...b, slots, extras, active: firstEmpty(slots) };
 }
 

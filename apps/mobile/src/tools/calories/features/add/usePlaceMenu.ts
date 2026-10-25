@@ -2,11 +2,12 @@
 // Kept in the store (and saved), so a half-built plate is still there after going back, closing the sheet or relaunching.
 // Editing a logged plate works on its own copy instead, so it never touches that draft; saving swaps the logged line.
 import { router } from 'expo-router';
-import { useState } from 'react';
-import { MENU, ORDERS, RESTAURANTS, type Category, type Restaurant } from '@/tools/calories/data/menu';
+import { useMemo, useState } from 'react';
+import { extrasOf, itemsOf, ORDERS, PLACES, type Category, type Restaurant } from '@/tools/calories/data/menu';
 import { focus, fromParts, pick, removeExtra, setHalf, startBuild, toParts, type Build } from '@/tools/calories/lib/builder';
 import { countItem, type Entry } from '@/tools/calories/lib/log';
 import { useApp } from '@/tools/calories/store/app';
+import { useCatalog } from '@/tools/calories/store/catalog';
 import { useUi, type PlaceState } from '@/tools/calories/store/ui';
 import { tap } from '@/ui/haptics';
 import { useLogFood } from './useLogFood';
@@ -14,7 +15,8 @@ import { useLogFood } from './useLogFood';
 export const ALA_CARTE = 'À la carte';
 export type Filter = Category | 'all';
 
-const comboOf = (place: Restaurant, orderName: string) => `${place === 'cfa' ? 'Chick-fil-A' : RESTAURANTS[place].split(' ')[0]} ${orderName}`;
+// "Panda Plate", "Chick-fil-A Meal", "McDonald's Meal": the logged line's name. Panda keeps its short form: old logs use it.
+const comboOf = (place: Restaurant, orderName: string) => `${place === 'panda' ? 'Panda' : PLACES[place]?.name ?? place} ${orderName}`;
 
 // A logged plate back as builder state: which order it was (from its name), its slots, and how many.
 function editState(place: Restaurant, e: Entry): PlaceState {
@@ -38,11 +40,12 @@ export function usePlaceMenu(place: Restaurant, edit?: { index: number; entry: E
 
   const orders = ORDERS[place];
   const order = orders?.[orderName] ?? null;
-  const items = MENU.filter(m => m.restaurant === place);
+  const version = useCatalog(s => s.version); // the downloaded catalog arriving adds items
+  const items = useMemo(() => itemsOf(place), [place, version]); // eslint-disable-line react-hooks/exhaustive-deps
   const comboName = comboOf(place, orderName);
 
   return {
-    name: RESTAURANTS[place], orders, orderName, order, build, items, filter, setFilter, qty,
+    name: PLACES[place]?.name ?? place, orders, orderName, order, build, items, filter, setFilter, qty,
     stepQty: (by: number) => update({ qty: Math.min(9, Math.max(1, qty + by)) }),
     categories: [...new Set(items.map(m => m.category))],
     setOrder: (name: string) => {
@@ -54,7 +57,7 @@ export function usePlaceMenu(place: Restaurant, edit?: { index: number; entry: E
     tapItem: (id: string) => {
       if (!build || !order) return add({ parts: [{ id, qty: 1 }] });
       tap();
-      setBuild(pick(build, id, order.extras));
+      setBuild(pick(build, id, extrasOf(order)));
     },
     focusSlot: (i: number) => build && setBuild(focus(build, i)),
     toggleHalf: (on: boolean) => build && setBuild(setHalf(build, on)),

@@ -1,7 +1,8 @@
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { ScrollView, Text, TextInput, View } from 'react-native';
-import { RESTAURANTS, type Category, type Restaurant } from '@/tools/calories/data/menu';
+import { CATEGORY_NAMES, extrasOf, PLACES, type Category, type Restaurant } from '@/tools/calories/data/menu';
 import { AddBar } from '@/tools/calories/features/add/AddBar';
 import { BuilderPanel } from '@/tools/calories/features/add/BuilderPanel';
 import { MenuGrid } from '@/tools/calories/features/add/MenuGrid';
@@ -18,11 +19,12 @@ import { useUi, type CustomFood } from '@/tools/calories/store/ui';
 import { Chips } from '@/ui/Chips';
 import { Section } from '@/ui/Section';
 import { Stepper } from '@/ui/Stepper';
-import { nums, space, type, useColors } from '@/ui/theme';
+import { nums, radius, space, type, useColors } from '@/ui/theme';
 import { range, WheelRow } from '@/ui/WheelRow';
 
-const CATEGORY: Record<Category, string> = { entree: 'Entrées', base: 'Bases', side: 'Sides', appetizer: 'Appetizers', drink: 'Drinks', sauce: 'Sauces', shake: 'Shake', custom: 'Custom' };
+const CATEGORY = CATEGORY_NAMES;
 const ONE: Record<string, string> = { entree: 'entrée', base: 'base', side: 'side', drink: 'drink' };
+const BIG = 60; // a place with more items than this (the Store) gets a search box and shows the first few per category
 const fmt = (n: number) => Math.round(n).toLocaleString();
 const CUSTOM = range(1, 300).map(n => n * 10); // 10–3,000 kcal
 const GRAMS = range(0, 300);
@@ -37,7 +39,7 @@ const customOf = (e: Entry): CustomFood => {
 // With ?edit=<index> it edits that line of the day's log instead (opened by tapping it on Food).
 export default function PlaceMenu() {
   const { place: raw, edit } = useLocalSearchParams<{ place: string; edit?: string }>();
-  const place = (raw in RESTAURANTS ? raw : 'cfa') as Restaurant;
+  const place = (raw in PLACES ? raw : 'cfa') as Restaurant;
   const c = useColors();
   const day = useUi(s => s.day);
   const shake = useApp(s => s.shake);
@@ -62,6 +64,14 @@ export default function PlaceMenu() {
   const picked = new Set(m.build ? [...m.build.slots.map(s => s.id), ...m.build.extras] : []);
   const next = m.build?.slots.find(s => !s.id);
   const shown = m.filter === 'all' ? m.categories : [m.filter];
+  const [find, setFind] = useState('');
+  const big = m.items.length > BIG;
+  const q = find.trim().toLowerCase();
+  // Big menus: a search box; without a search, just the first rows of each category.
+  const listed = (k: Category) => {
+    const all = m.items.filter(i => i.category === k && (!q || i.name.toLowerCase().includes(q) || i.brand?.toLowerCase().includes(q)));
+    return big && !q && m.filter === 'all' ? all.slice(0, 12) : all;
+  };
 
   const action = place === 'shake'
     ? { title: `Add to ${mealName} · ${fmt(shake)} kcal`, onPress: () => add({ parts: [{ id: 'shake', qty: 1 }] }) }
@@ -114,17 +124,25 @@ export default function PlaceMenu() {
             {active
               ? <MenuGrid title={`Choose ${ONE[active]}`} items={m.items.filter(i => i.category === active)} onPick={m.tapItem} selected={id => picked.has(id)} />
               : <Text style={[type.subhead, { color: c.secondary, paddingHorizontal: space.xl }]}>All set. Tap a row to swap something.</Text>}
-            {m.order.extras && (
-              <MenuGrid title={`Add ${CATEGORY[m.order.extras].toLowerCase()} (optional)`} items={m.items.filter(i => i.category === m.order!.extras)}
-                onPick={m.tapItem} badge={id => m.build!.extras.filter(x => x === id).length} />
-            )}
+            {extrasOf(m.order).map(x => (
+              <MenuGrid key={x} title={`Add ${CATEGORY[x].toLowerCase()} (optional)`} items={m.items.filter(i => i.category === x)}
+                onPick={m.tapItem} badge={id => m.build!.extras.filter(y => y === id).length} />
+            ))}
           </>
         ) : (
           <>
+            {big && (
+              <View style={{ marginHorizontal: space.lg, flexDirection: 'row', alignItems: 'center', gap: space.sm, backgroundColor: c.fill, borderRadius: radius.md, paddingHorizontal: space.md }}>
+                <Ionicons name="search" size={18} color={c.secondary} />
+                <TextInput value={find} onChangeText={setFind} placeholder={`Search ${m.name}`} placeholderTextColor={c.secondary} clearButtonMode="while-editing"
+                  autoCorrect={false} returnKeyType="search" accessibilityLabel={`Search ${m.name}`} style={[type.body, { flex: 1, color: c.label, paddingVertical: 9 }]} />
+              </View>
+            )}
             {m.categories.length > 1 && (
               <Chips options={[['all', 'All'] as [Filter, string], ...m.categories.map(k => [k, CATEGORY[k]] as [Filter, string])]} value={m.filter} onChange={m.setFilter} />
             )}
-            {shown.map(k => <MenuGrid key={k} title={CATEGORY[k]} items={m.items.filter(i => i.category === k)} onPick={m.tapItem} badge={m.inMeal} />)}
+            {shown.map(k => <MenuGrid key={k} title={CATEGORY[k]} items={listed(k)} onPick={m.tapItem} badge={m.inMeal} />)}
+            {big && !q && m.filter === 'all' && <Text style={[type.footnote, { color: c.secondary, textAlign: 'center', paddingHorizontal: space.xl }]}>Showing a few of each. Search or pick a category for everything.</Text>}
           </>
         )}
       </ScrollView>

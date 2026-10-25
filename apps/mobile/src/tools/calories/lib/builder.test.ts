@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { ORDERS } from '../data/menu.ts';
+import { extrasOf, ORDERS } from '../data/menu.ts';
 import { buildKcal, fromParts, isDone, pick, setHalf, startBuild, toParts } from './builder.ts';
 
 test('Panda plate fills base then entrées; half & half splits the base', () => {
@@ -17,9 +17,9 @@ test('Panda plate fills base then entrées; half & half splits the base', () => 
 test('items that fit no slot are ignored, unless they are the add-on category', () => {
   const meal = ORDERS.cfa!.Meal!;
   let b = startBuild(meal);
-  b = pick(b, 'cfa-waffle-fries-m', meal.extras); // side while the entrée slot is active
+  b = pick(b, 'cfa-waffle-fries-m', extrasOf(meal)); // side while the entrée slot is active
   assert.equal(b.slots[1].id, null);
-  b = pick(b, 'cfa-chick-fil-a-sauce', meal.extras);
+  b = pick(b, 'cfa-chick-fil-a-sauce', extrasOf(meal));
   assert.deepEqual(b.extras, ['cfa-chick-fil-a-sauce']);
   assert.ok(!isDone(b));
 });
@@ -39,6 +39,6 @@ test('a logged plate or meal rebuilds into the same build, so it can be edited',
 
   const meal = ORDERS.cfa!.Meal!;
   let b = startBuild(meal);
-  for (const id of ['cfa-chicken-sandwich', 'cfa-waffle-fries-m', 'cfa-sweet-tea-m', 'cfa-chick-fil-a-sauce', 'cfa-chick-fil-a-sauce']) b = pick(b, id, meal.extras);
+  for (const id of ['cfa-chicken-sandwich', 'cfa-waffle-fries-m', 'cfa-sweet-tea-m', 'cfa-chick-fil-a-sauce', 'cfa-chick-fil-a-sauce']) b = pick(b, id, extrasOf(meal));
   assert.deepEqual(fromParts(meal, toParts(b)), b);
 });

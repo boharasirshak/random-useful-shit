@@ -1,0 +1,244 @@
+{
+ "source": "innout",
+ "fetched": "2026-10-24",
+ "places": [
+  {
+   "id": "innout",
+   "name": "In-N-Out",
+   "kind": "fast",
+   "orders": {
+    "À la carte": null,
+    "Meal": {
+     "slots": [
+      "entree",
+      "side",
+      "drink"
+     ]
+    }
+   }
+  }
+ ],
+ "items": [
+  {
+   "id": "innout-double-double",
+   "place": "innout",
+   "name": "Double-Double",
+   "category": "entree",
+   "kcal": 610,
+   "p": 34,
+   "c": 42,
+   "f": 34,
+   "na": 1670,
+   "grams": 287,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/double-double@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-cheeseburger",
+   "place": "innout",
+   "name": "Cheeseburger",
+   "category": "entree",
+   "kcal": 430,
+   "p": 20,
+   "c": 40,
+   "f": 21,
+   "na": 1080,
+   "grams": 229,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/cheeseburger@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-hamburger",
+   "place": "innout",
+   "name": "Hamburger",
+   "category": "entree",
+   "kcal": 360,
+   "p": 16,
+   "c": 38,
+   "f": 16,
+   "na": 670,
+   "grams": 209,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/hamburger@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-french-fries",
+   "place": "innout",
+   "name": "French Fries",
+   "category": "side",
+   "kcal": 360,
+   "p": 6,
+   "c": 49,
+   "f": 15,
+   "na": 150,
+   "grams": 125,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/fries@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-chocolate-shake",
+   "place": "innout",
+   "name": "Chocolate Shake",
+   "category": "dessert",
+   "kcal": 610,
+   "p": 16,
+   "c": 74,
+   "f": 30,
+   "na": 370,
+   "grams": 15,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/chocolate-shake@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-vanilla-shake",
+   "place": "innout",
+   "name": "Vanilla Shake",
+   "category": "dessert",
+   "kcal": 590,
+   "p": 16,
+   "c": 66,
+   "f": 31,
+   "na": 360,
+   "grams": 15,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/vanilla-shake@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-strawberry-shake",
+   "place": "innout",
+   "name": "Strawberry Shake",
+   "category": "dessert",
+   "kcal": 610,
+   "p": 15,
+   "c": 74,
+   "f": 30,
+   "na": 350,
+   "grams": 15,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/strawberry-shake@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-coca-cola",
+   "place": "innout",
+   "name": "Coca-Cola",
+   "category": "drink",
+   "kcal": 130,
+   "p": 0,
+   "c": 37,
+   "f": 0,
+   "na": 35,
+   "grams": 11,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/cola@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-cherry-coke",
+   "place": "innout",
+   "name": "Cherry Coke",
+   "category": "entree",
+   "kcal": 140,
+   "p": 0,
+   "c": 38,
+   "f": 0,
+   "na": 40,
+   "grams": 11,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/cola@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-barq-s-root-beer",
+   "place": "innout",
+   "name": "Barq's Root Beer",
+   "category": "drink",
+   "kcal": 140,
+   "p": 0,
+   "c": 37,
+   "f": 0,
+   "na": 65,
+   "grams": 11,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/cola@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-7-up",
+   "place": "innout",
+   "name": "7-Up",
+   "category": "drink",
+   "kcal": 130,
+   "p": 0,
+   "c": 35,
+   "f": 0,
+   "na": 45,
+   "grams": 11,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/7up@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-dr-pepper",
+   "place": "innout",
+   "name": "Dr. Pepper",
+   "category": "entree",
+   "kcal": 130,
+   "p": 0,
+   "c": 36,
+   "f": 0,
+   "na": 40,
+   "grams": 11,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/cola@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-signature-pink-lemonade",
+   "place": "innout",
+   "name": "Signature Pink Lemonade",
+   "category": "drink",
+   "kcal": 150,
+   "p": 0,
+   "c": 35,
+   "f": 0,
+   "na": 25,
+   "grams": 11,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/pink-lemonade@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-lite-pink-lemonade",
+   "place": "innout",
+   "name": "Lite Pink Lemonade",
+   "category": "drink",
+   "kcal": 5,
+   "p": 0,
+   "c": 3,
+   "f": 0,
+   "na": 25,
+   "grams": 11,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/pink-lemonade@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-sweet-iced-tea",
+   "place": "innout",
+   "name": "Sweet Iced Tea",
+   "category": "drink",
+   "kcal": 80,
+   "p": 0,
+   "c": 20,
+   "f": 0,
+   "na": 0,
+   "grams": 6,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/tea@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-milk",
+   "place": "innout",
+   "name": "Milk",
+   "category": "drink",
+   "kcal": 160,
+   "p": 10,
+   "c": 16,
+   "f": 7,
+   "na": 160,
+   "grams": 10,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/milk@3x.png?package=INNOUT"
+  },
+  {
+   "id": "innout-hot-cocoa",
+   "place": "innout",
+   "name": "Hot Cocoa",
+   "category": "drink",
+   "kcal": 160,
+   "p": 2,
+   "c": 33,
+   "f": 3,
+   "na": 240,
+   "grams": 8,
+   "image": "https://web.archive.org/web/2026id_/https://www.in-n-out.com/Frontend-Assembly/INNOUT.PublicSite.Sitefinity/content/images/menu/hot-cocoa@3x.png?package=INNOUT"
+  }
+ ]
+}

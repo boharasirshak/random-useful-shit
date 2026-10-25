@@ -99,7 +99,7 @@ src/
       features/                 Library, BookScreen, PlayerBar, Voices
   ui/                           Shared iOS design kit: theme, Screen, Section, Row, Segmented, Field,
                                 Stepper, Button, LineChart, AppIcon, WebTab, haptics, confirm
-assets/menu/                    Menu photos, one folder per restaurant (+ CREDITS.md)
+assets/menu/                    Menu photos: catalog/ (generated, one per bundled item) + the original hand-picked ones (+ CREDITS.md)
 assets/tools/                   Drawn launcher icons (unrot.png, made by unrot-logo.py)
 assets/rive/                    Built Rive animations (one .riv, built from rive/)
 rive/                           Rive source: rive.yaml + one .rml per artboard (Rive CLI project)
@@ -159,7 +159,7 @@ rive rive               # live previewer; `main:` in rive/rive.yaml picks the ar
 - Keep files small: one component per file; logic goes in `lib/` with a test next to it.
 - Each tool's `lib/` and `data/` import each other with relative paths **including `.ts`** (so `node --test` can run them). Everything else imports with `@/…`.
 - Every new library must work on web too (or have a `.web.tsx` fallback).
-- Adding a menu photo: drop it in `assets/menu/`, set `image` in `tools/calories/data/menu.ts`, and add it to `tools/calories/data/images.ts`.
+- The food database comes from `packages/food-data` (see its README and ADR [0008](../../docs/decisions/0008-food-database.md)): `npm run build && node export.mjs` there regenerates `tools/calories/data/catalog.ts`, `catalogImages.ts` and `assets/menu/catalog/`. The hand-typed list in `data/menu.ts` is only the bottom layer for old ids. The full database (every store product) is a download in Body → Food database, served from UploadThing (`upload.mjs` there; set `EXPO_PUBLIC_FOOD_DATA_URL` in `.env`): the JSON first, then optionally every photo, a few a second while the app is open, saved under the app's documents so it all works offline. Both ask before using mobile data (`expo-network`). None of it is backed up or synced; it can be downloaded again.
 
 ## Status
 

@@ -3,12 +3,12 @@ import { Image } from 'expo-image';
 import { View } from 'react-native';
 import type { Restaurant } from '@/tools/calories/data/menu';
 import { useColors } from '@/ui/theme';
-import { PLACE_LOOK } from './places';
+import { placeLook } from './places';
 
 // A place's square badge: logo on white (like a menu photo), or a colored icon.
 export function PlaceBadge({ place, size = 44 }: { place: Restaurant; size?: number }) {
   const c = useColors();
-  const look = PLACE_LOOK[place];
+  const look = placeLook(place);
   const r = size * 0.23;
   if ('logo' in look) {
     return (

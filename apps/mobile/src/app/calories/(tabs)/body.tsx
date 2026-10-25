@@ -1,5 +1,6 @@
 import { BackupSection } from '@/tools/calories/features/body/BackupSection';
 import { BurnSection } from '@/tools/calories/features/body/BurnSection';
+import { FoodDataSection } from '@/tools/calories/features/body/FoodDataSection';
 import { ActivitySection, ProfileSections } from '@/tools/calories/features/body/ProfileSections';
 import { StepWeekSection } from '@/tools/calories/features/body/StepWeekSection';
 import { HelpButton } from '@/tools/calories/features/faq/HelpButton';
@@ -13,6 +14,7 @@ export default function BodyScreen() {
       <StepWeekSection />
       <ActivitySection />
       <BurnSection />
+      <FoodDataSection />
       <BackupSection />
     </Screen>
   );
