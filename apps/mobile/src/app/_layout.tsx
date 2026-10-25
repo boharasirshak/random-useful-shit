@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import * as WebBrowser from 'expo-web-browser';
 import { useEffect } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { useAmbient } from '@/shared/ambient/store';
 import { startSync } from '@/shared/sync/engine';
 import { SYNCED } from '@/tools/sync';
 import { useColors } from '@/ui/theme';
@@ -15,6 +16,7 @@ export default function RootLayout() {
   const c = useColors();
   // Offline-first: everything is saved on the device; sync sends it to the server whenever it can (see shared/sync).
   useEffect(() => { startSync(SYNCED); }, []);
+  useEffect(() => { useAmbient.getState().resume(); }, []); // the ambient sound you left on
   return (
     // Gesture root: charts scrub with a pan gesture.
     <GestureHandlerRootView style={{ flex: 1 }}>

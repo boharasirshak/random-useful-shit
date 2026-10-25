@@ -9,9 +9,10 @@ import { Directory, File, Paths } from 'expo-file-system';
 import * as Network from 'expo-network';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
+import { DATA_URL } from '@/shared/data';
 import { byId, fromCatalog, MENU, registerItems, type Catalog } from '@/tools/calories/data/menu';
 
-export const FOOD_DATA = process.env.EXPO_PUBLIC_FOOD_DATA_URL?.replace(/\/$/, '') || null; // e.g. https://<app>.ufs.sh/f
+export const FOOD_DATA = DATA_URL;
 export const PHOTO_MB = 180; // what every photo adds up to, for the "on mobile data" question
 const PHOTO_GAP_MS = 250; // ponytail: ~4 photos a second, gentle on the host; a background task if anyone wants it faster
 const dir = () => new Directory(Paths.document, 'calories');
@@ -116,7 +117,7 @@ export const useCatalog = create<State>()(
           }
         },
         download: async () => {
-          if (!FOOD_DATA) throw new Error('This build has no download address (EXPO_PUBLIC_FOOD_DATA_URL).');
+          if (!FOOD_DATA) throw new Error('This build has no download address (EXPO_PUBLIC_DATA_URL).');
           set({ busy: true });
           try {
             const r = await fetch(`${FOOD_DATA}/foods.json`);

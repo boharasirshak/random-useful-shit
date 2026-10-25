@@ -11,8 +11,11 @@ export type Card = {
   em?: string; // the key phrase, highlighted (an exact part of text)
   author?: string;
   source: string;
-  more: string; // the "go deeper" panel
+  more?: string; // the "go deeper" panel (bulk cards may have none: the source line stands alone)
   link?: string;
   thread?: Thread;
+  image?: string; // a picture (URL), with its credit
+  credit?: string;
+  tier?: number; // 1 (or unset): hand-written, bundled. 2: gathered by script (packages/unrot-content/BULK.md)
 };
 export type Catalog = { version: string; cards: Card[] };

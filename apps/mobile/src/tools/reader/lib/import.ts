@@ -10,7 +10,7 @@ export const canImport = !!pdf;
 
 export async function importPdf(): Promise<{ id: string; title: string; count: number } | null> {
   if (!pdf) throw new Error('This build has no PDF module. Rebuild the app (npm run ios / android).');
-  const picked = await File.pickFileAsync({ mimeTypes: 'application/pdf' });
+  const picked = await File.pickFileAsync({ mimeTypes: ['application/pdf'] }); // a list: iOS rejects a bare string before the picker opens
   if (picked.canceled) return null;
   const file = picked.result;
   const text = await pdf.extractText(filePath(file), null);

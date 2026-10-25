@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Image } from 'expo-image';
 import { Text, View } from 'react-native';
 import { topic } from '@/tools/unrot/data/topics';
 import type { Card } from '@/tools/unrot/lib/types';
@@ -20,6 +21,11 @@ export function CardFace({ card, width, height, top, bottom, active, children }:
   return (
     <View style={{ width, height, backgroundColor: C.bg, paddingTop: top, paddingBottom: bottom, paddingLeft: 28, paddingRight: 76 }}>
       <View style={{ flex: 1 }} />
+      {card.image && (
+        // A picture card: the picture first, quiet and rounded, the words under it. Loads by URL (bulk cards aren't bundled).
+        <Image source={{ uri: card.image }} contentFit="cover" transition={200} cachePolicy="disk" accessibilityLabel={card.title}
+          style={{ width: '100%', maxWidth: 620, height: Math.min(height * 0.38, 360), borderRadius: 14, marginBottom: 22, backgroundColor: C.panel }} />
+      )}
       <View style={{ gap: 20, maxWidth: 620 }}>
         {titled && <Text style={sans(32, '700', { color: C.ink })}>{card.title}</Text>}
         {titled ? (

@@ -42,6 +42,10 @@ Run all four before calling a change done.
 - **PWA:** `npm run build:web` → `dist/` (static site + offline service worker). Every push to `main` deploys it to GitHub Pages (`.github/workflows/pages.yml`) at https://boharasirshak.github.io/random-useful-shit/. Sub-path builds set `EXPO_BASE_URL=/<repo>`; for Drive backup on the hosted site, add a `GOOGLE_WEB_CLIENT_ID` repo variable.
 - **iOS / Android:** EAS cloud builds (not set up yet): `npx eas-cli@latest build --profile development|preview|production`.
 
+## Ambient sound
+
+White, pink or brown noise (made by `scripts/noise.py`, in `assets/sounds/`), a free track downloaded from `packages/ambient` (CC0 / CC BY, published to UploadThing as `ambient-*.m4a` + `ambient-tracks.json`), or one audio file of your own, on repeat, in the background too. Picked under Unrot → You; the player is `src/shared/ambient/`. The Reader stops it while it reads. Albums we can't ship (Minecraft Volume Alpha/Beta, lofi mixes) get a "Play elsewhere" row that opens a search in YouTube Music, Apple Music, Spotify or YouTube.
+
 ## Google Drive backup (one-time setup)
 
 Backup works with no server: the app signs you in with Google and saves one file to your Drive's hidden app folder. You need OAuth client IDs:
@@ -55,7 +59,7 @@ Backup works with no server: the app signs you in with Google and saves one file
 4. `cp .env.example .env` and paste the IDs.
 5. Rebuild the phone apps (`npm run ios`). `app.config.ts` registers the iOS sign-in redirect automatically.
 
-Until this is done, the Backup rows are disabled and say why.
+Until this is done, the Backup rows (on the Account screen, under the person icon on the launcher) are disabled and say why.
 
 ## Layout
 

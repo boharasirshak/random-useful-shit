@@ -9,7 +9,7 @@ import { Row } from '@/ui/Row';
 import { Section } from '@/ui/Section';
 import { useColors } from '@/ui/theme';
 
-// Back up / restore the whole app to the user's Google Drive (hidden app folder).
+// Back up / restore the Calorie Tracker to the user's Google Drive (hidden app folder). Lives on the Account screen.
 export function BackupSection() {
   const c = useColors();
   const google = useGoogleDriveToken();
@@ -44,7 +44,7 @@ export function BackupSection() {
   const disabled = !google.configured || !google.ready || busy != null;
 
   return (
-    <Section header="Backup" footer={footer}>
+    <Section header="Calorie Tracker backup" footer={footer}>
       <Row title="Back Up to Google Drive" tint={!disabled} onPress={disabled ? undefined : () => run('up')}
         right={busy === 'up' ? <ActivityIndicator color={c.secondary} /> : undefined} />
       <Row title="Restore from Google Drive" tint={!disabled} onPress={disabled ? undefined : () => run('down')}

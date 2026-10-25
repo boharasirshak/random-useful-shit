@@ -9,10 +9,15 @@ import bundled from '../../../../../../packages/unrot-content/cards.json';
 export const BUNDLED = bundled as Catalog;
 
 // `base`: the bundled version when it was downloaded. A new app release ships newer cards, so it wins.
-type State = { catalog: Catalog | null; base: string | null; set: (c: Catalog) => void };
+// `askOnLaunch`: check the published cards when Unrot opens and offer the download; `declined`: the version you said no to.
+type State = { catalog: Catalog | null; base: string | null; askOnLaunch: boolean; declined: string | null; set: (c: Catalog) => void; setAsk: (on: boolean) => void; decline: (version: string) => void };
 export const useCatalog = create<State>()(
-  persist(set => ({ catalog: null, base: null, set: catalog => set({ catalog, base: BUNDLED.version }) }),
-    { name: 'unrot-catalog', storage: createJSONStorage(() => AsyncStorage), partialize: s => ({ catalog: s.catalog, base: s.base }) }),
+  persist(set => ({
+    catalog: null, base: null, askOnLaunch: true, declined: null,
+    set: catalog => set({ catalog, base: BUNDLED.version }),
+    setAsk: askOnLaunch => set({ askOnLaunch }),
+    decline: declined => set({ declined }),
+  }), { name: 'unrot-catalog', storage: createJSONStorage(() => AsyncStorage), partialize: s => ({ catalog: s.catalog, base: s.base, askOnLaunch: s.askOnLaunch, declined: s.declined }) }),
 );
 
 const pickCards = (s: State) => (s.catalog && s.base === BUNDLED.version ? s.catalog : BUNDLED);

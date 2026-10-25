@@ -1,6 +1,6 @@
 # unrot-content
 
-The cards for Unrot, the scrolling tool in `apps/mobile`. One JSON file per topic in `parts/`, merged into `cards.json`, which the app bundles and `apps/server` serves.
+The cards for Unrot, the scrolling tool in `apps/mobile`. One JSON file per topic in `parts/`, merged into `cards.json`, which the app bundles, `apps/server` serves, and `upload.mjs` publishes (the app checks on launch and asks before downloading; Unrot → You turns that off).
 
 ## Requirements
 
@@ -10,9 +10,14 @@ Node.js 22+. No installs.
 
 ```sh
 node build.mjs      # checks every card, then writes cards.json with a content hash as its version
+node upload.mjs     # publishes cards.json to UploadThing (UPLOADTHING_TOKEN in the root .env); the app offers it on launch
 ```
 
 The build fails on a bad id, topic, type, missing field, over-long text, or a thread with missing parts. Run it after every edit to `parts/` and commit `cards.json` with it.
+
+## Bulk cards
+
+Thousands more, gathered by script from public-domain sources, with pictures: see `BULK.md`. They are never bundled; `build-full.mjs` + `upload.mjs` publish them and the app offers the download on launch.
 
 ## Card rules
 

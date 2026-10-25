@@ -1,10 +1,12 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { router } from 'expo-router';
-import { View } from 'react-native';
-import { useCards } from '@/tools/unrot/data/catalog';
+import { Switch, View } from 'react-native';
+import { AmbientSection } from '@/shared/ambient/AmbientSection';
+import { useCards, useCatalog } from '@/tools/unrot/data/catalog';
 import { TasteSection } from '@/tools/unrot/features/TasteSection';
 import { todayCount, useUnrot } from '@/tools/unrot/store/app';
-import { confirm } from '@/ui/confirm';
+import { fetchPublished, UNROT_DATA } from '@/tools/unrot/store/sync';
+import { confirm, notify } from '@/ui/confirm';
 import { Row } from '@/ui/Row';
 import { Screen } from '@/ui/Screen';
 import { Section } from '@/ui/Section';
@@ -22,6 +24,18 @@ export default function YouScreen() {
   const today = todayCount(useUnrot(s => s.today));
   const st = useUnrot.getState;
   const chevron = <Ionicons name="chevron-forward" size={18} color={c.tertiary} />;
+  const askOnLaunch = useCatalog(s => s.askOnLaunch);
+  const setAsk = useCatalog(s => s.setAsk);
+  const checkNow = async () => {
+    try {
+      const fresh = await fetchPublished();
+      if (!fresh) return notify('Up to date', 'You have the newest cards.');
+      useCatalog.getState().set(fresh);
+      notify('Updated', `${fresh.cards.length.toLocaleString()} cards now.`);
+    } catch (e) {
+      notify('Could not check', e instanceof Error ? e.message : String(e));
+    }
+  };
   return (
     <Screen title="You" back="Apps">
       <Section>
@@ -34,6 +48,13 @@ export default function YouScreen() {
         </View>
       </Section>
       <TasteSection />
+      <AmbientSection />
+      {UNROT_DATA && (
+        <Section header="New cards" footer="Cards are published separately from app updates. On launch, Unrot can check and ask before downloading.">
+          <Row title="Ask on launch" right={<Switch value={askOnLaunch} onValueChange={setAsk} />} />
+          <Row title="Check for new cards now" tint onPress={checkNow} />
+        </Section>
+      )}
       <Section>
         <Row title="Change topics" onPress={() => router.push('/unrot/welcome')} right={chevron} />
         <Row title="Show the gesture tips again" onPress={() => { st().relearn(); router.navigate('/unrot'); }} right={chevron} />

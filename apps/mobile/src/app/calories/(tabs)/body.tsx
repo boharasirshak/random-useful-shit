@@ -1,4 +1,3 @@
-import { BackupSection } from '@/tools/calories/features/body/BackupSection';
 import { BurnSection } from '@/tools/calories/features/body/BurnSection';
 import { FoodDataSection } from '@/tools/calories/features/body/FoodDataSection';
 import { ActivitySection, ProfileSections } from '@/tools/calories/features/body/ProfileSections';
@@ -6,7 +5,7 @@ import { StepWeekSection } from '@/tools/calories/features/body/StepWeekSection'
 import { HelpButton } from '@/tools/calories/features/faq/HelpButton';
 import { Screen } from '@/ui/Screen';
 
-// Body: who you are and how much you move → daily burn. Also home to backup.
+// Body: who you are and how much you move → daily burn.
 export default function BodyScreen() {
   return (
     <Screen title="Body" back="Apps" accessory={<HelpButton />}>
@@ -15,7 +14,6 @@ export default function BodyScreen() {
       <ActivitySection />
       <BurnSection />
       <FoodDataSection />
-      <BackupSection />
     </Screen>
   );
 }

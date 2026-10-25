@@ -1,6 +1,7 @@
 // The audiobook player. Sentences are rendered to audio files a few ahead of the cursor and queued in an
 // expo-audio playlist, so background playback, lock-screen controls and speed are the OS's job, not ours.
 import { createAudioPlaylist, setAudioModeAsync, type AudioPlaylist } from 'expo-audio';
+import { useAmbient } from '@/shared/ambient/store';
 import { Directory, File } from 'expo-file-system';
 import { create } from 'zustand';
 import { makeSynth } from '@/tools/reader/engine';
@@ -68,6 +69,7 @@ function list() {
 }
 
 export async function open(b: Book, voice: Voice, rate: number, at: number) {
+  useAmbient.getState().stop(); // the book gets the speaker to itself
   const s = ++session;
   await setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: true, interruptionMode: 'doNotMix' });
   if (s !== session) return;

@@ -8,6 +8,7 @@ const EXPLORE = 0.2; // share of picks that go to your least-seen topic, so the 
 const REJECTED = -0.5; // topic bias below this: exploring leaves it alone
 const WINDOW = 5; // no topic gets more than 2 of the last 5 cards
 const TOP = 4; // pick among the best few, not always the single best
+const BULK_PENALTY = 0.3; // hand-written cards edge out script-gathered ones when scores are close
 
 export type PickInput = {
   cards: Card[];
@@ -60,7 +61,7 @@ export function pick({ cards, model, seen, hidden, exclude, recent, recentTypes 
     return fresh[Math.floor(random() * fresh.length)];
   }
   // ponytail: scores every eligible card per pick; fine for a few thousand cards, cache scores if the catalog grows past that.
-  const top = pool.map(c => [score(model, c), c] as const).sort((x, y) => y[0] - x[0]).slice(0, TOP);
+  const top = pool.map(c => [score(model, c) - (c.tier === 2 ? BULK_PENALTY : 0), c] as const).sort((x, y) => y[0] - x[0]).slice(0, TOP);
   return top[Math.floor(random() * top.length)][1];
 }
 

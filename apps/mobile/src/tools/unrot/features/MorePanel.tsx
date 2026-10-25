@@ -27,7 +27,8 @@ export function MorePanel({ card, width, height, top, bottom, next, open, onClos
       <ScrollView contentContainerStyle={{ paddingTop: top, paddingBottom: bottom + 32, paddingHorizontal: 28, gap: 28, maxWidth: 680, width: '100%', alignSelf: 'center' }}>
         <View style={{ gap: 14 }}>
           <Text style={sans(30, '700', { color: C.ink })}>{heading}</Text>
-          {card.more.split(/\n\n+/).map((p, i) => <Text key={i} style={sans(17, '400', { color: C.body, lineHeight: 27 })}>{p}</Text>)}
+          {(card.more ?? '').split(/\n\n+/).filter(Boolean).map((p, i) => <Text key={i} style={sans(17, '400', { color: C.body, lineHeight: 27 })}>{p}</Text>)}
+          {card.credit && <Text style={sans(13, '400', { color: C.dim })}>Picture: {card.credit}</Text>}
         </View>
         <View style={{ gap: 4, borderTopWidth: 1, borderTopColor: C.hairline, paddingTop: 20 }}>
           {card.author && card.type !== 'quote' && <Text style={sans(15, '600', { color: C.ink })}>{card.author}</Text>}

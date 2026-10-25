@@ -11,8 +11,14 @@ public class SpeechFileModule: Module {
     Name("SpeechFile")
 
     // Installed voices. Quality: "default", "enhanced" or "premium" (the ones users download in Settings).
+    // Left out: novelty voices (Bubbles, Cellos, Zarvox…), the Eloquence set (Rocko, Grandma, Eddy…) and Personal
+    // Voice. They all come back from speechVoices() on iOS 17+, and a book read by one sounds like a haunted toy.
     AsyncFunction("getVoices") { () -> [[String: Any]] in
-      AVSpeechSynthesisVoice.speechVoices().map { v in
+      AVSpeechSynthesisVoice.speechVoices().filter { v in
+        if #available(iOS 17.0, *), v.voiceTraits.contains(.isNoveltyVoice) || v.voiceTraits.contains(.isPersonalVoice) { return false }
+        let id = v.identifier.lowercased()
+        return !v.name.isEmpty && !id.hasPrefix("com.apple.speech.synthesis.voice.") && !id.contains("eloquence")
+      }.map { v in
         let quality: String
         switch v.quality {
         case .premium: quality = "premium"

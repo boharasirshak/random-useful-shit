@@ -3,6 +3,7 @@ import { Switch, Text, View } from 'react-native';
 import { api, API, syncBlocked } from '@/shared/api';
 import { useAccount } from '@/shared/account/store';
 import { useGoogleIdToken } from '@/shared/google';
+import { BackupSection } from '@/tools/calories/features/body/BackupSection';
 import { signedIn, signedOut, syncNow, type Session } from '@/shared/sync/engine';
 import { Button } from '@/ui/Button';
 import { confirm, notify } from '@/ui/confirm';
@@ -58,6 +59,7 @@ export default function AccountScreen() {
         <Section footer="Everything works offline and stays on this device.">
           <Row title="Sync isn’t available" subtitle={API ? 'Update the app to turn it on.' : 'This version of the app has no server to sync with.'} />
         </Section>
+        <BackupSection />
       </Screen>
     );
 
@@ -88,6 +90,7 @@ export default function AccountScreen() {
           <Row title="Delete account and server data" tint valueColor={c.red} onPress={remove} />
         </Section>
       )}
+      <BackupSection />
     </Screen>
   );
 }
